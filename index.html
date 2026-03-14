@@ -217,30 +217,21 @@ function parseCR3(buf){
                     }
                   }
                 }
-                // ── Fallback scan for unknown/new Canon bodies (e.g. EOS R1) ──
-                // Scan the entire block at 4-byte intervals for plausible ShutterCount values.
-                // Score by proximity to known confirmed offsets to minimise false positives.
-                // Result is flagged as unverified — the user must confirm correctness.
-                const ANCHOR=[0x0af1,0x09c0]; // confirmed offsets from other bodies
-                const candidates=[];
-                const scanTo=Math.min(cnt,0x3000);
-                for(let so=0x100;so+4<=scanTo;so+=4){
-                  if(bo+so+4>buf.byteLength)break;
-                  const sv=v.getUint32(bo+so,true);
-                  if(sv<10||sv>999999)continue;
-                  const dist=Math.min(...ANCHOR.map(a=>Math.abs(so-a)));
-                  candidates.push({off:so,val:sv,dist});
+                // ── Probe mode for unknown/new Canon bodies (e.g. EOS R1) ──
+                // Read the uint32 LE value at each candidate offset and show all probes
+                // to the user. They can compare with their known shutter count to find
+                // the correct offset, which can then be added to the confirmed list.
+                const PROBE_OFFSETS=[
+                  0x09c0,0x0af1,0x0bf1,0x0cf1,0x0df1, // near known anchors
+                  0x0c00,0x0d00,0x0e00,0x0f00,         // round alternatives
+                ];
+                const probes=[];
+                for(const po of PROBE_OFFSETS){
+                  if(po+4>cnt||bo+po+4>buf.byteLength)continue;
+                  const pv=v.getUint32(bo+po,true);
+                  probes.push(`0x${po.toString(16).toUpperCase()}=${pv}`);
                 }
-                if(candidates.length){
-                  candidates.sort((a,b)=>a.dist-b.dist);
-                  const best=candidates[0];
-                  // Only trust if the best candidate is near a known offset (< 0x800 away)
-                  if(best.dist<0x800){
-                    res.shutterCount=best.val;
-                    res.method=`CTMD scan → tag 0x000D → offset 0x${best.off.toString(16).toUpperCase()} (NEOVĚŘENO — ${candidates.length} kandidátů, nejbližší ke známým offsetům)`;
-                    res._scanCandidates=candidates.slice(0,8).map(c=>`0x${c.off.toString(16)}=${c.val}`).join(' | ');
-                  }
-                }
+                if(probes.length) res._probeValues=probes.join(' | ');
               }
             }
             break;
@@ -782,9 +773,8 @@ function card(file,r,err){
   const isUnknownR = isCR3 && isCanon && sc==null &&
     /EOS RP|EOS R\b|EOS R5|EOS R7|EOS R10|EOS R50|EOS R8|EOS R100|EOS R1\b/.test(r.model||'');
   const isCR2noSC = isCR2 && isCanon && !model.includes('EOS-1D');
-  const isScanResult = r.method?.includes('NEOVĚŘENO') || r.method?.includes('experimental');
   const dm=err?'Chyba parsování':sc!=null?
-    (isScanResult?'⚠️ Shuttercount nalezen (neověřený offset — zkontroluj hodnotu)':'Shuttercount nalezen'):
+    (r.method?.includes('experimental')?'⚠️ Shuttercount nalezen (experimentální offset — neověřeno)':'Shuttercount nalezen'):
     isUnknownR?`Canon ${r.model||'R-série'} — offset ShutterCountu není potvrzen`:
     isCR2noSC?'Canon toto tělo ShutterCount do souboru nezapisuje (jen 1D série)':
     'Shuttercount nenalezen v tomto souboru';
@@ -803,8 +793,8 @@ function card(file,r,err){
     r.iso?`<div class="field"><div class="field-label">ISO</div><div class="field-value">${r.iso}</div></div>`:'',
     r.fileNumber?`<div class="field full-width"><div class="field-label">Číslo souboru (karta)</div><div class="field-value" style="font-size:.8rem">${r.fileNumber} <span style="color:var(--muted);font-size:.7rem">— čítač karty, ne celoživotní počet</span></div></div>`:'',
     r.method?`<div class="field full-width"><div class="field-label">Metoda extrakce</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">${r.method}</div></div>`:'',
-    r._scanCandidates?`<div class="field full-width"><div class="field-label">Scan kandidáti (offset=hodnota)</div><div class="field-value" style="font-size:.68rem;color:var(--muted);word-break:break-all">${r._scanCandidates}</div></div>`:'',
-    (!sc && r._cr3BlockSize)?`<div class="field full-width"><div class="field-label">Diagnostika CR3 bloku</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">Blok tag 0x000D: <code style="background:var(--border);padding:1px 5px;border-radius:3px;color:var(--accent)">${r._cr3BlockSize} B (0x${r._cr3BlockSize.toString(16).toUpperCase()})</code> — sdílej soubor pro přidání offsetu</div></div>`:'',
+    (!sc && r._probeValues)?`<div class="field full-width"><div class="field-label">Kandidáti — vyber svůj počet (offset=hodnota)</div><div class="field-value" style="font-size:.68rem;color:var(--accent);word-break:break-all;line-height:1.8">${r._probeValues}</div></div>`:'',
+    (!sc && r._cr3BlockSize)?`<div class="field full-width"><div class="field-label">Diagnostika CR3</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">Blok 0x000D: <code style="background:var(--border);padding:1px 5px;border-radius:3px;color:var(--accent)">${r._cr3BlockSize} B (0x${r._cr3BlockSize.toString(16).toUpperCase()})</code> — nahlaste offset + blok na GitHub Issues</div></div>`:'',
   ].filter(Boolean).join('');
   const c=document.createElement('div');c.className='result-card';
   c.innerHTML=`<div class="card-header"><div class="card-filename">${file.name}</div><div class="card-size">${fmtSz(file.size)}</div></div><div class="card-body"><div class="field"><div class="field-label">Shuttercount</div>${sh}</div><div class="field"><div class="field-label">Opotřebení závěrky</div>${ph}</div>${rows}</div><div class="status-bar"><div class="status-dot ${dc}"></div>${dm}</div>`;
