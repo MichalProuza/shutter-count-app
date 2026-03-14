@@ -217,21 +217,29 @@ function parseCR3(buf){
                     }
                   }
                 }
-                // ── Probe mode for unknown/new Canon bodies (e.g. EOS R1) ──
-                // Read the uint32 LE value at each candidate offset and show all probes
-                // to the user. They can compare with their known shutter count to find
-                // the correct offset, which can then be added to the confirmed list.
-                const PROBE_OFFSETS=[
-                  0x09c0,0x0af1,0x0bf1,0x0cf1,0x0df1, // near known anchors
-                  0x0c00,0x0d00,0x0e00,0x0f00,         // round alternatives
-                ];
-                const probes=[];
-                for(const po of PROBE_OFFSETS){
-                  if(po+4>cnt||bo+po+4>buf.byteLength)continue;
-                  const pv=v.getUint32(bo+po,true);
-                  probes.push(`0x${po.toString(16).toUpperCase()}=${pv}`);
+                // ── Full-block dump for unknown/new Canon bodies (e.g. EOS R1) ──
+                // Scan every 4-byte aligned position in the block.
+                // Display non-trivial values grouped by magnitude so the user can
+                // spot their actual shutter count and report the correct offset.
+                // Powers of 2 are tagged with * as they are likely size/limit fields.
+                const isPow2=n=>n>0&&(n&(n-1))===0;
+                const dumpGroups={hundreds:[],thousands:[],tens_k:[],other:[]};
+                const scanEnd=Math.min(cnt-3,0x4000);
+                for(let so=0;so<scanEnd;so+=4){
+                  if(bo+so+4>buf.byteLength)break;
+                  const sv=v.getUint32(bo+so,true);
+                  if(sv===0)continue;
+                  const tag=isPow2(sv)?'*':'';
+                  const entry=`0x${so.toString(16).padStart(4,'0')}=${sv}${tag}`;
+                  if(sv>=100&&sv<1000)dumpGroups.hundreds.push(entry);
+                  else if(sv>=1000&&sv<10000)dumpGroups.thousands.push(entry);
+                  else if(sv>=10000&&sv<200000)dumpGroups.tens_k.push(entry);
                 }
-                if(probes.length) res._probeValues=probes.join(' | ');
+                const parts=[];
+                if(dumpGroups.thousands.length) parts.push('【tisíce】 '+dumpGroups.thousands.join(' | '));
+                if(dumpGroups.tens_k.length)    parts.push('【10k–200k】 '+dumpGroups.tens_k.join(' | '));
+                if(dumpGroups.hundreds.length)  parts.push('【stovky】 '+dumpGroups.hundreds.join(' | '));
+                if(parts.length) res._probeValues=parts.join('\n');
               }
             }
             break;
@@ -793,7 +801,7 @@ function card(file,r,err){
     r.iso?`<div class="field"><div class="field-label">ISO</div><div class="field-value">${r.iso}</div></div>`:'',
     r.fileNumber?`<div class="field full-width"><div class="field-label">Číslo souboru (karta)</div><div class="field-value" style="font-size:.8rem">${r.fileNumber} <span style="color:var(--muted);font-size:.7rem">— čítač karty, ne celoživotní počet</span></div></div>`:'',
     r.method?`<div class="field full-width"><div class="field-label">Metoda extrakce</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">${r.method}</div></div>`:'',
-    (!sc && r._probeValues)?`<div class="field full-width"><div class="field-label">Kandidáti — vyber svůj počet (offset=hodnota)</div><div class="field-value" style="font-size:.68rem;color:var(--accent);word-break:break-all;line-height:1.8">${r._probeValues}</div></div>`:'',
+    (!sc && r._probeValues)?`<div class="field full-width"><div class="field-label">Dump bloku — najdi svůj počet (* = mocnina 2, pravděpodobně ne SC)</div><div class="field-value" style="font-size:.66rem;color:var(--accent);word-break:break-all;line-height:2;white-space:pre-wrap">${r._probeValues}</div></div>`:'',
     (!sc && r._cr3BlockSize)?`<div class="field full-width"><div class="field-label">Diagnostika CR3</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">Blok 0x000D: <code style="background:var(--border);padding:1px 5px;border-radius:3px;color:var(--accent)">${r._cr3BlockSize} B (0x${r._cr3BlockSize.toString(16).toUpperCase()})</code> — nahlaste offset + blok na GitHub Issues</div></div>`:'',
   ].filter(Boolean).join('');
   const c=document.createElement('div');c.className='result-card';
