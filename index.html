@@ -13,7 +13,7 @@ header{text-align:center;margin-bottom:56px}
 .logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px}
 .logo span{color:var(--accent)}
 .subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
-.dropzone{width:100%;max-width:640px;border:2px dashed var(--border);border-radius:12px;padding:64px 32px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;position:relative;margin-bottom:40px}
+.dropzone{width:100%;max-width:640px;border:2px dashed var(--border);border-radius:12px;padding:64px 32px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;position:relative;margin-bottom:16px}
 .dropzone:hover,.dropzone.dragover{border-color:var(--accent);background:rgba(232,255,71,.04)}
 .dropzone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
 .drop-icon{font-size:2.8rem;margin-bottom:16px;display:block}
@@ -21,6 +21,15 @@ header{text-align:center;margin-bottom:56px}
 .drop-sub{color:var(--muted);font-size:.75rem;letter-spacing:.05em}
 .drop-formats{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
 .fmt-badge{background:var(--border);border-radius:4px;padding:3px 10px;font-size:.7rem;letter-spacing:.1em;color:var(--muted)}
+.drop-actions{width:100%;max-width:640px;display:flex;align-items:center;gap:10px;margin-bottom:24px}
+.btn{background:transparent;border:1px solid var(--border);color:var(--text);border-radius:6px;padding:8px 16px;font-family:var(--mono);font-size:.75rem;letter-spacing:.05em;cursor:pointer;transition:border-color .2s,color .2s;white-space:nowrap}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn-accent{border-color:var(--accent);color:var(--accent)}
+.btn-sm{padding:5px 12px;font-size:.7rem}
+.drop-sep{flex:1;height:1px;background:var(--border)}
+.export-bar{width:100%;max-width:640px;display:none;align-items:center;gap:12px;margin-bottom:16px}
+.export-bar.visible{display:flex}
+.export-count{flex:1;font-size:.72rem;color:var(--muted)}
 #results{width:100%;max-width:640px;display:flex;flex-direction:column;gap:16px}
 .result-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;animation:slideIn .3s ease forwards;opacity:0}
 @keyframes slideIn{from{transform:translateY(12px);opacity:0}to{transform:translateY(0);opacity:1}}
@@ -57,12 +66,12 @@ header{text-align:center;margin-bottom:56px}
 <body>
 <header>
   <div class="logo">SHUTTER<span>COUNT</span></div>
-  <p class="subtitle">RAW EXIF Inspector — Canon R6 · R5 · R3 · R7 · CR2 · NEF · ARW</p>
+  <p class="subtitle">RAW EXIF Inspector — Canon · Nikon · Sony · Fujifilm · Olympus / OM System</p>
 </header>
 <div class="dropzone" id="dropzone">
   <input type="file" id="fileInput" accept=".cr2,.cr3,.nef,.arw,.raf,.orf,.rw2,.dng,.jpg,.jpeg" multiple>
   <span class="drop-icon">📷</span>
-  <div class="drop-title">Přetáhni RAW soubory nebo klikni</div>
+  <div class="drop-title">Přetáhni RAW soubory nebo složku sem</div>
   <div class="drop-sub">Zpracování probíhá lokálně v prohlížeči — žádný soubor se neodesílá</div>
   <div class="drop-formats">
     <span class="fmt-badge">CR3 (R6/R5/R3/R7)</span>
@@ -70,9 +79,21 @@ header{text-align:center;margin-bottom:56px}
     <span class="fmt-badge">NEF</span>
     <span class="fmt-badge">ARW</span>
     <span class="fmt-badge">RAF</span>
+    <span class="fmt-badge">ORF</span>
     <span class="fmt-badge">DNG</span>
     <span class="fmt-badge">JPEG</span>
   </div>
+</div>
+<div class="drop-actions">
+  <button class="btn btn-sm" id="folderBtn" title="Vybrat složku">📁 Otevřít složku</button>
+  <input type="file" id="folderInput" webkitdirectory style="display:none" multiple>
+  <div class="drop-sep"></div>
+  <span style="font-size:.7rem;color:var(--muted)">nebo přetáhni celou složku</span>
+</div>
+<div class="export-bar" id="exportBar">
+  <span class="export-count" id="exportCount"></span>
+  <button class="btn btn-sm" onclick="clearResults()">✕ Vymazat</button>
+  <button class="btn btn-sm btn-accent" onclick="exportCSV()">↓ Export CSV</button>
 </div>
 <div class="loader" id="loader"><div class="spinner"></div>PARSUJU DATA...</div>
 <div id="results"></div>
@@ -86,7 +107,11 @@ header{text-align:center;margin-bottom:56px}
   <br><br>
   <strong>Sony ARW / DNG</strong> — ARW: tag <code>0x9050</code> šifrovaný <code>(b³ % 249)</code>. DNG: MakerNote v <code>DNGPrivateData</code> (Adobe MakN wrapper) s korekcí offsetů. Po dešifrování: offset <code>0x003a</code> (A7III/IV, A9, A6400…), <code>0x0032</code> (A7I/II, SLT), <code>0x000a</code> (A6700, A7CM2/CR).
   <br><br>
-  Vše běží offline v prohlížeči — žádný soubor se neodesílá.
+  <strong>Fujifilm RAF</strong> — RAF obsahuje embedded JPEG s plným EXIF. ShutterCount je v Fujifilm MakerNote: tag <code>0x1402</code> (ShotCount). ✅ Potvrzeno pro X-T3/4, X100V/VI, X-S10/20, GFX sérii. Starší těla (X-T1/2, X-Pro1/2) mohou tag neobsahovat.
+  <br><br>
+  <strong>Olympus / OM System ORF</strong> — MakerNote Equipment sub-IFD, tag <code>0x0101</code> (ShutterCount). ✅ Moderní Olympus E-system, OM-D, OM System (OM-1, OM-5). Starší Olymp\0 formát také podporován.
+  <br><br>
+  Vše běží offline v prohlížeči — žádný soubor se neodesílá. CSV export zahrnuje všechny zpracované soubory od načtení stránky.
 </div>
 <script>
 const r16=(v,o,le)=>v.getUint16(o,le);
@@ -236,7 +261,7 @@ function parseCMT(v,u,base,size,cmt,r){
   }
 }
 
-// ── Classic TIFF/EXIF (CR2, NEF, ARW, JPEG) ──────────────────────────────────
+// ── Classic TIFF/EXIF (CR2, NEF, ARW, ORF, JPEG) ─────────────────────────────
 function parseExif(buf){
   const v=new DataView(buf),u=new Uint8Array(buf);
   const r={make:'',model:'',shutterCount:null,firmware:'',dateTime:'',
@@ -253,7 +278,9 @@ function parseExif(buf){
   }
   const order=r16(v,tb,false),le=order===0x4949;
   if(order!==0x4949&&order!==0x4D4D)return r;
-  if(r16(v,tb+2,le)!==0x002A)return r;
+  // Accept standard TIFF magic 0x002A and Olympus ORF variant 0x4F52 ("OR")
+  const tiffMagic=r16(v,tb+2,le);
+  if(tiffMagic!==0x002A&&tiffMagic!==0x4F52)return r;
   const ifd0=parseIFD(v,u,tb+r32(v,tb+4,le),tb,le);
   r.make=iStr(u,tb,ifd0[0x010F]);r.model=iStr(u,tb,ifd0[0x0110]);r.dateTime=iStr(u,tb,ifd0[0x0132]);
   let ex={};
@@ -274,7 +301,10 @@ function parseExif(buf){
           if(mn[0x00A7]&&mn[0x00A7].val>0){r.shutterCount=mn[0x00A7].val;r.method='Nikon MakerNote 0x00A7';}}
       }
       else if(mk.includes('SONY')){ parseSonyMakerNote(v,u,mo,le,r); }
-      else if(mk.includes('OLYMPUS')||mk.includes('OM ')){const mn=parseIFD(v,u,mo,mo,le);if(mn[0x0207]){const eq=parseIFD(v,u,mo+mn[0x0207].val,mo,le);if(eq[0x0101]&&eq[0x0101].val>0){r.shutterCount=eq[0x0101].val;r.method='Olympus Equipment 0x0101';}}}
+      else if(mk.includes('FUJIFILM')){ parseFujiMakerNote(v,u,mo,tb,le,r); }
+      else if(mk.includes('OLYMPUS')||mk.includes('OM ')||mk.includes('OM-DIGITAL')){
+        parseOlympusMakerNote(v,u,mo,tb,le,r);
+      }
     }catch{}
   }
 
@@ -488,33 +518,232 @@ function parseSonyMakerNote(v, u, makerOff, le, r, corr=0) {
   }
 }
 
+// ── Fujifilm MakerNote parser ─────────────────────────────────────────────────
+// Header: "FUJIFILM" (8 bytes) + uint16 LE IFD offset (typically 12).
+// All IFD offsets are relative to the MakerNote start (makerOff).
+// Byte order within Fujifilm MakerNote is always little-endian.
+// Tag 0x1402 = ShotCount (confirmed for X-T3/4, X100V/VI, X-S10/20, GFX series).
+function parseFujiMakerNote(v, u, makerOff, tiffBase, le, r) {
+  if (makerOff + 12 > v.byteLength) return;
+  if (s4(u, makerOff) !== 'FUJI' || s4(u, makerOff+4) !== 'FILM') return;
+  // Bytes 8-9: LE uint16 = offset of IFD from MakerNote start (typically 12)
+  const ifdRelOff = u[makerOff+8] | (u[makerOff+9] << 8);
+  if (ifdRelOff < 8 || ifdRelOff > 256) return;
+  const ifdOff = makerOff + ifdRelOff;
+  if (ifdOff + 2 > v.byteLength) return;
+  // Fujifilm IFD is always LE; offsets relative to makerOff
+  const mn = parseIFD(v, u, ifdOff, makerOff, false);
+  // 0x1402: ShotCount (LONG, confirmed for modern X/GFX bodies)
+  if (mn[0x1402] && mn[0x1402].type === 4 && mn[0x1402].val > 0 && mn[0x1402].val < 2000000) {
+    r.shutterCount = mn[0x1402].val;
+    r.method = 'Fujifilm MakerNote 0x1402 (ShotCount)';
+    return;
+  }
+  // Some bodies store it as a SHORT
+  if (mn[0x1402] && mn[0x1402].type === 3 && mn[0x1402].val > 0 && mn[0x1402].val < 2000000) {
+    r.shutterCount = mn[0x1402].val;
+    r.method = 'Fujifilm MakerNote 0x1402 (ShotCount, SHORT)';
+  }
+}
+
+// ── Olympus / OM System MakerNote parser ──────────────────────────────────────
+// Modern format (E-system, OM-D, OM System):
+//   "OLYMPUS\0" (8 bytes) + byte-order "II"/"MM" (2 bytes) + version (2 bytes)
+//   IFD starts at offset 12 from MakerNote start; all offsets relative to MakerNote.
+// Older format (compact cameras):
+//   "OLYMP\0" (6 bytes) + IFD; offsets relative to main TIFF base.
+// ShutterCount: Equipment sub-IFD (tag 0x0207) → tag 0x0101.
+function parseOlympusMakerNote(v, u, makerOff, tiffBase, le, r) {
+  if (makerOff + 8 > v.byteLength) return;
+  let ifdOff, ifdBase, ifdLE = le;
+  if (s4(u, makerOff) === 'OLYM' && s4(u, makerOff+4) === 'PUS\x00') {
+    // Modern Olympus/OM System: "OLYMPUS\0" + endian + version, IFD at +12
+    ifdLE   = (u[makerOff+8] === 0x49); // 'I' = little-endian
+    ifdBase = makerOff;
+    ifdOff  = makerOff + 12;
+  } else if (s4(u, makerOff) === 'OLYM' && u[makerOff+4] === 0x50) {
+    // Older "OLYMP\0" compact-camera format, IFD at +8, offsets from TIFF base
+    ifdBase = tiffBase;
+    ifdOff  = makerOff + 8;
+  } else {
+    // Unknown variant — try direct IFD parse from MakerNote start
+    ifdBase = makerOff;
+    ifdOff  = makerOff;
+  }
+  if (ifdOff + 2 > v.byteLength) return;
+  const mn = parseIFD(v, u, ifdOff, ifdBase, ifdLE);
+  // Equipment sub-IFD (0x0207) → ShutterCount at tag 0x0101
+  const eqTag = mn[0x0207];
+  if (eqTag && eqTag.type === 4) {
+    const eqOff = ifdBase + eqTag.raw;
+    if (eqOff + 2 < v.byteLength) {
+      const eq = parseIFD(v, u, eqOff, ifdBase, ifdLE);
+      if (eq[0x0101] && eq[0x0101].val > 0 && eq[0x0101].val < 2000000) {
+        r.shutterCount = eq[0x0101].val;
+        r.method = 'Olympus Equipment IFD 0x0101';
+        return;
+      }
+    }
+  }
+}
+
+// ── Fujifilm RAF parser ───────────────────────────────────────────────────────
+// RAF is FUJIFILM's proprietary container. Magic: "FUJIFILM" at byte 0.
+// The file contains an embedded JPEG (with full EXIF + Fujifilm MakerNote)
+// whose offset and length are stored as big-endian uint32 at 0x54 and 0x58.
+function parseRAF(buf) {
+  const u = new Uint8Array(buf);
+  if (s4(u,0) !== 'FUJI' || s4(u,4) !== 'FILM') return null;
+  if (buf.byteLength < 0x60) return null;
+  // JPEG embedded image: offset and size at 0x54/0x58 (big-endian)
+  const jpegOff = ((u[0x54]<<24)|(u[0x55]<<16)|(u[0x56]<<8)|u[0x57]) >>> 0;
+  const jpegLen = ((u[0x58]<<24)|(u[0x59]<<16)|(u[0x5a]<<8)|u[0x5b]) >>> 0;
+  if (jpegOff < 160 || jpegOff >= buf.byteLength || jpegLen < 100) return null;
+  const end = Math.min(jpegOff + jpegLen, buf.byteLength);
+  if (u[jpegOff] !== 0xFF || u[jpegOff+1] !== 0xD8) return null;
+  // Parse the embedded JPEG — its EXIF contains the Fujifilm MakerNote
+  return parseExif(buf.slice(jpegOff, end));
+}
+
 // ── Dispatcher ────────────────────────────────────────────────────────────────
 function parseFile(buf){
   const u=new Uint8Array(buf);
-  return s4(u,4)==='ftyp'?(parseCR3(buf)||parseExif(buf)):parseExif(buf);
+  // CR3: ISOBMFF (ftyp box at offset 4)
+  if(s4(u,4)==='ftyp') return parseCR3(buf) || parseExif(buf);
+  // RAF: FUJIFILM proprietary (magic at offset 0)
+  if(s4(u,0)==='FUJI' && s4(u,4)==='FILM') return parseRAF(buf) || parseExif(buf);
+  // Everything else: TIFF/EXIF (NEF, ARW, CR2, ORF, DNG, JPEG)
+  return parseExif(buf);
 }
 
+// ── Results tracking for CSV export ──────────────────────────────────────────
+const allResults = [];
+
 // ── UI ────────────────────────────────────────────────────────────────────────
-const dz=document.getElementById('dropzone'),fi=document.getElementById('fileInput'),
-      ld=document.getElementById('loader'),rs=document.getElementById('results');
+const dz=document.getElementById('dropzone'),
+      fi=document.getElementById('fileInput'),
+      folderInput=document.getElementById('folderInput'),
+      folderBtn=document.getElementById('folderBtn'),
+      ld=document.getElementById('loader'),
+      rs=document.getElementById('results'),
+      exportBar=document.getElementById('exportBar'),
+      exportCount=document.getElementById('exportCount');
+
 dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('dragover');});
 dz.addEventListener('dragleave',()=>dz.classList.remove('dragover'));
-dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('dragover');run([...e.dataTransfer.files]);});
+dz.addEventListener('drop',e=>{
+  e.preventDefault();
+  dz.classList.remove('dragover');
+  // Use DataTransferItem API to support folders (webkitGetAsEntry)
+  const items = e.dataTransfer.items;
+  if (items && items.length) {
+    const files = [];
+    let pending = 0;
+    const done = () => { if (--pending === 0) run(files); };
+    for (const item of items) {
+      const entry = item.webkitGetAsEntry ? item.webkitGetAsEntry() : null;
+      if (entry) {
+        pending++;
+        traverseEntry(entry, files, done);
+      }
+    }
+    if (pending === 0) run([...e.dataTransfer.files]);
+  } else {
+    run([...e.dataTransfer.files]);
+  }
+});
 fi.addEventListener('change',()=>run([...fi.files]));
+folderBtn.addEventListener('click',e=>{e.stopPropagation();folderInput.click();});
+folderInput.addEventListener('change',()=>run([...folderInput.files]));
+
+// Recursively traverse a FileSystemEntry (file or directory)
+function traverseEntry(entry, files, done) {
+  if (entry.isFile) {
+    entry.file(f => { files.push(f); done(); }, () => done());
+  } else if (entry.isDirectory) {
+    const reader = entry.createReader();
+    // readEntries may need multiple calls to get all files
+    const readAll = (accumulated) => {
+      reader.readEntries(entries => {
+        if (!entries.length) {
+          // Done reading this directory
+          if (!accumulated.length) { done(); return; }
+          let sub = accumulated.length;
+          const subdone = () => { if (--sub === 0) done(); };
+          for (const e of accumulated) traverseEntry(e, files, subdone);
+        } else {
+          readAll([...accumulated, ...entries]);
+        }
+      }, () => done());
+    };
+    readAll([]);
+  } else {
+    done();
+  }
+}
+
+// Filter to only RAW/image files we can handle
+const ACCEPTED_EXT = new Set(['.cr2','.cr3','.nef','.arw','.raf','.orf','.rw2','.dng','.jpg','.jpeg']);
+function acceptedFile(f) {
+  const ext = f.name.slice(f.name.lastIndexOf('.')).toLowerCase();
+  return ACCEPTED_EXT.has(ext);
+}
 
 async function run(files){
-  if(!files.length)return;ld.classList.add('active');
-  for(const f of files)await proc(f);
+  const accepted = files.filter(acceptedFile);
+  if(!accepted.length) return;
+  ld.classList.add('active');
+  for(const f of accepted) await proc(f);
   ld.classList.remove('active');
 }
 async function proc(file){
   return new Promise(res=>{
     const rd=new FileReader();
-    rd.onload=e=>{let r={},err=null;try{r=parseFile(e.target.result)||{};}catch(ex){err=ex.message;}card(file,r,err);res();};
+    rd.onload=e=>{
+      let r={},err=null;
+      try{r=parseFile(e.target.result)||{};}catch(ex){err=ex.message;}
+      allResults.push({filename:file.name,size:file.size,model:r.model||'',
+        dateTime:r.dateTime||'',shutterCount:r.shutterCount??null,make:r.make||''});
+      updateExportBar();
+      card(file,r,err);
+      res();
+    };
     rd.onerror=()=>{card(file,{},'Soubor nelze přečíst');res();};
     rd.readAsArrayBuffer(file);
   });
 }
+
+function updateExportBar() {
+  const n = allResults.length;
+  exportBar.classList.toggle('visible', n > 0);
+  exportCount.textContent = `${n} soubor${n===1?'':n<5?'y':'ů'} zpracováno`;
+}
+
+function clearResults() {
+  allResults.length = 0;
+  rs.innerHTML = '';
+  exportBar.classList.remove('visible');
+}
+
+function exportCSV() {
+  const BOM = '\uFEFF'; // UTF-8 BOM for Excel compatibility
+  const header = ['Soubor','Model','Výrobce','Datum pořízení','ShutterCount'];
+  const rows = allResults.map(r => [
+    `"${r.filename.replace(/"/g,'""')}"`,
+    `"${r.model.replace(/"/g,'""')}"`,
+    `"${r.make.replace(/"/g,'""')}"`,
+    `"${r.dateTime.replace(/"/g,'""')}"`,
+    r.shutterCount ?? ''
+  ].join(';')); // semicolon for better Excel CZ compatibility
+  const csv = BOM + [header.join(';'), ...rows].join('\r\n');
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `shuttercount_${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+}
+
 function fmtSz(b){return b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(1)+' MB';}
 function card(file,r,err){
   const sc=r.shutterCount??null,MAX=300000,pct=sc!=null?Math.min(100,sc/MAX*100):null;
@@ -555,4 +784,3 @@ function card(file,r,err){
 </script>
 </body>
 </html>
-<!-- PLACEHOLDER - will be replaced -->
