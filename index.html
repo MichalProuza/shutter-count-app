@@ -197,6 +197,8 @@ function parseCR3(buf){
               const tag=r16(v,ep,le),typ=r16(v,ep+2,le),cnt=r32(v,ep+4,le),raw=r32(v,ep+8,le);
               if(tag===0x000d&&typ===7&&cnt>=100){
                 const bo=tb+raw;
+                // Save block size for diagnostic display when ShutterCount is not found
+                res._cr3BlockSize = cnt;
                 // Known ShutterCount offsets in the CanonCameraInfo BinaryData blob,
                 // indexed by block size (different bodies have different block sizes).
                 // Only R6/R6mkII/R3 confirmed by exiftool canon.pm (0x0af1 in 4608-byte block).
@@ -208,11 +210,35 @@ function parseCR3(buf){
                 for(const o of OFFSETS){
                   if(cnt>=o.minCnt&&bo+o.off+4<=buf.byteLength){
                     const sc=v.getUint32(bo+o.off,true);
-                    if(sc>0&&sc<600000){
+                    if(sc>0&&sc<999999){
                       res.shutterCount=sc;
                       res.method=`CTMD rec.8 → tag 0x000D → offset 0x${o.off.toString(16).toUpperCase()} (${o.label})`;
                       return res;
                     }
+                  }
+                }
+                // ── Fallback scan for unknown/new Canon bodies (e.g. EOS R1) ──
+                // Scan the entire block at 4-byte intervals for plausible ShutterCount values.
+                // Score by proximity to known confirmed offsets to minimise false positives.
+                // Result is flagged as unverified — the user must confirm correctness.
+                const ANCHOR=[0x0af1,0x09c0]; // confirmed offsets from other bodies
+                const candidates=[];
+                const scanTo=Math.min(cnt,0x3000);
+                for(let so=0x100;so+4<=scanTo;so+=4){
+                  if(bo+so+4>buf.byteLength)break;
+                  const sv=v.getUint32(bo+so,true);
+                  if(sv<10||sv>999999)continue;
+                  const dist=Math.min(...ANCHOR.map(a=>Math.abs(so-a)));
+                  candidates.push({off:so,val:sv,dist});
+                }
+                if(candidates.length){
+                  candidates.sort((a,b)=>a.dist-b.dist);
+                  const best=candidates[0];
+                  // Only trust if the best candidate is near a known offset (< 0x800 away)
+                  if(best.dist<0x800){
+                    res.shutterCount=best.val;
+                    res.method=`CTMD scan → tag 0x000D → offset 0x${best.off.toString(16).toUpperCase()} (NEOVĚŘENO — ${candidates.length} kandidátů, nejbližší ke známým offsetům)`;
+                    res._scanCandidates=candidates.slice(0,8).map(c=>`0x${c.off.toString(16)}=${c.val}`).join(' | ');
                   }
                 }
               }
@@ -756,9 +782,10 @@ function card(file,r,err){
   const isUnknownR = isCR3 && isCanon && sc==null &&
     /EOS RP|EOS R\b|EOS R5|EOS R7|EOS R10|EOS R50|EOS R8|EOS R100|EOS R1\b/.test(r.model||'');
   const isCR2noSC = isCR2 && isCanon && !model.includes('EOS-1D');
+  const isScanResult = r.method?.includes('NEOVĚŘENO') || r.method?.includes('experimental');
   const dm=err?'Chyba parsování':sc!=null?
-    (r.method?.includes('experimental')?'⚠️ Shuttercount nalezen (experimentální offset — neověřeno)':'Shuttercount nalezen'):
-    isUnknownR?`Canon ${r.model||'R-série'} — offset ShutterCountu není v exiftool dokumentován`:
+    (isScanResult?'⚠️ Shuttercount nalezen (neověřený offset — zkontroluj hodnotu)':'Shuttercount nalezen'):
+    isUnknownR?`Canon ${r.model||'R-série'} — offset ShutterCountu není potvrzen`:
     isCR2noSC?'Canon toto tělo ShutterCount do souboru nezapisuje (jen 1D série)':
     'Shuttercount nenalezen v tomto souboru';
   const sh=sc!=null?`<div class="field-value highlight">${sc.toLocaleString('cs-CZ')}</div>`:
@@ -776,6 +803,8 @@ function card(file,r,err){
     r.iso?`<div class="field"><div class="field-label">ISO</div><div class="field-value">${r.iso}</div></div>`:'',
     r.fileNumber?`<div class="field full-width"><div class="field-label">Číslo souboru (karta)</div><div class="field-value" style="font-size:.8rem">${r.fileNumber} <span style="color:var(--muted);font-size:.7rem">— čítač karty, ne celoživotní počet</span></div></div>`:'',
     r.method?`<div class="field full-width"><div class="field-label">Metoda extrakce</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">${r.method}</div></div>`:'',
+    r._scanCandidates?`<div class="field full-width"><div class="field-label">Scan kandidáti (offset=hodnota)</div><div class="field-value" style="font-size:.68rem;color:var(--muted);word-break:break-all">${r._scanCandidates}</div></div>`:'',
+    (!sc && r._cr3BlockSize)?`<div class="field full-width"><div class="field-label">Diagnostika CR3 bloku</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">Blok tag 0x000D: <code style="background:var(--border);padding:1px 5px;border-radius:3px;color:var(--accent)">${r._cr3BlockSize} B (0x${r._cr3BlockSize.toString(16).toUpperCase()})</code> — sdílej soubor pro přidání offsetu</div></div>`:'',
   ].filter(Boolean).join('');
   const c=document.createElement('div');c.className='result-card';
   c.innerHTML=`<div class="card-header"><div class="card-filename">${file.name}</div><div class="card-size">${fmtSz(file.size)}</div></div><div class="card-body"><div class="field"><div class="field-label">Shuttercount</div>${sh}</div><div class="field"><div class="field-label">Opotřebení závěrky</div>${ph}</div>${rows}</div><div class="status-bar"><div class="status-dot ${dc}"></div>${dm}</div>`;
