@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShutterCount</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+header{text-align:center;margin-bottom:56px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.dropzone{width:100%;max-width:640px;border:2px dashed var(--border);border-radius:12px;padding:64px 32px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;position:relative;margin-bottom:40px}
+.dropzone:hover,.dropzone.dragover{border-color:var(--accent);background:rgba(232,255,71,.04)}
+.dropzone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.drop-icon{font-size:2.8rem;margin-bottom:16px;display:block}
+.drop-title{font-family:var(--sans);font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.drop-sub{color:var(--muted);font-size:.75rem;letter-spacing:.05em}
+.drop-formats{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.fmt-badge{background:var(--border);border-radius:4px;padding:3px 10px;font-size:.7rem;letter-spacing:.1em;color:var(--muted)}
+#results{width:100%;max-width:640px;display:flex;flex-direction:column;gap:16px}
+.result-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;animation:slideIn .3s ease forwards;opacity:0}
+@keyframes slideIn{from{transform:translateY(12px);opacity:0}to{transform:translateY(0);opacity:1}}
+.card-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border);gap:12px}
+.card-filename{font-size:.8rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+.card-size{font-size:.7rem;color:var(--muted);flex-shrink:0}
+.card-body{padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:4px}
+.field-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.field-value{font-size:.92rem;font-weight:600}
+.field-value.highlight{font-family:var(--sans);font-size:1.6rem;font-weight:800;color:var(--accent);letter-spacing:-.02em;line-height:1}
+.field-value.not-found{color:var(--muted);font-weight:400;font-size:.8rem}
+.field-value.error{color:var(--accent2);font-weight:400;font-size:.8rem}
+.field.full-width{grid-column:1/-1}
+.life-bar-bg{width:100%;height:4px;background:var(--border);border-radius:2px;overflow:hidden;margin-top:6px}
+.life-bar-fill{height:100%;border-radius:2px;background:var(--accent)}
+.life-bar-fill.warn{background:#ffaa47}
+.life-bar-fill.danger{background:var(--accent2)}
+.status-bar{display:flex;align-items:center;gap:8px;padding:8px 18px;border-top:1px solid var(--border);font-size:.7rem;color:var(--muted)}
+.status-dot{width:6px;height:6px;border-radius:50%;background:var(--muted);flex-shrink:0}
+.status-dot.ok{background:#47ff8a}
+.status-dot.warn{background:var(--accent)}
+.status-dot.err{background:var(--accent2)}
+.loader{display:none;width:100%;max-width:640px;text-align:center;padding:32px;color:var(--muted);font-size:.8rem;letter-spacing:.1em}
+.loader.active{display:block}
+.spinner{width:28px;height:28px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.help{margin-top:48px;max-width:640px;border:1px solid var(--border);border-radius:10px;padding:20px 24px;font-size:.75rem;color:var(--muted);line-height:1.7}
+.help h3{font-family:var(--sans);font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:10px}
+.help code{background:var(--border);border-radius:3px;padding:1px 6px;color:var(--accent);font-size:.78rem}
+.help strong{color:var(--text)}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <p class="subtitle">RAW EXIF Inspector — Canon R6 · R5 · R3 · R7 · CR2 · NEF · ARW</p>
+</header>
+<div class="dropzone" id="dropzone">
+  <input type="file" id="fileInput" accept=".cr2,.cr3,.nef,.arw,.raf,.orf,.rw2,.dng,.jpg,.jpeg" multiple>
+  <span class="drop-icon">📷</span>
+  <div class="drop-title">Přetáhni RAW soubory nebo klikni</div>
+  <div class="drop-sub">Zpracování probíhá lokálně v prohlížeči — žádný soubor se neodesílá</div>
+  <div class="drop-formats">
+    <span class="fmt-badge">CR3 (R6/R5/R3/R7)</span>
+    <span class="fmt-badge">CR2</span>
+    <span class="fmt-badge">NEF</span>
+    <span class="fmt-badge">ARW</span>
+    <span class="fmt-badge">RAF</span>
+    <span class="fmt-badge">DNG</span>
+    <span class="fmt-badge">JPEG</span>
+  </div>
+</div>
+<div class="loader" id="loader"><div class="spinner"></div>PARSUJU DATA...</div>
+<div id="results"></div>
+<div class="help">
+  <h3>Podporované formáty a zdroje dat</h3>
+  <strong>Canon CR3</strong> (R5, R6, R7, R10…) — ISOBMFF kontejner, cesta: <code>CTMD rec.8 → TIFF tag 0x000D → offset 0x0AF1</code>. ✅ Potvrzeno pro R6, R6 Mark II, R3. ⚠️ Pro EOS RP, R, R5, R7, R10 — experimentální offset <code>0x09C0</code> (nepotvrzeno, může být nepřesné).
+  <br><br>
+  <strong>Canon CR2</strong> — ShutterCount je v EXIF <em>pouze</em> u profesionálních těl řady 1D/1Ds. Canon ho pro běžná těla (5D, 7D, 60D, 70D, 80D, Rebel/xxxD…) do souboru vůbec nezapisuje — jde o hardwarový čítač čitelný pouze přes USB PTP z kamery. Pro 1D/1Ds: MakerNote tag <code>0x93</code> (FileInfo). Pro 1DmkIII: tag <code>0x0d</code> (CameraInfo[0x176]).
+  <br><br>
+  <strong>Nikon NEF</strong> — MakerNote tag <code>0x00A7</code> (ShutterCount). ✅ Všechna moderní těla.
+  <br><br>
+  <strong>Sony ARW / DNG</strong> — ARW: tag <code>0x9050</code> šifrovaný <code>(b³ % 249)</code>. DNG: MakerNote v <code>DNGPrivateData</code> (Adobe MakN wrapper) s korekcí offsetů. Po dešifrování: offset <code>0x003a</code> (A7III/IV, A9, A6400…), <code>0x0032</code> (A7I/II, SLT), <code>0x000a</code> (A6700, A7CM2/CR).
+  <br><br>
+  Vše běží offline v prohlížeči — žádný soubor se neodesílá.
+</div>
+<script>
+const r16=(v,o,le)=>v.getUint16(o,le);
+const r32=(v,o,le)=>v.getUint32(o,le);
+const r64=(v,o)=>{const h=v.getUint32(o,false),l=v.getUint32(o+4,false);return h*4294967296+l;};
+const s4=(u,o)=>String.fromCharCode(u[o],u[o+1],u[o+2],u[o+3]);
+
+// ── CR3: Canon ISOBMFF with CTMD metadata track ───────────────────────────────
+// Verified algorithm:
+//   moov → trak(nmhd) → stbl → co64 → CTMD records →
+//   rec type 8 → embedded TIFF → tag 0x000D (CanonCameraInfoR6, 4608 bytes) →
+//   uint32 LE at byte offset 0x0AF1 = ShutterCount
+function parseCR3(buf){
+  const v=new DataView(buf), u=new Uint8Array(buf);
+
+  // Find moov
+  let moovOff=-1,moovEnd=-1;
+  for(let p=0;p+8<buf.byteLength;){
+    const sz=r32(v,p,false);if(sz<8)break;
+    if(s4(u,p+4)==='moov'){moovOff=p;moovEnd=p+sz;break;}
+    p+=sz;
+  }
+  if(moovOff<0)return null;
+
+  // Basic metadata from Canon UUID CMT boxes
+  const res={make:'Canon',model:'',shutterCount:null,method:'',firmware:'',
+             dateTime:'',iso:null,focalLength:null,aperture:null,shutterSpeed:null,lensModel:''};
+  const CU=[0x85,0xc0,0xb6,0x87,0x82,0x0f,0x11,0xe0,0x81,0x11,0xf4,0xce,0x46,0x2b,0x6a,0x48];
+  for(let p=moovOff+8;p+24<moovEnd;){
+    const sz=r32(v,p,false);if(sz<8)break;
+    if(s4(u,p+4)==='uuid'){
+      let ok=true;for(let i=0;i<16;i++)if(u[p+8+i]!==CU[i]){ok=false;break;}
+      if(ok){parseCMTs(v,u,p+24,p+sz,res);break;}
+    }
+    p+=sz;
+  }
+
+  // Find all co64 boxes deep in moov; identify the CTMD one
+  const co64s=[];
+  (function scan(s,e,d){
+    for(let p=s;p+8<e;){
+      const sz=r32(v,p,false);if(sz<8)break;
+      const t=s4(u,p+4);
+      if(t==='co64')co64s.push(p);
+      if(d<6&&['moov','trak','mdia','minf','stbl','udta','meta'].includes(t))scan(p+8,Math.min(p+sz,e),d+1);
+      p+=sz;
+    }
+  })(moovOff+8,moovEnd,0);
+
+  for(const co64Off of co64s){
+    const entries=r32(v,co64Off+12,false);
+    if(entries<1)continue;
+    const ck=r64(v,co64Off+16);
+    if(ck+8>buf.byteLength)continue;
+    // CTMD chunk: first record type must be 1 (timestamps), small size
+    const frt=v.getUint16(ck+4,true);
+    const frs=v.getUint32(ck,true);
+    if(frt!==1||frs<8||frs>256)continue;
+
+    // Parse CTMD records
+    let cp=0;
+    while(ck+cp+8<buf.byteLength){
+      const rs=v.getUint32(ck+cp,true);
+      const rt=v.getUint16(ck+cp+4,true);
+      if(rs<8||rs>0x40000)break;
+
+      if(rt===8){
+        const pd=ck+cp+8; // payload data start
+        const psz=rs-8;
+        // Find TIFF 'II*\0' or 'MM\0*' in first 64 bytes of payload
+        for(let ti=0;ti<Math.min(64,psz-8);ti++){
+          const sig=s4(u,pd+ti);
+          if(sig==='II\x2a\x00'||sig==='MM\x00\x2a'){
+            const tb=pd+ti;
+            const le=u[tb]===0x49;
+            const io=r32(v,tb+4,le);
+            if(tb+io+2>buf.byteLength)break;
+            const nc=r16(v,tb+io,le);
+            if(nc>100)break;
+            let ep=tb+io+2;
+            for(let ei=0;ei<nc;ei++,ep+=12){
+              if(ep+12>buf.byteLength)break;
+              const tag=r16(v,ep,le),typ=r16(v,ep+2,le),cnt=r32(v,ep+4,le),raw=r32(v,ep+8,le);
+              if(tag===0x000d&&typ===7&&cnt>=100){
+                const bo=tb+raw;
+                // Known ShutterCount offsets in the CanonCameraInfo BinaryData blob,
+                // indexed by block size (different bodies have different block sizes).
+                // Only R6/R6mkII/R3 confirmed by exiftool canon.pm (0x0af1 in 4608-byte block).
+                // EOS RP/R/R5/R7/R10 use smaller blocks — offsets are community-researched.
+                const OFFSETS=[
+                  {minCnt:0x0af5, off:0x0af1, label:'R6/R6II/R3 (CanonCameraInfoR6)'},  // 4608 bytes
+                  {minCnt:0x09c4, off:0x09c0, label:'EOS RP/R/R5/R7/R10 (experimental)'},// 2560 bytes
+                ];
+                for(const o of OFFSETS){
+                  if(cnt>=o.minCnt&&bo+o.off+4<=buf.byteLength){
+                    const sc=v.getUint32(bo+o.off,true);
+                    if(sc>0&&sc<600000){
+                      res.shutterCount=sc;
+                      res.method=`CTMD rec.8 → tag 0x000D → offset 0x${o.off.toString(16).toUpperCase()} (${o.label})`;
+                      return res;
+                    }
+                  }
+                }
+              }
+            }
+            break;
+          }
+        }
+      }
+      cp+=rs;
+    }
+  }
+  return res;
+}
+
+function parseCMTs(v,u,s,e,r){
+  for(let p=s;p+8<e;){
+    const sz=r32(v,p,false);if(sz<8)break;
+    const t=s4(u,p+4);
+    if(['CMT1','CMT2','CMT3'].includes(t))parseCMT(v,u,p+8,sz-8,t,r);
+    p+=sz;
+  }
+}
+function parseCMT(v,u,base,size,cmt,r){
+  if(base+8>v.byteLength)return;
+  const le=r16(v,base,false)===0x4949;
+  if(r16(v,base+2,le)!==0x002A)return;
+  const io=r32(v,base+4,le);let p=base+io;
+  if(p+2>v.byteLength)return;
+  const n=r16(v,p,le);p+=2;
+  for(let i=0;i<n&&i<300;i++,p+=12){
+    if(p+12>v.byteLength)break;
+    const tag=r16(v,p,le),typ=r16(v,p+2,le),cnt=r32(v,p+4,le),raw=r32(v,p+8,le);
+    try{
+      const str=()=>{if(typ!==2)return'';const o=cnt>4?base+raw:p+8;let s='';for(let j=0;j<cnt&&o+j<u.length;j++){if(!u[o+j])break;s+=String.fromCharCode(u[o+j]);}return s.trim();};
+      const rat=(o,m)=>{if(o+8>v.byteLength)return'?';const n2=r32(v,o,le),d=r32(v,o+4,le);if(!d)return'?';if(m===0)return(n2/d).toFixed(0);if(m===1)return d/n2>=2?`1/${Math.round(d/n2)}s`:`${(n2/d).toFixed(2)}s`;return(n2/d).toFixed(1);};
+      if(cmt==='CMT1'){if(tag===0x0110)r.model=str();if(tag===0x0132)r.dateTime=str();}
+      if(cmt==='CMT2'){
+        if(tag===0x8827&&typ===3&&cnt===1)r.iso=r16(v,p+8,le);
+        if(tag===0x920A&&typ===5)r.focalLength=rat(base+raw,0)+' mm';
+        if(tag===0x829A&&typ===5)r.shutterSpeed=rat(base+raw,1);
+        if(tag===0x829D&&typ===5)r.aperture='f/'+rat(base+raw,2);
+        if(tag===0xA434)r.lensModel=str();
+      }
+      if(cmt==='CMT3'){if(tag===0x0007)r.firmware=str();}
+    }catch{}
+  }
+}
+
+// ── Classic TIFF/EXIF (CR2, NEF, ARW, JPEG) ──────────────────────────────────
+function parseExif(buf){
+  const v=new DataView(buf),u=new Uint8Array(buf);
+  const r={make:'',model:'',shutterCount:null,firmware:'',dateTime:'',
+           iso:null,focalLength:null,aperture:null,shutterSpeed:null,lensModel:'',method:''};
+  let tb=0;
+  if(r16(v,0,false)===0xFFD8){
+    for(let p=2;p<v.byteLength-4;){
+      const m=r16(v,p,false),l=r16(v,p+2,false);
+      if(m===0xFFE1&&s4(u,p+4)==='Exif'){tb=p+10;break;}
+      if(m===0xFFDA)break;
+      p+=2+l;
+    }
+    if(!tb)return r;
+  }
+  const order=r16(v,tb,false),le=order===0x4949;
+  if(order!==0x4949&&order!==0x4D4D)return r;
+  if(r16(v,tb+2,le)!==0x002A)return r;
+  const ifd0=parseIFD(v,u,tb+r32(v,tb+4,le),tb,le);
+  r.make=iStr(u,tb,ifd0[0x010F]);r.model=iStr(u,tb,ifd0[0x0110]);r.dateTime=iStr(u,tb,ifd0[0x0132]);
+  let ex={};
+  if(ifd0[0x8769])try{ex=parseIFD(v,u,tb+ifd0[0x8769].val,tb,le);}catch{}
+  if(ex[0x8827])r.iso=ex[0x8827].val;
+  if(ex[0xA434])r.lensModel=iStr(u,tb,ex[0xA434]);
+  const rat=(o,m)=>{if(o+8>v.byteLength)return'?';const n=r32(v,o,le),d=r32(v,o+4,le);if(!d)return'?';if(m===0)return(n/d).toFixed(0);if(m===1)return d/n>=2?`1/${Math.round(d/n)}s`:`${(n/d).toFixed(2)}s`;return(n/d).toFixed(1);};
+  if(ex[0x920A]&&ex[0x920A].type===5)r.focalLength=rat(tb+ex[0x920A].val,0)+' mm';
+  if(ex[0x829A]&&ex[0x829A].type===5)r.shutterSpeed=rat(tb+ex[0x829A].val,1);
+  if(ex[0x829D]&&ex[0x829D].type===5)r.aperture='f/'+rat(tb+ex[0x829D].val,2);
+  const mk=r.make.toUpperCase();
+  if(ex[0x927C]){
+    const mo=tb+ex[0x927C].val;
+    try{
+      if(mk.includes('CANON')){ parseCanonMakerNote(v,u,mo,le,r); }
+      else if(mk.includes('NIKON')){
+        if(s4(u,mo)==='Niko'){const nb=mo+10,le2=r16(v,nb,false)===0x4949,io2=r32(v,nb+4,le2),mn=parseIFD(v,u,nb+io2,nb,le2);
+          if(mn[0x00A7]&&mn[0x00A7].val>0){r.shutterCount=mn[0x00A7].val;r.method='Nikon MakerNote 0x00A7';}}
+      }
+      else if(mk.includes('SONY')){ parseSonyMakerNote(v,u,mo,le,r); }
+      else if(mk.includes('OLYMPUS')||mk.includes('OM ')){const mn=parseIFD(v,u,mo,mo,le);if(mn[0x0207]){const eq=parseIFD(v,u,mo+mn[0x0207].val,mo,le);if(eq[0x0101]&&eq[0x0101].val>0){r.shutterCount=eq[0x0101].val;r.method='Olympus Equipment 0x0101';}}}
+    }catch{}
+  }
+
+  // ── DNG: MakerNote in DNGPrivateData (tag 0xC634) with Adobe MakN wrapper ──
+  // Adobe stores the original MakerNote in tag 0xC634 as:
+  // "Adobe\0MakN" (10 bytes) + uint16(0) + uint32_BE(block_size) +
+  // "II\0\0" (4 bytes) + uint32_BE(orig_tiff_base_in_src_file) + IFD_data
+  // Tag offsets in the IFD are original file offsets; correction = IFD_abs - orig_tiff_base
+  if(!r.shutterCount && ifd0[0xC634]){
+    try{
+      const dp = ifd0[0xC634].raw; // absolute offset of DNGPrivateData
+      // Verify "Adobe\0MakN" signature
+      if(s4(u,dp)==='Adob' && u[dp+4]===0x65 && u[dp+5]===0x00 &&
+         s4(u,dp+6)==='MakN'){
+        // orig_tiff_base = BE uint32 at dp+16 (after "Adobe\0MakN\0\0II\0\0" + 2 bytes)
+        const origBase = ((u[dp+16]<<24)|(u[dp+17]<<16)|(u[dp+18]<<8)|u[dp+19])>>>0;
+        // IFD starts at dp+20 (8-byte header: II+\0\0+origBase, then IFD count+entries)
+        const ifdAbs = dp+20;
+        const corr   = ifdAbs - origBase; // offset correction: add to any raw IFD value
+        const mn = parseIFD(v,u,ifdAbs,0,true); // Sony MakerNote IFD is always LE
+        if(mk.includes('SONY')){ parseSonyMakerNote(v,u,ifdAbs,true,r,corr); }
+        else if(mk.includes('NIKON')){
+          // Nikon DNG: MakerNote at raw+corr, inner base at nb+corr
+          if(mn[0x927C]){
+            const mo2=mn[0x927C].raw+corr;
+            if(s4(u,mo2)==='Niko'){const nb=mo2+10,le2=r16(v,nb,false)===0x4949,
+              io2=r32(v,nb+4,le2),mn2=parseIFD(v,u,nb+io2,nb,le2);
+              if(mn2[0x00A7]&&mn2[0x00A7].val>0){r.shutterCount=mn2[0x00A7].val;r.method='Nikon DNG MakerNote 0x00A7';}}
+          }
+        }
+      }
+    }catch{}
+  }
+  return r;
+}
+function parseIFD(v,u,off,base,le){
+  const t={};if(off+2>v.byteLength)return t;
+  const n=r16(v,off,le);
+  for(let i=0;i<Math.min(n,300);i++){
+    const p=off+2+i*12;if(p+12>v.byteLength)break;
+    const tag=r16(v,p,le),type=r16(v,p+2,le),cnt=r32(v,p+4,le),raw=r32(v,p+8,le);
+    let val=raw;if(type===3&&cnt===1)val=r16(v,p+8,le);
+    t[tag]={val,type,cnt,raw};
+  }
+  return t;
+}
+function iStr(u,base,tag){
+  if(!tag||tag.cnt>4096)return'';
+  const off=tag.cnt>4?base+tag.raw:0;
+  if(!off||off+tag.cnt>u.length)return'';
+  let s='';for(let j=0;j<tag.cnt&&off+j<u.length;j++){if(!u[off+j])break;s+=String.fromCharCode(u[off+j]);}
+  return s.trim();
+}
+
+// ── Canon CR2 MakerNote parser ────────────────────────────────────────────────
+// ShutterCount in CR2 EXIF ONLY exists for professional 1D-series bodies.
+// Canon does NOT store ShutterCount for any consumer EOS body (5D, 7D, 60D,
+// 70D, 80D, Rebels…). This is a hardware counter readable only via USB PTP.
+//
+// 1D/1Ds:       MakerNote tag 0x93 (FileInfo), entry[0] as big-endian uint32
+// 1DmkII/IIs:   Same, but words byte-swapped: (val>>16)|((val&0xffff)<<16)
+// 1DmkIII:      MakerNote tag 0x0d (CameraInfo binary blob), uint32 at 0x176
+function parseCanonMakerNote(v, u, makerOff, le, r) {
+  const mn = parseIFD(v, u, makerOff, makerOff, le);
+
+  // ── FileInfo (tag 0x93): ONLY 1D/1Ds (big-endian files) ──────────
+  // Consumer bodies (5D, 7D, 60D…) also have tag 0x93 but its first word
+  // is a data-length (e.g. 52), NOT shutter count. The 1D/1Ds bodies write
+  // big-endian TIFF files (le===false), so we use that as a guard.
+  // 1DmkII/IIs: little-endian files BUT the shutter count uint32 has
+  // its two 16-bit words swapped — and exiftool only knows about specific
+  // 1DmkII models. We skip LE entirely to avoid false positives.
+  const fi = mn[0x93];
+  if (!le && fi && fi.type === 3 && fi.cnt >= 2) {
+    // fi.raw is an absolute TIFF offset — do NOT add makerOff
+    const off = fi.cnt > 2 ? fi.raw : 0;
+    if (off > 0 && off + 4 <= u.length) {
+      // 1D/1Ds: big-endian TIFF → read as BE uint32
+      const scBE = ((u[off]<<24)|(u[off+1]<<16)|(u[off+2]<<8)|u[off+3]) >>> 0;
+      if (scBE > 0 && scBE < 600000) {
+        r.shutterCount = scBE; r.method = 'Canon FileInfo[0] BE (1D/1Ds)'; return;
+      }
+    }
+  }
+
+  // ── CameraInfo (tag 0x0d): 1DmkIII, uint32 at byte offset 0x176 ──
+  const ci = mn[0x0d];
+  if (ci && ci.type === 7 && ci.cnt > 0x17a) {
+    // ci.raw is an absolute TIFF offset — do NOT add makerOff
+    const off = ci.raw;
+    if (off + 0x17a <= u.length) {
+      const sc = (u[off+0x176]|(u[off+0x177]<<8)|(u[off+0x178]<<16)|(u[off+0x179]<<24)) >>> 0;
+      if (sc > 0 && sc < 9999999) {
+        r.shutterCount = sc + 1; // exiftool applies +1 for this field
+        r.method = 'Canon CameraInfo1DmkIII[0x176]'; return;
+      }
+    }
+  }
+
+  // ── FileIndex + DirectoryIndex: consumer bodies (5D, 7D, 60D…) ──
+  // No true ShutterCount available. Extract FileIndex and DirectoryIndex
+  // from CameraInfo blob as a partial indicator (resets on card format).
+  if (ci && ci.type === 7) {
+    // ci.raw is an absolute TIFF offset
+    const off = ci.raw;
+    // Try common offsets for FileIndex across consumer body CameraInfo tables
+    // 5DmkII: 0x1bb, 5DmkIII/70D/80D: similar range
+    const fileIdxOffsets = [0x1bb, 0x1c3, 0x1cb, 0x1d3, 0x1e3];
+    const dirIdxOffsets  = [0x1c7, 0x1cf, 0x1d7, 0x1df, 0x1ef];
+    for (let i = 0; i < fileIdxOffsets.length; i++) {
+      const fo = fileIdxOffsets[i], dfo = dirIdxOffsets[i];
+      if (fo + 4 > ci.cnt || dfo + 4 > ci.cnt) continue;
+      const fileIdx = (u[off+fo]|(u[off+fo+1]<<8)|(u[off+fo+2]<<16)|(u[off+fo+3]<<24))>>>0;
+      const dirIdx  = (u[off+dfo]|(u[off+dfo+1]<<8)|(u[off+dfo+2]<<16)|(u[off+dfo+3]<<24))>>>0;
+      if (fileIdx > 0 && fileIdx < 10000 && dirIdx >= 100 && dirIdx < 1000) {
+        r.fileNumber  = `${dirIdx}-${String(fileIdx+1).padStart(4,'0')}`;
+        r.fileIndex   = fileIdx;
+        r.dirIndex    = dirIdx;
+        break;
+      }
+    }
+  }
+}
+
+// ── Sony ARW parser ───────────────────────────────────────────────────────────
+// Tag 0x9050 (SonyInfo) data is encrypted with a cubic substitution cipher.
+// Decipher formula: plain = b such that (b³ % 249) == ciphered_byte
+// Lookup table: index = ciphered byte → value = plain byte
+const SONY_DECIPHER = new Uint8Array([
+  0,  1, 50,177, 10, 14,135, 40,  2,204,202,173, 27,220,  8,237,
+100,134,240, 79,140,108,184,203,105,196, 44,  3,151,182,147,124,
+ 20,243,226, 62, 48,142,215, 96, 28,161,171, 55,236,117,190, 35,
+ 21,106, 89, 63,208,185,150,181, 80, 39,136,227,129,148,224,192,
+  4, 92,198,232, 95, 75,112, 56,159,130,128, 81, 43,197, 69, 73,
+155, 33, 82, 83, 84,133, 11, 93, 97,218,123, 85, 38, 36,  7,110,
+ 54, 91, 71,183,217, 74,162,223,191, 18, 37,188, 30,127, 86,234,
+ 16,230,207,103, 77, 60,145,131,225, 49,179,111,244,  5,138, 70,
+200, 24,118,104,189,172,146, 42, 19,233, 15,163,122,219, 61,212,
+231, 58, 26, 87,175, 32, 66,178,158,195,139,242,213,211,164,126,
+ 31,152,156,238,116,165,166,167,216, 94,176,180, 52,206,168,121,
+119, 90,193,137,174,154, 17, 51,157,245, 57, 25,101,120, 22,113,
+210,169, 68, 99, 64, 41,186,160,143,228,214, 59,132, 13,194, 78,
+ 88,221,153, 34,107,201,187, 23,  6,229,125,102, 67, 98,246,205,
+ 53,144, 46, 65,141,109,170,  9,115,149, 12,241, 29,222, 76, 47,
+ 45,247,209,114,235,239, 72,199,248,249,250,251,252,253,254,255,
+]);
+
+function sonyCipher(data) {
+  // Decipher a copy of data (bytes 0–248 are substituted, 249–255 pass through)
+  const out = new Uint8Array(data);
+  for (let i = 0; i < out.length; i++) out[i] = SONY_DECIPHER[out[i]];
+  return out;
+}
+
+function parseSonyMakerNote(v, u, makerOff, le, r, corr=0) {
+  const mn = parseIFD(v, u, makerOff, makerOff, le);
+
+  // ── Tag 0x9050: SonyInfo (encrypted blob) ─────────────────────
+  const t9050 = mn[0x9050];
+  if (t9050 && t9050.type === 7 && t9050.cnt > 60) {
+    // For ARW (flat TIFF, tb=0): t9050.raw is absolute file offset.
+    // For DNG (Adobe MakN wrapper): add corr to adjust from original ARW offset.
+    const dataOff = t9050.raw + corr;
+    if (dataOff + t9050.cnt <= u.length) {
+      const plain = sonyCipher(u.slice(dataOff, dataOff + t9050.cnt));
+
+      // Pick the correct offset based on model (Sony tag9050 sub-table varies by body).
+      // Without model matching we'd get false positives from the wrong offset.
+      const model = (r.model || '').toUpperCase();
+      function readU32(off) {
+        if (off + 4 > plain.length) return 0;
+        return (plain[off] | (plain[off+1]<<8) | (plain[off+2]<<16) | (plain[off+3]<<24)) >>> 0;
+      }
+
+      // Tag9050d: A6700, A7CM2, A7CR (FIRST_ENTRY=0, byte offset = tag number directly)
+      if (/ILCE-(6700|7CM2|7CR)/.test(model)) {
+        const sc = readU32(0x000a);
+        if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = 'Sony 9050d[0x000a]'; return; }
+      }
+      // Tag9050c: A7IV, A7RV, A7SM3, A1, FX3, FX30, ZV-E1
+      else if (/ILCE-(7M4|7RM5|7SM3|1\b)|ILME-(FX3|FX30)|ZV-E1\b/.test(model)) {
+        const sc = readU32(0x003a);
+        if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = 'Sony 9050c[0x003a]'; return; }
+      }
+      // Tag9050b: A7III/RIII/RIV, A9/II, A6100/6300/6400/6500/6600, A7C, ZV-E10, ILCA-99M2
+      else if (/ILCE-(7M3|7RM3|7RM4A?|9M?2?|6[1-6]\d\d|7C\b)|ZV-E10|ILCA-99M2/.test(model)) {
+        const sc = readU32(0x003a);
+        if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = 'Sony 9050b[0x003a]'; return; }
+        // ShutterCount2 fallback for some 9050b bodies
+        const sc2 = readU32(0x0050);
+        if (sc2 > 0 && sc2 < 600000) { r.shutterCount = sc2; r.method = 'Sony 9050b[0x0050]'; return; }
+      }
+      // Tag9050a: everything older (A7/R/S I, A7II/RII/SII, SLT-A*, NEX-*, ILCE-6000/7/7R/7S/7M2…)
+      else {
+        const sc = readU32(0x0032);
+        if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = 'Sony 9050a[0x0032]'; return; }
+        // ShutterCount2 for some A-mount bodies at 0x004c
+        const sc2 = readU32(0x004c);
+        if (sc2 > 0 && sc2 < 600000) { r.shutterCount = sc2; r.method = 'Sony 9050a[0x004c]'; return; }
+      }
+    }
+  }
+
+  // ── Older DSLR-A series: unencrypted tags in main MakerNote ───
+  for (const [tag, label] of [[0x0846,'DSLR-A900/A850/A700'],[0x0125,'DSLR-A550/A500/A450'],[0x014a,'DSLR']]) {
+    const t = mn[tag];
+    if (t && t.type === 4 && t.cnt === 1) {
+      const sc = t.val & 0x00FFFFFF;
+      if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = `Sony MakerNote 0x${tag.toString(16)} (${label})`; return; }
+    }
+  }
+}
+
+// ── Dispatcher ────────────────────────────────────────────────────────────────
+function parseFile(buf){
+  const u=new Uint8Array(buf);
+  return s4(u,4)==='ftyp'?(parseCR3(buf)||parseExif(buf)):parseExif(buf);
+}
+
+// ── UI ────────────────────────────────────────────────────────────────────────
+const dz=document.getElementById('dropzone'),fi=document.getElementById('fileInput'),
+      ld=document.getElementById('loader'),rs=document.getElementById('results');
+dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('dragover');});
+dz.addEventListener('dragleave',()=>dz.classList.remove('dragover'));
+dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('dragover');run([...e.dataTransfer.files]);});
+fi.addEventListener('change',()=>run([...fi.files]));
+
+async function run(files){
+  if(!files.length)return;ld.classList.add('active');
+  for(const f of files)await proc(f);
+  ld.classList.remove('active');
+}
+async function proc(file){
+  return new Promise(res=>{
+    const rd=new FileReader();
+    rd.onload=e=>{let r={},err=null;try{r=parseFile(e.target.result)||{};}catch(ex){err=ex.message;}card(file,r,err);res();};
+    rd.onerror=()=>{card(file,{},'Soubor nelze přečíst');res();};
+    rd.readAsArrayBuffer(file);
+  });
+}
+function fmtSz(b){return b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(1)+' MB';}
+function card(file,r,err){
+  const sc=r.shutterCount??null,MAX=300000,pct=sc!=null?Math.min(100,sc/MAX*100):null;
+  const dc=err?'err':sc!=null?'ok':'warn';
+  const model=(r.model||'').toUpperCase();
+  const isCanon=(r.make||'').toUpperCase().includes('CANON');
+  const isCR2=(file.name||'').toLowerCase().endsWith('.cr2');
+  const isCR3=(file.name||'').toLowerCase().endsWith('.cr3');
+  // Canon CR3 bodies without confirmed offset
+  const isUnknownR = isCR3 && isCanon && sc==null &&
+    /EOS RP|EOS R\b|EOS R5|EOS R7|EOS R10|EOS R50|EOS R8|EOS R100|EOS R1\b/.test(r.model||'');
+  const isCR2noSC = isCR2 && isCanon && !model.includes('EOS-1D');
+  const dm=err?'Chyba parsování':sc!=null?
+    (r.method?.includes('experimental')?'⚠️ Shuttercount nalezen (experimentální offset — neověřeno)':'Shuttercount nalezen'):
+    isUnknownR?`Canon ${r.model||'R-série'} — offset ShutterCountu není v exiftool dokumentován`:
+    isCR2noSC?'Canon toto tělo ShutterCount do souboru nezapisuje (jen 1D série)':
+    'Shuttercount nenalezen v tomto souboru';
+  const sh=sc!=null?`<div class="field-value highlight">${sc.toLocaleString('cs-CZ')}</div>`:
+           err?`<div class="field-value error">Chyba: ${err}</div>`:`<div class="field-value not-found">Nenalezeno</div>`;
+  const bc=pct>80?'danger':pct>60?'warn':'';
+  const ph=pct!=null?`<div class="field-value">${pct.toFixed(1)} % <span style="color:var(--muted);font-size:.7rem">(z 300 000)</span></div><div class="life-bar-bg"><div class="life-bar-fill ${bc}" style="width:${pct}%"></div></div>`:`<div class="field-value not-found">—</div>`;
+  const rows=[
+    r.model?`<div class="field"><div class="field-label">Model</div><div class="field-value">${r.model}</div></div>`:'',
+    r.firmware?`<div class="field"><div class="field-label">Firmware</div><div class="field-value">${r.firmware}</div></div>`:'',
+    r.dateTime?`<div class="field"><div class="field-label">Datum pořízení</div><div class="field-value">${r.dateTime}</div></div>`:'',
+    r.lensModel?`<div class="field full-width"><div class="field-label">Objektiv</div><div class="field-value">${r.lensModel}</div></div>`:'',
+    r.focalLength?`<div class="field"><div class="field-label">Ohnisko</div><div class="field-value">${r.focalLength}</div></div>`:'',
+    r.aperture?`<div class="field"><div class="field-label">Clona</div><div class="field-value">${r.aperture}</div></div>`:'',
+    r.shutterSpeed?`<div class="field"><div class="field-label">Čas závěrky</div><div class="field-value">${r.shutterSpeed}</div></div>`:'',
+    r.iso?`<div class="field"><div class="field-label">ISO</div><div class="field-value">${r.iso}</div></div>`:'',
+    r.fileNumber?`<div class="field full-width"><div class="field-label">Číslo souboru (karta)</div><div class="field-value" style="font-size:.8rem">${r.fileNumber} <span style="color:var(--muted);font-size:.7rem">— čítač karty, ne celoživotní počet</span></div></div>`:'',
+    r.method?`<div class="field full-width"><div class="field-label">Metoda extrakce</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">${r.method}</div></div>`:'',
+  ].filter(Boolean).join('');
+  const c=document.createElement('div');c.className='result-card';
+  c.innerHTML=`<div class="card-header"><div class="card-filename">${file.name}</div><div class="card-size">${fmtSz(file.size)}</div></div><div class="card-body"><div class="field"><div class="field-label">Shuttercount</div>${sh}</div><div class="field"><div class="field-label">Opotřebení závěrky</div>${ph}</div>${rows}</div><div class="status-bar"><div class="status-dot ${dc}"></div>${dm}</div>`;
+  rs.prepend(c);
+}
+</script>
+</body>
+</html>
+<!-- PLACEHOLDER - will be replaced -->
