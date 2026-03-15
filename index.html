@@ -69,7 +69,7 @@ header{text-align:center;margin-bottom:56px}
   <p class="subtitle">RAW EXIF Inspector — Canon · Nikon · Sony · Fujifilm · Olympus / OM System</p>
 </header>
 <div class="dropzone" id="dropzone">
-  <input type="file" id="fileInput" accept=".cr2,.cr3,.nef,.arw,.raf,.orf,.rw2,.dng,.jpg,.jpeg" multiple>
+  <input type="file" id="fileInput" accept=".cr2,.cr3,.nef,.arw,.raf,.orf,.dng,.jpg,.jpeg" multiple>
   <span class="drop-icon">📷</span>
   <div class="drop-title">Přetáhni RAW soubory nebo složku sem</div>
   <div class="drop-sub">Zpracování probíhá lokálně v prohlížeči — žádný soubor se neodesílá</div>
@@ -378,9 +378,18 @@ function parseIFD(v,u,off,base,le){
 }
 function iStr(u,base,tag){
   if(!tag||tag.cnt>4096)return'';
-  const off=tag.cnt>4?base+tag.raw:0;
-  if(!off||off+tag.cnt>u.length)return'';
-  let s='';for(let j=0;j<tag.cnt&&off+j<u.length;j++){if(!u[off+j])break;s+=String.fromCharCode(u[off+j]);}
+  if(tag.cnt>4){
+    const off=base+tag.raw;
+    if(off+tag.cnt>u.length)return'';
+    let s='';for(let j=0;j<tag.cnt&&off+j<u.length;j++){if(!u[off+j])break;s+=String.fromCharCode(u[off+j]);}
+    return s.trim();
+  }
+  // Inline: cnt<=4, data stored in the 4-byte value field of IFD entry.
+  // tag.raw is uint32 read with file endianness; extract bytes in LE order
+  // (works for LE files which covers most modern cameras; BE inline strings
+  //  of <=4 chars are extremely rare — model/make are always longer)
+  let s='';const rv=tag.raw;
+  for(let j=0;j<tag.cnt;j++){const b=(rv>>>(j*8))&0xFF;if(!b)break;s+=String.fromCharCode(b);}
   return s.trim();
 }
 
@@ -557,7 +566,7 @@ function parseFujiMakerNote(v, u, makerOff, tiffBase, le, r) {
   const ifdOff = makerOff + ifdRelOff;
   if (ifdOff + 2 > v.byteLength) return;
   // Fujifilm IFD is always LE; offsets relative to makerOff
-  const mn = parseIFD(v, u, ifdOff, makerOff, false);
+  const mn = parseIFD(v, u, ifdOff, makerOff, true);
   // 0x1402: ShotCount (LONG, confirmed for modern X/GFX bodies)
   if (mn[0x1402] && mn[0x1402].type === 4 && mn[0x1402].val > 0 && mn[0x1402].val < 2000000) {
     r.shutterCount = mn[0x1402].val;
@@ -708,7 +717,7 @@ function traverseEntry(entry, files, done) {
 }
 
 // Filter to only RAW/image files we can handle
-const ACCEPTED_EXT = new Set(['.cr2','.cr3','.nef','.arw','.raf','.orf','.rw2','.dng','.jpg','.jpeg']);
+const ACCEPTED_EXT = new Set(['.cr2','.cr3','.nef','.arw','.raf','.orf','.dng','.jpg','.jpeg']);
 function acceptedFile(f) {
   const ext = f.name.slice(f.name.lastIndexOf('.')).toLowerCase();
   return ACCEPTED_EXT.has(ext);
@@ -718,7 +727,11 @@ async function run(files){
   const accepted = files.filter(acceptedFile);
   if(!accepted.length) return;
   ld.classList.add('active');
-  for(const f of accepted) await proc(f);
+  // Process files in parallel with concurrency limit
+  const CONCURRENCY = 4;
+  let i = 0;
+  const next = async () => { while (i < accepted.length) await proc(accepted[i++]); };
+  await Promise.all(Array.from({length: Math.min(CONCURRENCY, accepted.length)}, next));
   ld.classList.remove('active');
 }
 async function proc(file){
@@ -770,8 +783,17 @@ function exportCSV() {
 }
 
 function fmtSz(b){return b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(1)+' MB';}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function card(file,r,err){
-  const sc=r.shutterCount??null,MAX=300000,pct=sc!=null?Math.min(100,sc/MAX*100):null;
+  const sc=r.shutterCount??null;
+  // Shutter life expectancy by camera class (manufacturer rated cycles)
+  const mk2=(r.make||'').toUpperCase(),mdl=(r.model||'').toUpperCase();
+  const MAX=mk2.includes('CANON')&&/EOS-1D|EOS R3/.test(mdl)?500000:
+            mk2.includes('NIKON')&&/\bD[4-6]\b|\bD8[0-9]{2}\b|\bZ\s?9/.test(mdl)?400000:
+            mk2.includes('SONY')&&/ILCE-(1|9M?2?)/.test(mdl)?500000:
+            /EOS R5|EOS R6|D7[0-9]{2}|D500|ILCE-7RM/.test(mdl)?200000:
+            150000;
+  const pct=sc!=null?Math.min(100,sc/MAX*100):null;
   const dc=err?'err':sc!=null?'ok':'warn';
   const model=(r.model||'').toUpperCase();
   const isCanon=(r.make||'').toUpperCase().includes('CANON');
@@ -783,29 +805,29 @@ function card(file,r,err){
   const isCR2noSC = isCR2 && isCanon && !model.includes('EOS-1D');
   const dm=err?'Chyba parsování':sc!=null?
     (r.method?.includes('experimental')?'⚠️ Shuttercount nalezen (experimentální offset — neověřeno)':'Shuttercount nalezen'):
-    isUnknownR?`Canon ${r.model||'R-série'} — offset ShutterCountu není potvrzen`:
+    isUnknownR?`Canon ${esc(r.model||'R-série')} — offset ShutterCountu není potvrzen`:
     isCR2noSC?'Canon toto tělo ShutterCount do souboru nezapisuje (jen 1D série)':
     'Shuttercount nenalezen v tomto souboru';
   const sh=sc!=null?`<div class="field-value highlight">${sc.toLocaleString('cs-CZ')}</div>`:
-           err?`<div class="field-value error">Chyba: ${err}</div>`:`<div class="field-value not-found">Nenalezeno</div>`;
+           err?`<div class="field-value error">Chyba: ${esc(err)}</div>`:`<div class="field-value not-found">Nenalezeno</div>`;
   const bc=pct>80?'danger':pct>60?'warn':'';
-  const ph=pct!=null?`<div class="field-value">${pct.toFixed(1)} % <span style="color:var(--muted);font-size:.7rem">(z 300 000)</span></div><div class="life-bar-bg"><div class="life-bar-fill ${bc}" style="width:${pct}%"></div></div>`:`<div class="field-value not-found">—</div>`;
+  const ph=pct!=null?`<div class="field-value">${pct.toFixed(1)} % <span style="color:var(--muted);font-size:.7rem">(z ${MAX.toLocaleString('cs-CZ')})</span></div><div class="life-bar-bg"><div class="life-bar-fill ${bc}" style="width:${pct}%"></div></div>`:`<div class="field-value not-found">—</div>`;
   const rows=[
-    r.model?`<div class="field"><div class="field-label">Model</div><div class="field-value">${r.model}</div></div>`:'',
-    r.firmware?`<div class="field"><div class="field-label">Firmware</div><div class="field-value">${r.firmware}</div></div>`:'',
-    r.dateTime?`<div class="field"><div class="field-label">Datum pořízení</div><div class="field-value">${r.dateTime}</div></div>`:'',
-    r.lensModel?`<div class="field full-width"><div class="field-label">Objektiv</div><div class="field-value">${r.lensModel}</div></div>`:'',
-    r.focalLength?`<div class="field"><div class="field-label">Ohnisko</div><div class="field-value">${r.focalLength}</div></div>`:'',
-    r.aperture?`<div class="field"><div class="field-label">Clona</div><div class="field-value">${r.aperture}</div></div>`:'',
-    r.shutterSpeed?`<div class="field"><div class="field-label">Čas závěrky</div><div class="field-value">${r.shutterSpeed}</div></div>`:'',
+    r.model?`<div class="field"><div class="field-label">Model</div><div class="field-value">${esc(r.model)}</div></div>`:'',
+    r.firmware?`<div class="field"><div class="field-label">Firmware</div><div class="field-value">${esc(r.firmware)}</div></div>`:'',
+    r.dateTime?`<div class="field"><div class="field-label">Datum pořízení</div><div class="field-value">${esc(r.dateTime)}</div></div>`:'',
+    r.lensModel?`<div class="field full-width"><div class="field-label">Objektiv</div><div class="field-value">${esc(r.lensModel)}</div></div>`:'',
+    r.focalLength?`<div class="field"><div class="field-label">Ohnisko</div><div class="field-value">${esc(r.focalLength)}</div></div>`:'',
+    r.aperture?`<div class="field"><div class="field-label">Clona</div><div class="field-value">${esc(r.aperture)}</div></div>`:'',
+    r.shutterSpeed?`<div class="field"><div class="field-label">Čas závěrky</div><div class="field-value">${esc(r.shutterSpeed)}</div></div>`:'',
     r.iso?`<div class="field"><div class="field-label">ISO</div><div class="field-value">${r.iso}</div></div>`:'',
-    r.fileNumber?`<div class="field full-width"><div class="field-label">Číslo souboru (karta)</div><div class="field-value" style="font-size:.8rem">${r.fileNumber} <span style="color:var(--muted);font-size:.7rem">— čítač karty, ne celoživotní počet</span></div></div>`:'',
-    r.method?`<div class="field full-width"><div class="field-label">Metoda extrakce</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">${r.method}</div></div>`:'',
-    (!sc && r._probeValues)?`<div class="field full-width"><div class="field-label">Dump bloku — najdi svůj počet (* = mocnina 2, pravděpodobně ne SC)</div><div class="field-value" style="font-size:.66rem;color:var(--accent);word-break:break-all;line-height:2;white-space:pre-wrap">${r._probeValues}</div></div>`:'',
+    r.fileNumber?`<div class="field full-width"><div class="field-label">Číslo souboru (karta)</div><div class="field-value" style="font-size:.8rem">${esc(r.fileNumber)} <span style="color:var(--muted);font-size:.7rem">— čítač karty, ne celoživotní počet</span></div></div>`:'',
+    r.method?`<div class="field full-width"><div class="field-label">Metoda extrakce</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">${esc(r.method)}</div></div>`:'',
+    (!sc && r._probeValues)?`<div class="field full-width"><div class="field-label">Dump bloku — najdi svůj počet (* = mocnina 2, pravděpodobně ne SC)</div><div class="field-value" style="font-size:.66rem;color:var(--accent);word-break:break-all;line-height:2;white-space:pre-wrap">${esc(r._probeValues)}</div></div>`:'',
     (!sc && r._cr3BlockSize)?`<div class="field full-width"><div class="field-label">Diagnostika CR3</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">Blok 0x000D: <code style="background:var(--border);padding:1px 5px;border-radius:3px;color:var(--accent)">${r._cr3BlockSize} B (0x${r._cr3BlockSize.toString(16).toUpperCase()})</code> — nahlaste offset + blok na GitHub Issues</div></div>`:'',
   ].filter(Boolean).join('');
   const c=document.createElement('div');c.className='result-card';
-  c.innerHTML=`<div class="card-header"><div class="card-filename">${file.name}</div><div class="card-size">${fmtSz(file.size)}</div></div><div class="card-body"><div class="field"><div class="field-label">Shuttercount</div>${sh}</div><div class="field"><div class="field-label">Opotřebení závěrky</div>${ph}</div>${rows}</div><div class="status-bar"><div class="status-dot ${dc}"></div>${dm}</div>`;
+  c.innerHTML=`<div class="card-header"><div class="card-filename">${esc(file.name)}</div><div class="card-size">${fmtSz(file.size)}</div></div><div class="card-body"><div class="field"><div class="field-label">Shuttercount</div>${sh}</div><div class="field"><div class="field-label">Opotřebení závěrky</div>${ph}</div>${rows}</div><div class="status-bar"><div class="status-dot ${dc}"></div>${dm}</div>`;
   rs.prepend(c);
 }
 </script>
