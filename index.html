@@ -424,9 +424,12 @@ function parseCanonMakerNote(v, u, makerOff, le, r) {
     }
   }
 
-  // ── CameraInfo (tag 0x0d): 1DmkIII, uint32 at byte offset 0x176 ──
+  // ── CameraInfo (tag 0x0d): 1DmkIII ONLY, uint32 at byte offset 0x176 ──
+  // Guard: only apply this offset for 1D Mark III — other bodies have different
+  // CameraInfo layouts and the value at 0x176 would be a false positive.
   const ci = mn[0x0d];
-  if (ci && ci.type === 7 && ci.cnt > 0x17a) {
+  const mdl0 = (r.model || '').toUpperCase();
+  if (ci && ci.type === 7 && ci.cnt > 0x17a && /EOS-?1D\s*(MARK\s*III|MK\s*3)\b/i.test(r.model||'')) {
     // ci.raw is an absolute TIFF offset — do NOT add makerOff
     const off = ci.raw;
     if (off + 0x17a <= u.length) {
