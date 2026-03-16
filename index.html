@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,18 +61,27 @@ header{text-align:center;margin-bottom:56px}
 .help h3{font-family:var(--sans);font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:10px}
 .help code{background:var(--border);border-radius:3px;padding:1px 6px;color:var(--accent);font-size:.78rem}
 .help strong{color:var(--text)}
+.promo{margin-top:40px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:20px 28px;display:flex;align-items:center;gap:20px;text-decoration:none;color:var(--text);transition:border-color .25s,background .25s}
+.promo:hover{border-color:var(--accent);background:rgba(232,255,71,.04)}
+.promo-icon{font-size:2rem;flex-shrink:0}
+.promo-body{flex:1}
+.promo-title{font-family:var(--sans);font-size:.9rem;font-weight:700;margin-bottom:4px}
+.promo-title span{color:var(--accent)}
+.promo-desc{color:var(--muted);font-size:.72rem;line-height:1.6;letter-spacing:.02em}
+.promo-cta{flex-shrink:0;font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--bg);background:var(--accent);padding:6px 16px;border-radius:6px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.promo-tag{display:inline-block;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:8px;opacity:.6}
 </style>
 </head>
 <body>
 <header>
   <div class="logo">SHUTTER<span>COUNT</span></div>
-  <p class="subtitle">RAW EXIF Inspector — Canon · Nikon · Sony · Fujifilm · Olympus / OM System</p>
+  <p class="subtitle">RAW EXIF Inspector — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic</p>
 </header>
 <div class="dropzone" id="dropzone">
   <input type="file" id="fileInput" accept=".cr2,.cr3,.nef,.arw,.raf,.orf,.rw2,.dng,.jpg,.jpeg" multiple>
   <span class="drop-icon">📷</span>
-  <div class="drop-title">Přetáhni RAW soubory nebo složku sem</div>
-  <div class="drop-sub">Zpracování probíhá lokálně v prohlížeči — žádný soubor se neodesílá</div>
+  <div class="drop-title">Drop RAW files or folder here</div>
+  <div class="drop-sub">Processing runs locally in your browser — no files are uploaded</div>
   <div class="drop-formats">
     <span class="fmt-badge">CR3 (R6/R5/R3/R7)</span>
     <span class="fmt-badge">CR2</span>
@@ -80,39 +89,51 @@ header{text-align:center;margin-bottom:56px}
     <span class="fmt-badge">ARW</span>
     <span class="fmt-badge">RAF</span>
     <span class="fmt-badge">ORF</span>
+    <span class="fmt-badge">RW2</span>
     <span class="fmt-badge">DNG</span>
     <span class="fmt-badge">JPEG</span>
   </div>
 </div>
 <div class="drop-actions">
-  <button class="btn btn-sm" id="folderBtn" title="Vybrat složku">📁 Otevřít složku</button>
+  <button class="btn btn-sm" id="folderBtn" title="Select folder">📁 Open Folder</button>
   <input type="file" id="folderInput" webkitdirectory style="display:none" multiple>
   <div class="drop-sep"></div>
-  <span style="font-size:.7rem;color:var(--muted)">nebo přetáhni celou složku</span>
+  <span style="font-size:.7rem;color:var(--muted)">or drag & drop an entire folder</span>
 </div>
 <div class="export-bar" id="exportBar">
   <span class="export-count" id="exportCount"></span>
-  <button class="btn btn-sm" onclick="clearResults()">✕ Vymazat</button>
+  <button class="btn btn-sm" onclick="clearResults()">✕ Clear</button>
   <button class="btn btn-sm btn-accent" onclick="exportCSV()">↓ Export CSV</button>
 </div>
-<div class="loader" id="loader"><div class="spinner"></div>PARSUJU DATA...</div>
+<div class="loader" id="loader"><div class="spinner"></div>PARSING DATA...</div>
 <div id="results"></div>
 <div class="help">
-  <h3>Podporované formáty a zdroje dat</h3>
-  <strong>Canon CR3</strong> (R5, R6, R7, R8, R10…) — ISOBMFF kontejner, cesta: <code>CTMD rec.8 → TIFF tag 0x000D</code>. ✅ Potvrzeno: R6II/R8/R50 → <code>0x0D29</code> (uint32), R5/R6/R3 → <code>0x0AF1</code> (uint32), R6 Mark III → <code>0x086D</code> (uint16, ImageCount). ⚠️ Experimentální: EOS RP/R/R7/R10 → <code>0x09C0</code>.
+  <h3>Supported formats and data sources</h3>
+  <strong>Canon CR3</strong> (R5, R6, R7, R8, R10…) — ISOBMFF container, path: <code>CTMD rec.8 → TIFF tag 0x000D</code>. ✅ Confirmed: R6II/R8/R50 → <code>0x0D29</code> (uint32), R5/R6/R3 → <code>0x0AF1</code> (uint32), R6 Mark III → <code>0x086D</code> (uint16, ImageCount). ⚠️ Experimental: EOS RP/R/R7/R10 → <code>0x09C0</code>.
   <br><br>
-  <strong>Canon CR2</strong> — ShutterCount je v EXIF <em>pouze</em> u profesionálních těl řady 1D/1Ds. Canon ho pro běžná těla (5D, 7D, 60D, 70D, 80D, Rebel/xxxD…) do souboru vůbec nezapisuje — jde o hardwarový čítač čitelný pouze přes USB PTP z kamery. Pro 1D/1Ds: MakerNote tag <code>0x93</code> (FileInfo). Pro 1DmkIII: tag <code>0x0d</code> (CameraInfo[0x176]).
+  <strong>Canon CR2</strong> — ShutterCount in EXIF is available <em>only</em> for professional 1D/1Ds series bodies. Canon does not write it for consumer bodies (5D, 7D, 60D, 70D, 80D, Rebel/xxxD…) — it is a hardware counter readable only via USB PTP from the camera. For 1D/1Ds: MakerNote tag <code>0x93</code> (FileInfo). For 1DmkIII: tag <code>0x0d</code> (CameraInfo[0x176]).
   <br><br>
-  <strong>Nikon NEF</strong> — MakerNote tag <code>0x00A7</code> (ShutterCount). ✅ Všechna moderní těla.
+  <strong>Nikon NEF</strong> — MakerNote tag <code>0x00A7</code> (ShutterCount). ✅ All modern bodies.
   <br><br>
-  <strong>Sony ARW / DNG</strong> — ARW: tag <code>0x9050</code> šifrovaný <code>(b³ % 249)</code>. DNG: MakerNote v <code>DNGPrivateData</code> (Adobe MakN wrapper) s korekcí offsetů. Po dešifrování: offset <code>0x003a</code> (A7III/IV, A9, A6400…), <code>0x0032</code> (A7I/II, SLT), <code>0x000a</code> (A6700, A7CM2/CR).
+  <strong>Sony ARW / DNG</strong> — ARW: tag <code>0x9050</code> encrypted with <code>(b³ % 249)</code>. DNG: MakerNote in <code>DNGPrivateData</code> (Adobe MakN wrapper) with offset correction. After decryption: offset <code>0x003a</code> (A7III/IV, A9, A6400…), <code>0x0032</code> (A7I/II, SLT), <code>0x000a</code> (A6700, A7CM2/CR).
   <br><br>
-  <strong>Fujifilm RAF</strong> — RAF obsahuje embedded JPEG s plným EXIF. ShutterCount je v Fujifilm MakerNote: tag <code>0x1402</code> (ShotCount). ✅ Potvrzeno pro X-T3/4, X100V/VI, X-S10/20, GFX sérii. Starší těla (X-T1/2, X-Pro1/2) mohou tag neobsahovat.
+  <strong>Fujifilm RAF</strong> — RAF contains an embedded JPEG with full EXIF. ShutterCount is in the Fujifilm MakerNote: tag <code>0x1402</code> (ShotCount). ✅ Confirmed for X-T3/4, X100V/VI, X-S10/20, GFX series. Older bodies (X-T1/2, X-Pro1/2) may not include this tag.
   <br><br>
-  <strong>Olympus / OM System ORF</strong> — MakerNote Equipment sub-IFD, tag <code>0x0101</code> (ShutterCount). ✅ Moderní Olympus E-system, OM-D, OM System (OM-1, OM-5). Starší Olymp\0 formát také podporován.
+  <strong>Olympus / OM System ORF</strong> — MakerNote Equipment sub-IFD, tag <code>0x0101</code> (ShutterCount). ✅ Modern Olympus E-system, OM-D, OM System (OM-1, OM-5). Older Olymp\0 format also supported.
   <br><br>
-  Vše běží offline v prohlížeči — žádný soubor se neodesílá. CSV export zahrnuje všechny zpracované soubory od načtení stránky.
+  <strong>Panasonic RW2</strong> — TIFF variant with proprietary magic <code>0x0055</code>. Standard EXIF metadata is extracted. ShutterCount is not stored in Panasonic RAW files.
+  <br><br>
+  Everything runs offline in your browser — no files are uploaded. CSV export includes all processed files since page load.
 </div>
+<a class="promo" href="https://www.zoner.com/en/zoner-photo-studio-x" target="_blank" rel="noopener">
+  <div class="promo-icon">🎨</div>
+  <div class="promo-body">
+    <div class="promo-title">Edit your RAW files in <span>Zoner Photo Studio X</span></div>
+    <div class="promo-desc">Professional RAW development, batch editing, cataloging & advanced retouching — all in one app.</div>
+    <div class="promo-tag">sponsored</div>
+  </div>
+  <div class="promo-cta">Try Free</div>
+</a>
 <script>
 const r16=(v,o,le)=>v.getUint16(o,le);
 const r32=(v,o,le)=>v.getUint32(o,le);
@@ -250,9 +271,9 @@ function parseCR3(buf){
                   else if(sv>=10000&&sv<200000)dumpGroups.tens_k.push(entry);
                 }
                 const parts=[];
-                if(dumpGroups.thousands.length) parts.push('【tisíce】 '+dumpGroups.thousands.join(' | '));
+                if(dumpGroups.thousands.length) parts.push('【thousands】 '+dumpGroups.thousands.join(' | '));
                 if(dumpGroups.tens_k.length)    parts.push('【10k–200k】 '+dumpGroups.tens_k.join(' | '));
-                if(dumpGroups.hundreds.length)  parts.push('【stovky】 '+dumpGroups.hundreds.join(' | '));
+                if(dumpGroups.hundreds.length)  parts.push('【hundreds】 '+dumpGroups.hundreds.join(' | '));
                 if(parts.length) res._probeValues=parts.join('\n');
               }
             }
@@ -768,7 +789,7 @@ async function proc(file){
       card(file,r,err);
       res();
     };
-    rd.onerror=()=>{card(file,{},'Soubor nelze přečíst');res();};
+    rd.onerror=()=>{card(file,{},'File cannot be read');res();};
     rd.readAsArrayBuffer(file);
   });
 }
@@ -776,7 +797,7 @@ async function proc(file){
 function updateExportBar() {
   const n = allResults.length;
   exportBar.classList.toggle('visible', n > 0);
-  exportCount.textContent = `${n} soubor${n===1?'':n<5?'y':'ů'} zpracováno`;
+  exportCount.textContent = `${n} file${n===1?'':'s'} processed`;
 }
 
 function clearResults() {
@@ -787,15 +808,15 @@ function clearResults() {
 
 function exportCSV() {
   const BOM = '\uFEFF'; // UTF-8 BOM for Excel compatibility
-  const header = ['Soubor','Model','Výrobce','Datum pořízení','ShutterCount'];
+  const header = ['File','Model','Manufacturer','Date Taken','ShutterCount'];
   const rows = allResults.map(r => [
     `"${r.filename.replace(/"/g,'""')}"`,
     `"${r.model.replace(/"/g,'""')}"`,
     `"${r.make.replace(/"/g,'""')}"`,
     `"${r.dateTime.replace(/"/g,'""')}"`,
     r.shutterCount ?? ''
-  ].join(';')); // semicolon for better Excel CZ compatibility
-  const csv = BOM + [header.join(';'), ...rows].join('\r\n');
+  ].join(','));
+  const csv = BOM + [header.join(','), ...rows].join('\r\n');
   const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -825,31 +846,31 @@ function card(file,r,err){
   const isUnknownR = isCR3 && isCanon && sc==null &&
     /EOS RP|EOS R\b|EOS R5|EOS R7|EOS R10|EOS R50|EOS R8|EOS R100|EOS R1\b/.test(r.model||'');
   const isCR2noSC = isCR2 && isCanon && !model.includes('EOS-1D');
-  const dm=err?'Chyba parsování':sc!=null?
-    (r.method?.includes('experimental')?'⚠️ Shuttercount nalezen (experimentální offset — neověřeno)':'Shuttercount nalezen'):
-    isUnknownR?`Canon ${esc(r.model||'R-série')} — offset ShutterCountu není potvrzen`:
-    isCR2noSC?'Canon toto tělo ShutterCount do souboru nezapisuje (jen 1D série)':
-    'Shuttercount nenalezen v tomto souboru';
-  const sh=sc!=null?`<div class="field-value highlight">${sc.toLocaleString('cs-CZ')}</div>`:
-           err?`<div class="field-value error">Chyba: ${esc(err)}</div>`:`<div class="field-value not-found">Nenalezeno</div>`;
+  const dm=err?'Parsing error':sc!=null?
+    (r.method?.includes('experimental')?'⚠️ Shutter count found (experimental offset — unverified)':'Shutter count found'):
+    isUnknownR?`Canon ${esc(r.model||'R-series')} — shutter count offset not confirmed`:
+    isCR2noSC?'Canon does not store shutter count in file for this body (1D series only)':
+    'Shutter count not found in this file';
+  const sh=sc!=null?`<div class="field-value highlight">${sc.toLocaleString('en-US')}</div>`:
+           err?`<div class="field-value error">Error: ${esc(err)}</div>`:`<div class="field-value not-found">Not found</div>`;
   const bc=pct>80?'danger':pct>60?'warn':'';
-  const ph=pct!=null?`<div class="field-value">${pct.toFixed(1)} % <span style="color:var(--muted);font-size:.7rem">(z ${MAX.toLocaleString('cs-CZ')})</span></div><div class="life-bar-bg"><div class="life-bar-fill ${bc}" style="width:${pct}%"></div></div>`:`<div class="field-value not-found">—</div>`;
+  const ph=pct!=null?`<div class="field-value">${pct.toFixed(1)} % <span style="color:var(--muted);font-size:.7rem">(of ${MAX.toLocaleString('en-US')})</span></div><div class="life-bar-bg"><div class="life-bar-fill ${bc}" style="width:${pct}%"></div></div>`:`<div class="field-value not-found">—</div>`;
   const rows=[
     r.model?`<div class="field"><div class="field-label">Model</div><div class="field-value">${esc(r.model)}</div></div>`:'',
     r.firmware?`<div class="field"><div class="field-label">Firmware</div><div class="field-value">${esc(r.firmware)}</div></div>`:'',
-    r.dateTime?`<div class="field"><div class="field-label">Datum pořízení</div><div class="field-value">${esc(r.dateTime)}</div></div>`:'',
-    r.lensModel?`<div class="field full-width"><div class="field-label">Objektiv</div><div class="field-value">${esc(r.lensModel)}</div></div>`:'',
-    r.focalLength?`<div class="field"><div class="field-label">Ohnisko</div><div class="field-value">${esc(r.focalLength)}</div></div>`:'',
-    r.aperture?`<div class="field"><div class="field-label">Clona</div><div class="field-value">${esc(r.aperture)}</div></div>`:'',
-    r.shutterSpeed?`<div class="field"><div class="field-label">Čas závěrky</div><div class="field-value">${esc(r.shutterSpeed)}</div></div>`:'',
+    r.dateTime?`<div class="field"><div class="field-label">Date Taken</div><div class="field-value">${esc(r.dateTime)}</div></div>`:'',
+    r.lensModel?`<div class="field full-width"><div class="field-label">Lens</div><div class="field-value">${esc(r.lensModel)}</div></div>`:'',
+    r.focalLength?`<div class="field"><div class="field-label">Focal Length</div><div class="field-value">${esc(r.focalLength)}</div></div>`:'',
+    r.aperture?`<div class="field"><div class="field-label">Aperture</div><div class="field-value">${esc(r.aperture)}</div></div>`:'',
+    r.shutterSpeed?`<div class="field"><div class="field-label">Shutter Speed</div><div class="field-value">${esc(r.shutterSpeed)}</div></div>`:'',
     r.iso?`<div class="field"><div class="field-label">ISO</div><div class="field-value">${r.iso}</div></div>`:'',
-    r.fileNumber?`<div class="field full-width"><div class="field-label">Číslo souboru (karta)</div><div class="field-value" style="font-size:.8rem">${esc(r.fileNumber)} <span style="color:var(--muted);font-size:.7rem">— čítač karty, ne celoživotní počet</span></div></div>`:'',
-    r.method?`<div class="field full-width"><div class="field-label">Metoda extrakce</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">${esc(r.method)}</div></div>`:'',
-    (!sc && r._probeValues)?`<div class="field full-width"><div class="field-label">Dump bloku — najdi svůj počet (* = mocnina 2, pravděpodobně ne SC)</div><div class="field-value" style="font-size:.66rem;color:var(--accent);word-break:break-all;line-height:2;white-space:pre-wrap">${esc(r._probeValues)}</div></div>`:'',
-    (!sc && r._cr3BlockSize)?`<div class="field full-width"><div class="field-label">Diagnostika CR3</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">Blok 0x000D: <code style="background:var(--border);padding:1px 5px;border-radius:3px;color:var(--accent)">${r._cr3BlockSize} B (0x${r._cr3BlockSize.toString(16).toUpperCase()})</code> — nahlaste offset + blok na GitHub Issues</div></div>`:'',
+    r.fileNumber?`<div class="field full-width"><div class="field-label">File Number (card)</div><div class="field-value" style="font-size:.8rem">${esc(r.fileNumber)} <span style="color:var(--muted);font-size:.7rem">— card counter, not lifetime count</span></div></div>`:'',
+    r.method?`<div class="field full-width"><div class="field-label">Extraction Method</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">${esc(r.method)}</div></div>`:'',
+    (!sc && r._probeValues)?`<div class="field full-width"><div class="field-label">Block dump — find your count (* = power of 2, likely not SC)</div><div class="field-value" style="font-size:.66rem;color:var(--accent);word-break:break-all;line-height:2;white-space:pre-wrap">${esc(r._probeValues)}</div></div>`:'',
+    (!sc && r._cr3BlockSize)?`<div class="field full-width"><div class="field-label">CR3 Diagnostics</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">Block 0x000D: <code style="background:var(--border);padding:1px 5px;border-radius:3px;color:var(--accent)">${r._cr3BlockSize} B (0x${r._cr3BlockSize.toString(16).toUpperCase()})</code> — please report offset + block on GitHub Issues</div></div>`:'',
   ].filter(Boolean).join('');
   const c=document.createElement('div');c.className='result-card';
-  c.innerHTML=`<div class="card-header"><div class="card-filename">${esc(file.name)}</div><div class="card-size">${fmtSz(file.size)}</div></div><div class="card-body"><div class="field"><div class="field-label">Shuttercount</div>${sh}</div><div class="field"><div class="field-label">Opotřebení závěrky</div>${ph}</div>${rows}</div><div class="status-bar"><div class="status-dot ${dc}"></div>${dm}</div>`;
+  c.innerHTML=`<div class="card-header"><div class="card-filename">${esc(file.name)}</div><div class="card-size">${fmtSz(file.size)}</div></div><div class="card-body"><div class="field"><div class="field-label">Shutter Count</div>${sh}</div><div class="field"><div class="field-label">Shutter Life</div>${ph}</div>${rows}</div><div class="status-bar"><div class="status-dot ${dc}"></div>${dm}</div>`;
   rs.prepend(c);
 }
 </script>
