@@ -29,7 +29,7 @@ let passed = 0, warned = 0, failed = 0;
 
 for (const file of files) {
   const ext = file.slice(file.lastIndexOf('.')).toLowerCase();
-  if (!['.cr2','.cr3','.nef','.arw','.raf','.orf','.dng','.jpg','.jpeg'].includes(ext)) continue;
+  if (!['.cr2','.cr3','.nef','.arw','.raf','.orf','.rw2','.dng','.jpg','.jpeg'].includes(ext)) continue;
 
   const buf = readFileSync(join(samplesDir, file));
   const ab = buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength);

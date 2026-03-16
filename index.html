@@ -69,7 +69,7 @@ header{text-align:center;margin-bottom:56px}
   <p class="subtitle">RAW EXIF Inspector — Canon · Nikon · Sony · Fujifilm · Olympus / OM System</p>
 </header>
 <div class="dropzone" id="dropzone">
-  <input type="file" id="fileInput" accept=".cr2,.cr3,.nef,.arw,.raf,.orf,.dng,.jpg,.jpeg" multiple>
+  <input type="file" id="fileInput" accept=".cr2,.cr3,.nef,.arw,.raf,.orf,.rw2,.dng,.jpg,.jpeg" multiple>
   <span class="drop-icon">📷</span>
   <div class="drop-title">Přetáhni RAW soubory nebo složku sem</div>
   <div class="drop-sub">Zpracování probíhá lokálně v prohlížeči — žádný soubor se neodesílá</div>
@@ -317,9 +317,9 @@ function parseExif(buf){
   }
   const order=r16(v,tb,false),le=order===0x4949;
   if(order!==0x4949&&order!==0x4D4D)return r;
-  // Accept standard TIFF magic 0x002A and Olympus ORF variant 0x4F52 ("OR")
+  // Accept standard TIFF magic 0x002A, Olympus ORF 0x4F52 ("OR"), Panasonic RW2 0x0055
   const tiffMagic=r16(v,tb+2,le);
-  if(tiffMagic!==0x002A&&tiffMagic!==0x4F52)return r;
+  if(tiffMagic!==0x002A&&tiffMagic!==0x4F52&&tiffMagic!==0x0055)return r;
   const ifd0=parseIFD(v,u,tb+r32(v,tb+4,le),tb,le);
   r.make=iStr(u,tb,ifd0[0x010F]);r.model=iStr(u,tb,ifd0[0x0110]);r.dateTime=iStr(u,tb,ifd0[0x0132]);
   let ex={};
@@ -608,10 +608,15 @@ function parseOlympusMakerNote(v, u, makerOff, tiffBase, le, r) {
   if (makerOff + 8 > v.byteLength) return;
   let ifdOff, ifdBase, ifdLE = le;
   if (s4(u, makerOff) === 'OLYM' && s4(u, makerOff+4) === 'PUS\x00') {
-    // Modern Olympus/OM System: "OLYMPUS\0" + endian + version, IFD at +12
-    ifdLE   = (u[makerOff+8] === 0x49); // 'I' = little-endian
+    // Modern Olympus: "OLYMPUS\0" + endian + version, IFD at +12
+    ifdLE   = (u[makerOff+8] === 0x49);
     ifdBase = makerOff;
     ifdOff  = makerOff + 12;
+  } else if (s4(u, makerOff) === 'OM S' && s4(u, makerOff+4) === 'YSTE') {
+    // OM System (OM-1, OM-3, OM-5…): "OM SYSTEM\0\0\0" (12 bytes) + endian(2) + version(2), IFD at +16
+    ifdLE   = (u[makerOff+12] === 0x49);
+    ifdBase = makerOff;
+    ifdOff  = makerOff + 16;
   } else if (s4(u, makerOff) === 'OLYM' && u[makerOff+4] === 0x50) {
     // Older "OLYMP\0" compact-camera format, IFD at +8, offsets from TIFF base
     ifdBase = tiffBase;
@@ -623,8 +628,8 @@ function parseOlympusMakerNote(v, u, makerOff, tiffBase, le, r) {
   }
   if (ifdOff + 2 > v.byteLength) return;
   const mn = parseIFD(v, u, ifdOff, ifdBase, ifdLE);
-  // Equipment sub-IFD (0x0207) → ShutterCount at tag 0x0101
-  const eqTag = mn[0x0207];
+  // Equipment sub-IFD: tag 0x0207 (classic Olympus) or 0x2010 (OM System)
+  const eqTag = mn[0x0207] || mn[0x2010];
   if (eqTag && eqTag.type === 4) {
     const eqOff = ifdBase + eqTag.raw;
     if (eqOff + 2 < v.byteLength) {
@@ -734,7 +739,7 @@ function traverseEntry(entry, files, done) {
 }
 
 // Filter to only RAW/image files we can handle
-const ACCEPTED_EXT = new Set(['.cr2','.cr3','.nef','.arw','.raf','.orf','.dng','.jpg','.jpeg']);
+const ACCEPTED_EXT = new Set(['.cr2','.cr3','.nef','.arw','.raf','.orf','.rw2','.dng','.jpg','.jpeg']);
 function acceptedFile(f) {
   const ext = f.name.slice(f.name.lastIndexOf('.')).toLowerCase();
   return ACCEPTED_EXT.has(ext);
