@@ -99,7 +99,7 @@ header{text-align:center;margin-bottom:56px}
 <div id="results"></div>
 <div class="help">
   <h3>Podporované formáty a zdroje dat</h3>
-  <strong>Canon CR3</strong> (R5, R6, R7, R10…) — ISOBMFF kontejner, cesta: <code>CTMD rec.8 → TIFF tag 0x000D → offset 0x0AF1</code>. ✅ Potvrzeno pro R6, R6 Mark II, R3. ⚠️ Pro EOS RP, R, R5, R7, R10 — experimentální offset <code>0x09C0</code> (nepotvrzeno, může být nepřesné).
+  <strong>Canon CR3</strong> (R5, R6, R7, R8, R10…) — ISOBMFF kontejner, cesta: <code>CTMD rec.8 → TIFF tag 0x000D</code>. ✅ Potvrzeno: R6II/R8/R50 → <code>0x0D29</code> (uint32), R5/R6/R3 → <code>0x0AF1</code> (uint32), R6 Mark III → <code>0x086D</code> (uint16, ImageCount). ⚠️ Experimentální: EOS RP/R/R7/R10 → <code>0x09C0</code>.
   <br><br>
   <strong>Canon CR2</strong> — ShutterCount je v EXIF <em>pouze</em> u profesionálních těl řady 1D/1Ds. Canon ho pro běžná těla (5D, 7D, 60D, 70D, 80D, Rebel/xxxD…) do souboru vůbec nezapisuje — jde o hardwarový čítač čitelný pouze přes USB PTP z kamery. Pro 1D/1Ds: MakerNote tag <code>0x93</code> (FileInfo). Pro 1DmkIII: tag <code>0x0d</code> (CameraInfo[0x176]).
   <br><br>
@@ -199,18 +199,32 @@ function parseCR3(buf){
                 const bo=tb+raw;
                 // Save block size for diagnostic display when ShutterCount is not found
                 res._cr3BlockSize = cnt;
-                // Known ShutterCount offsets in the CanonCameraInfo BinaryData blob,
-                // indexed by block size (different bodies have different block sizes).
-                // Only R6/R6mkII/R3 confirmed by exiftool canon.pm (0x0af1 in 4608-byte block).
-                // EOS RP/R/R5/R7/R10 use smaller blocks — offsets are community-researched.
+                // Known ShutterCount offsets in the CanonCameraInfo BinaryData blob.
+                // Ref: exiftool Canon.pm — CameraInfoR6, CameraInfoR6m2, CameraInfoR6m3.
+                // uint32 offsets (tried first):
                 const OFFSETS=[
-                  {minCnt:0x0af5, off:0x0af1, label:'R6/R6II/R3 (CanonCameraInfoR6)'},  // 4608 bytes
-                  {minCnt:0x09c4, off:0x09c0, label:'EOS RP/R/R5/R7/R10 (experimental)'},// 2560 bytes
+                  {minCnt:0x0d2d, off:0x0d29, label:'R6II/R8/R50 (CameraInfoR6m2)'},     // 4608-byte block
+                  {minCnt:0x0af5, off:0x0af1, label:'R5/R6/R3 (CameraInfoR6)'},           // 4608-byte block
+                  {minCnt:0x09c4, off:0x09c0, label:'EOS RP/R/R7/R10 (experimental)'},    // 2560-byte block
                 ];
                 for(const o of OFFSETS){
                   if(cnt>=o.minCnt&&bo+o.off+4<=buf.byteLength){
                     const sc=v.getUint32(bo+o.off,true);
                     if(sc>0&&sc<999999){
+                      res.shutterCount=sc;
+                      res.method=`CTMD rec.8 → tag 0x000D → offset 0x${o.off.toString(16).toUpperCase()} (${o.label})`;
+                      return res;
+                    }
+                  }
+                }
+                // uint16 offsets for bodies with different structure:
+                const OFFSETS16=[
+                  {minCnt:0x086f, off:0x086d, label:'R6III (CameraInfoR6m3, ImageCount)'},
+                ];
+                for(const o of OFFSETS16){
+                  if(cnt>=o.minCnt&&bo+o.off+2<=buf.byteLength){
+                    const sc=v.getUint16(bo+o.off,true);
+                    if(sc>0&&sc<65535){
                       res.shutterCount=sc;
                       res.method=`CTMD rec.8 → tag 0x000D → offset 0x${o.off.toString(16).toUpperCase()} (${o.label})`;
                       return res;
