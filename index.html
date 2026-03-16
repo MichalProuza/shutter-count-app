@@ -69,6 +69,16 @@ header{text-align:center;margin-bottom:56px}
 .promo-desc{color:var(--muted);font-size:.72rem;line-height:1.6;letter-spacing:.02em}
 .promo-cta{flex-shrink:0;font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--bg);background:var(--accent);padding:6px 16px;border-radius:6px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
 .promo-tag{display:inline-block;font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:8px;opacity:.6}
+.tested{margin-top:48px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:20px 24px;font-size:.75rem;color:var(--muted);line-height:1.7}
+.tested h3{font-family:var(--sans);font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.tested table{width:100%;border-collapse:collapse}
+.tested th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--border)}
+.tested td{padding:6px 8px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.72rem;vertical-align:top}
+.tested tr:last-child td{border-bottom:none}
+.tested .brand{color:var(--text);font-weight:600}
+.tested .ok{color:var(--accent)}
+.tested .no{color:var(--muted);font-style:italic}
+.tested .note{font-size:.65rem;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -108,7 +118,7 @@ header{text-align:center;margin-bottom:56px}
 <div id="results"></div>
 <div class="help">
   <h3>Supported formats and data sources</h3>
-  <strong>Canon CR3</strong> (R5, R6, R7, R8, R10…) — ISOBMFF container, path: <code>CTMD rec.8 → TIFF tag 0x000D</code>. ✅ Confirmed: R6II/R8/R50 → <code>0x0D29</code> (uint32), R5/R6/R3 → <code>0x0AF1</code> (uint32), R6 Mark III → <code>0x086D</code> (uint16, ImageCount). ⚠️ Experimental: EOS RP/R/R7/R10 → <code>0x09C0</code>.
+  <strong>Canon CR3</strong> (R5, R6, R7, R8, R10…) — ISOBMFF container, path: <code>CTMD rec.8 → TIFF tag 0x000D</code>. ✅ Confirmed: R6II/R8/R50 → <code>0x0D29</code> (uint32), R5/R6/R3 → <code>0x0AF1</code> (uint32), R6III/R50V/R1 → <code>0x086D</code> (uint16, ImageCount). ⚠️ EOS RP/R/R7/R10: shutter count offset not yet known.
   <br><br>
   <strong>Canon CR2</strong> — ShutterCount in EXIF is available <em>only</em> for professional 1D/1Ds series bodies. Canon does not write it for consumer bodies (5D, 7D, 60D, 70D, 80D, Rebel/xxxD…) — it is a hardware counter readable only via USB PTP from the camera. For 1D/1Ds: MakerNote tag <code>0x93</code> (FileInfo). For 1DmkIII: tag <code>0x0d</code> (CameraInfo[0x176]).
   <br><br>
@@ -148,6 +158,53 @@ header{text-align:center;margin-bottom:56px}
   </div>
   <div class="promo-cta">Try Free</div>
 </a>
+<div class="tested">
+  <h3>Tested cameras and results</h3>
+  <table>
+    <thead><tr><th>Camera</th><th>Format</th><th>Shutter Count</th><th>Notes</th></tr></thead>
+    <tbody>
+    <tr><td class="brand">Canon</td><td colspan="3"></td></tr>
+    <tr><td>EOS R8</td><td>CR3</td><td class="ok">&#10003; Yes</td><td class="note">Offset 0x0D29 (uint32), confirmed</td></tr>
+    <tr><td>EOS R6 Mark II</td><td>CR3</td><td class="ok">&#10003; Yes</td><td class="note">Offset 0x0D29 (uint32), confirmed</td></tr>
+    <tr><td>EOS R50</td><td>CR3</td><td class="ok">&#10003; Yes</td><td class="note">Offset 0x0D29 (uint32), confirmed</td></tr>
+    <tr><td>EOS R5</td><td>CR3</td><td class="ok">&#10003; Yes</td><td class="note">Offset 0x0AF1 (uint32), confirmed</td></tr>
+    <tr><td>EOS R6</td><td>CR3</td><td class="ok">&#10003; Yes</td><td class="note">Offset 0x0AF1 (uint32), confirmed</td></tr>
+    <tr><td>EOS R3</td><td>CR3</td><td class="ok">&#10003; Yes</td><td class="note">Offset 0x0AF1 (uint32), confirmed</td></tr>
+    <tr><td>EOS R6 Mark III</td><td>CR3</td><td class="ok">&#10003; Yes</td><td class="note">Offset 0x086D (uint16, ImageCount — resets on format)</td></tr>
+    <tr><td>EOS R50 V</td><td>CR3</td><td class="ok">&#10003; Yes</td><td class="note">Offset 0x086D (uint16, ImageCount)</td></tr>
+    <tr><td>EOS R1</td><td>CR3</td><td class="ok">&#10003; Yes</td><td class="note">Offset 0x086D (uint16, ImageCount) — probe mode</td></tr>
+    <tr><td>EOS RP</td><td>CR3</td><td class="no">&#10007; No</td><td class="note">Offset not known, probe dump available</td></tr>
+    <tr><td>EOS R, R7, R10, R100</td><td>CR3</td><td class="no">&#10007; No</td><td class="note">Offset not known, probe dump available</td></tr>
+    <tr><td>EOS 5D Mark II</td><td>CR2</td><td class="no">&#10007; No</td><td class="note">Canon does not store SC in consumer CR2 files</td></tr>
+    <tr><td>EOS 1100D</td><td>CR2</td><td class="no">&#10007; No</td><td class="note">Consumer body — SC only via USB PTP</td></tr>
+    <tr><td>EOS-1D / 1Ds series</td><td>CR2</td><td class="ok">&#10003; Yes</td><td class="note">MakerNote tag 0x93 (FileInfo), BE</td></tr>
+
+    <tr><td class="brand">Nikon</td><td colspan="3"></td></tr>
+    <tr><td>Z5 II</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">MakerNote 0x00A7</td></tr>
+    <tr><td>Z8</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">MakerNote 0x00A7</td></tr>
+    <tr><td>Z f</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">MakerNote 0x00A7</td></tr>
+    <tr><td>D7000</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">MakerNote 0x00A7</td></tr>
+    <tr><td>All modern Nikon bodies</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Universal tag 0x00A7</td></tr>
+
+    <tr><td class="brand">Sony</td><td colspan="3"></td></tr>
+    <tr><td>A7 IV (ILCE-7M4)</td><td>ARW</td><td class="ok">&#10003; Yes</td><td class="note">Tag 0x9050 encrypted, offset 0x003a</td></tr>
+    <tr><td>A7III, A7RV, A9, A1, FX3</td><td>ARW</td><td class="ok">&#10003; Yes</td><td class="note">Tag 0x9050, offset varies by model</td></tr>
+    <tr><td>A6700, A7C II, A7CR</td><td>ARW</td><td class="ok">&#10003; Yes</td><td class="note">Tag 0x9050d, offset 0x000a</td></tr>
+    <tr><td>DSC-RX100M5A</td><td>ARW</td><td class="no">&#10007; No</td><td class="note">Compact DSC — offset not known</td></tr>
+
+    <tr><td class="brand">Fujifilm</td><td colspan="3"></td></tr>
+    <tr><td>X-T3, X-T4, X100V/VI</td><td>RAF</td><td class="ok">&#10003; Yes</td><td class="note">MakerNote 0x1402 (ShotCount)</td></tr>
+    <tr><td>X-S10, X-S20, GFX series</td><td>RAF</td><td class="ok">&#10003; Yes</td><td class="note">MakerNote 0x1402 (ShotCount)</td></tr>
+
+    <tr><td class="brand">Olympus / OM System</td><td colspan="3"></td></tr>
+    <tr><td>OM-1, OM-5, E-M1 series</td><td>ORF</td><td class="ok">&#10003; Yes</td><td class="note">Equipment sub-IFD tag 0x0101</td></tr>
+    <tr><td>OM-3</td><td>ORF</td><td class="no">&#10007; No</td><td class="note">SC not stored in file — only via camera menu</td></tr>
+
+    <tr><td class="brand">Panasonic</td><td colspan="3"></td></tr>
+    <tr><td>S1M2, S1RM2, S5D, S9</td><td>RW2</td><td class="no">&#10007; No</td><td class="note">Panasonic does not store SC in RAW files</td></tr>
+    </tbody>
+  </table>
+</div>
 <script>
 const r16=(v,o,le)=>v.getUint16(o,le);
 const r32=(v,o,le)=>v.getUint32(o,le);
@@ -240,7 +297,7 @@ function parseCR3(buf){
                 const OFFSETS=[
                   {minCnt:0x0d2d, off:0x0d29, label:'R6II/R8/R50 (CameraInfoR6m2)'},     // 4608-byte block
                   {minCnt:0x0af5, off:0x0af1, label:'R5/R6/R3 (CameraInfoR6)'},           // 4608-byte block
-                  {minCnt:0x09c4, off:0x09c0, label:'EOS RP/R/R7/R10 (experimental)'},    // 2560-byte block
+                  // 0x09C0 removed: reads a fixed value on EOS RP (not shutter count)
                 ];
                 for(const o of OFFSETS){
                   if(cnt>=o.minCnt&&bo+o.off+4<=buf.byteLength){
