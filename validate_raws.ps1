@@ -67,7 +67,7 @@ function Parse-IFD {
     if ($p + 11 -ge $Bytes.Length) { break }
     $tag = Read-U16 $Bytes $p $LittleEndian
     $type = Read-U16 $Bytes ($p + 2) $LittleEndian
-    $cnt = [int](Read-U32 $Bytes ($p + 4) $LittleEndian)
+    $cnt = [uint32](Read-U32 $Bytes ($p + 4) $LittleEndian)
     $raw = [uint32](Read-U32 $Bytes ($p + 8) $LittleEndian)
     $val = $raw
     if ($type -eq 3 -and $cnt -eq 1) {
@@ -102,7 +102,7 @@ function Get-IFDString {
 }
 
 function New-Result {
-  return [ordered]@{
+  return @{
     make = ''
     model = ''
     shutterCount = $null
@@ -235,10 +235,10 @@ function Parse-FujiMakerNote {
   if ($ifdRelOff -lt 8 -or $ifdRelOff -gt 256) { return }
   $ifdOff = $MakerOff + $ifdRelOff
   $mn = Parse-IFD $Bytes $ifdOff $MakerOff $true
-  $shot = $mn[0x1402]
+  $shot = $mn[0x1438]
   if ($shot -and $shot.Value -gt 0 -and $shot.Value -lt 2000000) {
     $Result.shutterCount = [int]$shot.Value
-    $Result.method = 'Fujifilm MakerNote 0x1402'
+    $Result.method = 'Fujifilm MakerNote 0x1438'
   }
 }
 
@@ -261,15 +261,7 @@ function Parse-OlympusMakerNote {
     $ifdOff = $MakerOff + 8
   }
   $mn = Parse-IFD $Bytes $ifdOff $ifdBase $ifdLE
-  $eqTag = if ($mn.ContainsKey(0x0207)) { $mn[0x0207] } elseif ($mn.ContainsKey(0x2010)) { $mn[0x2010] } else { $null }
-  if ($eqTag -and $eqTag.Type -eq 4) {
-    $eqOff = $ifdBase + $eqTag.Raw
-    $eq = Parse-IFD $Bytes $eqOff $ifdBase $ifdLE
-    if ($eq.ContainsKey(0x0101) -and $eq[0x0101].Value -gt 0 -and $eq[0x0101].Value -lt 2000000) {
-      $Result.shutterCount = [int]$eq[0x0101].Value
-      $Result.method = 'Olympus Equipment IFD 0x0101'
-    }
-  }
+  # Full-release validation has not confirmed a reliable in-file shutter count for ORF.
 }
 
 function Parse-Exif {
@@ -370,7 +362,7 @@ function Parse-RAF {
   if ($Bytes.Length -lt 0x60) { return $null }
   $jpegOff = [int](Read-U32 $Bytes 0x54 $false)
   $jpegLen = [int](Read-U32 $Bytes 0x58 $false)
-  if ($jpegOff -lt 160 -or $jpegOff -ge $Bytes.Length -or $jpegLen -lt 100) { return $null }
+  if ($jpegOff -lt 64 -or $jpegOff -ge $Bytes.Length -or $jpegLen -lt 100) { return $null }
   $end = [Math]::Min($jpegOff + $jpegLen, $Bytes.Length)
   if ($Bytes[$jpegOff] -ne 0xFF -or $Bytes[$jpegOff + 1] -ne 0xD8) { return $null }
   $slice = [byte[]]::new($end - $jpegOff)
@@ -512,10 +504,11 @@ function Parse-CR3 {
                 $bo = $tb + $raw
                 $res._cr3BlockSize = $cnt
                 $offsets = @(
-                  @{ minCnt = 0x0d2d; off = 0x0d29; label = 'R6II/R8/R50' }
-                  @{ minCnt = 0x0af5; off = 0x0af1; label = 'R5/R6/R3' }
+                  @{ minCnt = 0x0d2d; off = 0x0d29; label = 'R6II/R8/R50'; model = '\bEOS\s+R6\s+MARK\s+II\b|\bEOS\s+R8\b|\bEOS\s+R50\b' }
+                  @{ minCnt = 0x0af5; off = 0x0af1; label = 'R5/R6/R3/R5 C'; model = '\bEOS\s+R5\b|\bEOS\s+R6\b|\bEOS\s+R3\b|\bEOS\s+R5\s+C\b' }
                 )
                 foreach ($o in $offsets) {
+                  if ($o.model -and $res.model -notmatch $o.model) { continue }
                   if ($cnt -ge $o.minCnt -and $bo + $o.off + 3 -lt $Bytes.Length) {
                     $sc = [uint32](Read-U32 $Bytes ($bo + $o.off) $true)
                     if ($sc -gt 0 -and $sc -lt 999999) {
