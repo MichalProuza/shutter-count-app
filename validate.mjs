@@ -18,9 +18,17 @@ const fn = new Function(parserCode + '\nreturn {parseCR3,parseExif,parseRAF,pars
 const P = fn();
 
 // ── Run against sample files ──
-const samplesDir = join(import.meta.dirname, 'Samples');
-let files;
-try { files = readdirSync(samplesDir); } catch { console.error('Samples/ directory not found'); process.exit(1); }
+const sampleDirCandidates = ['Raws_small_truncated', 'Samples'];
+const samplesDir = sampleDirCandidates
+  .map(dir => join(import.meta.dirname, dir))
+  .find(dir => {
+    try { readdirSync(dir); return true; } catch { return false; }
+  });
+if (!samplesDir) {
+  console.error(`No sample directory found. Tried: ${sampleDirCandidates.join(', ')}`);
+  process.exit(1);
+}
+const files = readdirSync(samplesDir);
 
 const PASS = '\x1b[32m✓\x1b[0m';
 const FAIL = '\x1b[31m✗\x1b[0m';

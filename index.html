@@ -159,9 +159,12 @@ header{text-align:center;margin-bottom:56px}
   <strong>Panasonic RW2</strong> — TIFF variant with proprietary magic <code>0x0055</code>. Standard EXIF metadata is extracted. ShutterCount is not stored in Panasonic RAW files.
   <br><br>
   Everything runs offline in your browser — no files are uploaded. CSV export includes all processed files since page load.
+  <br><br>
+  <strong>Validation note for bundled samples</strong> — files in <code>Raws_small_truncated/</code> are only 32 KB snippets. They are enough for basic EXIF and many Nikon shutter counts, but some Canon CR3, Sony ARW and newer Nikon samples are cut before the shutter-count block or MakerNote payload.
 </div>
 <div class="tested">
   <h3>Tested cameras and results</h3>
+  <div class="note" style="margin-bottom:14px">Full GitHub release validation on <code>Zoner_D</code> and <code>Zoner_D2</code> confirmed Nikon shutter-count extraction for D5, D500, D5100, D6, D7000, D750, D7500, D780, D850, Z5, Z5 II, Z6, Z6 II, Z6 III, Z7, Z7 II, Z8, Z9, Z f, Z fc, Z30, Z50 and Z50 II. Canon CR3 validation also confirmed the known offsets for R5, R6, R6 Mark II, R8, R50 and R5 C; the 0x086D fallback is now limited to explicitly confirmed ImageCount-based bodies.</div>
   <table>
     <thead><tr><th>Camera</th><th>Format</th><th>Shutter Count</th><th>Notes</th></tr></thead>
     <tbody>
@@ -182,10 +185,29 @@ header{text-align:center;margin-bottom:56px}
     <tr><td>EOS-1D / 1Ds series</td><td>CR2</td><td class="ok">&#10003; Yes</td><td class="note">MakerNote tag 0x93 (FileInfo), BE</td></tr>
 
     <tr><td class="brand">Nikon</td><td colspan="3"></td></tr>
-    <tr><td>Z5 II</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">MakerNote 0x00A7</td></tr>
-    <tr><td>Z8</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">MakerNote 0x00A7</td></tr>
-    <tr><td>Z f</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">MakerNote 0x00A7</td></tr>
+    <tr><td>Z5 II</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>D5</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>D500</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>D5100</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>D750</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>D7500</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>D780</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>D850</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>Z8</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>Z f</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>Z50</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>Z6</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>Z7</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
     <tr><td>D7000</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">MakerNote 0x00A7</td></tr>
+    <tr><td>D6</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>Z5</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>Z6 II</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>Z6 III</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>Z7 II</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>Z9</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>Z30</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>Z fc</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
+    <tr><td>Z50 II</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
     <tr><td>All modern Nikon bodies</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Universal tag 0x00A7</td></tr>
 
     <tr><td class="brand">Sony</td><td colspan="3"></td></tr>
@@ -313,9 +335,10 @@ function parseCR3(buf){
                 }
                 // uint16 offsets for bodies with different structure:
                 const OFFSETS16=[
-                  {minCnt:0x086f, off:0x086d, label:'R6III (CameraInfoR6m3, ImageCount)'},
+                  {minCnt:0x086f, off:0x086d, label:'R6III/R50V/R1 (CameraInfoR6m3, ImageCount)', model:/(\bEOS\s+)?R6\s+MARK\s+III\b|\bR50\s+V\b|\bEOS\s+R1\b|\bR1\b/i},
                 ];
                 for(const o of OFFSETS16){
+                  if(o.model && !o.model.test(res.model||'')) continue;
                   if(cnt>=o.minCnt&&bo+o.off+2<=buf.byteLength){
                     const sc=v.getUint16(bo+o.off,true);
                     if(sc>0&&sc<65535){
@@ -902,6 +925,9 @@ function fmtSz(b){return b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function card(file,r,err){
   const sc=r.shutterCount??null;
+  const ext=(file.name||'').slice((file.name||'').lastIndexOf('.')).toLowerCase();
+  const isTinySample=file.size<=32768;
+  const likelyTruncatedSample=!err&&sc==null&&isTinySample&&['.cr3','.arw','.nef'].includes(ext);
   // Shutter life expectancy by camera class (manufacturer rated cycles)
   const mk2=(r.make||'').toUpperCase(),mdl=(r.model||'').toUpperCase();
   const MAX=mk2.includes('CANON')&&/EOS-1D|EOS R3/.test(mdl)?500000:
@@ -913,14 +939,15 @@ function card(file,r,err){
   const dc=err?'err':sc!=null?'ok':'warn';
   const model=(r.model||'').toUpperCase();
   const isCanon=(r.make||'').toUpperCase().includes('CANON');
-  const isCR2=(file.name||'').toLowerCase().endsWith('.cr2');
-  const isCR3=(file.name||'').toLowerCase().endsWith('.cr3');
+  const isCR2=ext==='.cr2';
+  const isCR3=ext==='.cr3';
   // Canon CR3 bodies without confirmed offset
   const isUnknownR = isCR3 && isCanon && sc==null &&
     /EOS RP|EOS R\b|EOS R5|EOS R7|EOS R10|EOS R50|EOS R8|EOS R100|EOS R1\b/.test(r.model||'');
   const isCR2noSC = isCR2 && isCanon && !model.includes('EOS-1D');
   const dm=err?'Parsing error':sc!=null?
     (r.method?.includes('experimental')?'⚠️ Shutter count found (experimental offset — unverified)':'Shutter count found'):
+    likelyTruncatedSample?'Small truncated sample — required shutter metadata is likely outside this file':
     isUnknownR?`Canon ${esc(r.model||'R-series')} — shutter count offset not confirmed`:
     isCR2noSC?'Canon does not store shutter count in file for this body (1D series only)':
     'Shutter count not found in this file';
@@ -938,6 +965,7 @@ function card(file,r,err){
     r.shutterSpeed?`<div class="field"><div class="field-label">Shutter Speed</div><div class="field-value">${esc(r.shutterSpeed)}</div></div>`:'',
     r.iso?`<div class="field"><div class="field-label">ISO</div><div class="field-value">${r.iso}</div></div>`:'',
     r.fileNumber?`<div class="field full-width"><div class="field-label">File Number (card)</div><div class="field-value" style="font-size:.8rem">${esc(r.fileNumber)} <span style="color:var(--muted);font-size:.7rem">— card counter, not lifetime count</span></div></div>`:'',
+    likelyTruncatedSample?`<div class="field full-width"><div class="field-label">Sample diagnostics</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">This file is only ${fmtSz(file.size)}. In the bundled validation pack, some Canon CR3, Sony ARW and newer Nikon NEF samples are truncated before the maker-note / CTMD block that contains shutter-count data.</div></div>`:'',
     r.method?`<div class="field full-width"><div class="field-label">Extraction Method</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">${esc(r.method)}</div></div>`:'',
     (!sc && r._probeValues)?`<div class="field full-width"><div class="field-label">Block dump — find your count (* = power of 2, likely not SC)</div><div class="field-value" style="font-size:.66rem;color:var(--accent);word-break:break-all;line-height:2;white-space:pre-wrap">${esc(r._probeValues)}</div></div>`:'',
     (!sc && r._cr3BlockSize)?`<div class="field full-width"><div class="field-label">CR3 Diagnostics</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">Block 0x000D: <code style="background:var(--border);padding:1px 5px;border-radius:3px;color:var(--accent)">${r._cr3BlockSize} B (0x${r._cr3BlockSize.toString(16).toUpperCase()})</code> — please report offset + block on GitHub Issues</div></div>`:'',
