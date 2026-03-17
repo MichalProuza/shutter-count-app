@@ -826,6 +826,13 @@ const dz=document.getElementById('dropzone'),
       exportBar=document.getElementById('exportBar'),
       exportCount=document.getElementById('exportCount');
 
+for (const row of document.querySelectorAll('.tested tbody tr')) {
+  const cells = row.querySelectorAll('td');
+  if (cells.length === 4 && cells[0].textContent.trim() === 'EOS R1') {
+    cells[3].textContent = 'Offset 0x086D (uint16, ImageCount), confirmed from full GitHub release';
+  }
+}
+
 dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('dragover');});
 dz.addEventListener('dragleave',()=>dz.classList.remove('dragover'));
 dz.addEventListener('drop',e=>{
@@ -967,7 +974,7 @@ function card(file,r,err){
   const isCR3=ext==='.cr3';
   // Canon CR3 bodies without confirmed offset
   const isUnknownR = isCR3 && isCanon && sc==null &&
-    /EOS RP|EOS R\b|EOS R5|EOS R7|EOS R10|EOS R50|EOS R8|EOS R100|EOS R1\b/.test(r.model||'');
+    /EOS RP|EOS R\b|EOS R7|EOS R10|EOS R100\b/.test(r.model||'');
   const isCR2noSC = isCR2 && isCanon && !model.includes('EOS-1D');
   const dm=err?'Parsing error':sc!=null?
     (r.method?.includes('experimental')?'⚠️ Shutter count found (experimental offset — unverified)':'Shutter count found'):
