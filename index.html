@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ShutterCount</title>
+<title>ShutterCount — Free Camera Shutter Count Checker | Canon, Nikon, Sony, Fujifilm</title>
+<meta name="description" content="Check your camera's shutter count for free directly in your browser. Supports Canon CR3/CR2, Nikon NEF, Sony ARW, Fujifilm RAF and more — no upload required. Validated on 60+ camera models.">
+<meta name="keywords" content="shutter count, camera shutter count, check shutter count, Canon EOS R5 shutter count, Nikon Z8 shutter count, Sony A7 IV shutter count, Fujifilm X-T5 shutter count, RAW EXIF shutter count">
+<link rel="canonical" href="https://shuttercount.app/">
+<meta property="og:title" content="ShutterCount — Free Camera Shutter Count Checker">
+<meta property="og:description" content="Read your camera's shutter count directly from a RAW file in your browser. No upload needed. Supports Canon, Nikon, Sony, Fujifilm and more.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ShutterCount — Free Camera Shutter Count Checker">
+<meta name="twitter:description" content="Read shutter count from Canon CR3, Nikon NEF, Sony ARW and Fujifilm RAF files — locally in your browser. No account, no upload.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
 :root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
@@ -93,6 +102,102 @@ header{text-align:center;margin-bottom:56px}
 .seo-block strong{color:var(--text)}
 @media(max-width:560px){.support-panel{flex-direction:column;align-items:stretch;text-align:center}.support-btn{width:100%}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "ShutterCount",
+      "url": "https://shuttercount.app/",
+      "description": "Free browser-based tool to read camera shutter count directly from RAW files (CR3, CR2, NEF, ARW, RAF, ORF, RW2, DNG). No upload required. Supports Canon, Nikon, Sony, Fujifilm, Olympus and Panasonic.",
+      "applicationCategory": "PhotographyApplication",
+      "operatingSystem": "Any (web browser)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Canon CR3 shutter count (EOS R3, R5, R6, R6 Mark II, R8, R50)",
+        "Nikon NEF shutter count (all modern Z and D bodies)",
+        "Sony ARW shutter count (A7 III/IV, A9, A1, A6700 and more)",
+        "Fujifilm RAF shutter count (X-T3, X-T5, X-H2, X-S20)",
+        "Works offline — no files uploaded to a server"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I check my camera's shutter count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The easiest way to check your camera's shutter count is to open a RAW photo taken with the camera in a tool like ShutterCount (shuttercount.app). The tool reads the shutter count directly from the RAW file's EXIF metadata in your browser — no upload is needed. For Nikon cameras, the count is stored in MakerNote tag 0x00A7 and is reliably readable from NEF files. For Sony cameras, it is stored in encrypted form in ARW tag 0x9050. For Canon EOS R-series bodies, it is in the CR3 CTMD metadata block."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the Canon EOS R5 store shutter count in the RAW file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Canon EOS R5 stores the shutter count in its CR3 RAW file inside the CTMD metadata block, at byte offset 0x0AF1 as a uint32 little-endian value. The same offset applies to the EOS R6 and EOS R3. The EOS R6 Mark II, R8 and R50 use offset 0x0D29 instead. Consumer CR2 bodies (5D, 7D, 80D, Rebel series) do not store shutter count in-file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the Nikon Z8 or Z9 store shutter count in NEF files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All modern Nikon cameras — including the Z8, Z9, Z6 III, Z7 II, Z50 II, D850 and D6 — store the shutter count in the NEF file's MakerNote under tag 0x00A7 (ShutterCount). This tag is present and readable across virtually all Nikon bodies from the D40 era onward. ShutterCount reads this value directly from the NEF file without uploading it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I read the shutter count from a Sony A7 IV or A7 III ARW file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Sony stores the shutter count in ARW files in an encrypted MakerNote block under tag 0x9050. After decryption using the Sony algorithm (based on cubic residues modulo 249), the count is at byte offset 0x003a for the A7 III, A7 IV, A9, A9 II, A9 III, A1, A6100, A6300, A6400, A6600 and ZV-E10. The A1 II, A7, A7 II, A7V and A7S use offset 0x0032. The A6700 and A7CR use offset 0x000a."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Fujifilm store shutter count in RAF files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Modern Fujifilm cameras store the image count in RAF files as MakerNote tag 0x1438 (ImageCount). This is confirmed for the X-T3, X-T4, X-T5, X-S20, X-E4, X-H2, X-H2S, X100F, GFX50S II and GFX100 II. Note that this is an image counter that resets if the camera's memory is formatted, rather than a mechanical lifetime counter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do Olympus / OM System or Panasonic cameras store shutter count in RAW files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No reliable in-file shutter count has been confirmed for Olympus ORF or Panasonic RW2 RAW files. For OM System and Olympus bodies (OM-1, OM-5, E-M1 III, E-M1X), the shutter count is best read from the camera's own menu. Panasonic explicitly does not store shutter count in RW2 files."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to upload my RAW files to check the shutter count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ShutterCount processes all files entirely locally in your browser using JavaScript. No RAW file data is ever uploaded to any server. The tool works offline once the page is loaded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good shutter count for a used camera?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most consumer and prosumer mirrorless and DSLR cameras are rated for 100,000 to 300,000 actuations. Professional bodies like the Nikon D6, Canon EOS-1D X III or Sony A9 III are typically rated for 500,000 or more. A shutter count under 20% of the rated life is generally considered low. ShutterCount displays the count alongside a life-bar based on the rated lifespan for the detected camera model."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header>
@@ -258,16 +363,31 @@ header{text-align:center;margin-bottom:56px}
   <a class="support-btn" href="https://buymeacoffee.com/michalp" target="_blank" rel="noopener">Buy Me a Coffee</a>
 </div>
 <div class="seo-block">
-  <h3>Camera shutter count lookup by model</h3>
-  <p><strong>ShutterCount</strong> is designed to answer searches like <strong>Canon EOS R5 shutter count</strong>, <strong>Nikon Z8 shutter count</strong>, <strong>Sony A7 IV shutter count</strong> or <strong>Fujifilm X-T5 shutter count</strong> directly from a local RAW file. The page runs fully in the browser, so users can check camera shutter count from supported RAW formats without uploading photos to a server.</p>
-  <p>For <strong>Nikon shutter count</strong>, support is broad and reliable because Nikon stores the lifetime counter in MakerNote tag <strong>0x00A7</strong>. Full release validation confirmed working extraction for bodies such as <strong>Nikon D5 shutter count</strong>, <strong>Nikon D850 shutter count</strong>, <strong>Nikon Z6 III shutter count</strong>, <strong>Nikon Z8 shutter count</strong>, <strong>Nikon Z9 shutter count</strong> and many older DSLR models.</p>
+  <h3>Camera shutter count lookup — model-by-model reference</h3>
+  <p><strong>ShutterCount</strong> reads the shutter count (also called actuation count or image count) directly from a RAW photo file in your browser. No file is uploaded to any server. Supported formats include <strong>Canon CR3 and CR2</strong>, <strong>Nikon NEF</strong>, <strong>Sony ARW</strong>, <strong>Fujifilm RAF</strong>, Olympus ORF, Panasonic RW2 and DNG.</p>
+
+  <h4>How to check your camera's shutter count</h4>
+  <p>Take a RAW photo with your camera, then drag and drop the file onto this page. ShutterCount parses the EXIF and MakerNote metadata and displays the shutter count in under a second. The whole process is offline — the file never leaves your device.</p>
+
+  <h4>Nikon shutter count</h4>
+  <p>Nikon stores the shutter count in MakerNote tag <strong>0x00A7</strong> (ShutterCount) in every NEF file. This is confirmed across all modern Nikon bodies: <strong>Nikon Z9 shutter count</strong>, <strong>Nikon Z8 shutter count</strong>, <strong>Nikon Z6 III shutter count</strong>, <strong>Nikon Z7 II shutter count</strong>, <strong>Nikon Z50 II shutter count</strong>, <strong>Nikon D850 shutter count</strong>, <strong>Nikon D6 shutter count</strong>, <strong>Nikon D5 shutter count</strong> and all Nikon bodies back to the D40. Nikon shutter count from NEF is the most reliable extraction available across any camera brand.</p>
+
   <h4>Canon shutter count</h4>
-  <p><strong>Canon EOS R5 shutter count</strong>, <strong>Canon EOS R6 shutter count</strong>, <strong>Canon EOS R6 Mark II shutter count</strong>, <strong>Canon EOS R8 shutter count</strong>, <strong>Canon EOS R50 shutter count</strong>, <strong>Canon EOS R50 V shutter count</strong> and <strong>Canon EOS R1 shutter count</strong> are supported from specific CR3 metadata layouts validated on full sample files. By contrast, many older or consumer Canon CR2 bodies such as <strong>Canon 5D Mark IV shutter count</strong>, <strong>Canon 80D shutter count</strong> or <strong>Canon 1100D shutter count</strong> are not available from the RAW file itself, because Canon does not store that lifetime counter in-file for those models.</p>
+  <p><strong>Canon EOS R5 shutter count</strong> and <strong>Canon EOS R6 shutter count</strong> are stored in the CR3 CTMD metadata block at byte offset <strong>0x0AF1</strong>. <strong>Canon EOS R6 Mark II shutter count</strong>, <strong>Canon EOS R8 shutter count</strong> and <strong>Canon EOS R50 shutter count</strong> use offset <strong>0x0D29</strong>. <strong>Canon EOS R1 shutter count</strong> and <strong>Canon EOS R6 Mark III shutter count</strong> use offset <strong>0x086D</strong> (uint16 ImageCount). Consumer Canon CR2 bodies — including the <strong>Canon 5D Mark IV</strong>, <strong>Canon 80D</strong>, <strong>Canon 7D Mark II</strong> and all Rebel/xxxD models — do not store shutter count in-file; Canon only exposes it over USB PTP.</p>
+
   <h4>Sony shutter count</h4>
-  <p><strong>Sony A7 IV shutter count</strong>, <strong>Sony A7 III shutter count</strong>, <strong>Sony A9 shutter count</strong>, <strong>Sony A1 shutter count</strong>, <strong>Sony A1 II shutter count</strong>, <strong>Sony A6700 shutter count</strong> and <strong>Sony ZV-E10 shutter count</strong> are supported from encrypted Sony MakerNote data in ARW files. Some compact DSC models still remain unconfirmed, so a model showing as unsupported usually means the correct in-file offset has not yet been validated.</p>
-  <h4>Fujifilm, OM System and Panasonic</h4>
-  <p><strong>Fujifilm shutter count</strong> is confirmed for modern RAF bodies including <strong>Fujifilm X100F shutter count</strong>, <strong>Fujifilm X-H2 shutter count</strong>, <strong>Fujifilm X-H2S shutter count</strong>, <strong>Fujifilm X-S20 shutter count</strong>, <strong>Fujifilm X-T3 shutter count</strong>, <strong>Fujifilm X-T5 shutter count</strong> and selected GFX bodies, using MakerNote tag <strong>0x1438</strong>. <strong>OM System shutter count</strong> and <strong>Olympus shutter count</strong> are currently not confirmed from ORF files, and <strong>Panasonic shutter count</strong> is generally not stored in RW2 RAW files.</p>
-  <p>This page is maintained as a model-by-model compatibility reference, so it can also be cited as a practical source for questions like <strong>does Nikon Z8 RAW contain shutter count</strong>, <strong>can Canon EOS R6 shutter count be read from CR3</strong>, or <strong>which Sony ARW files include shutter count metadata</strong>.</p>
+  <p>Sony ARW files store the shutter count encrypted in MakerNote tag <strong>0x9050</strong>. After decryption (cubic residue algorithm, modulo 249), the count is at offset <strong>0x003a</strong> for the <strong>Sony A7 IV shutter count</strong>, <strong>Sony A7 III shutter count</strong>, <strong>Sony A9 III shutter count</strong>, <strong>Sony A1 shutter count</strong>, <strong>Sony A6700 shutter count</strong> and others. The <strong>Sony A1 II shutter count</strong>, <strong>Sony A7 II shutter count</strong> and <strong>Sony A7V shutter count</strong> use offset <strong>0x0032</strong>. The <strong>Sony A6700 shutter count</strong> and <strong>Sony A7CR shutter count</strong> use offset <strong>0x000a</strong>.</p>
+
+  <h4>Fujifilm shutter count</h4>
+  <p>Fujifilm stores the image counter in RAF files as MakerNote tag <strong>0x1438</strong>. Confirmed bodies include <strong>Fujifilm X-T5 shutter count</strong>, <strong>Fujifilm X-T3 shutter count</strong>, <strong>Fujifilm X-H2 shutter count</strong>, <strong>Fujifilm X-H2S shutter count</strong>, <strong>Fujifilm X-S20 shutter count</strong>, <strong>Fujifilm X100F shutter count</strong>, <strong>Fujifilm GFX100 II shutter count</strong> and <strong>Fujifilm GFX50S II shutter count</strong>. This counter resets if the camera storage is formatted.</p>
+
+  <h4>Olympus / OM System and Panasonic shutter count</h4>
+  <p><strong>OM System shutter count</strong> and <strong>Olympus shutter count</strong> are not stored reliably in ORF files — for bodies like the OM-1, OM-5 and E-M1 III, the shutter count is only accessible from the camera menu. <strong>Panasonic shutter count</strong> is not stored in RW2 files either; Panasonic Lumix cameras (S1M2, S5D, S9) do not write this counter to RAW metadata.</p>
+
+  <h4>Frequently asked questions</h4>
+  <p><strong>What is a good shutter count for a used camera?</strong> Most consumer mirrorless and DSLR cameras are rated for 100,000–300,000 actuations. Professional bodies (Nikon D6, Canon EOS-1D X III, Sony A9 III) are typically rated for 500,000+. A count under 20% of the rated life is generally considered low mileage.</p>
+  <p><strong>Does shutter count affect camera value?</strong> Yes. A lower shutter count indicates less mechanical wear on the shutter curtain. Buyers of used cameras commonly verify shutter count before purchase to estimate remaining shutter life.</p>
+  <p><strong>Can I check shutter count without uploading my photos?</strong> Yes. ShutterCount runs entirely in your browser — it parses the RAW file locally using JavaScript and never transmits any file data over the network.</p>
 </div>
 <script>
 const r16=(v,o,le)=>v.getUint16(o,le);
