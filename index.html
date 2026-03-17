@@ -180,9 +180,11 @@ header{text-align:center;margin-bottom:56px}
     <tr><td>EOS R1</td><td>CR3</td><td class="ok">&#10003; Yes</td><td class="note">Offset 0x086D (uint16, ImageCount) — probe mode</td></tr>
     <tr><td>EOS RP</td><td>CR3</td><td class="no">&#10007; No</td><td class="note">Offset not known, probe dump available</td></tr>
     <tr><td>EOS R, R7, R10, R100</td><td>CR3</td><td class="no">&#10007; No</td><td class="note">Offset not known, probe dump available</td></tr>
-    <tr><td>EOS 5D Mark II</td><td>CR2</td><td class="no">&#10007; No</td><td class="note">Canon does not store SC in consumer CR2 files</td></tr>
-    <tr><td>EOS 1100D</td><td>CR2</td><td class="no">&#10007; No</td><td class="note">Consumer body — SC only via USB PTP</td></tr>
-    <tr><td>EOS-1D / 1Ds series</td><td>CR2</td><td class="ok">&#10003; Yes</td><td class="note">MakerNote tag 0x93 (FileInfo), BE</td></tr>
+    <tr><td>EOS 850D, 250D, M50 Mark II, M50, M200</td><td>CR3</td><td class="no">&#10007; No</td><td class="note">Samples validated, but no confirmed shutter-count offset for these CR3 bodies yet</td></tr>
+    <tr><td>EOS 1000D, 1100D, 350D, 400D, 450D, 500D, 550D, 600D, 650D</td><td>CR2</td><td class="no">&#10007; No</td><td class="note">Samples validated; Canon consumer CR2 files do not store shutter count in-file</td></tr>
+    <tr><td>EOS 20D, 30D, 40D, 50D, 60D, 70D, 77D, 80D</td><td>CR2</td><td class="no">&#10007; No</td><td class="note">Samples validated; shutter count for these bodies is typically only readable over USB PTP</td></tr>
+    <tr><td>EOS 5D, 5D Mark II, 5D Mark III, 5D Mark IV, 6D Mark II, 7D, 7D Mark II, EOS M, EOS M5</td><td>CR2</td><td class="no">&#10007; No</td><td class="note">Samples validated; Canon does not store shutter count in consumer / prosumer CR2 files</td></tr>
+    <tr><td>EOS-1D Mark II / IIN / III / IV, EOS-1Ds Mark II / III</td><td>CR2</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub releases, MakerNote FileInfo / CameraInfo path</td></tr>
 
     <tr><td class="brand">Nikon</td><td colspan="3"></td></tr>
     <tr><td>Z5 II</td><td>NEF</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, MakerNote 0x00A7</td></tr>
