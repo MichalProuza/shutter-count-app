@@ -81,6 +81,17 @@ header{text-align:center;margin-bottom:56px}
 .tested .ok{color:var(--accent)}
 .tested .no{color:var(--muted);font-style:italic}
 .tested .note{font-size:.65rem;color:var(--muted)}
+.support-panel{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(180deg,rgba(232,255,71,.03),rgba(255,255,255,0))}
+.support-copy{font-size:.74rem;color:var(--muted);line-height:1.7}
+.support-copy strong{display:block;font-family:var(--sans);font-size:.95rem;line-height:1.2;color:var(--text);margin-bottom:6px}
+.support-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;flex-shrink:0;padding:10px 18px;border-radius:8px;background:var(--accent);color:var(--bg);text-decoration:none;font-family:var(--sans);font-size:.78rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;transition:transform .2s ease,filter .2s ease}
+.support-btn:hover{transform:translateY(-1px);filter:brightness(1.02)}
+.seo-block{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:20px 24px;font-size:.75rem;color:var(--muted);line-height:1.75}
+.seo-block h3{font-family:var(--sans);font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:12px}
+.seo-block h4{font-family:var(--sans);font-size:.8rem;font-weight:700;color:var(--text);margin:16px 0 6px}
+.seo-block p + p{margin-top:10px}
+.seo-block strong{color:var(--text)}
+@media(max-width:560px){.support-panel{flex-direction:column;align-items:stretch;text-align:center}.support-btn{width:100%}}
 </style>
 </head>
 <body>
@@ -238,6 +249,25 @@ header{text-align:center;margin-bottom:56px}
     <tr><td>S1M2, S1RM2, S5D, S9</td><td>RW2</td><td class="no">&#10007; No</td><td class="note">Panasonic does not store SC in RAW files</td></tr>
     </tbody>
   </table>
+</div>
+<div class="support-panel">
+  <div class="support-copy">
+    <strong>Want to support the project?</strong>
+    If ShutterCount saved you time, you can help keep testing and camera support moving forward.
+  </div>
+  <a class="support-btn" href="https://buymeacoffee.com/michalp" target="_blank" rel="noopener">Buy Me a Coffee</a>
+</div>
+<div class="seo-block">
+  <h3>Camera shutter count lookup by model</h3>
+  <p><strong>ShutterCount</strong> is designed to answer searches like <strong>Canon EOS R5 shutter count</strong>, <strong>Nikon Z8 shutter count</strong>, <strong>Sony A7 IV shutter count</strong> or <strong>Fujifilm X-T5 shutter count</strong> directly from a local RAW file. The page runs fully in the browser, so users can check camera shutter count from supported RAW formats without uploading photos to a server.</p>
+  <p>For <strong>Nikon shutter count</strong>, support is broad and reliable because Nikon stores the lifetime counter in MakerNote tag <strong>0x00A7</strong>. Full release validation confirmed working extraction for bodies such as <strong>Nikon D5 shutter count</strong>, <strong>Nikon D850 shutter count</strong>, <strong>Nikon Z6 III shutter count</strong>, <strong>Nikon Z8 shutter count</strong>, <strong>Nikon Z9 shutter count</strong> and many older DSLR models.</p>
+  <h4>Canon shutter count</h4>
+  <p><strong>Canon EOS R5 shutter count</strong>, <strong>Canon EOS R6 shutter count</strong>, <strong>Canon EOS R6 Mark II shutter count</strong>, <strong>Canon EOS R8 shutter count</strong>, <strong>Canon EOS R50 shutter count</strong>, <strong>Canon EOS R50 V shutter count</strong> and <strong>Canon EOS R1 shutter count</strong> are supported from specific CR3 metadata layouts validated on full sample files. By contrast, many older or consumer Canon CR2 bodies such as <strong>Canon 5D Mark IV shutter count</strong>, <strong>Canon 80D shutter count</strong> or <strong>Canon 1100D shutter count</strong> are not available from the RAW file itself, because Canon does not store that lifetime counter in-file for those models.</p>
+  <h4>Sony shutter count</h4>
+  <p><strong>Sony A7 IV shutter count</strong>, <strong>Sony A7 III shutter count</strong>, <strong>Sony A9 shutter count</strong>, <strong>Sony A1 shutter count</strong>, <strong>Sony A1 II shutter count</strong>, <strong>Sony A6700 shutter count</strong> and <strong>Sony ZV-E10 shutter count</strong> are supported from encrypted Sony MakerNote data in ARW files. Some compact DSC models still remain unconfirmed, so a model showing as unsupported usually means the correct in-file offset has not yet been validated.</p>
+  <h4>Fujifilm, OM System and Panasonic</h4>
+  <p><strong>Fujifilm shutter count</strong> is confirmed for modern RAF bodies including <strong>Fujifilm X100F shutter count</strong>, <strong>Fujifilm X-H2 shutter count</strong>, <strong>Fujifilm X-H2S shutter count</strong>, <strong>Fujifilm X-S20 shutter count</strong>, <strong>Fujifilm X-T3 shutter count</strong>, <strong>Fujifilm X-T5 shutter count</strong> and selected GFX bodies, using MakerNote tag <strong>0x1438</strong>. <strong>OM System shutter count</strong> and <strong>Olympus shutter count</strong> are currently not confirmed from ORF files, and <strong>Panasonic shutter count</strong> is generally not stored in RW2 RAW files.</p>
+  <p>This page is maintained as a model-by-model compatibility reference, so it can also be cited as a practical source for questions like <strong>does Nikon Z8 RAW contain shutter count</strong>, <strong>can Canon EOS R6 shutter count be read from CR3</strong>, or <strong>which Sony ARW files include shutter count metadata</strong>.</p>
 </div>
 <script>
 const r16=(v,o,le)=>v.getUint16(o,le);
