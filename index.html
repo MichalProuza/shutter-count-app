@@ -830,18 +830,25 @@ function parseSonyMakerNote(v, u, makerOff, le, r, corr=0) {
       const model = (r.model || '').toUpperCase();
       function readU32(off) {
         if (off + 4 > plain.length) return 0;
-        return (plain[off] | (plain[off+1]<<8) | (plain[off+2]<<16) | (plain[off+3]<<24)) >>> 0;
+        // Mask to 24 bits: ExifTool uses RawConv '$val & 0x00ffffff' for all Tag9050 ShutterCount
+        return ((plain[off] | (plain[off+1]<<8) | (plain[off+2]<<16) | (plain[off+3]<<24)) >>> 0) & 0x00ffffff;
       }
+      // Check if first 5 bytes of raw (encrypted) tag data are null — needed for A7V/A1II routing
+      const raw9050 = u.slice(dataOff, dataOff + Math.min(5, t9050.cnt));
+      const first5null = raw9050.length >= 5 && raw9050[0]===0 && raw9050[1]===0 && raw9050[2]===0 && raw9050[3]===0 && raw9050[4]===0;
 
-      // Tag9050d: A6700, A7CM2, A7CR, FX2, ZV-E10M2 (always); A7V, A1II (try 0x000a first, fallback to 0x003a)
+      // Tag9050d: A6700, A7CM2, A7CR, FX2, ZV-E10M2 (always)
       if (/ILCE-(6700|7CM2|7CR)|ILME-FX2|ZV-E10M2/.test(model)) {
         const sc = readU32(0x000a);
         if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = 'Sony 9050d[0x000a]'; return; }
       }
-      // A7V (ILCE-7M5), A1II (ILCE-1M2): try 0x000a first, then 0x003a
+      // A7V (ILCE-7M5), A1II (ILCE-1M2): use Tag9050d (0x000a) only when first 5 bytes are null
+      // (mechanical shutter); otherwise fall back to Tag9050c (0x003a)
       else if (/ILCE-(1M2|7M5)/.test(model)) {
-        const sc = readU32(0x000a);
-        if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = 'Sony 9050d[0x000a]'; return; }
+        if (first5null) {
+          const sc = readU32(0x000a);
+          if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = 'Sony 9050d[0x000a]'; return; }
+        }
         const sc2 = readU32(0x003a);
         if (sc2 > 0 && sc2 < 600000) { r.shutterCount = sc2; r.method = 'Sony 9050c[0x003a]'; return; }
       }
