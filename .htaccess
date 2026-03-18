@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Serve index.html for all language paths (Apache / shared hosting)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(zh|hi|es|fr|ar|bn|pt|ru|ur|id|de|ja|te|mr|tr|ta|vi|ko|it|pl|uk|fa|ro|nl|hu|el|cz|sv|ms|th|tl|no|da|fi|sk|bg|hr|sr|ca|he|lt|lv|et|sw|af|sq|sl|az|kk)/?$ /index.html [L]
