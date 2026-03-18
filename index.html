@@ -398,10 +398,7 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
   <h4>Olympus / OM System and Panasonic shutter count</h4>
   <p><strong>OM System shutter count</strong> and <strong>Olympus shutter count</strong> are not stored reliably in ORF files — for bodies like the OM-1, OM-5 and E-M1 III, the shutter count is only accessible from the camera menu. <strong>Panasonic shutter count</strong> is not stored in RW2 files either; Panasonic Lumix cameras (S1M2, S5D, S9) do not write this counter to RAW metadata.</p>
 
-  <h4>Frequently asked questions</h4>
-  <p><strong>What is a good shutter count for a used camera?</strong> Most consumer mirrorless and DSLR cameras are rated for 100,000–300,000 actuations. Professional bodies (Nikon D6, Canon EOS-1D X III, Sony A9 III) are typically rated for 500,000+. A count under 20% of the rated life is generally considered low mileage.</p>
-  <p><strong>Does shutter count affect camera value?</strong> Yes. A lower shutter count indicates less mechanical wear on the shutter curtain. Buyers of used cameras commonly verify shutter count before purchase to estimate remaining shutter life.</p>
-  <p><strong>Can I check shutter count without uploading my photos?</strong> Yes. ShutterCount runs entirely in your browser — it parses the RAW file locally using JavaScript and never transmits any file data over the network.</p>
+  <div id="faqSection"></div>
 </div>
 <script>
 const r16=(v,o,le)=>v.getUint16(o,le);
@@ -1246,6 +1243,180 @@ const TRANSLATIONS={
   kk:{subtitle:'RAW EXIF Инспекторы — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'RAW файлдарды немесе қалтаны осында тастаңыз',dropSub:'Өңдеу браузерде жергілікті түрде жүреді — ешбір файл жүктелмейді',openFolder:'Қалтаны ашу',orDrag:'немесе бүкіл қалтаны апарып тастаңыз',clear:'✕ Тазалау',exportCsv:'↓ CSV экспорттау',parsing:'ДЕРЕКТЕР ӨҢДЕЛУДЕ...',supportTitle:'Жобаны қолдағыңыз келе ме?',supportBody:'Егер ShutterCount уақытыңызды үнемдесе, тестілеу мен камера қолдауын жалғастыруға көмектесе аласыз.',buyCoffee:'Маған кофе сатып ал',helpTitle:'Қолдауы бар форматтар мен деректер көздері',testedTitle:'Тексерілген камералар мен нәтижелер',thCamera:'Камера',thFormat:'Формат',thShutter:'Жалпақ санауышы',thNotes:'Ескертпелер',exportCountFn:(n)=>`${n} файл өңделді`},
 };
 
+const FAQ={
+en:{title:'Frequently asked questions',items:[
+  {q:'What is shutter count?',a:'Shutter count (also called actuation count) is the total number of times a camera\'s mechanical shutter has fired. It is stored in the EXIF metadata of RAW files and increases by one with every mechanical exposure.'},
+  {q:'What is a good shutter count for a used camera?',a:'Consumer cameras (Canon R6, Nikon Z6 II, Sony A7 IV) are typically rated for 150,000–300,000 actuations. Professional bodies (Nikon Z9, Canon EOS-1D X III, Sony A9 III) reach 400,000–500,000+. A count below 20–30% of the rated life is generally considered low mileage.'},
+  {q:'Does shutter count affect resale value?',a:'Yes. A lower count means less wear on the shutter curtain. Buyers of used cameras routinely check it before purchase to estimate remaining life and negotiate the price.'},
+  {q:'Can shutter count be reset or faked?',a:'Service centres can reset the counter after a shutter replacement, but this is rare. Tools that overwrite only the EXIF value do not change the hardware counter inside the camera. Always verify from original RAW files rather than screenshots.'},
+  {q:'Is electronic shutter included in the count?',a:'No. Electronic shutter (silent shutter) bypasses the mechanical curtain entirely. Only mechanical and EFCS (electronic first curtain) exposures increment the shutter count.'},
+  {q:'Why is there no shutter count for my Olympus or Panasonic?',a:'Most Olympus (OM System) and Panasonic Lumix cameras do not write the shutter counter to ORF or RW2 file metadata. On Olympus/OM System bodies the count is visible in the camera menu; Panasonic does not expose this value at all.'},
+  {q:'What file formats does ShutterCount support?',a:'Canon CR3 and CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, DNG, and JPEG. JPEG support is limited to cameras that embed shutter count in EXIF (mainly Nikon and select Sony models).'},
+  {q:'Is my file uploaded anywhere?',a:'No. All processing runs entirely in your browser using JavaScript. No file data, metadata, or personal information is ever sent to any server. The tool works offline once the page has loaded.'},
+  {q:'What is the rated shutter life of popular cameras?',a:'Canon R5/R6: 300,000 · Canon R5 II/R6 II: 500,000 · Nikon Z6 III: 400,000 · Nikon Z8/Z9: 500,000 · Sony A7R V/A9 III: 500,000 · Fujifilm X-T5: 300,000 · Sony A7 IV: 150,000.'},
+  {q:'Can I check multiple cameras at once?',a:'Yes. Drop files from different cameras at the same time — each file is processed independently and results appear as separate rows in the table.'}]},
+cz:{title:'Často kladené dotazy',items:[
+  {q:'Co je počet závěrek?',a:'Počet závěrek (čítač expozic) je celkový počet spuštění mechanického závěru fotoaparátu. Je uložen v EXIF metadatech RAW souborů a zvyšuje se o jedničku s každou mechanickou expozicí.'},
+  {q:'Jaký je dobrý počet závěrek pro ojetý fotoaparát?',a:'Spotřebitelské fotoaparáty (Canon R6, Nikon Z6 II, Sony A7 IV) jsou hodnoceny na 150 000–300 000 expozic. Profesionální těla (Nikon Z9, Canon EOS-1D X III, Sony A9 III) dosahují 400 000–500 000+. Počet pod 20–30 % jmenovité životnosti je považován za nízký nájezd.'},
+  {q:'Ovlivňuje počet závěrek hodnotu při prodeji?',a:'Ano. Nižší počet znamená menší opotřebení závěru. Kupující si ho standardně ověřují před koupí, aby odhadli zbývající životnost a mohli vyjednávat o ceně.'},
+  {q:'Lze počet závěrek resetovat nebo podvrhnout?',a:'Servisní střediska mohou po výměně závěru čítač resetovat, ale je to výjimečné. Nástroje, které přepíší jen hodnotu v EXIF, hardwarový čítač v těle fotoaparátu nezmění. Při koupi vždy ověřujte z originálních RAW souborů, ne ze screenshotů.'},
+  {q:'Počítá se elektronická závěrka do počtu?',a:'Ne. Elektronická závěrka (tichý mód) zcela obchází mechanický závěr, takže tyto snímky se nepočítají. Čítač se zvyšuje pouze při mechanické expozici nebo EFCS (elektronická první lamela).'},
+  {q:'Proč se u Olympusu nebo Panasonicu počet závěrek nezobrazí?',a:'Většina fotoaparátů Olympus (OM System) a Panasonic Lumix nezapisuje čítač do metadat ORF nebo RW2. U těl Olympus/OM System je počet dostupný v menu fotoaparátu; Panasonic tuto hodnotu vůbec nezveřejňuje.'},
+  {q:'Jaké formáty souborů jsou podporovány?',a:'Canon CR3 a CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, DNG a JPEG. Podpora JPEG je omezena na fotoaparáty ukládající počet závěrek do EXIF (převážně Nikon a vybrané modely Sony).'},
+  {q:'Jsou soubory někam nahrávány?',a:'Ne. Veškeré zpracování probíhá pouze ve vašem prohlížeči pomocí JavaScriptu. Žádná data souborů, metadata ani osobní údaje nejsou nikdy odesílány na server. Nástroj funguje offline po načtení stránky.'},
+  {q:'Jaká je životnost závěru oblíbených fotoaparátů?',a:'Canon R5/R6: 300 000 · Canon R5 II/R6 II: 500 000 · Nikon Z6 III: 400 000 · Nikon Z8/Z9: 500 000 · Sony A7R V/A9 III: 500 000 · Fujifilm X-T5: 300 000 · Sony A7 IV: 150 000.'},
+  {q:'Mohu zkontrolovat více fotoaparátů najednou?',a:'Ano. Přetáhněte soubory z různých fotoaparátů současně — každý soubor je zpracován samostatně a výsledky se zobrazí jako samostatné řádky v tabulce.'}]},
+de:{title:'Häufig gestellte Fragen',items:[
+  {q:'Was ist der Verschlussauslösezähler?',a:'Der Verschlussauslösezähler gibt an, wie oft der mechanische Verschluss einer Kamera ausgelöst wurde. Er erhöht sich um eins bei jeder mechanischen Aufnahme und ist in den EXIF-Metadaten von RAW-Dateien gespeichert.'},
+  {q:'Was ist ein guter Verschlusszählerstand für eine gebrauchte Kamera?',a:'Verbraucherkameras (Canon R6, Nikon Z6 II, Sony A7 IV) sind typischerweise für 150.000–300.000 Auslösungen ausgelegt. Profibodies (Nikon Z9, Canon EOS-1D X III, Sony A9 III) erreichen 400.000–500.000+. Ein Wert unter 20–30 % der Nennlebensdauer gilt als geringer Verschleiß.'},
+  {q:'Beeinflusst der Verschlusszähler den Wiederverkaufswert?',a:'Ja. Ein niedrigerer Zähler bedeutet weniger Verschleiß am Verschlussvorhang. Käufer gebrauchter Kameras überprüfen ihn routinemäßig vor dem Kauf.'},
+  {q:'Kann der Verschlusszähler zurückgesetzt oder gefälscht werden?',a:'Servicezentren können den Zähler nach einem Verschlusswechsel zurücksetzen, was jedoch selten vorkommt. Tools, die nur den EXIF-Wert überschreiben, ändern den Hardware-Zähler in der Kamera nicht. Immer anhand originaler RAW-Dateien prüfen, nicht anhand von Screenshots.'},
+  {q:'Zählt der elektronische Verschluss mit?',a:'Nein. Der elektronische Verschluss (Stummverschluss) umgeht den mechanischen Vorhang vollständig. Nur mechanische und EFCS-Aufnahmen erhöhen den Zähler.'},
+  {q:'Warum wird kein Verschlusszähler für meine Olympus oder Panasonic angezeigt?',a:'Die meisten Olympus (OM System) und Panasonic Lumix Kameras schreiben den Zähler nicht in die ORF- oder RW2-Datei. Bei Olympus/OM System ist er nur im Kameramenü sichtbar; Panasonic gibt diesen Wert gar nicht aus.'},
+  {q:'Welche Dateiformate werden unterstützt?',a:'Canon CR3 und CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, DNG und JPEG. JPEG-Unterstützung ist auf Kameras beschränkt, die den Zähler im EXIF speichern (hauptsächlich Nikon und ausgewählte Sony-Modelle).'},
+  {q:'Wird meine Datei irgendwohin hochgeladen?',a:'Nein. Alle Verarbeitungen laufen vollständig im Browser per JavaScript. Keine Dateidaten, Metadaten oder persönliche Informationen werden an einen Server gesendet.'},
+  {q:'Wie hoch ist die Verschlusslebensdauer beliebter Kameras?',a:'Canon R5/R6: 300.000 · Canon R5 II/R6 II: 500.000 · Nikon Z6 III: 400.000 · Nikon Z8/Z9: 500.000 · Sony A7R V/A9 III: 500.000 · Fujifilm X-T5: 300.000 · Sony A7 IV: 150.000.'},
+  {q:'Kann ich mehrere Kameras gleichzeitig überprüfen?',a:'Ja. Dateien verschiedener Kameras können gleichzeitig abgelegt werden — jede wird separat verarbeitet und als eigene Zeile in der Tabelle angezeigt.'}]},
+fr:{title:'Questions fréquentes',items:[
+  {q:"Qu'est-ce que le compteur de déclenchements ?",a:"Le compteur de déclenchements (actuation count) indique combien de fois l'obturateur mécanique a fonctionné. Il augmente d'une unité à chaque prise de vue mécanique et est stocké dans les métadonnées EXIF des fichiers RAW."},
+  {q:"Quel est un bon compteur pour un appareil d'occasion ?",a:'Les appareils grand public (Canon R6, Nikon Z6 II, Sony A7 IV) sont estimés à 150 000–300 000 déclenchements. Les boîtiers professionnels (Nikon Z9, Canon EOS-1D X III, Sony A9 III) atteignent 400 000–500 000+. Un compteur inférieur à 20–30 % de la durée de vie nominale est considéré comme faible.'},
+  {q:'Le compteur influence-t-il la valeur de revente ?',a:"Oui. Un compteur faible signifie moins d'usure sur le rideau d'obturation. Les acheteurs de matériel d'occasion le vérifient systématiquement avant l'achat."},
+  {q:'Le compteur peut-il être réinitialisé ou falsifié ?',a:"Les centres de service peuvent réinitialiser le compteur après un remplacement d'obturateur, mais c'est rare. Les outils qui ne modifient que la valeur EXIF ne changent pas le compteur matériel. Vérifiez toujours depuis les fichiers RAW originaux, pas depuis des captures d'écran."},
+  {q:"L'obturateur électronique est-il compté ?",a:"Non. L'obturateur électronique (mode silencieux) court-circuite entièrement le rideau mécanique. Seules les poses mécaniques et EFCS incrémentent le compteur."},
+  {q:'Pourquoi mon Olympus ou Panasonic ne montre pas de compteur ?',a:"La plupart des appareils Olympus (OM System) et Panasonic Lumix n'écrivent pas le compteur dans les métadonnées ORF ou RW2. Sur les boîtiers Olympus/OM System, il est visible dans le menu ; Panasonic n'expose pas du tout cette valeur."},
+  {q:'Quels formats de fichiers sont supportés ?',a:'Canon CR3 et CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, DNG et JPEG. La prise en charge JPEG est limitée aux appareils qui intègrent le compteur dans EXIF (principalement Nikon et certains Sony).'},
+  {q:'Mon fichier est-il envoyé quelque part ?',a:"Non. Tout le traitement s'effectue dans votre navigateur via JavaScript. Aucune donnée de fichier, métadonnée ou information personnelle n'est jamais envoyée à un serveur."},
+  {q:'Quelle est la durée de vie des appareils populaires ?',a:'Canon R5/R6 : 300 000 · Canon R5 II/R6 II : 500 000 · Nikon Z6 III : 400 000 · Nikon Z8/Z9 : 500 000 · Sony A7R V/A9 III : 500 000 · Fujifilm X-T5 : 300 000 · Sony A7 IV : 150 000.'},
+  {q:'Puis-je vérifier plusieurs appareils à la fois ?',a:'Oui. Déposez des fichiers de différents appareils en même temps — chaque fichier est traité indépendamment et les résultats apparaissent dans des lignes séparées du tableau.'}]},
+es:{title:'Preguntas frecuentes',items:[
+  {q:'¿Qué es el contador de disparos?',a:'El contador de disparos (actuation count) indica el número total de veces que el obturador mecánico ha funcionado. Aumenta en uno con cada exposición mecánica y se almacena en los metadatos EXIF de los archivos RAW.'},
+  {q:'¿Cuál es un buen contador para una cámara de segunda mano?',a:'Las cámaras de consumo (Canon R6, Nikon Z6 II, Sony A7 IV) suelen valorarse en 150.000–300.000 disparos. Los cuerpos profesionales (Nikon Z9, Canon EOS-1D X III, Sony A9 III) alcanzan 400.000–500.000+. Un contador por debajo del 20–30 % de la vida útil nominal se considera bajo.'},
+  {q:'¿Afecta el contador al valor de reventa?',a:'Sí. Un contador más bajo significa menos desgaste en el obturador. Los compradores de cámaras usadas lo verifican habitualmente antes de la compra para estimar la vida restante.'},
+  {q:'¿Se puede resetear o falsificar el contador?',a:'Los centros de servicio pueden resetear el contador tras sustituir el obturador, aunque es poco frecuente. Las herramientas que solo sobrescriben el valor EXIF no cambian el contador hardware. Verifica siempre con archivos RAW originales, no con capturas de pantalla.'},
+  {q:'¿El obturador electrónico se incluye en el contador?',a:'No. El obturador electrónico (modo silencioso) evita completamente el mecanismo físico. Solo las exposiciones mecánicas y EFCS incrementan el contador.'},
+  {q:'¿Por qué mi Olympus o Panasonic no muestra contador?',a:'La mayoría de cámaras Olympus (OM System) y Panasonic Lumix no escriben el contador en los metadatos ORF o RW2. En Olympus/OM System el valor es visible en el menú de la cámara; Panasonic no expone este valor en absoluto.'},
+  {q:'¿Qué formatos de archivo son compatibles?',a:'Canon CR3 y CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, DNG y JPEG. La compatibilidad JPEG se limita a cámaras que incrustan el contador en EXIF (principalmente Nikon y algunos Sony).'},
+  {q:'¿Se sube mi archivo a algún lugar?',a:'No. Todo el procesamiento ocurre en tu navegador mediante JavaScript. Ningún dato de archivo, metadato o información personal se envía jamás a un servidor.'},
+  {q:'¿Cuál es la vida útil del obturador de las cámaras más populares?',a:'Canon R5/R6: 300.000 · Canon R5 II/R6 II: 500.000 · Nikon Z6 III: 400.000 · Nikon Z8/Z9: 500.000 · Sony A7R V/A9 III: 500.000 · Fujifilm X-T5: 300.000 · Sony A7 IV: 150.000.'},
+  {q:'¿Puedo verificar varias cámaras a la vez?',a:'Sí. Suelta archivos de diferentes cámaras al mismo tiempo — cada uno se procesa de forma independiente y los resultados aparecen como filas separadas en la tabla.'}]},
+it:{title:'Domande frequenti',items:[
+  {q:'Cos\'è il contatore degli scatti?',a:'Il contatore degli scatti (actuation count) indica quante volte l\'otturatore meccanico ha scattato. Aumenta di uno ad ogni esposizione meccanica ed è memorizzato nei metadati EXIF dei file RAW.'},
+  {q:'Qual è un buon contatore per una fotocamera usata?',a:'Le fotocamere consumer (Canon R6, Nikon Z6 II, Sony A7 IV) sono solitamente valutate per 150.000–300.000 scatti. I corpi professionali (Nikon Z9, Canon EOS-1D X III, Sony A9 III) raggiungono 400.000–500.000+. Un contatore sotto il 20–30% della vita nominale è considerato basso.'},
+  {q:'Il contatore influisce sul valore di rivendita?',a:'Sì. Un contatore più basso indica meno usura sull\'otturatore. Gli acquirenti di fotocamere usate lo verificano abitualmente prima dell\'acquisto.'},
+  {q:'Il contatore può essere azzerato o falsificato?',a:'I centri di assistenza possono azzerarlo dopo la sostituzione dell\'otturatore, ma è raro. Gli strumenti che sovrascrivono solo il valore EXIF non modificano il contatore hardware. Verifica sempre dai file RAW originali, non dagli screenshot.'},
+  {q:'Lo scatto elettronico è incluso nel contatore?',a:'No. L\'otturatore elettronico (modalità silenziosa) bypassa completamente il meccanismo fisico. Solo le esposizioni meccaniche e EFCS incrementano il contatore.'},
+  {q:'Perché la mia Olympus o Panasonic non mostra il contatore?',a:'La maggior parte delle fotocamere Olympus (OM System) e Panasonic Lumix non scrivono il contatore nei metadati ORF o RW2. Su Olympus/OM System il valore è visibile nel menu; Panasonic non espone questo valore.'},
+  {q:'Quali formati di file sono supportati?',a:'Canon CR3 e CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, DNG e JPEG. Il supporto JPEG è limitato alle fotocamere che incorporano il contatore nell\'EXIF (principalmente Nikon e alcuni Sony).'},
+  {q:'Il mio file viene caricato da qualche parte?',a:'No. Tutta l\'elaborazione avviene nel browser tramite JavaScript. Nessun dato, metadato o informazione personale viene mai inviato a un server.'},
+  {q:'Qual è la vita utile dell\'otturatore delle fotocamere più diffuse?',a:'Canon R5/R6: 300.000 · Canon R5 II/R6 II: 500.000 · Nikon Z6 III: 400.000 · Nikon Z8/Z9: 500.000 · Sony A7R V/A9 III: 500.000 · Fujifilm X-T5: 300.000 · Sony A7 IV: 150.000.'},
+  {q:'Posso verificare più fotocamere contemporaneamente?',a:'Sì. Trascina file di fotocamere diverse allo stesso tempo — ciascuno viene elaborato separatamente e i risultati compaiono come righe distinte nella tabella.'}]},
+pt:{title:'Perguntas frequentes',items:[
+  {q:'O que é o contador de disparos?',a:'O contador de disparos (actuation count) indica o número total de vezes que o obturador mecânico disparou. Aumenta uma unidade a cada exposição mecânica e é armazenado nos metadados EXIF dos arquivos RAW.'},
+  {q:'Qual é um bom contador para uma câmera usada?',a:'Câmeras de consumo (Canon R6, Nikon Z6 II, Sony A7 IV) são tipicamente avaliadas em 150.000–300.000 disparos. Corpos profissionais (Nikon Z9, Canon EOS-1D X III, Sony A9 III) chegam a 400.000–500.000+. Um contador abaixo de 20–30% da vida útil nominal é considerado baixo.'},
+  {q:'O contador afeta o valor de revenda?',a:'Sim. Um contador mais baixo indica menos desgaste no obturador. Compradores de câmeras usadas verificam isso rotineiramente antes da compra.'},
+  {q:'O contador pode ser zerado ou falsificado?',a:'Centros de serviço podem zerar o contador após a substituição do obturador, mas isso é raro. Ferramentas que apenas sobrescrevem o valor EXIF não alteram o contador de hardware. Sempre verifique com arquivos RAW originais, não com capturas de tela.'},
+  {q:'O obturador eletrônico é incluído no contador?',a:'Não. O obturador eletrônico (modo silencioso) bypassa completamente o mecanismo físico. Apenas exposições mecânicas e EFCS incrementam o contador.'},
+  {q:'Por que minha Olympus ou Panasonic não mostra o contador?',a:'A maioria das câmeras Olympus (OM System) e Panasonic Lumix não grava o contador nos metadados ORF ou RW2. Em corpos Olympus/OM System o valor é visível no menu; Panasonic não expõe esse valor.'},
+  {q:'Quais formatos de arquivo são suportados?',a:'Canon CR3 e CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, DNG e JPEG. O suporte a JPEG é limitado a câmeras que incorporam o contador no EXIF (principalmente Nikon e alguns Sony).'},
+  {q:'Meu arquivo é enviado para algum lugar?',a:'Não. Todo o processamento ocorre no seu navegador via JavaScript. Nenhum dado de arquivo, metadado ou informação pessoal é enviado a um servidor.'},
+  {q:'Qual é a vida útil do obturador das câmeras mais populares?',a:'Canon R5/R6: 300.000 · Canon R5 II/R6 II: 500.000 · Nikon Z6 III: 400.000 · Nikon Z8/Z9: 500.000 · Sony A7R V/A9 III: 500.000 · Fujifilm X-T5: 300.000 · Sony A7 IV: 150.000.'},
+  {q:'Posso verificar várias câmeras ao mesmo tempo?',a:'Sim. Solte arquivos de câmeras diferentes ao mesmo tempo — cada arquivo é processado independentemente e os resultados aparecem como linhas separadas na tabela.'}]},
+nl:{title:'Veelgestelde vragen',items:[
+  {q:'Wat is de sluitertellerstand?',a:'De sluitertellerstand (actuation count) geeft aan hoe vaak de mechanische sluiter van een camera heeft gevuurd. Het telt één op bij elke mechanische opname en is opgeslagen in de EXIF-metagegevens van RAW-bestanden.'},
+  {q:'Wat is een goede sluiterstand voor een tweedehands camera?',a:'Consumentencamera\'s (Canon R6, Nikon Z6 II, Sony A7 IV) zijn doorgaans beoordeeld op 150.000–300.000 sluitingen. Professionele bodies (Nikon Z9, Canon EOS-1D X III, Sony A9 III) bereiken 400.000–500.000+. Een stand onder 20–30% van de nominale levensduur geldt als laag.'},
+  {q:'Heeft de sluiterstand invloed op de verkoopwaarde?',a:'Ja. Een lagere stand betekent minder slijtage op het sluiterlamellen. Kopers van tweedehands camera\'s controleren dit standaard voor aankoop.'},
+  {q:'Kan de sluiterstand worden gereset of vervalst?',a:'Servicecentra kunnen de teller na een sluiterwisseling resetten, maar dat is zeldzaam. Tools die alleen de EXIF-waarde overschrijven, veranderen de hardware-teller in de camera niet. Controleer altijd vanuit originele RAW-bestanden, niet vanuit screenshots.'},
+  {q:'Telt de elektronische sluiter mee?',a:'Nee. De elektronische sluiter (stille modus) omzeilt het mechanische lamellen volledig. Alleen mechanische en EFCS-opnames verhogen de teller.'},
+  {q:'Waarom toont mijn Olympus of Panasonic geen sluiterstand?',a:'De meeste Olympus (OM System) en Panasonic Lumix camera\'s schrijven de teller niet naar ORF- of RW2-bestandsmetadata. Bij Olympus/OM System is de waarde zichtbaar in het cameramenu; Panasonic stelt deze waarde helemaal niet beschikbaar.'},
+  {q:'Welke bestandsformaten worden ondersteund?',a:'Canon CR3 en CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, DNG en JPEG. JPEG-ondersteuning is beperkt tot camera\'s die de sluiterstand in EXIF opslaan (voornamelijk Nikon en bepaalde Sony-modellen).'},
+  {q:'Wordt mijn bestand ergens naartoe geüpload?',a:'Nee. Alle verwerking vindt volledig in uw browser plaats via JavaScript. Er worden nooit bestandsgegevens, metagegevens of persoonlijke informatie naar een server verzonden.'},
+  {q:'Wat is de nominale levensduur van populaire camera\'s?',a:'Canon R5/R6: 300.000 · Canon R5 II/R6 II: 500.000 · Nikon Z6 III: 400.000 · Nikon Z8/Z9: 500.000 · Sony A7R V/A9 III: 500.000 · Fujifilm X-T5: 300.000 · Sony A7 IV: 150.000.'},
+  {q:'Kan ik meerdere camera\'s tegelijk controleren?',a:'Ja. Zet bestanden van verschillende camera\'s tegelijkertijd neer — elk bestand wordt afzonderlijk verwerkt en resultaten verschijnen als aparte rijen in de tabel.'}]},
+pl:{title:'Często zadawane pytania',items:[
+  {q:'Czym jest licznik migawki?',a:'Licznik migawki (actuation count) wskazuje, ile razy mechaniczna migawka aparatu zadziałała. Zwiększa się o jeden przy każdym mechanicznym zdjęciu i jest przechowywany w metadanych EXIF plików RAW.'},
+  {q:'Jaki licznik migawki jest dobry dla aparatu używanego?',a:'Aparaty konsumenckie (Canon R6, Nikon Z6 II, Sony A7 IV) są zazwyczaj oceniane na 150 000–300 000 wyzwoleń. Profesjonalne korpusy (Nikon Z9, Canon EOS-1D X III, Sony A9 III) osiągają 400 000–500 000+. Licznik poniżej 20–30% nominalnej żywotności uważa się za niski.'},
+  {q:'Czy licznik migawki wpływa na wartość odsprzedaży?',a:'Tak. Niższy licznik oznacza mniejsze zużycie mechanizmu migawki. Kupujący używane aparaty rutynowo sprawdzają go przed zakupem.'},
+  {q:'Czy licznik migawki można zresetować lub sfałszować?',a:'Serwisy mogą zresetować licznik po wymianie migawki, ale jest to rzadkie. Narzędzia nadpisujące tylko wartość EXIF nie zmieniają sprzętowego licznika w aparacie. Zawsze weryfikuj z oryginalnych plików RAW, nie ze zrzutów ekranu.'},
+  {q:'Czy migawka elektroniczna jest wliczana do licznika?',a:'Nie. Migawka elektroniczna (tryb cichy) całkowicie omija mechaniczny zasłon. Licznik zwiększają tylko ekspozycje mechaniczne i EFCS.'},
+  {q:'Dlaczego mój Olympus lub Panasonic nie pokazuje licznika?',a:'Większość aparatów Olympus (OM System) i Panasonic Lumix nie zapisuje licznika w metadanych ORF ani RW2. W korpusach Olympus/OM System wartość jest widoczna w menu aparatu; Panasonic w ogóle nie udostępnia tej wartości.'},
+  {q:'Jakie formaty plików są obsługiwane?',a:'Canon CR3 i CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, DNG i JPEG. Obsługa JPEG ogranicza się do aparatów zapisujących licznik w EXIF (głównie Nikon i wybrane modele Sony).'},
+  {q:'Czy mój plik jest gdzieś przesyłany?',a:'Nie. Całe przetwarzanie odbywa się w przeglądarce za pomocą JavaScript. Żadne dane pliku, metadane ani informacje osobowe nie są wysyłane na serwer.'},
+  {q:'Jaka jest żywotność migawki popularnych aparatów?',a:'Canon R5/R6: 300 000 · Canon R5 II/R6 II: 500 000 · Nikon Z6 III: 400 000 · Nikon Z8/Z9: 500 000 · Sony A7R V/A9 III: 500 000 · Fujifilm X-T5: 300 000 · Sony A7 IV: 150 000.'},
+  {q:'Czy mogę sprawdzić kilka aparatów jednocześnie?',a:'Tak. Upuść pliki z różnych aparatów jednocześnie — każdy plik jest przetwarzany niezależnie, a wyniki wyświetlają się jako osobne wiersze w tabeli.'}]},
+zh:{title:'常见问题',items:[
+  {q:'什么是快门计数？',a:'快门计数（也称曝光次数）是相机机械快门触发的总次数，每次机械曝光增加一次，存储在RAW文件的EXIF元数据中。'},
+  {q:'二手相机多少快门计数合适？',a:'消费级相机（佳能R6、尼康Z6 II、索尼A7 IV）通常额定寿命为15万–30万次。专业机身（尼康Z9、佳能EOS-1D X III、索尼A9 III）可达40万–50万次以上。计数低于额定寿命20–30%通常被认为使用较少。'},
+  {q:'快门计数影响二手价格吗？',a:'是的。更低的快门计数意味着快门帘磨损更少。二手相机买家通常在购买前核实快门计数，以估算剩余寿命并协商价格。'},
+  {q:'快门计数可以被重置或伪造吗？',a:'维修中心可以在更换快门后重置计数器，但这种情况很少见。仅覆盖EXIF值的工具不会改变相机内部的硬件计数器。购买时请务必从原始RAW文件验证，而非截图。'},
+  {q:'使用电子快门会影响快门计数吗？',a:'不会。电子快门（静音快门）完全绕过机械帘幕，此类拍摄不计入快门计数。只有机械快门和电子前帘（EFCS）曝光才会增加计数。'},
+  {q:'为什么我的奥林巴斯或松下没有显示快门计数？',a:'大多数奥林巴斯（OM System）和松下Lumix相机不会将快门计数写入ORF或RW2文件元数据。在奥林巴斯/OM System机身上可在相机菜单中查看；松下根本不提供此值。'},
+  {q:'支持哪些文件格式？',a:'佳能CR3和CR2、尼康NEF、索尼ARW、富士RAF、奥林巴斯ORF、松下RW2、DNG和JPEG。JPEG支持仅限于将快门计数嵌入EXIF的相机（主要是尼康和部分索尼型号）。'},
+  {q:'我的文件会被上传到任何地方吗？',a:'不会。所有处理完全在您的浏览器中通过JavaScript运行，任何文件数据、元数据或个人信息都不会发送到服务器。'},
+  {q:'热门相机的快门寿命是多少？',a:'佳能R5/R6：30万次 · 佳能R5 II/R6 II：50万次 · 尼康Z6 III：40万次 · 尼康Z8/Z9：50万次 · 索尼A7R V/A9 III：50万次 · 富士X-T5：30万次 · 索尼A7 IV：15万次。'},
+  {q:'我可以同时检查多台相机吗？',a:'可以。同时拖入不同相机的文件——每个文件独立处理，结果在表格中以单独行显示。'}]},
+ja:{title:'よくある質問',items:[
+  {q:'シャッター回数とは何ですか？',a:'シャッター回数（アクチュエーション数）はカメラのメカニカルシャッターが作動した累計回数です。メカニカル露光のたびに1増加し、RAWファイルのEXIFメタデータに記録されています。'},
+  {q:'中古カメラの適切なシャッター回数は？',a:'コンシューマー機（Canon R6、Nikon Z6 II、Sony A7 IV）は通常15万〜30万回が耐久目安です。プロ機（Nikon Z9、Canon EOS-1D X III、Sony A9 III）は40万〜50万回以上に達します。耐久目安の20〜30%未満は低使用と見なされます。'},
+  {q:'シャッター回数は売却価格に影響しますか？',a:'はい。回数が低いほどシャッター幕の摩耗が少ないことを示します。中古カメラの購入者は残存寿命の見積もりと価格交渉のために購入前に確認するのが一般的です。'},
+  {q:'シャッター回数をリセットまたは偽装できますか？',a:'シャッター交換後にサービスセンターがカウンターをリセットすることはありますが、まれです。EXIF値を上書きするだけのツールはカメラ内部のハードウェアカウンターを変更しません。購入時は必ずオリジナルのRAWファイルで確認してください。'},
+  {q:'電子シャッターはカウントに含まれますか？',a:'いいえ。電子シャッター（サイレントシャッター）はメカニカル幕を完全にバイパスするためカウントされません。カウントが増加するのはメカニカルシャッターとEFCS露光のみです。'},
+  {q:'OlympusやPanasonicでシャッター回数が表示されないのはなぜですか？',a:'ほとんどのOlympus（OM System）およびPanasonic LumixカメラはORFまたはRW2ファイルにカウンターを書き込みません。Olympus/OM Systemボディではカメラメニューで確認できますが、Panasonicはこの値を公開していません。'},
+  {q:'対応ファイル形式は何ですか？',a:'Canon CR3・CR2、Nikon NEF、Sony ARW、Fujifilm RAF、Olympus ORF、Panasonic RW2、DNG、JPEG。JPEGサポートはEXIFにシャッター回数を埋め込むカメラ（主にNikonと一部のSonyモデル）に限定されます。'},
+  {q:'ファイルはどこかにアップロードされますか？',a:'いいえ。すべての処理はJavaScriptによってブラウザ内のみで行われます。ファイルデータ、メタデータ、個人情報はサーバーに送信されません。'},
+  {q:'人気カメラのシャッター耐久回数は？',a:'Canon R5/R6：30万回 · Canon R5 II/R6 II：50万回 · Nikon Z6 III：40万回 · Nikon Z8/Z9：50万回 · Sony A7R V/A9 III：50万回 · Fujifilm X-T5：30万回 · Sony A7 IV：15万回。'},
+  {q:'複数のカメラを同時に確認できますか？',a:'はい。異なるカメラのファイルを同時にドロップしてください。それぞれ独立して処理され、テーブルに別々の行として結果が表示されます。'}]},
+ko:{title:'자주 묻는 질문',items:[
+  {q:'셔터 횟수란 무엇인가요?',a:'셔터 횟수(액추에이션 카운트)는 카메라의 기계식 셔터가 작동한 총 횟수입니다. 기계식 노출마다 1씩 증가하며 RAW 파일의 EXIF 메타데이터에 저장됩니다.'},
+  {q:'중고 카메라의 적정 셔터 횟수는?',a:'소비자용 카메라(Canon R6, Nikon Z6 II, Sony A7 IV)는 보통 15만~30만 회로 평가됩니다. 프로용 바디(Nikon Z9, Canon EOS-1D X III, Sony A9 III)는 40만~50만 회 이상입니다. 정격 수명의 20~30% 미만이면 사용량이 적다고 봅니다.'},
+  {q:'셔터 횟수가 중고 가격에 영향을 미치나요?',a:'네. 횟수가 낮을수록 셔터 막의 마모가 적다는 의미입니다. 중고 카메라 구매자들은 잔여 수명 추정 및 가격 협상을 위해 구매 전 확인하는 것이 일반적입니다.'},
+  {q:'셔터 횟수를 초기화하거나 조작할 수 있나요?',a:'셔터 교체 후 서비스 센터에서 초기화할 수 있지만 드문 일입니다. EXIF 값만 덮어쓰는 도구는 카메라 내부의 하드웨어 카운터를 변경하지 않습니다. 구매 시 스크린샷이 아닌 원본 RAW 파일로 반드시 확인하세요.'},
+  {q:'전자 셔터는 횟수에 포함되나요?',a:'아니요. 전자 셔터(무음 셔터)는 기계식 막을 완전히 우회하므로 카운트되지 않습니다. 기계식 셔터와 EFCS(전자식 선막) 노출만 횟수를 증가시킵니다.'},
+  {q:'Olympus나 Panasonic에서 셔터 횟수가 표시되지 않는 이유는?',a:'대부분의 Olympus(OM System)와 Panasonic Lumix 카메라는 ORF 또는 RW2 파일 메타데이터에 셔터 카운터를 기록하지 않습니다. Olympus/OM System 바디는 카메라 메뉴에서 확인 가능하며, Panasonic은 이 값을 전혀 제공하지 않습니다.'},
+  {q:'지원하는 파일 형식은?',a:'Canon CR3·CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, DNG, JPEG. JPEG는 EXIF에 셔터 횟수를 기록하는 카메라(주로 Nikon과 일부 Sony 모델)만 지원됩니다.'},
+  {q:'파일이 어딘가에 업로드되나요?',a:'아니요. 모든 처리는 JavaScript를 통해 브라우저 내에서만 이루어집니다. 파일 데이터, 메타데이터, 개인 정보는 어떤 서버에도 전송되지 않습니다.'},
+  {q:'인기 카메라의 셔터 수명은?',a:'Canon R5/R6: 30만 회 · Canon R5 II/R6 II: 50만 회 · Nikon Z6 III: 40만 회 · Nikon Z8/Z9: 50만 회 · Sony A7R V/A9 III: 50만 회 · Fujifilm X-T5: 30만 회 · Sony A7 IV: 15만 회.'},
+  {q:'여러 카메라를 동시에 확인할 수 있나요?',a:'네. 다른 카메라의 파일을 동시에 드래그하세요. 각 파일은 독립적으로 처리되며 결과는 테이블의 별도 행으로 표시됩니다.'}]},
+tr:{title:'Sık sorulan sorular',items:[
+  {q:'Obtüratör sayısı nedir?',a:'Obtüratör sayısı (aktüasyon sayısı), bir kameranın mekanik obtüratörünün toplam tetiklenme sayısıdır. Her mekanik pozlamada bir artar ve RAW dosyalarının EXIF meta verilerinde saklanır.'},
+  {q:'İkinci el kamera için iyi bir obtüratör sayısı nedir?',a:'Tüketici kameraları (Canon R6, Nikon Z6 II, Sony A7 IV) genellikle 150.000–300.000 aktüasyon için değerlendirilir. Profesyonel gövdeler (Nikon Z9, Canon EOS-1D X III, Sony A9 III) 400.000–500.000+ değerlerine ulaşır. Nominal ömrün %20–30\'unun altındaki bir sayı düşük kullanım olarak kabul edilir.'},
+  {q:'Obtüratör sayısı yeniden satış değerini etkiler mi?',a:'Evet. Daha düşük bir sayı, obtüratör perdesinde daha az aşınma anlamına gelir. İkinci el kamera alıcıları, kalan ömrü tahmin etmek ve fiyat pazarlığı yapmak için satın almadan önce bunu kontrol eder.'},
+  {q:'Obtüratör sayısı sıfırlanabilir veya taklit edilebilir mi?',a:'Servis merkezleri obtüratör değişiminin ardından sayacı sıfırlayabilir, ancak bu nadirdir. Yalnızca EXIF değerini yazan araçlar kameradaki donanım sayacını değiştirmez. Satın alırken ekran görüntüsü yerine her zaman orijinal RAW dosyalarından doğrulayın.'},
+  {q:'Elektronik obtüratör sayıma dahil midir?',a:'Hayır. Elektronik obtüratör (sessiz mod), mekanik perdeyi tamamen atlar; bu çekimler sayılmaz. Yalnızca mekanik ve EFCS (elektronik ön perde) pozlamalar sayacı artırır.'},
+  {q:'Olympus veya Panasonic\'te neden obtüratör sayısı gösterilmiyor?',a:'Çoğu Olympus (OM System) ve Panasonic Lumix kamera, obtüratör sayacını ORF veya RW2 dosya meta verilerine yazmaz. Olympus/OM System gövdelerinde sayı kamera menüsünden görülebilir; Panasonic bu değeri hiç sunmamaktadır.'},
+  {q:'Hangi dosya biçimleri destekleniyor?',a:'Canon CR3 ve CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, DNG ve JPEG. JPEG desteği yalnızca EXIF\'e obtüratör sayısını gömen kameralarla sınırlıdır (ağırlıklı olarak Nikon ve bazı Sony modelleri).'},
+  {q:'Dosyam bir yere yükleniyor mu?',a:'Hayır. Tüm işleme, tarayıcınızda yalnızca JavaScript aracılığıyla çalışır. Hiçbir dosya verisi, meta veri veya kişisel bilgi hiçbir sunucuya gönderilmez.'},
+  {q:'Popüler kameraların obtüratör ömrü nedir?',a:'Canon R5/R6: 300.000 · Canon R5 II/R6 II: 500.000 · Nikon Z6 III: 400.000 · Nikon Z8/Z9: 500.000 · Sony A7R V/A9 III: 500.000 · Fujifilm X-T5: 300.000 · Sony A7 IV: 150.000.'},
+  {q:'Birden fazla kamerayı aynı anda kontrol edebilir miyim?',a:'Evet. Farklı kameralardan dosyaları aynı anda bırakın — her dosya bağımsız olarak işlenir ve sonuçlar tabloda ayrı satırlar olarak görüntülenir.'}]},
+uk:{title:'Часті запитання',items:[
+  {q:'Що таке лічильник затвора?',a:'Лічильник затвора (actuation count) — це загальна кількість спрацювань механічного затвора камери. Він збільшується на одиницю при кожній механічній експозиції та зберігається в EXIF-метаданих RAW-файлів.'},
+  {q:'Який хороший лічильник затвора для вживаної камери?',a:'Споживчі камери (Canon R6, Nikon Z6 II, Sony A7 IV) розраховані на 150 000–300 000 спрацювань. Профійні тіла (Nikon Z9, Canon EOS-1D X III, Sony A9 III) досягають 400 000–500 000+. Лічильник нижче 20–30% від номінального ресурсу вважається низьким.'},
+  {q:'Чи впливає лічильник на вартість при перепродажу?',a:'Так. Нижче значення означає менший знос шторки затвора. Покупці вживаних камер стандартно перевіряють його перед покупкою.'},
+  {q:'Чи можна скинути або підробити лічильник?',a:'Сервісні центри можуть скинути лічильник після заміни затвора, але це рідкість. Інструменти, що перезаписують лише значення EXIF, не змінюють апаратний лічильник у камері. При покупці завжди перевіряйте з оригінальних RAW-файлів.'},
+  {q:'Чи зараховується електронний затвор?',a:'Ні. Електронний затвор (беззвучний режим) повністю обходить механічну шторку, тому такі знімки не рахуються. Лічильник збільшується лише при механічній та EFCS-експозиції.'},
+  {q:'Чому мій Olympus або Panasonic не показує лічильник?',a:'Більшість камер Olympus (OM System) і Panasonic Lumix не записують лічильник затвора в метадані ORF або RW2. На тілах Olympus/OM System значення доступне у меню камери; Panasonic взагалі не надає це значення.'},
+  {q:'Які формати файлів підтримуються?',a:'Canon CR3 і CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, DNG і JPEG. Підтримка JPEG обмежена камерами, що вбудовують лічильник в EXIF (переважно Nikon і окремі моделі Sony).'},
+  {q:'Чи завантажується мій файл кудись?',a:'Ні. Вся обробка відбувається лише у вашому браузері за допомогою JavaScript. Жодні дані файлу, метадані або особиста інформація ніколи не надсилаються на сервер.'},
+  {q:'Який ресурс затвора популярних камер?',a:'Canon R5/R6: 300 000 · Canon R5 II/R6 II: 500 000 · Nikon Z6 III: 400 000 · Nikon Z8/Z9: 500 000 · Sony A7R V/A9 III: 500 000 · Fujifilm X-T5: 300 000 · Sony A7 IV: 150 000.'},
+  {q:'Чи можна перевірити кілька камер одночасно?',a:'Так. Перетягніть файли з різних камер одночасно — кожен файл обробляється незалежно, а результати відображаються як окремі рядки в таблиці.'}]},
+ar:{title:'الأسئلة الشائعة',items:[
+  {q:'ما هو عداد الغالق؟',a:'عداد الغالق (actuation count) هو إجمالي عدد مرات تشغيل الغالق الميكانيكي للكاميرا. يزيد بمقدار واحد مع كل تعريض ميكانيكي ويُخزَّن في بيانات EXIF لملفات RAW.'},
+  {q:'ما هو عداد الغالق الجيد لكاميرا مستعملة؟',a:'الكاميرات الاستهلاكية (Canon R6، Nikon Z6 II، Sony A7 IV) مصنفة لـ150,000–300,000 تشغيل. الأجسام الاحترافية (Nikon Z9، Canon EOS-1D X III، Sony A9 III) تصل إلى 400,000–500,000+. العدد الأقل من 20–30% من العمر الافتراضي يُعدّ منخفضًا.'},
+  {q:'هل يؤثر عداد الغالق على قيمة إعادة البيع؟',a:'نعم. العدد الأقل يعني تآكلًا أقل في ستارة الغالق. يحرص مشترو الكاميرات المستعملة على التحقق منه قبل الشراء.'},
+  {q:'هل يمكن إعادة ضبط العداد أو تزويره؟',a:'يمكن لمراكز الخدمة إعادة ضبط العداد بعد استبدال الغالق، لكن ذلك نادر. الأدوات التي تُعيد كتابة قيمة EXIF فقط لا تغيّر العداد الصلب داخل الكاميرا. تحقق دائمًا من ملفات RAW الأصلية.'},
+  {q:'هل يُحتسب الغالق الإلكتروني ضمن العداد؟',a:'لا. الغالق الإلكتروني (الوضع الصامت) يتجاوز الستارة الميكانيكية كليًا، لذا لا تُحتسب هذه الصور. العداد يزيد فقط عند استخدام الغالق الميكانيكي أو EFCS.'},
+  {q:'لماذا لا يظهر عداد الغالق لكاميرا Olympus أو Panasonic؟',a:'معظم كاميرات Olympus (OM System) و Panasonic Lumix لا تكتب العداد في بيانات ORF أو RW2. في أجسام Olympus/OM System يمكن الاطلاع عليه من قائمة الكاميرا؛ أما Panasonic فلا تُتيح هذه القيمة إطلاقًا.'},
+  {q:'ما تنسيقات الملفات المدعومة؟',a:'Canon CR3 و CR2 وNikon NEF وSony ARW وFujifilm RAF وOlympus ORF وPanasonic RW2 وDNG وJPEG. دعم JPEG محدود بالكاميرات التي تُضمّن العداد في EXIF (Nikon بشكل رئيسي وبعض موديلات Sony).'},
+  {q:'هل يُرفع ملفي إلى أي مكان؟',a:'لا. تتم جميع المعالجات في متصفحك عبر JavaScript. لا تُرسَل أي بيانات ملفات أو معلومات شخصية إلى أي خادم.'},
+  {q:'ما هو عمر الغالق المُقدَّر للكاميرات الشائعة؟',a:'Canon R5/R6: 300,000 · Canon R5 II/R6 II: 500,000 · Nikon Z6 III: 400,000 · Nikon Z8/Z9: 500,000 · Sony A7R V/A9 III: 500,000 · Fujifilm X-T5: 300,000 · Sony A7 IV: 150,000.'},
+  {q:'هل يمكنني فحص كاميرات متعددة دفعةً واحدة؟',a:'نعم. أفلت ملفات من كاميرات مختلفة في وقت واحد — تتم معالجة كل ملف باستقلالية وتظهر النتائج كصفوف منفصلة في الجدول.'}]}
+};
+function buildFaq(code){
+  const f=FAQ[code]||FAQ.en;
+  const sec=document.getElementById('faqSection');
+  if(!sec)return;
+  sec.innerHTML='<h4>'+f.title+'</h4>'+f.items.map(({q,a})=>'<p><strong>'+q+'</strong> '+a+'</p>').join('');
+}
+
 // Maps language code → ISO 3166-1 alpha-2 country code for flagcdn.com
 const LANG_CC={en:'gb',zh:'cn',hi:'in',es:'es',fr:'fr',ar:'sa',bn:'bd',pt:'br',ur:'pk',id:'id',de:'de',ja:'jp',te:'in',mr:'in',tr:'tr',ta:'in',vi:'vn',ko:'kr',it:'it',pl:'pl',uk:'ua',fa:'ir',ro:'ro',nl:'nl',hu:'hu',el:'gr',cz:'cz',sv:'se',ms:'my',th:'th',tl:'ph',no:'no',da:'dk',fi:'fi',sk:'sk',bg:'bg',hr:'hr',sr:'rs',ca:'es',he:'il',lt:'lt',lv:'lv',et:'ee',sw:'ke',af:'za',sq:'al',sl:'si',az:'az',kk:'kz'};
 function flagImg(code,w,h){const cc=LANG_CC[code]||'un';return `<img src="https://flagcdn.com/${w}x${h}/${cc}.png" width="${w}" height="${h}" alt="" style="border-radius:2px;vertical-align:middle;flex-shrink:0">`;}
@@ -1294,6 +1465,7 @@ function applyLang(code){
     el.classList.toggle('active',el.dataset.lang===code);
   });
   localStorage.setItem('__sc_lang',code);
+  buildFaq(code);
 }
 
 function setLang(code){
