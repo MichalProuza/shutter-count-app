@@ -18,7 +18,7 @@
 :root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
-header{text-align:center;margin-bottom:56px}
+header{text-align:center;margin-bottom:56px;position:relative}
 .logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;word-break:break-word;overflow-wrap:break-word;text-align:center}
 .logo span{color:var(--accent)}
 .subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
@@ -101,6 +101,16 @@ header{text-align:center;margin-bottom:56px}
 .seo-block p + p{margin-top:10px}
 .seo-block strong{color:var(--text)}
 @media(max-width:560px){.support-panel{flex-direction:column;align-items:stretch;text-align:center}.support-btn{width:100%}}
+.lang-switcher{position:absolute;top:0;right:0}
+.lang-btn{background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:6px;padding:5px 11px;font-family:var(--mono);font-size:.72rem;cursor:pointer;display:flex;align-items:center;gap:6px;transition:border-color .2s,color .2s;white-space:nowrap}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+.lang-menu{display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px;min-width:200px;max-height:360px;overflow-y:auto;z-index:1000;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.lang-menu.open{display:block}
+.lang-item{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:5px;cursor:pointer;font-size:.72rem;color:var(--muted);transition:background .15s,color .15s}
+.lang-item:hover{background:var(--border);color:var(--text)}
+.lang-item.active{color:var(--accent)}
+.lang-item-flag{width:22px;text-align:center;flex-shrink:0}
+@media(max-width:480px){.lang-btn{font-size:.65rem;padding:4px 8px}}
 </style>
 <script type="application/ld+json">
 {
@@ -201,14 +211,18 @@ header{text-align:center;margin-bottom:56px}
 </head>
 <body>
 <header>
+  <div class="lang-switcher">
+    <button class="lang-btn" id="langBtn" onclick="toggleLangMenu(event)"><span id="langBtnText">🌐 English</span> ▾</button>
+    <div class="lang-menu" id="langMenu"></div>
+  </div>
   <div class="logo">SHUTTER<span>COUNT</span></div>
-  <p class="subtitle">RAW EXIF Inspector — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic</p>
+  <p class="subtitle" data-i18n="subtitle">RAW EXIF Inspector — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic</p>
 </header>
 <div class="dropzone" id="dropzone">
   <input type="file" id="fileInput" accept=".cr2,.cr3,.nef,.arw,.raf,.orf,.rw2,.dng,.jpg,.jpeg" multiple>
   <span class="drop-icon">📷</span>
-  <div class="drop-title">Drop RAW files or folder here</div>
-  <div class="drop-sub">Processing runs locally in your browser — no files are uploaded</div>
+  <div class="drop-title" data-i18n="dropTitle">Drop RAW files or folder here</div>
+  <div class="drop-sub" data-i18n="dropSub">Processing runs locally in your browser — no files are uploaded</div>
   <div class="drop-formats">
     <span class="fmt-badge">CR3 (R6/R5/R3/R7)</span>
     <span class="fmt-badge">CR2</span>
@@ -222,10 +236,10 @@ header{text-align:center;margin-bottom:56px}
   </div>
 </div>
 <div class="drop-actions">
-  <button class="btn btn-sm" id="folderBtn" title="Select folder">📁 Open Folder</button>
+  <button class="btn btn-sm" id="folderBtn" title="Select folder">📁 <span data-i18n="openFolder">Open Folder</span></button>
   <input type="file" id="folderInput" webkitdirectory style="display:none" multiple>
   <div class="drop-sep"></div>
-  <span style="font-size:.7rem;color:var(--muted)">or drag & drop an entire folder</span>
+  <span style="font-size:.7rem;color:var(--muted)" data-i18n="orDrag">or drag & drop an entire folder</span>
 </div>
 <a class="promo" href="https://www.zoner.com/en/download" target="_blank" rel="noopener">
   <div class="promo-logo"><svg width="140" viewBox="0 0 15681 1911" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -253,13 +267,13 @@ header{text-align:center;margin-bottom:56px}
 </a>
 <div class="export-bar" id="exportBar">
   <span class="export-count" id="exportCount"></span>
-  <button class="btn btn-sm" onclick="clearResults()">✕ Clear</button>
-  <button class="btn btn-sm btn-accent" onclick="exportCSV()">↓ Export CSV</button>
+  <button class="btn btn-sm" onclick="clearResults()" data-i18n="clear">✕ Clear</button>
+  <button class="btn btn-sm btn-accent" onclick="exportCSV()" data-i18n="exportCsv">↓ Export CSV</button>
 </div>
-<div class="loader" id="loader"><div class="spinner"></div>PARSING DATA...</div>
+<div class="loader" id="loader"><div class="spinner"></div><span data-i18n="parsing">PARSING DATA...</span></div>
 <div id="results"></div>
 <div class="help">
-  <h3>Supported formats and data sources</h3>
+  <h3 data-i18n="helpTitle">Supported formats and data sources</h3>
   <strong>Canon CR3</strong> (R5, R6, R7, R8, R10…) — ISOBMFF container, path: <code>CTMD rec.8 → TIFF tag 0x000D</code>. ✅ Confirmed: R6II/R8/R50 → <code>0x0D29</code> (uint32), R5/R6/R3 → <code>0x0AF1</code> (uint32), R6III/R50V/R1 → <code>0x086D</code> (uint16, ImageCount). ⚠️ EOS RP/R/R7/R10: shutter count offset not yet known.
   <br><br>
   <strong>Canon CR2</strong> — ShutterCount in EXIF is available <em>only</em> for professional 1D/1Ds series bodies. Canon does not write it for consumer bodies (5D, 7D, 60D, 70D, 80D, Rebel/xxxD…) — it is a hardware counter readable only via USB PTP from the camera. For 1D/1Ds: MakerNote tag <code>0x93</code> (FileInfo). For 1DmkIII: tag <code>0x0d</code> (CameraInfo[0x176]).
@@ -279,10 +293,10 @@ header{text-align:center;margin-bottom:56px}
   <strong>Validation note for bundled samples</strong> — files in <code>Raws_small_truncated/</code> are only 32 KB snippets. They are enough for basic EXIF and many Nikon shutter counts, but some Canon CR3, Sony ARW and newer Nikon samples are cut before the shutter-count block or MakerNote payload.
 </div>
 <div class="tested">
-  <h3>Tested cameras and results</h3>
+  <h3 data-i18n="testedTitle">Tested cameras and results</h3>
   <div class="note" style="margin-bottom:14px">Full GitHub release validation on <code>Zoner_D</code> through <code>Zoner_D4</code> confirmed Nikon shutter-count extraction across modern Z bodies and a broad legacy range from D40/D50/D70 up to D850/D6, plus Nikon 1 J1/V1. Sony ARW was also confirmed on full samples for A1, A1 II, A6100/A6300/A6400/A6600, A6700, A7/A7 II/A7 III/A7 IV/A7C/A7CR, A7R III/IV/V, A7S, A7S III, A9/A9 II/A9 III and ZV-E10. Canon CR3 validation still confirms the known offsets for R5, R6, R6 Mark II, R8, R50 and R5 C; the 0x086D fallback is now limited to explicitly confirmed ImageCount-based bodies.</div>
   <table>
-    <thead><tr><th>Camera</th><th>Format</th><th>Shutter Count</th><th>Notes</th></tr></thead>
+    <thead><tr><th data-i18n="thCamera">Camera</th><th data-i18n="thFormat">Format</th><th data-i18n="thShutter">Shutter Count</th><th data-i18n="thNotes">Notes</th></tr></thead>
     <tbody>
     <tr><td class="brand">Canon</td><td colspan="3"></td></tr>
     <tr><td>EOS R8</td><td>CR3</td><td class="ok">&#10003; Yes</td><td class="note">Offset 0x0D29 (uint32), confirmed</td></tr>
@@ -357,10 +371,10 @@ header{text-align:center;margin-bottom:56px}
 </div>
 <div class="support-panel">
   <div class="support-copy">
-    <strong>Want to support the project?</strong>
-    If ShutterCount saved you time, you can help keep testing and camera support moving forward.
+    <strong data-i18n="supportTitle">Want to support the project?</strong>
+    <span data-i18n="supportBody">If ShutterCount saved you time, you can help keep testing and camera support moving forward.</span>
   </div>
-  <a class="support-btn" href="https://buymeacoffee.com/michalp" target="_blank" rel="noopener">Buy Me a Coffee</a>
+  <a class="support-btn" href="https://buymeacoffee.com/michalp" target="_blank" rel="noopener" data-i18n="buyCoffee">Buy Me a Coffee</a>
 </div>
 <div class="seo-block">
   <h3>Camera shutter count lookup — model-by-model reference</h3>
@@ -1044,7 +1058,8 @@ async function proc(file){
 function updateExportBar() {
   const n = allResults.length;
   exportBar.classList.toggle('visible', n > 0);
-  exportCount.textContent = `${n} file${n===1?'':'s'} processed`;
+  const t = TRANSLATIONS[_lang] || TRANSLATIONS.en;
+  exportCount.textContent = t.exportCountFn ? t.exportCountFn(n) : `${n} file${n===1?'':'s'} processed`;
 }
 
 function clearResults() {
@@ -1125,6 +1140,187 @@ function card(file,r,err){
   c.innerHTML=`<div class="card-header"><div class="card-filename">${esc(file.name)}</div><div class="card-size">${fmtSz(file.size)}</div></div><div class="card-body"><div class="field"><div class="field-label">Shutter Count</div>${sh}</div><div class="field"><div class="field-label">Shutter Life</div>${ph}</div>${rows}</div><div class="status-bar"><div class="status-dot ${dc}"></div>${dm}</div>`;
   rs.prepend(c);
 }
+
+// ── i18n ─────────────────────────────────────────────────────────────────────
+const LANGS=[
+  {code:'en',slug:'',flag:'🇬🇧',name:'English'},
+  {code:'zh',slug:'zh',flag:'🇨🇳',name:'中文'},
+  {code:'hi',slug:'hi',flag:'🇮🇳',name:'हिन्दी'},
+  {code:'es',slug:'es',flag:'🇪🇸',name:'Español'},
+  {code:'fr',slug:'fr',flag:'🇫🇷',name:'Français'},
+  {code:'ar',slug:'ar',flag:'🇸🇦',name:'العربية'},
+  {code:'bn',slug:'bn',flag:'🇧🇩',name:'বাংলা'},
+  {code:'pt',slug:'pt',flag:'🇧🇷',name:'Português'},
+  {code:'ru',slug:'ru',flag:'🇷🇺',name:'Русский'},
+  {code:'ur',slug:'ur',flag:'🇵🇰',name:'اردو'},
+  {code:'id',slug:'id',flag:'🇮🇩',name:'Bahasa Indonesia'},
+  {code:'de',slug:'de',flag:'🇩🇪',name:'Deutsch'},
+  {code:'ja',slug:'ja',flag:'🇯🇵',name:'日本語'},
+  {code:'te',slug:'te',flag:'🇮🇳',name:'తెలుగు'},
+  {code:'mr',slug:'mr',flag:'🇮🇳',name:'मराठी'},
+  {code:'tr',slug:'tr',flag:'🇹🇷',name:'Türkçe'},
+  {code:'ta',slug:'ta',flag:'🇮🇳',name:'தமிழ்'},
+  {code:'vi',slug:'vi',flag:'🇻🇳',name:'Tiếng Việt'},
+  {code:'ko',slug:'ko',flag:'🇰🇷',name:'한국어'},
+  {code:'it',slug:'it',flag:'🇮🇹',name:'Italiano'},
+  {code:'pl',slug:'pl',flag:'🇵🇱',name:'Polski'},
+  {code:'uk',slug:'uk',flag:'🇺🇦',name:'Українська'},
+  {code:'fa',slug:'fa',flag:'🇮🇷',name:'فارسی'},
+  {code:'ro',slug:'ro',flag:'🇷🇴',name:'Română'},
+  {code:'nl',slug:'nl',flag:'🇳🇱',name:'Nederlands'},
+  {code:'hu',slug:'hu',flag:'🇭🇺',name:'Magyar'},
+  {code:'el',slug:'el',flag:'🇬🇷',name:'Ελληνικά'},
+  {code:'cz',slug:'cz',flag:'🇨🇿',name:'Čeština'},
+  {code:'sv',slug:'sv',flag:'🇸🇪',name:'Svenska'},
+  {code:'ms',slug:'ms',flag:'🇲🇾',name:'Melayu'},
+  {code:'th',slug:'th',flag:'🇹🇭',name:'ภาษาไทย'},
+  {code:'tl',slug:'tl',flag:'🇵🇭',name:'Filipino'},
+  {code:'no',slug:'no',flag:'🇳🇴',name:'Norsk'},
+  {code:'da',slug:'da',flag:'🇩🇰',name:'Dansk'},
+  {code:'fi',slug:'fi',flag:'🇫🇮',name:'Suomi'},
+  {code:'sk',slug:'sk',flag:'🇸🇰',name:'Slovenčina'},
+  {code:'bg',slug:'bg',flag:'🇧🇬',name:'Български'},
+  {code:'hr',slug:'hr',flag:'🇭🇷',name:'Hrvatski'},
+  {code:'sr',slug:'sr',flag:'🇷🇸',name:'Српски'},
+  {code:'ca',slug:'ca',flag:'🏴',name:'Català'},
+  {code:'he',slug:'he',flag:'🇮🇱',name:'עברית'},
+  {code:'lt',slug:'lt',flag:'🇱🇹',name:'Lietuvių'},
+  {code:'lv',slug:'lv',flag:'🇱🇻',name:'Latviešu'},
+  {code:'et',slug:'et',flag:'🇪🇪',name:'Eesti'},
+  {code:'sw',slug:'sw',flag:'🇰🇪',name:'Kiswahili'},
+  {code:'af',slug:'af',flag:'🇿🇦',name:'Afrikaans'},
+  {code:'sq',slug:'sq',flag:'🇦🇱',name:'Shqip'},
+  {code:'sl',slug:'sl',flag:'🇸🇮',name:'Slovenščina'},
+  {code:'az',slug:'az',flag:'🇦🇿',name:'Azərbaycan'},
+  {code:'kk',slug:'kk',flag:'🇰🇿',name:'Қазақша'},
+];
+
+const TRANSLATIONS={
+  en:{subtitle:'RAW EXIF Inspector — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Drop RAW files or folder here',dropSub:'Processing runs locally in your browser — no files are uploaded',openFolder:'Open Folder',orDrag:'or drag & drop an entire folder',clear:'✕ Clear',exportCsv:'↓ Export CSV',parsing:'PARSING DATA...',supportTitle:'Want to support the project?',supportBody:'If ShutterCount saved you time, you can help keep testing and camera support moving forward.',buyCoffee:'Buy Me a Coffee',helpTitle:'Supported formats and data sources',testedTitle:'Tested cameras and results',thCamera:'Camera',thFormat:'Format',thShutter:'Shutter Count',thNotes:'Notes',exportCountFn:(n)=>`${n} file${n===1?'':'s'} processed`},
+  zh:{subtitle:'RAW EXIF 查看器 — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'拖放 RAW 文件或文件夹到此处',dropSub:'在您的浏览器中本地处理 — 不上传任何文件',openFolder:'打开文件夹',orDrag:'或拖放整个文件夹',clear:'✕ 清除',exportCsv:'↓ 导出 CSV',parsing:'正在解析数据...',supportTitle:'想要支持这个项目吗？',supportBody:'如果 ShutterCount 为您节省了时间，您可以帮助推进测试和相机支持。',buyCoffee:'请我喝咖啡',helpTitle:'支持的格式和数据来源',testedTitle:'已测试的相机和结果',thCamera:'相机',thFormat:'格式',thShutter:'快门次数',thNotes:'备注',exportCountFn:(n)=>`已处理 ${n} 个文件`},
+  hi:{subtitle:'RAW EXIF इंस्पेक्टर — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'यहाँ RAW फ़ाइलें या फ़ोल्डर छोड़ें',dropSub:'आपके ब्राउज़र में स्थानीय रूप से प्रोसेस होता है — कोई फ़ाइल अपलोड नहीं होती',openFolder:'फ़ोल्डर खोलें',orDrag:'या पूरे फ़ोल्डर को ड्रैग & ड्रॉप करें',clear:'✕ साफ़ करें',exportCsv:'↓ CSV निर्यात करें',parsing:'डेटा पार्स हो रहा है...',supportTitle:'प्रोजेक्ट का समर्थन करना चाहते हैं?',supportBody:'यदि ShutterCount ने आपका समय बचाया तो आप परीक्षण और कैमरा समर्थन को आगे बढ़ाने में मदद कर सकते हैं।',buyCoffee:'कॉफ़ी पिलाएं',helpTitle:'समर्थित फ़ॉर्मेट और डेटा स्रोत',testedTitle:'परीक्षण किए गए कैमरे और परिणाम',thCamera:'कैमरा',thFormat:'फ़ॉर्मेट',thShutter:'शटर काउंट',thNotes:'नोट्स',exportCountFn:(n)=>`${n} फ़ाइलें प्रोसेस हुईं`},
+  es:{subtitle:'Inspector EXIF RAW — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Arrastra archivos RAW o carpeta aquí',dropSub:'El procesamiento se realiza localmente en tu navegador — no se sube ningún archivo',openFolder:'Abrir carpeta',orDrag:'o arrastra y suelta una carpeta completa',clear:'✕ Borrar',exportCsv:'↓ Exportar CSV',parsing:'ANALIZANDO DATOS...',supportTitle:'¿Quieres apoyar el proyecto?',supportBody:'Si ShutterCount te ahorró tiempo, puedes ayudar a mantener las pruebas y el soporte de cámaras.',buyCoffee:'Invítame un café',helpTitle:'Formatos compatibles y fuentes de datos',testedTitle:'Cámaras probadas y resultados',thCamera:'Cámara',thFormat:'Formato',thShutter:'Contador de disparos',thNotes:'Notas',exportCountFn:(n)=>`${n} archivo${n===1?'':'s'} procesado${n===1?'':'s'}`},
+  fr:{subtitle:'Inspecteur EXIF RAW — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Déposez des fichiers RAW ou un dossier ici',dropSub:"Le traitement s'effectue localement dans votre navigateur — aucun fichier n'est envoyé",openFolder:'Ouvrir un dossier',orDrag:'ou glissez-déposez un dossier entier',clear:'✕ Effacer',exportCsv:'↓ Exporter CSV',parsing:'ANALYSE EN COURS...',supportTitle:'Vous souhaitez soutenir le projet ?',supportBody:'Si ShutterCount vous a fait gagner du temps, vous pouvez aider à poursuivre les tests et le support des appareils.',buyCoffee:'Offrez-moi un café',helpTitle:'Formats pris en charge et sources de données',testedTitle:'Appareils testés et résultats',thCamera:'Appareil',thFormat:'Format',thShutter:'Compteur de déclenchements',thNotes:'Notes',exportCountFn:(n)=>`${n} fichier${n===1?'':'s'} traité${n===1?'':'s'}`},
+  ar:{subtitle:'فاحص EXIF للصور الخام — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'اسحب ملفات RAW أو مجلدًا هنا',dropSub:'المعالجة تتم محليًا في متصفحك — لا يتم رفع أي ملف',openFolder:'فتح مجلد',orDrag:'أو اسحب وأفلت مجلدًا كاملًا',clear:'✕ مسح',exportCsv:'↓ تصدير CSV',parsing:'جارٍ تحليل البيانات...',supportTitle:'هل تريد دعم المشروع؟',supportBody:'إذا وفّر ShutterCount وقتك، يمكنك المساعدة في الاستمرار في الاختبار ودعم الكاميرات.',buyCoffee:'اشترِ لي قهوة',helpTitle:'الصيغ المدعومة ومصادر البيانات',testedTitle:'الكاميرات المختبرة والنتائج',thCamera:'الكاميرا',thFormat:'الصيغة',thShutter:'عداد الغالق',thNotes:'ملاحظات',exportCountFn:(n)=>`تمت معالجة ${n} ملف`},
+  bn:{subtitle:'RAW EXIF পরিদর্শক — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'RAW ফাইল বা ফোল্ডার এখানে ছেড়ে দিন',dropSub:'আপনার ব্রাউজারে স্থানীয়ভাবে প্রক্রিয়া করা হয় — কোনো ফাইল আপলোড হয় না',openFolder:'ফোল্ডার খুলুন',orDrag:'বা পুরো ফোল্ডার টেনে আনুন',clear:'✕ মুছুন',exportCsv:'↓ CSV রপ্তানি করুন',parsing:'ডেটা বিশ্লেষণ হচ্ছে...',supportTitle:'প্রজেক্ট সমর্থন করতে চান?',supportBody:'ShutterCount যদি আপনার সময় বাঁচিয়ে থাকে, তাহলে পরীক্ষা ও ক্যামেরা সমর্থন এগিয়ে নিতে সাহায্য করুন।',buyCoffee:'আমাকে কফি কিনুন',helpTitle:'সমর্থিত ফরম্যাট ও ডেটা উৎস',testedTitle:'পরীক্ষিত ক্যামেরা ও ফলাফল',thCamera:'ক্যামেরা',thFormat:'ফরম্যাট',thShutter:'শাটার কাউন্ট',thNotes:'নোট',exportCountFn:(n)=>`${n}টি ফাইল প্রক্রিয়া হয়েছে`},
+  pt:{subtitle:'Inspetor EXIF RAW — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Solte arquivos RAW ou pasta aqui',dropSub:'O processamento é feito localmente no seu navegador — nenhum arquivo é enviado',openFolder:'Abrir Pasta',orDrag:'ou arraste e solte uma pasta inteira',clear:'✕ Limpar',exportCsv:'↓ Exportar CSV',parsing:'PROCESSANDO DADOS...',supportTitle:'Quer apoiar o projeto?',supportBody:'Se o ShutterCount economizou seu tempo, você pode ajudar a continuar os testes e o suporte a câmeras.',buyCoffee:'Me pague um café',helpTitle:'Formatos suportados e fontes de dados',testedTitle:'Câmeras testadas e resultados',thCamera:'Câmera',thFormat:'Formato',thShutter:'Contador de disparos',thNotes:'Notas',exportCountFn:(n)=>`${n} arquivo${n===1?'':'s'} processado${n===1?'':'s'}`},
+  ru:{subtitle:'RAW EXIF Инспектор — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Перетащите RAW-файлы или папку сюда',dropSub:'Обработка выполняется локально в вашем браузере — файлы не загружаются',openFolder:'Открыть папку',orDrag:'или перетащите целую папку',clear:'✕ Очистить',exportCsv:'↓ Экспорт CSV',parsing:'ОБРАБОТКА ДАННЫХ...',supportTitle:'Хотите поддержать проект?',supportBody:'Если ShutterCount сэкономил вам время, вы можете помочь продолжать тестирование и поддержку камер.',buyCoffee:'Угостить кофе',helpTitle:'Поддерживаемые форматы и источники данных',testedTitle:'Протестированные камеры и результаты',thCamera:'Камера',thFormat:'Формат',thShutter:'Счётчик затвора',thNotes:'Примечания',exportCountFn:(n)=>`Обработано ${n} файлов`},
+  ur:{subtitle:'RAW EXIF انسپکٹر — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'یہاں RAW فائلیں یا فولڈر ڈراپ کریں',dropSub:'پروسیسنگ آپ کے براؤزر میں مقامی طور پر چلتی ہے — کوئی فائل اپلوڈ نہیں ہوتی',openFolder:'فولڈر کھولیں',orDrag:'یا پورا فولڈر ڈریگ اور ڈراپ کریں',clear:'✕ صاف کریں',exportCsv:'↓ CSV برآمد کریں',parsing:'ڈیٹا پارس ہو رہا ہے...',supportTitle:'پروجیکٹ کی حمایت کرنا چاہتے ہیں؟',supportBody:'اگر ShutterCount نے آپ کا وقت بچایا تو آپ ٹیسٹنگ اور کیمرہ سپورٹ جاری رکھنے میں مدد کر سکتے ہیں۔',buyCoffee:'مجھے کافی پلائیں',helpTitle:'سپورٹ شدہ فارمیٹس اور ڈیٹا ذرائع',testedTitle:'آزمائے گئے کیمرے اور نتائج',thCamera:'کیمرہ',thFormat:'فارمیٹ',thShutter:'شٹر کاؤنٹ',thNotes:'نوٹس',exportCountFn:(n)=>`${n} فائلیں پروسیس ہوئیں`},
+  id:{subtitle:'Pemeriksa EXIF RAW — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Jatuhkan file RAW atau folder di sini',dropSub:'Pemrosesan berjalan secara lokal di browser Anda — tidak ada file yang diunggah',openFolder:'Buka Folder',orDrag:'atau seret dan lepaskan seluruh folder',clear:'✕ Hapus',exportCsv:'↓ Ekspor CSV',parsing:'MENGURAI DATA...',supportTitle:'Ingin mendukung proyek ini?',supportBody:'Jika ShutterCount menghemat waktu Anda, Anda dapat membantu melanjutkan pengujian dan dukungan kamera.',buyCoffee:'Traktir Saya Kopi',helpTitle:'Format yang didukung dan sumber data',testedTitle:'Kamera yang diuji dan hasilnya',thCamera:'Kamera',thFormat:'Format',thShutter:'Jumlah Rana',thNotes:'Catatan',exportCountFn:(n)=>`${n} file diproses`},
+  de:{subtitle:'RAW EXIF Inspektor — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'RAW-Dateien oder Ordner hier ablegen',dropSub:'Verarbeitung läuft lokal in Ihrem Browser — keine Datei wird hochgeladen',openFolder:'Ordner öffnen',orDrag:'oder ganzen Ordner hierher ziehen',clear:'✕ Löschen',exportCsv:'↓ CSV exportieren',parsing:'DATEN WERDEN ANALYSIERT...',supportTitle:'Möchten Sie das Projekt unterstützen?',supportBody:'Wenn ShutterCount Ihnen Zeit gespart hat, können Sie helfen, Tests und Kamera-Support voranzutreiben.',buyCoffee:'Spendiere mir einen Kaffee',helpTitle:'Unterstützte Formate und Datenquellen',testedTitle:'Getestete Kameras und Ergebnisse',thCamera:'Kamera',thFormat:'Format',thShutter:'Auslösezähler',thNotes:'Anmerkungen',exportCountFn:(n)=>`${n} Datei${n===1?'':'en'} verarbeitet`},
+  ja:{subtitle:'RAW EXIFインスペクター — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'RAWファイルまたはフォルダをここにドロップ',dropSub:'ブラウザ内でローカル処理 — ファイルはアップロードされません',openFolder:'フォルダを開く',orDrag:'またはフォルダ全体をドラッグ＆ドロップ',clear:'✕ クリア',exportCsv:'↓ CSVエクスポート',parsing:'データを解析中...',supportTitle:'プロジェクトをサポートしませんか？',supportBody:'ShutterCountが役に立ったなら、テストとカメラサポートの継続を支援していただけると嬉しいです。',buyCoffee:'コーヒーを奢ってください',helpTitle:'サポートされる形式とデータソース',testedTitle:'テスト済みカメラと結果',thCamera:'カメラ',thFormat:'フォーマット',thShutter:'シャッター回数',thNotes:'備考',exportCountFn:(n)=>`${n}ファイル処理済み`},
+  te:{subtitle:'RAW EXIF పరిశీలకుడు — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'RAW ఫైళ్ళు లేదా ఫోల్డర్ ఇక్కడ వదలండి',dropSub:'మీ బ్రౌజర్‌లో స్థానికంగా ప్రాసెస్ అవుతుంది — ఫైళ్ళు అప్‌లోడ్ కావు',openFolder:'ఫోల్డర్ తెరవండి',orDrag:'లేదా మొత్తం ఫోల్డర్ డ్రాగ్ & డ్రాప్ చేయండి',clear:'✕ తొలగించు',exportCsv:'↓ CSV ఎగుమతి',parsing:'డేటా విశ్లేషణ...',supportTitle:'ప్రాజెక్ట్‌కు మద్దతు ఇవ్వాలనుకుంటున్నారా?',supportBody:'ShutterCount మీ సమయాన్ని ఆదా చేసింది అంటే, పరీక్షలు మరియు కెమెరా మద్దతు కొనసాగించడంలో సహాయపడండి.',buyCoffee:'నాకు కాఫీ కొనండి',helpTitle:'మద్దతు ఉన్న ఫార్మాట్‌లు మరియు డేటా వనరులు',testedTitle:'పరీక్షించిన కెమెరాలు మరియు ఫలితాలు',thCamera:'కెమెరా',thFormat:'ఫార్మాట్',thShutter:'షట్టర్ కౌంట్',thNotes:'గమనికలు',exportCountFn:(n)=>`${n} ఫైళ్ళు ప్రాసెస్ అయ్యాయి`},
+  mr:{subtitle:'RAW EXIF तपासक — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'RAW फाइल्स किंवा फोल्डर येथे टाका',dropSub:'तुमच्या ब्राउझरमध्ये स्थानिक पातळीवर प्रक्रिया होते — कोणतीही फाइल अपलोड होत नाही',openFolder:'फोल्डर उघडा',orDrag:'किंवा संपूर्ण फोल्डर ड्रॅग & ड्रॉप करा',clear:'✕ साफ करा',exportCsv:'↓ CSV निर्यात करा',parsing:'डेटा विश्लेषण...',supportTitle:'प्रकल्पाला पाठिंबा द्यायचा आहे का?',supportBody:'ShutterCount ने तुमचा वेळ वाचवला असल्यास, चाचणी आणि कॅमेरा समर्थन पुढे नेण्यात मदत करा.',buyCoffee:'मला कॉफी घ्या',helpTitle:'समर्थित स्वरूप आणि डेटा स्रोत',testedTitle:'चाचणी केलेले कॅमेरे आणि निकाल',thCamera:'कॅमेरा',thFormat:'स्वरूप',thShutter:'शटर काउंट',thNotes:'नोंदी',exportCountFn:(n)=>`${n} फाइल्स प्रक्रिया झाल्या`},
+  tr:{subtitle:'RAW EXIF Denetçisi — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'RAW dosyalarını veya klasörü buraya bırakın',dropSub:'İşlem tarayıcınızda yerel olarak gerçekleşir — hiçbir dosya yüklenmez',openFolder:'Klasör Aç',orDrag:'veya tüm klasörü sürükleyip bırakın',clear:'✕ Temizle',exportCsv:'↓ CSV Dışa Aktar',parsing:'VERİ İŞLENİYOR...',supportTitle:'Projeyi desteklemek ister misiniz?',supportBody:'ShutterCount size zaman kazandırdıysa, testlerin ve kamera desteğinin devamına yardımcı olabilirsiniz.',buyCoffee:'Bana Kahve Ismarla',helpTitle:'Desteklenen formatlar ve veri kaynakları',testedTitle:'Test edilen kameralar ve sonuçlar',thCamera:'Kamera',thFormat:'Format',thShutter:'Perde Sayısı',thNotes:'Notlar',exportCountFn:(n)=>`${n} dosya işlendi`},
+  ta:{subtitle:'RAW EXIF ஆய்வாளர் — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'RAW கோப்புகள் அல்லது கோப்புறையை இங்கே இழுத்து விடுங்கள்',dropSub:'உங்கள் உலாவியில் உள்ளூரில் செயல்படுகிறது — கோப்புகள் பதிவேற்றப்படுவதில்லை',openFolder:'கோப்புறையை திறக்கவும்',orDrag:'அல்லது முழு கோப்புறையையும் இழுத்து விடுங்கள்',clear:'✕ அழி',exportCsv:'↓ CSV ஏற்றுமதி',parsing:'தரவு பகுப்பாய்வு...',supportTitle:'திட்டத்தை ஆதரிக்க விரும்புகிறீர்களா?',supportBody:'ShutterCount உங்கள் நேரத்தை மிச்சப்படுத்தியிருந்தால், சோதனை மற்றும் கேமரா ஆதரவை தொடர உதவலாம்.',buyCoffee:'எனக்கு காபி வாங்கிக்கொடுங்கள்',helpTitle:'ஆதரிக்கப்படும் வடிவங்கள் மற்றும் தரவு மூலங்கள்',testedTitle:'சோதிக்கப்பட்ட கேமராக்கள் மற்றும் முடிவுகள்',thCamera:'கேமரா',thFormat:'வடிவம்',thShutter:'ஷட்டர் எண்ணிக்கை',thNotes:'குறிப்புகள்',exportCountFn:(n)=>`${n} கோப்புகள் செயல்படுத்தப்பட்டன`},
+  vi:{subtitle:'Trình kiểm tra EXIF RAW — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Thả file RAW hoặc thư mục vào đây',dropSub:'Xử lý chạy cục bộ trong trình duyệt của bạn — không có file nào được tải lên',openFolder:'Mở Thư Mục',orDrag:'hoặc kéo và thả toàn bộ thư mục',clear:'✕ Xóa',exportCsv:'↓ Xuất CSV',parsing:'ĐANG PHÂN TÍCH DỮ LIỆU...',supportTitle:'Muốn hỗ trợ dự án?',supportBody:'Nếu ShutterCount tiết kiệm thời gian cho bạn, bạn có thể giúp tiếp tục kiểm tra và hỗ trợ máy ảnh.',buyCoffee:'Mua Cà Phê Cho Tôi',helpTitle:'Các định dạng được hỗ trợ và nguồn dữ liệu',testedTitle:'Máy ảnh đã kiểm tra và kết quả',thCamera:'Máy ảnh',thFormat:'Định dạng',thShutter:'Số lần chụp',thNotes:'Ghi chú',exportCountFn:(n)=>`Đã xử lý ${n} file`},
+  ko:{subtitle:'RAW EXIF 검사기 — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'RAW 파일 또는 폴더를 여기에 놓으세요',dropSub:'브라우저에서 로컬로 처리됩니다 — 파일이 업로드되지 않습니다',openFolder:'폴더 열기',orDrag:'또는 전체 폴더를 드래그 앤 드롭하세요',clear:'✕ 지우기',exportCsv:'↓ CSV 내보내기',parsing:'데이터 분석 중...',supportTitle:'프로젝트를 지원하고 싶으신가요?',supportBody:'ShutterCount가 시간을 절약해줬다면, 테스트와 카메라 지원을 계속하는 데 도움을 줄 수 있습니다.',buyCoffee:'커피 사주기',helpTitle:'지원 형식 및 데이터 소스',testedTitle:'테스트된 카메라 및 결과',thCamera:'카메라',thFormat:'형식',thShutter:'셔터 횟수',thNotes:'참고사항',exportCountFn:(n)=>`${n}개 파일 처리됨`},
+  it:{subtitle:'Ispettore EXIF RAW — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Trascina file RAW o cartella qui',dropSub:"L'elaborazione avviene localmente nel tuo browser — nessun file viene caricato",openFolder:'Apri Cartella',orDrag:"o trascina e rilascia un'intera cartella",clear:'✕ Cancella',exportCsv:'↓ Esporta CSV',parsing:'ANALISI DATI IN CORSO...',supportTitle:'Vuoi supportare il progetto?',supportBody:'Se ShutterCount ti ha fatto risparmiare tempo, puoi aiutare a portare avanti test e supporto alle fotocamere.',buyCoffee:'Offrimi un caffè',helpTitle:'Formati supportati e fonti dati',testedTitle:'Fotocamere testate e risultati',thCamera:'Fotocamera',thFormat:'Formato',thShutter:'Contatore scatti',thNotes:'Note',exportCountFn:(n)=>`${n} file elaborat${n===1?'o':'i'}`},
+  pl:{subtitle:'Inspektor EXIF RAW — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Upuść pliki RAW lub folder tutaj',dropSub:'Przetwarzanie odbywa się lokalnie w przeglądarce — żadne pliki nie są przesyłane',openFolder:'Otwórz Folder',orDrag:'lub przeciągnij i upuść cały folder',clear:'✕ Wyczyść',exportCsv:'↓ Eksport CSV',parsing:'PRZETWARZANIE DANYCH...',supportTitle:'Chcesz wesprzeć projekt?',supportBody:'Jeśli ShutterCount zaoszczędził Ci czas, możesz pomóc w kontynuowaniu testów i wsparcia kamer.',buyCoffee:'Postaw mi kawę',helpTitle:'Obsługiwane formaty i źródła danych',testedTitle:'Przetestowane aparaty i wyniki',thCamera:'Aparat',thFormat:'Format',thShutter:'Licznik migawki',thNotes:'Uwagi',exportCountFn:(n)=>`Przetworzono ${n} plik${n===1?'':'ów'}`},
+  uk:{subtitle:'RAW EXIF Інспектор — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Перетягніть RAW-файли або папку сюди',dropSub:'Обробка виконується локально у вашому браузері — файли не завантажуються',openFolder:'Відкрити папку',orDrag:'або перетягніть цілу папку',clear:'✕ Очистити',exportCsv:'↓ Експорт CSV',parsing:'ОБРОБКА ДАНИХ...',supportTitle:'Хочете підтримати проект?',supportBody:'Якщо ShutterCount заощадив вам час, ви можете допомогти просувати тестування та підтримку камер.',buyCoffee:'Пригости кавою',helpTitle:'Підтримувані формати та джерела даних',testedTitle:'Протестовані камери та результати',thCamera:'Камера',thFormat:'Формат',thShutter:'Лічильник затвора',thNotes:'Примітки',exportCountFn:(n)=>`Оброблено ${n} файлів`},
+  fa:{subtitle:'بازرس RAW EXIF — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'فایل‌های RAW یا پوشه را اینجا بیندازید',dropSub:'پردازش به صورت محلی در مرورگر شما انجام می‌شود — هیچ فایلی آپلود نمی‌شود',openFolder:'باز کردن پوشه',orDrag:'یا یک پوشه کامل را بکشید و رها کنید',clear:'✕ پاک کردن',exportCsv:'↓ خروجی CSV',parsing:'در حال پردازش داده‌ها...',supportTitle:'می‌خواهید از پروژه حمایت کنید؟',supportBody:'اگر ShutterCount وقت شما را ذخیره کرده، می‌توانید به ادامه آزمایش و پشتیبانی دوربین کمک کنید.',buyCoffee:'یک قهوه برایم بخرید',helpTitle:'فرمت‌های پشتیبانی‌شده و منابع داده',testedTitle:'دوربین‌های آزموده‌شده و نتایج',thCamera:'دوربین',thFormat:'فرمت',thShutter:'شمارنده شاتر',thNotes:'یادداشت‌ها',exportCountFn:(n)=>`${n} فایل پردازش شد`},
+  ro:{subtitle:'Inspector EXIF RAW — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Trageți fișiere RAW sau un folder aici',dropSub:'Procesarea rulează local în browserul dvs. — niciun fișier nu este încărcat',openFolder:'Deschide Folder',orDrag:'sau trageți și plasați un folder întreg',clear:'✕ Șterge',exportCsv:'↓ Exportă CSV',parsing:'SE PROCESEAZĂ DATE...',supportTitle:'Doriți să sprijiniți proiectul?',supportBody:'Dacă ShutterCount v-a economisit timp, puteți ajuta la continuarea testelor și suportului pentru camere.',buyCoffee:'Cumpărați-mi o cafea',helpTitle:'Formate acceptate și surse de date',testedTitle:'Camere testate și rezultate',thCamera:'Cameră',thFormat:'Format',thShutter:'Contor declanșator',thNotes:'Note',exportCountFn:(n)=>`${n} fișier${n===1?'':'e'} procesat${n===1?'':'e'}`},
+  nl:{subtitle:'RAW EXIF Inspector — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Sleep RAW-bestanden of map hier naartoe',dropSub:'Verwerking vindt lokaal plaats in uw browser — er worden geen bestanden geüpload',openFolder:'Map openen',orDrag:'of sleep een volledige map hierheen',clear:'✕ Wissen',exportCsv:'↓ CSV exporteren',parsing:'DATA VERWERKEN...',supportTitle:'Wilt u het project steunen?',supportBody:'Als ShutterCount u tijd heeft bespaard, kunt u helpen het testen en de camera-ondersteuning voort te zetten.',buyCoffee:'Trakteer me op koffie',helpTitle:'Ondersteunde indelingen en gegevensbronnen',testedTitle:"Geteste camera's en resultaten",thCamera:'Camera',thFormat:'Indeling',thShutter:'Sluiterteller',thNotes:'Opmerkingen',exportCountFn:(n)=>`${n} bestand${n===1?'':'en'} verwerkt`},
+  hu:{subtitle:'RAW EXIF Ellenőrző — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Húzzon ide RAW fájlokat vagy mappát',dropSub:'A feldolgozás helyileg fut a böngészőjében — nem tölt fel fájlokat',openFolder:'Mappa megnyitása',orDrag:'vagy húzzon ide egy teljes mappát',clear:'✕ Törlés',exportCsv:'↓ CSV exportálás',parsing:'ADATOK FELDOLGOZÁSA...',supportTitle:'Támogatná a projektet?',supportBody:'Ha a ShutterCount időt takarított meg, segíthet a tesztelés és a kamera-támogatás folytatásában.',buyCoffee:'Fizessen nekem egy kávét',helpTitle:'Támogatott formátumok és adatforrások',testedTitle:'Tesztelt kamerák és eredmények',thCamera:'Kamera',thFormat:'Formátum',thShutter:'Exponálásszámláló',thNotes:'Megjegyzések',exportCountFn:(n)=>`${n} fájl feldolgozva`},
+  el:{subtitle:'Επιθεωρητής RAW EXIF — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Αποθέστε αρχεία RAW ή φάκελο εδώ',dropSub:'Η επεξεργασία εκτελείται τοπικά στον περιηγητή σας — δεν ανεβαίνει κανένα αρχείο',openFolder:'Άνοιγμα Φακέλου',orDrag:'ή σύρετε και αποθέστε έναν ολόκληρο φάκελο',clear:'✕ Εκκαθάριση',exportCsv:'↓ Εξαγωγή CSV',parsing:'ΕΠΕΞΕΡΓΑΣΙΑ ΔΕΔΟΜΕΝΩΝ...',supportTitle:'Θέλετε να υποστηρίξετε το έργο;',supportBody:'Αν το ShutterCount εξοικονόμησε χρόνο, μπορείτε να βοηθήσετε στη συνέχιση των δοκιμών και υποστήριξης κάμερας.',buyCoffee:'Κεράστε με έναν καφέ',helpTitle:'Υποστηριζόμενες μορφές και πηγές δεδομένων',testedTitle:'Δοκιμασμένες κάμερες και αποτελέσματα',thCamera:'Κάμερα',thFormat:'Μορφή',thShutter:'Μετρητής κλείστρου',thNotes:'Σημειώσεις',exportCountFn:(n)=>`Επεξεργάστηκαν ${n} αρχεία`},
+  cz:{subtitle:'RAW EXIF Inspektor — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Sem přetáhněte RAW soubory nebo složku',dropSub:'Zpracování probíhá lokálně ve vašem prohlížeči — žádné soubory se nenahrávají',openFolder:'Otevřít složku',orDrag:'nebo přetáhněte celou složku',clear:'✕ Smazat',exportCsv:'↓ Export CSV',parsing:'ZPRACOVÁNÍ DAT...',supportTitle:'Chcete podpořit projekt?',supportBody:'Pokud vám ShutterCount ušetřil čas, můžete pomoci pokračovat v testování a podpoře fotoaparátů.',buyCoffee:'Dát mi kávu',helpTitle:'Podporované formáty a zdroje dat',testedTitle:'Testované fotoaparáty a výsledky',thCamera:'Fotoaparát',thFormat:'Formát',thShutter:'Počet spuštění závěrky',thNotes:'Poznámky',exportCountFn:(n)=>`Zpracováno ${n} souborů`},
+  sv:{subtitle:'RAW EXIF Inspektor — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Släpp RAW-filer eller mapp här',dropSub:'Bearbetning sker lokalt i din webbläsare — inga filer laddas upp',openFolder:'Öppna Mapp',orDrag:'eller dra och släpp en hel mapp',clear:'✕ Rensa',exportCsv:'↓ Exportera CSV',parsing:'BEARBETAR DATA...',supportTitle:'Vill du stödja projektet?',supportBody:'Om ShutterCount sparade din tid kan du hjälpa till att driva testning och kamerastöd framåt.',buyCoffee:'Bjud mig på kaffe',helpTitle:'Format som stöds och datakällor',testedTitle:'Testade kameror och resultat',thCamera:'Kamera',thFormat:'Format',thShutter:'Slutarräknare',thNotes:'Anteckningar',exportCountFn:(n)=>`${n} fil${n===1?'':'er'} bearbetad${n===1?'':'e'}`},
+  ms:{subtitle:'Pemeriksa EXIF RAW — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Jatuhkan fail RAW atau folder di sini',dropSub:'Pemprosesan berjalan secara tempatan dalam pelayar anda — tiada fail dimuat naik',openFolder:'Buka Folder',orDrag:'atau seret dan lepaskan keseluruhan folder',clear:'✕ Padam',exportCsv:'↓ Eksport CSV',parsing:'MEMPROSES DATA...',supportTitle:'Ingin menyokong projek ini?',supportBody:'Jika ShutterCount menjimatkan masa anda, anda boleh membantu meneruskan ujian dan sokongan kamera.',buyCoffee:'Belanja Saya Kopi',helpTitle:'Format yang disokong dan sumber data',testedTitle:'Kamera yang diuji dan keputusan',thCamera:'Kamera',thFormat:'Format',thShutter:'Bilangan Pengatup',thNotes:'Nota',exportCountFn:(n)=>`${n} fail diproses`},
+  th:{subtitle:'ตรวจสอบ RAW EXIF — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'วางไฟล์ RAW หรือโฟลเดอร์ที่นี่',dropSub:'ประมวลผลในเบราว์เซอร์ของคุณ — ไม่มีการอัปโหลดไฟล์',openFolder:'เปิดโฟลเดอร์',orDrag:'หรือลากและวางทั้งโฟลเดอร์',clear:'✕ ล้าง',exportCsv:'↓ ส่งออก CSV',parsing:'กำลังประมวลผล...',supportTitle:'ต้องการสนับสนุนโครงการ?',supportBody:'ถ้า ShutterCount ช่วยประหยัดเวลาคุณ คุณสามารถช่วยให้การทดสอบและการสนับสนุนกล้องดำเนินต่อไปได้',buyCoffee:'ซื้อกาแฟให้ฉัน',helpTitle:'รูปแบบที่รองรับและแหล่งข้อมูล',testedTitle:'กล้องที่ทดสอบแล้วและผลลัพธ์',thCamera:'กล้อง',thFormat:'รูปแบบ',thShutter:'จำนวนชัตเตอร์',thNotes:'หมายเหตุ',exportCountFn:(n)=>`ประมวลผล ${n} ไฟล์`},
+  tl:{subtitle:'RAW EXIF Inspector — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'I-drop ang mga RAW file o folder dito',dropSub:'Ang pagpoproseso ay lokal sa iyong browser — walang file na ina-upload',openFolder:'Buksan ang Folder',orDrag:'o i-drag at i-drop ang buong folder',clear:'✕ I-clear',exportCsv:'↓ I-export ang CSV',parsing:'NAGPO-PROSESO NG DATA...',supportTitle:'Gusto mong suportahan ang proyekto?',supportBody:'Kung nakatipid ka ng oras sa ShutterCount, maaari kang tumulong sa pagpapatuloy ng pagsubok at suporta sa camera.',buyCoffee:'Bilhan Ako ng Kape',helpTitle:'Mga sinusuportahang format at pinagkukunan ng data',testedTitle:'Mga nasubok na camera at resulta',thCamera:'Camera',thFormat:'Format',thShutter:'Bilang ng Shutter',thNotes:'Mga Tala',exportCountFn:(n)=>`${n} file ang naproseso`},
+  no:{subtitle:'RAW EXIF Inspektor — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Slipp RAW-filer eller mappe her',dropSub:'Behandling skjer lokalt i nettleseren din — ingen filer lastes opp',openFolder:'Åpne Mappe',orDrag:'eller dra og slipp en hel mappe',clear:'✕ Fjern',exportCsv:'↓ Eksporter CSV',parsing:'BEHANDLER DATA...',supportTitle:'Vil du støtte prosjektet?',supportBody:'Hvis ShutterCount sparte deg for tid, kan du hjelpe til med å drive testing og kamerastøtte fremover.',buyCoffee:'Kjøp meg en kaffe',helpTitle:'Støttede formater og datakilder',testedTitle:'Testede kameraer og resultater',thCamera:'Kamera',thFormat:'Format',thShutter:'Lukkerteller',thNotes:'Notater',exportCountFn:(n)=>`${n} fil${n===1?'':'er'} behandlet`},
+  da:{subtitle:'RAW EXIF Inspektor — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Slip RAW-filer eller mappe her',dropSub:'Behandling sker lokalt i din browser — ingen filer uploades',openFolder:'Åbn Mappe',orDrag:'eller træk og slip en hel mappe',clear:'✕ Ryd',exportCsv:'↓ Eksporter CSV',parsing:'BEHANDLER DATA...',supportTitle:'Vil du støtte projektet?',supportBody:'Hvis ShutterCount sparede dig for tid, kan du hjælpe med at drive test og kamerasupport fremad.',buyCoffee:'Køb mig en kop kaffe',helpTitle:'Understøttede formater og datakilder',testedTitle:'Testede kameraer og resultater',thCamera:'Kamera',thFormat:'Format',thShutter:'Lukkertæller',thNotes:'Noter',exportCountFn:(n)=>`${n} fil${n===1?'':'er'} behandlet`},
+  fi:{subtitle:'RAW EXIF Tarkastaja — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Pudota RAW-tiedostot tai kansio tähän',dropSub:'Käsittely tapahtuu paikallisesti selaimessasi — tiedostoja ei ladata palvelimelle',openFolder:'Avaa kansio',orDrag:'tai vedä ja pudota kokonainen kansio',clear:'✕ Tyhjennä',exportCsv:'↓ Vie CSV',parsing:'KÄSITELLÄÄN DATAA...',supportTitle:'Haluatko tukea projektia?',supportBody:'Jos ShutterCount säästää aikaasi, voit auttaa testauksen ja kameratuen jatkamisessa.',buyCoffee:'Osta minulle kahvi',helpTitle:'Tuetut formaatit ja tietolähteet',testedTitle:'Testatut kamerat ja tulokset',thCamera:'Kamera',thFormat:'Formaatti',thShutter:'Laukaisulaskuri',thNotes:'Huomiot',exportCountFn:(n)=>`${n} tiedosto${n===1?'':'a'} käsitelty`},
+  sk:{subtitle:'RAW EXIF Inšpektor — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Sem presuňte RAW súbory alebo priečinok',dropSub:'Spracovanie prebieha lokálne vo vašom prehliadači — žiadne súbory sa nenahrávajú',openFolder:'Otvoriť priečinok',orDrag:'alebo presuňte celý priečinok',clear:'✕ Vymazať',exportCsv:'↓ Exportovať CSV',parsing:'SPRACOVANIE DÁT...',supportTitle:'Chcete podporiť projekt?',supportBody:'Ak vám ShutterCount ušetril čas, môžete pomôcť pokračovať v testovaní a podpore fotoaparátov.',buyCoffee:'Dať mi kávu',helpTitle:'Podporované formáty a zdroje dát',testedTitle:'Testované fotoaparáty a výsledky',thCamera:'Fotoaparát',thFormat:'Formát',thShutter:'Počet spustení uzávierky',thNotes:'Poznámky',exportCountFn:(n)=>`Spracované ${n} súborov`},
+  bg:{subtitle:'RAW EXIF Инспектор — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Пуснете RAW файлове или папка тук',dropSub:'Обработката се извършва локално в браузъра ви — не се качват файлове',openFolder:'Отвори папка',orDrag:'или плъзнете и пуснете цяла папка',clear:'✕ Изчисти',exportCsv:'↓ Експорт CSV',parsing:'ОБРАБОТКА НА ДАННИ...',supportTitle:'Искате да подкрепите проекта?',supportBody:'Ако ShutterCount ви е спестил време, можете да помогнете за продължаване на тестовете и поддръжката на камери.',buyCoffee:'Почерпи ме с кафе',helpTitle:'Поддържани формати и източници на данни',testedTitle:'Тествани камери и резултати',thCamera:'Камера',thFormat:'Формат',thShutter:'Брояч на затвора',thNotes:'Бележки',exportCountFn:(n)=>`Обработени ${n} файла`},
+  hr:{subtitle:'RAW EXIF Inspektor — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Ovdje ispustite RAW datoteke ili mapu',dropSub:'Obrada se odvija lokalno u vašem pregledniku — nijedna datoteka se ne učitava',openFolder:'Otvori Mapu',orDrag:'ili povucite i ispustite cijelu mapu',clear:'✕ Obriši',exportCsv:'↓ Izvezi CSV',parsing:'OBRADA PODATAKA...',supportTitle:'Želite li podržati projekt?',supportBody:'Ako vam je ShutterCount uštedio vrijeme, možete pomoći u nastavku testiranja i podrške za fotoaparate.',buyCoffee:'Kupi mi kavu',helpTitle:'Podržani formati i izvori podataka',testedTitle:'Testirani fotoaparati i rezultati',thCamera:'Fotoaparat',thFormat:'Format',thShutter:'Brojač okidača',thNotes:'Bilješke',exportCountFn:(n)=>`Obrađeno ${n} datoteka`},
+  sr:{subtitle:'RAW EXIF Инспектор — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Овде поставите RAW датотеке или фасциклу',dropSub:'Обрада се одвија локално у вашем прегледачу — ниједна датотека се не отпрема',openFolder:'Отвори фасциклу',orDrag:'или превуците и поставите целу фасциклу',clear:'✕ Обриши',exportCsv:'↓ Извези CSV',parsing:'ОБРАДА ПОДАТАКА...',supportTitle:'Желите ли да подржите пројекат?',supportBody:'Ако вам је ShutterCount уштедео времена, можете помоћи у наставку тестирања и подршке за фотоапарате.',buyCoffee:'Купите ми кафу',helpTitle:'Подржани формати и извори података',testedTitle:'Тестирани фотоапарати и резултати',thCamera:'Фотоапарат',thFormat:'Формат',thShutter:'Бројач окидача',thNotes:'Белешке',exportCountFn:(n)=>`Обрађено ${n} датотека`},
+  ca:{subtitle:'Inspector EXIF RAW — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Arrossegueu fitxers RAW o carpeta aquí',dropSub:"El processament s'executa localment al vostre navegador — no es carrega cap fitxer",openFolder:'Obre Carpeta',orDrag:"o arrossegueu i deixeu anar una carpeta sencera",clear:'✕ Esborra',exportCsv:'↓ Exporta CSV',parsing:'PROCESSANT DADES...',supportTitle:'Voleu donar suport al projecte?',supportBody:'Si ShutterCount us ha estalviat temps, podeu ajudar a continuar les proves i el suport de càmeres.',buyCoffee:"Convida'm a un cafè",helpTitle:'Formats compatibles i fonts de dades',testedTitle:'Càmeres provades i resultats',thCamera:'Càmera',thFormat:'Format',thShutter:'Comptador de disparades',thNotes:'Notes',exportCountFn:(n)=>`${n} fitxer${n===1?'':'s'} processat${n===1?'':'s'}`},
+  he:{subtitle:'בודק RAW EXIF — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'גרור קבצי RAW או תיקיה לכאן',dropSub:'העיבוד מתבצע באופן מקומי בדפדפן שלך — לא מועלה שום קובץ',openFolder:'פתח תיקיה',orDrag:'או גרור ושחרר תיקיה שלמה',clear:'✕ נקה',exportCsv:'↓ ייצוא CSV',parsing:'מעבד נתונים...',supportTitle:'רוצה לתמוך בפרויקט?',supportBody:'אם ShutterCount חסך לך זמן, תוכל לעזור לקדם את הבדיקות ותמיכת המצלמות.',buyCoffee:'קנה לי קפה',helpTitle:'פורמטים נתמכים ומקורות נתונים',testedTitle:'מצלמות שנבדקו ותוצאות',thCamera:'מצלמה',thFormat:'פורמט',thShutter:'מונה תריס',thNotes:'הערות',exportCountFn:(n)=>`עובדו ${n} קבצים`},
+  lt:{subtitle:'RAW EXIF Inspektorius — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Čia numeskite RAW failus arba aplanką',dropSub:'Apdorojimas vyksta vietiškai jūsų naršyklėje — jokie failai neįkeliami',openFolder:'Atidaryti aplanką',orDrag:'arba vilkite ir numeskite visą aplanką',clear:'✕ Išvalyti',exportCsv:'↓ Eksportuoti CSV',parsing:'APDOROJAMI DUOMENYS...',supportTitle:'Norite remti projektą?',supportBody:'Jei ShutterCount sutaupė jūsų laiko, galite padėti tęsti testavimą ir kamerų palaikymą.',buyCoffee:'Nupirkite man kavos',helpTitle:'Palaikomi formatai ir duomenų šaltiniai',testedTitle:'Išbandytos kameros ir rezultatai',thCamera:'Kamera',thFormat:'Formatas',thShutter:'Užrakto skaitiklis',thNotes:'Pastabos',exportCountFn:(n)=>`Apdorota ${n} failų`},
+  lv:{subtitle:'RAW EXIF Inspektors — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Nometiet RAW failus vai mapi šeit',dropSub:'Apstrāde notiek lokāli jūsu pārlūkprogrammā — neviens fails netiek augšupielādēts',openFolder:'Atvērt mapi',orDrag:'vai velciet un nometiet visu mapi',clear:'✕ Notīrīt',exportCsv:'↓ Eksportēt CSV',parsing:'DATU APSTRĀDE...',supportTitle:'Vēlaties atbalstīt projektu?',supportBody:'Ja ShutterCount ietaupīja jūsu laiku, varat palīdzēt turpināt testēšanu un kameru atbalstu.',buyCoffee:'Nopirciet man kafiju',helpTitle:'Atbalstītie formāti un datu avoti',testedTitle:'Pārbaudītās kameras un rezultāti',thCamera:'Kamera',thFormat:'Formāts',thShutter:'Aizvara skaitītājs',thNotes:'Piezīmes',exportCountFn:(n)=>`Apstrādāti ${n} faili`},
+  et:{subtitle:'RAW EXIF Inspektor — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Lohistage RAW-failid või kaust siia',dropSub:'Töötlemine toimub kohalikult teie brauseris — faile ei laadita üles',openFolder:'Ava kaust',orDrag:'või lohistage terve kaust siia',clear:'✕ Tühjenda',exportCsv:'↓ Ekspordi CSV',parsing:'TÖÖTLEN ANDMEID...',supportTitle:'Kas soovite projekti toetada?',supportBody:'Kui ShutterCount säästis teie aega, saate aidata testimist ja kaamera tuge edasi arendada.',buyCoffee:'Osta mulle kohvi',helpTitle:'Toetatud formaadid ja andmeallikad',testedTitle:'Testitud kaamerad ja tulemused',thCamera:'Kaamera',thFormat:'Formaat',thShutter:'Katiku loendur',thNotes:'Märkused',exportCountFn:(n)=>`${n} faili töödeldud`},
+  sw:{subtitle:'Kikaguzi cha RAW EXIF — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Acha faili za RAW au folda hapa',dropSub:'Usindikaji unafanyika ndani ya kivinjari chako — hakuna faili zinazopakiwa',openFolder:'Fungua Folda',orDrag:'au buruta na acha folda nzima',clear:'✕ Futa',exportCsv:'↓ Hamisha CSV',parsing:'INASINDIKA DATA...',supportTitle:'Unataka kusaidia mradi?',supportBody:'Ikiwa ShutterCount ilikuokoa muda, unaweza kusaidia kuendelea na majaribio na usaidizi wa kamera.',buyCoffee:'Nununulie Kahawa',helpTitle:'Miundo inayoungwa mkono na vyanzo vya data',testedTitle:'Kamera zilizojaribiwa na matokeo',thCamera:'Kamera',thFormat:'Muundo',thShutter:'Hesabu ya Shutter',thNotes:'Maelezo',exportCountFn:(n)=>`Faili ${n} zimesindikwa`},
+  af:{subtitle:'RAW EXIF Inspekteur — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Laat RAW-lêers of gids hier val',dropSub:'Verwerking vind plaaslik in u blaaier plaas — geen lêers word opgelaai nie',openFolder:'Maak Gids Oop',orDrag:"of sleep en los 'n hele gids hier",clear:'✕ Vee uit',exportCsv:'↓ Voer CSV uit',parsing:'VERWERK DATA...',supportTitle:'Wil u die projek ondersteun?',supportBody:'As ShutterCount u tyd gespaar het, kan u help om toetsing en kamera-ondersteuning voort te sit.',buyCoffee:"Koop vir my 'n koffie",helpTitle:'Ondersteunde formate en databronne',testedTitle:'Getoetste kameras en resultate',thCamera:'Kamera',thFormat:'Formaat',thShutter:'Sluierteller',thNotes:'Notas',exportCountFn:(n)=>`${n} lêer${n===1?'':'s'} verwerk`},
+  sq:{subtitle:'Inspektori RAW EXIF — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Lëshoni skedarët RAW ose dosjen këtu',dropSub:'Përpunimi bëhet lokalisht në shfletuesin tuaj — asnjë skedar nuk ngarkohet',openFolder:'Hap Dosjen',orDrag:'ose tërhiqni dhe lëshoni një dosje të tërë',clear:'✕ Pastro',exportCsv:'↓ Eksporto CSV',parsing:'PO PËRPUNOHEN TË DHËNAT...',supportTitle:'Dëshironi të mbështetni projektin?',supportBody:'Nëse ShutterCount ju kurseu kohë, mund të ndihmoni të vazhdohet testimi dhe mbështetja e kamerave.',buyCoffee:'Blini një kafe për mua',helpTitle:'Formatet e mbështetura dhe burimet e të dhënave',testedTitle:'Kamerat e testuara dhe rezultatet',thCamera:'Kamera',thFormat:'Formati',thShutter:'Numëruesi i grilave',thNotes:'Shënime',exportCountFn:(n)=>`${n} skedar të përpunuar`},
+  sl:{subtitle:'RAW EXIF Inšpektor — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Sem spustite datoteke RAW ali mapo',dropSub:'Obdelava poteka lokalno v vašem brskalniku — nobena datoteka se ne naloži',openFolder:'Odpri Mapo',orDrag:'ali povlecite in spustite celotno mapo',clear:'✕ Počisti',exportCsv:'↓ Izvozi CSV',parsing:'OBDELAVA PODATKOV...',supportTitle:'Želite podpreti projekt?',supportBody:'Če vam je ShutterCount prihranil čas, lahko pomagate nadaljevati testiranje in podporo za fotoaparate.',buyCoffee:'Kupi mi kavo',helpTitle:'Podprti formati in viri podatkov',testedTitle:'Preizkušeni fotoaparati in rezultati',thCamera:'Fotoaparat',thFormat:'Format',thShutter:'Števec zaklopa',thNotes:'Opombe',exportCountFn:(n)=>`Obdelanih ${n} datotek`},
+  az:{subtitle:'RAW EXIF Müfəttişi — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'RAW faylları və ya qovluğu bura salın',dropSub:'Emal brauzerinizdə yerli olaraq baş verir — heç bir fayl yüklənmir',openFolder:'Qovluğu Aç',orDrag:'və ya bütün qovluğu sürükləyib buraxın',clear:'✕ Sil',exportCsv:'↓ CSV ixrac et',parsing:'MƏLUMATLAR EMAL EDİLİR...',supportTitle:'Layihəni dəstəkləmək istəyirsiniz?',supportBody:'Əgər ShutterCount vaxtınıza qənaət edibsə, sınaqları və kamera dəstəyini irəliləməyə kömək edə bilərsiniz.',buyCoffee:'Mənə Qəhvə Al',helpTitle:'Dəstəklənən formatlar və məlumat mənbələri',testedTitle:'Test edilmiş kameralar və nəticələr',thCamera:'Kamera',thFormat:'Format',thShutter:'Pərdə sayğacı',thNotes:'Qeydlər',exportCountFn:(n)=>`${n} fayl emal edildi`},
+  kk:{subtitle:'RAW EXIF Инспекторы — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'RAW файлдарды немесе қалтаны осында тастаңыз',dropSub:'Өңдеу браузерде жергілікті түрде жүреді — ешбір файл жүктелмейді',openFolder:'Қалтаны ашу',orDrag:'немесе бүкіл қалтаны апарып тастаңыз',clear:'✕ Тазалау',exportCsv:'↓ CSV экспорттау',parsing:'ДЕРЕКТЕР ӨҢДЕЛУДЕ...',supportTitle:'Жобаны қолдағыңыз келе ме?',supportBody:'Егер ShutterCount уақытыңызды үнемдесе, тестілеу мен камера қолдауын жалғастыруға көмектесе аласыз.',buyCoffee:'Маған кофе сатып ал',helpTitle:'Қолдауы бар форматтар мен деректер көздері',testedTitle:'Тексерілген камералар мен нәтижелер',thCamera:'Камера',thFormat:'Формат',thShutter:'Жалпақ санауышы',thNotes:'Ескертпелер',exportCountFn:(n)=>`${n} файл өңделді`},
+};
+
+let _lang='en';
+
+function detectLang(){
+  // Check sessionStorage for pending language (set by /[lang]/ stub page)
+  const pending=sessionStorage.getItem('__sc_lang');
+  if(pending&&TRANSLATIONS[pending]){
+    const path=sessionStorage.getItem('__sc_path')||('/'+pending);
+    sessionStorage.removeItem('__sc_lang');
+    sessionStorage.removeItem('__sc_path');
+    history.replaceState(null,'',path);
+    applyLang(pending);
+    return;
+  }
+  // Detect from URL path
+  const slug=location.pathname.split('/').filter(Boolean)[0]||'';
+  const found=LANGS.find(l=>l.slug&&l.slug===slug);
+  if(found){applyLang(found.code);return;}
+  // Fallback to saved preference
+  const saved=localStorage.getItem('__sc_lang');
+  if(saved&&TRANSLATIONS[saved]){applyLang(saved);return;}
+  applyLang('en');
+}
+
+function applyLang(code){
+  const t=TRANSLATIONS[code]||TRANSLATIONS.en;
+  const lang=LANGS.find(l=>l.code===code)||LANGS[0];
+  _lang=code;
+  // Set HTML lang and dir
+  const isoCode=code==='cz'?'cs':code;
+  document.documentElement.lang=isoCode;
+  document.documentElement.dir=['ar','he','fa','ur'].includes(code)?'rtl':'ltr';
+  // Apply data-i18n translations
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.dataset.i18n;
+    if(t[key]!==undefined)el.textContent=t[key];
+  });
+  // Update lang button label
+  const btn=document.getElementById('langBtnText');
+  if(btn)btn.textContent=lang.flag+' '+lang.name;
+  // Update active state in dropdown
+  document.querySelectorAll('.lang-item').forEach(el=>{
+    el.classList.toggle('active',el.dataset.lang===code);
+  });
+  localStorage.setItem('__sc_lang',code);
+}
+
+function setLang(code){
+  const lang=LANGS.find(l=>l.code===code);
+  if(!lang)return;
+  history.pushState(null,'',lang.slug?'/'+lang.slug:'/');
+  applyLang(code);
+  document.getElementById('langMenu').classList.remove('open');
+}
+
+function toggleLangMenu(e){
+  if(e)e.stopPropagation();
+  document.getElementById('langMenu').classList.toggle('open');
+}
+
+(function buildLangMenu(){
+  const menu=document.getElementById('langMenu');
+  if(!menu)return;
+  menu.innerHTML=LANGS.map(l=>
+    `<div class="lang-item" data-lang="${l.code}" onclick="setLang('${l.code}')"><span class="lang-item-flag">${l.flag}</span><span>${l.name}</span></div>`
+  ).join('');
+})();
+
+document.addEventListener('click',e=>{
+  const menu=document.getElementById('langMenu');
+  if(menu&&!e.target.closest('.lang-switcher'))menu.classList.remove('open');
+});
+window.addEventListener('popstate',()=>detectLang());
+detectLang();
 </script>
 </body>
 </html>
