@@ -110,6 +110,16 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
 .seo-block p + p{margin-top:10px}
 .seo-block strong{color:var(--text)}
 @media(max-width:560px){.support-panel{flex-direction:column;align-items:stretch;text-align:center}.support-btn{width:100%}}
+.copy-btn{background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:4px;padding:2px 8px;font-family:var(--mono);font-size:.62rem;cursor:pointer;transition:border-color .15s,color .15s;flex-shrink:0;line-height:1.6}
+.copy-btn:hover{border-color:var(--accent);color:var(--accent)}
+.copy-btn.copied{border-color:#47ff8a;color:#47ff8a}
+.privacy-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:10px}
+.section-header{cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;margin-bottom:10px}
+.section-header h3{margin-bottom:0}
+.section-header:hover h3{color:var(--accent)}
+.collapse-arrow{color:var(--muted);font-size:.7rem;transition:transform .2s;flex-shrink:0}
+.section-collapsed .collapse-arrow{transform:rotate(-90deg)}
+.section-collapsed .section-body{display:none}
 .lang-switcher{display:flex;justify-content:center;margin:0 auto 16px;max-width:640px;position:relative}
 .lang-btn{background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:6px;padding:5px 11px;font-family:var(--mono);font-size:.72rem;cursor:pointer;display:flex;align-items:center;gap:6px;transition:border-color .2s,color .2s;white-space:nowrap}
 .lang-btn:hover{border-color:var(--accent);color:var(--accent)}
@@ -231,6 +241,7 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
   <input type="file" id="fileInput" accept=".cr2,.cr3,.nef,.arw,.raf,.orf,.rw2,.dng,.jpg,.jpeg" multiple>
   <span class="drop-icon">📷</span>
   <div class="drop-title" data-i18n="dropTitle">Drop RAW files or folder here</div>
+  <div class="privacy-badge">🔒 No upload — 100% local</div>
   <div class="drop-sub" data-i18n="dropSub">Processing runs locally in your browser — no files are uploaded</div>
   <div class="drop-formats">
     <span class="fmt-badge">CR3 (R6/R5/R3/R7)</span>
@@ -286,8 +297,12 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
 </div>
 <div class="loader" id="loader"><div class="spinner"></div><span data-i18n="parsing">PARSING DATA...</span></div>
 <div id="results"></div>
-<div class="help">
-  <h3 data-i18n="helpTitle">Supported formats and data sources</h3>
+<div class="help section-collapsed" id="helpSection">
+  <div class="section-header" onclick="toggleSection('helpSection')">
+    <h3 data-i18n="helpTitle">Supported formats and data sources</h3>
+    <span class="collapse-arrow">▾</span>
+  </div>
+  <div class="section-body">
   <strong>Canon CR3</strong> (R5, R6, R7, R8, R10…) — ISOBMFF container, path: <code>CTMD rec.8 → TIFF tag 0x000D</code>. ✅ Confirmed: R6II/R8/R50 → <code>0x0D29</code> (uint32), R5/R6/R3 → <code>0x0AF1</code> (uint32), R6III/R50V/R1 → <code>0x086D</code> (uint16, ImageCount). ⚠️ EOS RP/R/R7/R10: shutter count offset not yet known.
   <br><br>
   <strong>Canon CR2</strong> — ShutterCount in EXIF is available <em>only</em> for professional 1D/1Ds series bodies. Canon does not write it for consumer bodies (5D, 7D, 60D, 70D, 80D, Rebel/xxxD…) — it is a hardware counter readable only via USB PTP from the camera. For 1D/1Ds: MakerNote tag <code>0x93</code> (FileInfo). For 1DmkIII: tag <code>0x0d</code> (CameraInfo[0x176]).
@@ -305,9 +320,14 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
   Everything runs offline in your browser — no files are uploaded. CSV export includes all processed files since page load.
   <br><br>
   <strong>Validation note for bundled samples</strong> — files in <code>Raws_small_truncated/</code> are only 32 KB snippets. They are enough for basic EXIF and many Nikon shutter counts, but some Canon CR3, Sony ARW and newer Nikon samples are cut before the shutter-count block or MakerNote payload.
+  </div>
 </div>
-<div class="tested">
-  <h3 data-i18n="testedTitle">Tested cameras and results</h3>
+<div class="tested" id="testedSection">
+  <div class="section-header" onclick="toggleSection('testedSection')">
+    <h3 data-i18n="testedTitle">Tested cameras and results</h3>
+    <span class="collapse-arrow">▾</span>
+  </div>
+  <div class="section-body">
   <div class="note" style="margin-bottom:14px">Full GitHub release validation on <code>Zoner_D</code> through <code>Zoner_D4</code> confirmed Nikon shutter-count extraction across modern Z bodies and a broad legacy range from D40/D50/D70 up to D850/D6, plus Nikon 1 J1/V1. Sony ARW was also confirmed on full samples for A1, A1 II, A6100/A6300/A6400/A6600, A6700, A7/A7 II/A7 III/A7 IV/A7C/A7CR, A7R III/IV/V, A7S, A7S III, A9/A9 II/A9 III and ZV-E10. Canon CR3 validation still confirms the known offsets for R5, R6, R6 Mark II, R8, R50 and R5 C; the 0x086D fallback is now limited to explicitly confirmed ImageCount-based bodies.</div>
   <table>
     <thead><tr><th data-i18n="thCamera">Camera</th><th data-i18n="thFormat">Format</th><th data-i18n="thShutter">Shutter Count</th><th data-i18n="thNotes">Notes</th></tr></thead>
@@ -382,6 +402,7 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
     <tr><td>S1M2, S1RM2, S5D, S9</td><td>RW2</td><td class="no">&#10007; No</td><td class="note">Panasonic does not store SC in RAW files</td></tr>
     </tbody>
   </table>
+  </div>
 </div>
 <div class="support-panel">
   <div class="support-copy">
@@ -1110,6 +1131,8 @@ function exportCSV() {
   document.body.removeChild(a); URL.revokeObjectURL(url);
 }
 
+function toggleSection(id){document.getElementById(id).classList.toggle('section-collapsed');}
+function copyCount(n,btn){navigator.clipboard.writeText(String(n)).then(()=>{btn.textContent='✓ Copied';btn.classList.add('copied');setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');},1500);}).catch(()=>{});}
 function fmtSz(b){return b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(1)+' MB';}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function card(file,r,err){
@@ -1140,7 +1163,7 @@ function card(file,r,err){
     isUnknownR?`Canon ${esc(r.model||'R-series')} — shutter count offset not confirmed`:
     isCR2noSC?'Canon does not store shutter count in file for this body (1D series only)':
     'Shutter count not found in this file';
-  const sh=sc!=null?`<div class="field-value highlight">${sc.toLocaleString('en-US')}</div>`:
+  const sh=sc!=null?`<div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><div class="field-value highlight">${sc.toLocaleString('en-US')}</div><button class="copy-btn" onclick="copyCount(${sc},this)">Copy</button></div>`:
            err?`<div class="field-value error">Error: ${esc(err)}</div>`:`<div class="field-value not-found">Not found</div>`;
   const bc=pct>80?'danger':pct>60?'warn':'';
   const ph=pct!=null?`<div class="field-value">${pct.toFixed(1)} % <span style="color:var(--muted);font-size:.7rem">(of ${MAX.toLocaleString('en-US')})</span></div><div class="life-bar-bg"><div class="life-bar-fill ${bc}" style="width:${pct}%"></div></div>`:`<div class="field-value not-found">—</div>`;
