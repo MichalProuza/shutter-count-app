@@ -101,7 +101,7 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
 .seo-block p + p{margin-top:10px}
 .seo-block strong{color:var(--text)}
 @media(max-width:560px){.support-panel{flex-direction:column;align-items:stretch;text-align:center}.support-btn{width:100%}}
-.lang-switcher{position:absolute;top:0;right:0}
+.lang-switcher{display:flex;justify-content:center;margin:0 auto 16px;max-width:640px;position:relative}
 .lang-btn{background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:6px;padding:5px 11px;font-family:var(--mono);font-size:.72rem;cursor:pointer;display:flex;align-items:center;gap:6px;transition:border-color .2s,color .2s;white-space:nowrap}
 .lang-btn:hover{border-color:var(--accent);color:var(--accent)}
 .lang-menu{display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px;min-width:200px;max-height:360px;overflow-y:auto;z-index:1000;box-shadow:0 8px 24px rgba(0,0,0,.5)}
@@ -211,13 +211,13 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
 </head>
 <body>
 <header>
-  <div class="lang-switcher">
-    <button class="lang-btn" id="langBtn" onclick="toggleLangMenu(event)"><span id="langBtnText">🌐 English</span> ▾</button>
-    <div class="lang-menu" id="langMenu"></div>
-  </div>
   <div class="logo">SHUTTER<span>COUNT</span></div>
   <p class="subtitle" data-i18n="subtitle">RAW EXIF Inspector — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic</p>
 </header>
+<div class="lang-switcher">
+  <button class="lang-btn" id="langBtn" onclick="toggleLangMenu(event)"><span id="langBtnText">🌐 English</span> ▾</button>
+  <div class="lang-menu" id="langMenu"></div>
+</div>
 <div class="dropzone" id="dropzone">
   <input type="file" id="fileInput" accept=".cr2,.cr3,.nef,.arw,.raf,.orf,.rw2,.dng,.jpg,.jpeg" multiple>
   <span class="drop-icon">📷</span>
@@ -1151,7 +1151,6 @@ const LANGS=[
   {code:'ar',slug:'ar',flag:'🇸🇦',name:'العربية'},
   {code:'bn',slug:'bn',flag:'🇧🇩',name:'বাংলা'},
   {code:'pt',slug:'pt',flag:'🇧🇷',name:'Português'},
-  {code:'ru',slug:'ru',flag:'🇷🇺',name:'Русский'},
   {code:'ur',slug:'ur',flag:'🇵🇰',name:'اردو'},
   {code:'id',slug:'id',flag:'🇮🇩',name:'Bahasa Indonesia'},
   {code:'de',slug:'de',flag:'🇩🇪',name:'Deutsch'},
@@ -1204,7 +1203,6 @@ const TRANSLATIONS={
   ar:{subtitle:'فاحص EXIF للصور الخام — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'اسحب ملفات RAW أو مجلدًا هنا',dropSub:'المعالجة تتم محليًا في متصفحك — لا يتم رفع أي ملف',openFolder:'فتح مجلد',orDrag:'أو اسحب وأفلت مجلدًا كاملًا',clear:'✕ مسح',exportCsv:'↓ تصدير CSV',parsing:'جارٍ تحليل البيانات...',supportTitle:'هل تريد دعم المشروع؟',supportBody:'إذا وفّر ShutterCount وقتك، يمكنك المساعدة في الاستمرار في الاختبار ودعم الكاميرات.',buyCoffee:'اشترِ لي قهوة',helpTitle:'الصيغ المدعومة ومصادر البيانات',testedTitle:'الكاميرات المختبرة والنتائج',thCamera:'الكاميرا',thFormat:'الصيغة',thShutter:'عداد الغالق',thNotes:'ملاحظات',exportCountFn:(n)=>`تمت معالجة ${n} ملف`},
   bn:{subtitle:'RAW EXIF পরিদর্শক — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'RAW ফাইল বা ফোল্ডার এখানে ছেড়ে দিন',dropSub:'আপনার ব্রাউজারে স্থানীয়ভাবে প্রক্রিয়া করা হয় — কোনো ফাইল আপলোড হয় না',openFolder:'ফোল্ডার খুলুন',orDrag:'বা পুরো ফোল্ডার টেনে আনুন',clear:'✕ মুছুন',exportCsv:'↓ CSV রপ্তানি করুন',parsing:'ডেটা বিশ্লেষণ হচ্ছে...',supportTitle:'প্রজেক্ট সমর্থন করতে চান?',supportBody:'ShutterCount যদি আপনার সময় বাঁচিয়ে থাকে, তাহলে পরীক্ষা ও ক্যামেরা সমর্থন এগিয়ে নিতে সাহায্য করুন।',buyCoffee:'আমাকে কফি কিনুন',helpTitle:'সমর্থিত ফরম্যাট ও ডেটা উৎস',testedTitle:'পরীক্ষিত ক্যামেরা ও ফলাফল',thCamera:'ক্যামেরা',thFormat:'ফরম্যাট',thShutter:'শাটার কাউন্ট',thNotes:'নোট',exportCountFn:(n)=>`${n}টি ফাইল প্রক্রিয়া হয়েছে`},
   pt:{subtitle:'Inspetor EXIF RAW — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Solte arquivos RAW ou pasta aqui',dropSub:'O processamento é feito localmente no seu navegador — nenhum arquivo é enviado',openFolder:'Abrir Pasta',orDrag:'ou arraste e solte uma pasta inteira',clear:'✕ Limpar',exportCsv:'↓ Exportar CSV',parsing:'PROCESSANDO DADOS...',supportTitle:'Quer apoiar o projeto?',supportBody:'Se o ShutterCount economizou seu tempo, você pode ajudar a continuar os testes e o suporte a câmeras.',buyCoffee:'Me pague um café',helpTitle:'Formatos suportados e fontes de dados',testedTitle:'Câmeras testadas e resultados',thCamera:'Câmera',thFormat:'Formato',thShutter:'Contador de disparos',thNotes:'Notas',exportCountFn:(n)=>`${n} arquivo${n===1?'':'s'} processado${n===1?'':'s'}`},
-  ru:{subtitle:'RAW EXIF Инспектор — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Перетащите RAW-файлы или папку сюда',dropSub:'Обработка выполняется локально в вашем браузере — файлы не загружаются',openFolder:'Открыть папку',orDrag:'или перетащите целую папку',clear:'✕ Очистить',exportCsv:'↓ Экспорт CSV',parsing:'ОБРАБОТКА ДАННЫХ...',supportTitle:'Хотите поддержать проект?',supportBody:'Если ShutterCount сэкономил вам время, вы можете помочь продолжать тестирование и поддержку камер.',buyCoffee:'Угостить кофе',helpTitle:'Поддерживаемые форматы и источники данных',testedTitle:'Протестированные камеры и результаты',thCamera:'Камера',thFormat:'Формат',thShutter:'Счётчик затвора',thNotes:'Примечания',exportCountFn:(n)=>`Обработано ${n} файлов`},
   ur:{subtitle:'RAW EXIF انسپکٹر — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'یہاں RAW فائلیں یا فولڈر ڈراپ کریں',dropSub:'پروسیسنگ آپ کے براؤزر میں مقامی طور پر چلتی ہے — کوئی فائل اپلوڈ نہیں ہوتی',openFolder:'فولڈر کھولیں',orDrag:'یا پورا فولڈر ڈریگ اور ڈراپ کریں',clear:'✕ صاف کریں',exportCsv:'↓ CSV برآمد کریں',parsing:'ڈیٹا پارس ہو رہا ہے...',supportTitle:'پروجیکٹ کی حمایت کرنا چاہتے ہیں؟',supportBody:'اگر ShutterCount نے آپ کا وقت بچایا تو آپ ٹیسٹنگ اور کیمرہ سپورٹ جاری رکھنے میں مدد کر سکتے ہیں۔',buyCoffee:'مجھے کافی پلائیں',helpTitle:'سپورٹ شدہ فارمیٹس اور ڈیٹا ذرائع',testedTitle:'آزمائے گئے کیمرے اور نتائج',thCamera:'کیمرہ',thFormat:'فارمیٹ',thShutter:'شٹر کاؤنٹ',thNotes:'نوٹس',exportCountFn:(n)=>`${n} فائلیں پروسیس ہوئیں`},
   id:{subtitle:'Pemeriksa EXIF RAW — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'Jatuhkan file RAW atau folder di sini',dropSub:'Pemrosesan berjalan secara lokal di browser Anda — tidak ada file yang diunggah',openFolder:'Buka Folder',orDrag:'atau seret dan lepaskan seluruh folder',clear:'✕ Hapus',exportCsv:'↓ Ekspor CSV',parsing:'MENGURAI DATA...',supportTitle:'Ingin mendukung proyek ini?',supportBody:'Jika ShutterCount menghemat waktu Anda, Anda dapat membantu melanjutkan pengujian dan dukungan kamera.',buyCoffee:'Traktir Saya Kopi',helpTitle:'Format yang didukung dan sumber data',testedTitle:'Kamera yang diuji dan hasilnya',thCamera:'Kamera',thFormat:'Format',thShutter:'Jumlah Rana',thNotes:'Catatan',exportCountFn:(n)=>`${n} file diproses`},
   de:{subtitle:'RAW EXIF Inspektor — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'RAW-Dateien oder Ordner hier ablegen',dropSub:'Verarbeitung läuft lokal in Ihrem Browser — keine Datei wird hochgeladen',openFolder:'Ordner öffnen',orDrag:'oder ganzen Ordner hierher ziehen',clear:'✕ Löschen',exportCsv:'↓ CSV exportieren',parsing:'DATEN WERDEN ANALYSIERT...',supportTitle:'Möchten Sie das Projekt unterstützen?',supportBody:'Wenn ShutterCount Ihnen Zeit gespart hat, können Sie helfen, Tests und Kamera-Support voranzutreiben.',buyCoffee:'Spendiere mir einen Kaffee',helpTitle:'Unterstützte Formate und Datenquellen',testedTitle:'Getestete Kameras und Ergebnisse',thCamera:'Kamera',thFormat:'Format',thShutter:'Auslösezähler',thNotes:'Anmerkungen',exportCountFn:(n)=>`${n} Datei${n===1?'':'en'} verarbeitet`},
@@ -1249,7 +1247,7 @@ const TRANSLATIONS={
 };
 
 // Maps language code → ISO 3166-1 alpha-2 country code for flagcdn.com
-const LANG_CC={en:'gb',zh:'cn',hi:'in',es:'es',fr:'fr',ar:'sa',bn:'bd',pt:'br',ru:'ru',ur:'pk',id:'id',de:'de',ja:'jp',te:'in',mr:'in',tr:'tr',ta:'in',vi:'vn',ko:'kr',it:'it',pl:'pl',uk:'ua',fa:'ir',ro:'ro',nl:'nl',hu:'hu',el:'gr',cz:'cz',sv:'se',ms:'my',th:'th',tl:'ph',no:'no',da:'dk',fi:'fi',sk:'sk',bg:'bg',hr:'hr',sr:'rs',ca:'es',he:'il',lt:'lt',lv:'lv',et:'ee',sw:'ke',af:'za',sq:'al',sl:'si',az:'az',kk:'kz'};
+const LANG_CC={en:'gb',zh:'cn',hi:'in',es:'es',fr:'fr',ar:'sa',bn:'bd',pt:'br',ur:'pk',id:'id',de:'de',ja:'jp',te:'in',mr:'in',tr:'tr',ta:'in',vi:'vn',ko:'kr',it:'it',pl:'pl',uk:'ua',fa:'ir',ro:'ro',nl:'nl',hu:'hu',el:'gr',cz:'cz',sv:'se',ms:'my',th:'th',tl:'ph',no:'no',da:'dk',fi:'fi',sk:'sk',bg:'bg',hr:'hr',sr:'rs',ca:'es',he:'il',lt:'lt',lv:'lv',et:'ee',sw:'ke',af:'za',sq:'al',sl:'si',az:'az',kk:'kz'};
 function flagImg(code,w,h){const cc=LANG_CC[code]||'un';return `<img src="https://flagcdn.com/${w}x${h}/${cc}.png" width="${w}" height="${h}" alt="" style="border-radius:2px;vertical-align:middle;flex-shrink:0">`;}
 
 let _lang='en';
