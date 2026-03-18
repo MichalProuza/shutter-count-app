@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8ff47"/>
+      <stop offset="100%" stop-color="#c8d830"/>
+    </linearGradient>
+  </defs>
+  <!-- Dark background circle -->
+  <circle cx="32" cy="32" r="30" fill="#0a0a0b" stroke="#222226" stroke-width="2"/>
+  <!-- Shutter blades -->
+  <g fill="url(#g)" opacity=".85">
+    <path d="M32 8 A24 24 0 0 1 52.8 20L38 28Z"/>
+    <path d="M52.8 20 A24 24 0 0 1 52.8 44L38 32Z"/>
+    <path d="M52.8 44 A24 24 0 0 1 32 56L32 38Z"/>
+    <path d="M32 56 A24 24 0 0 1 11.2 44L26 36Z"/>
+    <path d="M11.2 44 A24 24 0 0 1 11.2 20L26 32Z"/>
+    <path d="M11.2 20 A24 24 0 0 1 32 8L32 26Z"/>
+  </g>
+  <!-- Center lens -->
+  <circle cx="32" cy="32" r="8" fill="#0a0a0b"/>
+  <circle cx="32" cy="32" r="5" fill="none" stroke="#e8ff47" stroke-width="1.5" opacity=".6"/>
+</svg>
