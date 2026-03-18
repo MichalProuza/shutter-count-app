@@ -177,7 +177,7 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
           "name": "Can I read the shutter count from a Sony A7 IV or A7 III ARW file?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Sony stores the shutter count in ARW files in an encrypted MakerNote block under tag 0x9050. After decryption using the Sony algorithm (based on cubic residues modulo 249), the count is at byte offset 0x003a for the A7 III, A7 IV, A7V, A9, A9 II, A9 III, A1, A6100, A6300, A6400, A6600 and ZV-E10. The A1 II, A7, A7 II and A7S use offset 0x0032. The A6700 and A7CR use offset 0x000a."
+            "text": "Yes. Sony stores the shutter count in ARW files in an encrypted MakerNote block under tag 0x9050. After decryption using the Sony algorithm (based on cubic residues modulo 249), the count is at byte offset 0x003a for the A7 III, A7 IV, A9, A9 II, A9 III, A1, A6100, A6300, A6400, A6600 and ZV-E10. The A7V, A1 II, A6700 and A7CR use offset 0x000a. The A7, A7 II and A7S use offset 0x0032."
           }
         },
         {
@@ -362,9 +362,9 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
 
     <tr><td class="brand">Sony</td><td colspan="3"></td></tr>
     <tr><td>A7 IV (ILCE-7M4)</td><td>ARW</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, tag 0x9050 encrypted, offset 0x003a</td></tr>
-    <tr><td>A7III, A7V, A7RV, A9, A9 II, A9 III, A1, A6100, A6300, A6400, A6600, ZV-E10</td><td>ARW</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, tag 0x9050, offset 0x003a</td></tr>
-    <tr><td>A1 II, A7, A7 II, A7S</td><td>ARW</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, tag 0x9050, offset 0x0032</td></tr>
-    <tr><td>A6700, A7CR</td><td>ARW</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, tag 0x9050, offset 0x000a</td></tr>
+    <tr><td>A7III, A7RV, A9, A9 II, A9 III, A1, A6100, A6300, A6400, A6600, ZV-E10</td><td>ARW</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, tag 0x9050, offset 0x003a</td></tr>
+    <tr><td>A7, A7 II, A7S</td><td>ARW</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, tag 0x9050, offset 0x0032</td></tr>
+    <tr><td>A7V, A1 II, A6700, A7CR</td><td>ARW</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, tag 0x9050, offset 0x000a</td></tr>
     <tr><td>A7C, A7R III, A7R IV, A7S III</td><td>ARW</td><td class="ok">&#10003; Yes</td><td class="note">Validated from full GitHub release, tag 0x9050 with model-specific offset</td></tr>
     <tr><td>DSC-RX100M5A</td><td>ARW</td><td class="no">&#10007; No</td><td class="note">Compact DSC — offset not known</td></tr>
 
@@ -404,7 +404,7 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
   <p><strong>Canon EOS R5 shutter count</strong> and <strong>Canon EOS R6 shutter count</strong> are stored in the CR3 CTMD metadata block at byte offset <strong>0x0AF1</strong>. <strong>Canon EOS R6 Mark II shutter count</strong>, <strong>Canon EOS R8 shutter count</strong> and <strong>Canon EOS R50 shutter count</strong> use offset <strong>0x0D29</strong>. <strong>Canon EOS R1 shutter count</strong> and <strong>Canon EOS R6 Mark III shutter count</strong> use offset <strong>0x086D</strong> (uint16 ImageCount). Consumer Canon CR2 bodies — including the <strong>Canon 5D Mark IV</strong>, <strong>Canon 80D</strong>, <strong>Canon 7D Mark II</strong> and all Rebel/xxxD models — do not store shutter count in-file; Canon only exposes it over USB PTP.</p>
 
   <h4>Sony shutter count</h4>
-  <p>Sony ARW files store the shutter count encrypted in MakerNote tag <strong>0x9050</strong>. After decryption (cubic residue algorithm, modulo 249), the count is at offset <strong>0x003a</strong> for the <strong>Sony A7 IV shutter count</strong>, <strong>Sony A7 III shutter count</strong>, <strong>Sony A9 III shutter count</strong>, <strong>Sony A1 shutter count</strong>, <strong>Sony A6700 shutter count</strong> and others. The <strong>Sony A7V shutter count</strong> also uses offset <strong>0x003a</strong>. The <strong>Sony A1 II shutter count</strong> and <strong>Sony A7 II shutter count</strong> use offset <strong>0x0032</strong>. The <strong>Sony A6700 shutter count</strong> and <strong>Sony A7CR shutter count</strong> use offset <strong>0x000a</strong>.</p>
+  <p>Sony ARW files store the shutter count encrypted in MakerNote tag <strong>0x9050</strong>. After decryption (cubic residue algorithm, modulo 249), the count is at offset <strong>0x003a</strong> for the <strong>Sony A7 IV shutter count</strong>, <strong>Sony A7 III shutter count</strong>, <strong>Sony A9 III shutter count</strong>, <strong>Sony A1 shutter count</strong> and others. The <strong>Sony A7V shutter count</strong>, <strong>Sony A1 II shutter count</strong>, <strong>Sony A6700 shutter count</strong> and <strong>Sony A7CR shutter count</strong> use offset <strong>0x000a</strong>. The <strong>Sony A7 II shutter count</strong> and <strong>Sony A7 shutter count</strong> use offset <strong>0x0032</strong>.</p>
 
   <h4>Fujifilm shutter count</h4>
   <p>Fujifilm stores the image counter in RAF files as MakerNote tag <strong>0x1438</strong>. Confirmed bodies include <strong>Fujifilm X-T5 shutter count</strong>, <strong>Fujifilm X-T3 shutter count</strong>, <strong>Fujifilm X-H2 shutter count</strong>, <strong>Fujifilm X-H2S shutter count</strong>, <strong>Fujifilm X-S20 shutter count</strong>, <strong>Fujifilm X100F shutter count</strong>, <strong>Fujifilm GFX100 II shutter count</strong> and <strong>Fujifilm GFX50S II shutter count</strong>. This counter resets if the camera storage is formatted.</p>
@@ -833,13 +833,14 @@ function parseSonyMakerNote(v, u, makerOff, le, r, corr=0) {
         return (plain[off] | (plain[off+1]<<8) | (plain[off+2]<<16) | (plain[off+3]<<24)) >>> 0;
       }
 
-      // Tag9050d: A6700, A7CM2, A7CR (FIRST_ENTRY=0, byte offset = tag number directly)
-      if (/ILCE-(6700|7CM2|7CR)/.test(model)) {
+      // Tag9050d: A6700, A7CM2, A7CR, FX2, ZV-E10M2 (always); A7V, A1II (when first 5 bytes null)
+      if (/ILCE-(6700|7CM2|7CR)|ILME-FX2|ZV-E10M2/.test(model) ||
+          (/ILCE-(1M2|7M5)/.test(model) && plain[0]===0 && plain[1]===0 && plain[2]===0 && plain[3]===0 && plain[4]===0)) {
         const sc = readU32(0x000a);
         if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = 'Sony 9050d[0x000a]'; return; }
       }
       // Tag9050c: A7IV, A7RV, A7SM3, A1, FX3, FX30, ZV-E1
-      else if (/ILCE-(7M4|7M5|7RM5|7SM3|1\b)|ILME-(FX3|FX30)|ZV-E1\b/.test(model)) {
+      else if (/ILCE-(7M4|7M5|7RM5|7SM3|1M2|1\b)|ILME-(FX3|FX30)|ZV-E1\b/.test(model)) {
         const sc = readU32(0x003a);
         if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = 'Sony 9050c[0x003a]'; return; }
       }
