@@ -5,8 +5,10 @@ import { join } from 'path';
 
 // ── Extract and eval the parser code from index.html ──
 const html = readFileSync(join(import.meta.dirname, 'index.html'), 'utf-8');
-const scriptMatch = html.match(/<script>([\s\S]*?)<\/script>/);
-if (!scriptMatch) { console.error('No <script> found'); process.exit(1); }
+// Pick the largest <script> block (the parser), not the small gtag/analytics scripts
+const scriptMatches = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
+if (!scriptMatches.length) { console.error('No <script> found'); process.exit(1); }
+const scriptMatch = scriptMatches.reduce((a, b) => a[1].length > b[1].length ? a : b);
 
 // Extract only the parser functions (before UI code starting with "const allResults")
 const fullScript = scriptMatch[1];
