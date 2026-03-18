@@ -833,14 +833,20 @@ function parseSonyMakerNote(v, u, makerOff, le, r, corr=0) {
         return (plain[off] | (plain[off+1]<<8) | (plain[off+2]<<16) | (plain[off+3]<<24)) >>> 0;
       }
 
-      // Tag9050d: A6700, A7CM2, A7CR, FX2, ZV-E10M2 (always); A7V, A1II (when first 5 bytes null)
-      if (/ILCE-(6700|7CM2|7CR)|ILME-FX2|ZV-E10M2/.test(model) ||
-          (/ILCE-(1M2|7M5)/.test(model) && plain[0]===0 && plain[1]===0 && plain[2]===0 && plain[3]===0 && plain[4]===0)) {
+      // Tag9050d: A6700, A7CM2, A7CR, FX2, ZV-E10M2 (always); A7V, A1II (try 0x000a first, fallback to 0x003a)
+      if (/ILCE-(6700|7CM2|7CR)|ILME-FX2|ZV-E10M2/.test(model)) {
         const sc = readU32(0x000a);
         if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = 'Sony 9050d[0x000a]'; return; }
       }
+      // A7V (ILCE-7M5), A1II (ILCE-1M2): try 0x000a first, then 0x003a
+      else if (/ILCE-(1M2|7M5)/.test(model)) {
+        const sc = readU32(0x000a);
+        if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = 'Sony 9050d[0x000a]'; return; }
+        const sc2 = readU32(0x003a);
+        if (sc2 > 0 && sc2 < 600000) { r.shutterCount = sc2; r.method = 'Sony 9050c[0x003a]'; return; }
+      }
       // Tag9050c: A7IV, A7RV, A7SM3, A1, FX3, FX30, ZV-E1
-      else if (/ILCE-(7M4|7M5|7RM5|7SM3|1M2|1\b)|ILME-(FX3|FX30)|ZV-E1\b/.test(model)) {
+      else if (/ILCE-(7M4|7RM5|7SM3|1\b)|ILME-(FX3|FX30)|ZV-E1\b/.test(model)) {
         const sc = readU32(0x003a);
         if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = 'Sony 9050c[0x003a]'; return; }
       }
