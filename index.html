@@ -842,15 +842,13 @@ function parseSonyMakerNote(v, u, makerOff, le, r, corr=0) {
         const sc = readU32(0x000a);
         if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = 'Sony 9050d[0x000a]'; return; }
       }
-      // A7V (ILCE-7M5), A1II (ILCE-1M2): use Tag9050d (0x000a) only when first 5 bytes are null
-      // (mechanical shutter); otherwise fall back to Tag9050c (0x003a)
+      // A7V (ILCE-7M5), A1II (ILCE-1M2): use Tag9050d (0x000a) only when first 5 raw bytes
+      // are null (mechanical shutter). Per ExifTool, no other offset is valid for these models.
       else if (/ILCE-(1M2|7M5)/.test(model)) {
         if (first5null) {
           const sc = readU32(0x000a);
           if (sc > 0 && sc < 600000) { r.shutterCount = sc; r.method = 'Sony 9050d[0x000a]'; return; }
         }
-        const sc2 = readU32(0x003a);
-        if (sc2 > 0 && sc2 < 600000) { r.shutterCount = sc2; r.method = 'Sony 9050c[0x003a]'; return; }
       }
       // Tag9050c: A7IV, A7RV, A7SM3, A1, FX3, FX30, ZV-E1
       else if (/ILCE-(7M4|7RM5|7SM3|1\b)|ILME-(FX3|FX30)|ZV-E1\b/.test(model)) {
