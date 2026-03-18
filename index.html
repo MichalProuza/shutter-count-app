@@ -1248,6 +1248,10 @@ const TRANSLATIONS={
   kk:{subtitle:'RAW EXIF Инспекторы — Canon · Nikon · Sony · Fujifilm · Olympus / OM System · Panasonic',dropTitle:'RAW файлдарды немесе қалтаны осында тастаңыз',dropSub:'Өңдеу браузерде жергілікті түрде жүреді — ешбір файл жүктелмейді',openFolder:'Қалтаны ашу',orDrag:'немесе бүкіл қалтаны апарып тастаңыз',clear:'✕ Тазалау',exportCsv:'↓ CSV экспорттау',parsing:'ДЕРЕКТЕР ӨҢДЕЛУДЕ...',supportTitle:'Жобаны қолдағыңыз келе ме?',supportBody:'Егер ShutterCount уақытыңызды үнемдесе, тестілеу мен камера қолдауын жалғастыруға көмектесе аласыз.',buyCoffee:'Маған кофе сатып ал',helpTitle:'Қолдауы бар форматтар мен деректер көздері',testedTitle:'Тексерілген камералар мен нәтижелер',thCamera:'Камера',thFormat:'Формат',thShutter:'Жалпақ санауышы',thNotes:'Ескертпелер',exportCountFn:(n)=>`${n} файл өңделді`},
 };
 
+// Maps language code → ISO 3166-1 alpha-2 country code for flagcdn.com
+const LANG_CC={en:'gb',zh:'cn',hi:'in',es:'es',fr:'fr',ar:'sa',bn:'bd',pt:'br',ru:'ru',ur:'pk',id:'id',de:'de',ja:'jp',te:'in',mr:'in',tr:'tr',ta:'in',vi:'vn',ko:'kr',it:'it',pl:'pl',uk:'ua',fa:'ir',ro:'ro',nl:'nl',hu:'hu',el:'gr',cz:'cz',sv:'se',ms:'my',th:'th',tl:'ph',no:'no',da:'dk',fi:'fi',sk:'sk',bg:'bg',hr:'hr',sr:'rs',ca:'es',he:'il',lt:'lt',lv:'lv',et:'ee',sw:'ke',af:'za',sq:'al',sl:'si',az:'az',kk:'kz'};
+function flagImg(code,w,h){const cc=LANG_CC[code]||'un';return `<img src="https://flagcdn.com/${w}x${h}/${cc}.png" width="${w}" height="${h}" alt="" style="border-radius:2px;vertical-align:middle;flex-shrink:0">`;}
+
 let _lang='en';
 
 function detectLang(){
@@ -1286,7 +1290,7 @@ function applyLang(code){
   });
   // Update lang button label
   const btn=document.getElementById('langBtnText');
-  if(btn)btn.textContent=lang.flag+' '+lang.name;
+  if(btn)btn.innerHTML=flagImg(code,20,15)+' '+lang.name;
   // Update active state in dropdown
   document.querySelectorAll('.lang-item').forEach(el=>{
     el.classList.toggle('active',el.dataset.lang===code);
@@ -1311,7 +1315,7 @@ function toggleLangMenu(e){
   const menu=document.getElementById('langMenu');
   if(!menu)return;
   menu.innerHTML=LANGS.map(l=>
-    `<div class="lang-item" data-lang="${l.code}" onclick="setLang('${l.code}')"><span class="lang-item-flag">${l.flag}</span><span>${l.name}</span></div>`
+    `<div class="lang-item" data-lang="${l.code}" onclick="setLang('${l.code}')"><span class="lang-item-flag">${flagImg(l.code,20,15)}</span><span>${l.name}</span></div>`
   ).join('');
 })();
 
