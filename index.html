@@ -1092,6 +1092,13 @@ async function proc(file){
       try{r=parseFile(e.target.result)||{};}catch(ex){err=ex.message;}
       allResults.push({filename:file.name,size:file.size,model:r.model||'',
         dateTime:r.dateTime||'',shutterCount:r.shutterCount??null,make:r.make||''});
+      if(r.model||r.make){
+        gtag('event','file_processed',{
+          camera_model:r.model||'unknown',
+          camera_make:r.make||'unknown',
+          file_format:file.name.split('.').pop().toLowerCase()
+        });
+      }
       updateExportBar();
       card(file,r,err);
       res();
