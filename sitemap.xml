@@ -6,7 +6,32 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://shuttercount.app/canon-r5-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://shuttercount.app/canon-r6-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-r7-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-z6-iii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-a7-iv-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x-t5-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
