@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canon R6 Shutter Count — How to Check & What It Means | ShutterCount</title>
+<meta name="description" content="Check the shutter count of your Canon EOS R6 or R6 Mark II for free — directly in your browser from a CR3 RAW file. No upload required. Rated lifespan: 300,000 (R6) and 500,000 (R6 Mark II) actuations.">
+<meta name="keywords" content="canon r6 shutter count, canon eos r6 shutter count, check shutter count canon r6, canon r6 mark ii shutter count, canon r6 actuations, canon r6 ii shutter count, CR3 shutter count">
+<link rel="canonical" href="https://shuttercount.app/canon-r6-shutter-count/">
+<meta property="og:title" content="Canon R6 Shutter Count — How to Check & What It Means">
+<meta property="og:description" content="Free browser-based Canon R6 shutter count checker. Drop a CR3 RAW file and get the exact actuation count instantly — no upload, no account.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/canon-r6-shutter-count/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Canon R6 Shutter Count — How to Check & What It Means">
+<meta name="twitter:description" content="Check Canon R6 and R6 Mark II shutter count for free from a CR3 file, directly in your browser. Rated lifespan: 300k / 500k actuations.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.section ol{padding-left:1.4em;margin-top:8px}
+.section ol li{margin-bottom:6px}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}
+.spec-table .ok{color:var(--accent)}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Canon R6 Shutter Count — How to Check & What It Means",
+      "url": "https://shuttercount.app/canon-r6-shutter-count/",
+      "description": "Complete guide to checking the shutter count of a Canon EOS R6 or R6 Mark II from a CR3 RAW file, with rated lifespans, typical actuation ranges, and a free browser-based checker tool.",
+      "inLanguage": "en",
+      "isPartOf": { "@type": "WebSite", "url": "https://shuttercount.app/" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Canon R6 Shutter Count", "item": "https://shuttercount.app/canon-r6-shutter-count/" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I check the shutter count of my Canon EOS R6?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Take a photo with your Canon R6, then drop the resulting CR3 RAW file into shuttercount.app. The tool reads the shutter count directly from the file's MakerNote data in your browser — no upload required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the rated shutter life of the Canon EOS R6?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Canon rates the EOS R6 shutter at 300,000 actuations and the EOS R6 Mark II at 500,000 actuations. These are manufacturer-estimated median values; individual shutters may last longer or fail earlier."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good shutter count when buying a used Canon R6?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a used Canon R6 (300,000 rated), a count below 60,000–90,000 (under 20–30% of rated life) is considered low use. A count of 100,000–200,000 is moderate. Above 200,000, factor potential shutter replacement cost into your price negotiation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the shutter count on a Canon R6 be reset or faked?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The hardware counter inside the camera can only be reset by a Canon service centre after a shutter replacement. Software tools that overwrite EXIF values do not change the internal counter. Always verify from an original CR3 RAW file, not a screenshot."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does using the electronic shutter on the Canon R6 affect the count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The electronic shutter (silent mode) bypasses the mechanical curtain entirely and does not increment the shutter count. Only mechanical shutter and Electronic Front Curtain Shutter (EFCS) exposures are counted."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What RAW file format does the Canon R6 use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Canon EOS R6 and R6 Mark II produce CR3 RAW files using Canon's ISOBMFF-based container format. The shutter count is stored in the MakerNote section of the embedded EXIF data."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; Canon R6 Shutter Count
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon · Nikon · Sony · Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>Canon R6 Shutter Count:<br>Check It Free in Your Browser</h1>
+  <p>Drop a CR3 RAW file from your <strong>Canon EOS R6</strong> or <strong>R6 Mark II</strong> and get the exact shutter actuation count in seconds &mdash; processed entirely in your browser, never uploaded anywhere.</p>
+  <a class="btn-cta" href="/">Check Shutter Count &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Canon EOS R6 &amp; R6 Mark II &mdash; Shutter Ratings</h2>
+  <p>Canon specifies shutter durability as the number of actuations at which the median shutter unit is expected to reach end of life. Knowing the current count lets you estimate remaining lifespan &mdash; critical when buying a used body.</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Release</th>
+        <th>Sensor</th>
+        <th>Rated Shutter Life</th>
+        <th>RAW Format</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="val">Canon EOS R6</td>
+        <td>2020</td>
+        <td>20.1 MP full-frame</td>
+        <td class="ok">300,000</td>
+        <td>CR3</td>
+      </tr>
+      <tr>
+        <td class="val">Canon EOS R6 Mark II</td>
+        <td>2022</td>
+        <td>24.2 MP full-frame</td>
+        <td class="ok">500,000</td>
+        <td>CR3</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box">
+    <strong>Note:</strong> These are median rated values from Canon. Individual shutter mechanisms frequently exceed the rated count. A camera at 280,000 actuations on an R6 may still be mechanically sound &mdash; but budget for a potential shutter replacement.
+  </div>
+</div>
+
+<div class="section">
+  <h2>How to Check Shutter Count on the Canon R6</h2>
+  <p>The Canon EOS R6 does not display the shutter count in its on-screen menus. The count is embedded in the MakerNote metadata of every CR3 RAW file the camera produces. You can read it with ShutterCount:</p>
+
+  <ol class="steps">
+    <li>Take any photo with your Canon R6 or R6 Mark II and locate the resulting <strong>.CR3</strong> file (do not use JPEGs &mdash; they may not embed the count).</li>
+    <li>Open <a href="/">shuttercount.app</a> in any modern browser (Chrome, Firefox, Safari, Edge).</li>
+    <li>Drag the CR3 file onto the drop zone, or click to open a file picker.</li>
+    <li>The shutter count and remaining life percentage appear instantly. No upload, no account, no plugins required.</li>
+  </ol>
+
+  <p>You can also drag multiple CR3 files at once to check a batch of files from different shooting sessions.</p>
+</div>
+
+<div class="section">
+  <h2>What Is a Good Shutter Count for a Used Canon R6?</h2>
+  <p>When evaluating a second-hand Canon R6, the shutter count tells you how much of the rated shutter life has already been used. Here are common reference points:</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Actuation Count</th>
+        <th>% of Rated Life (R6)</th>
+        <th>Assessment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="val">0 – 30,000</td>
+        <td>0 – 10 %</td>
+        <td class="ok">Very low use &mdash; near new</td>
+      </tr>
+      <tr>
+        <td class="val">30,000 – 90,000</td>
+        <td>10 – 30 %</td>
+        <td class="ok">Low use &mdash; plenty of life remaining</td>
+      </tr>
+      <tr>
+        <td class="val">90,000 – 180,000</td>
+        <td>30 – 60 %</td>
+        <td style="color:#ffaa47">Moderate use &mdash; normal for active shooters</td>
+      </tr>
+      <tr>
+        <td class="val">180,000 – 270,000</td>
+        <td>60 – 90 %</td>
+        <td style="color:#ffaa47">High use &mdash; negotiate price accordingly</td>
+      </tr>
+      <tr>
+        <td class="val">270,000 +</td>
+        <td>90 %+</td>
+        <td style="color:var(--accent2)">Near or past rated life &mdash; factor in shutter replacement (~€150–250)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>For the <strong>R6 Mark II</strong> (rated 500,000), scale these thresholds proportionally: under 50,000 is very low use, 150,000–300,000 is moderate, above 400,000 is high.</p>
+</div>
+
+<div class="section">
+  <h2>How Does ShutterCount Read the R6 Shutter Count?</h2>
+  <p>The Canon EOS R6 stores image data in the <strong>CR3</strong> format &mdash; an ISOBMFF (ISO Base Media File Format) container, the same standard used by HEIF and MP4. Inside the container, the main RAW image data sits alongside a full-copy of the EXIF block.</p>
+
+  <p>Within that EXIF block, Canon includes a <em>MakerNote</em> section specific to Canon cameras. ShutterCount parses the ISOBMFF box hierarchy to locate the MakerNote, then reads the appropriate byte offset for the shutter counter. The specific offset differs by camera model &mdash; ShutterCount has been validated against actual Canon R6 and R6 Mark II CR3 files.</p>
+
+  <h3>Why can't I use a JPEG from my R6?</h3>
+  <p>Canon does not embed the shutter counter in the MakerNote of JPEG files produced by the R6. The counter is only reliably present in <strong>CR3 RAW files</strong>. If you shoot RAW+JPEG, use the CR3 file for the check.</p>
+
+  <h3>Does the electronic shutter count?</h3>
+  <p>No. The R6's electronic shutter mode uses the sensor's rolling readout and never moves the mechanical curtain. Those frames do not increment the hardware counter. Only mechanical and EFCS (Electronic Front Curtain Shutter) exposures are counted. The R6 Mark II adds a fully electronic global-shutter-like readout option; those shots are also not counted.</p>
+</div>
+
+<div class="section">
+  <h2>Canon R6 Shutter Count &mdash; FAQ</h2>
+
+  <h3>How do I check the shutter count of my Canon EOS R6?</h3>
+  <p>Take a photo with your Canon R6, then drop the resulting CR3 RAW file into <a href="/">shuttercount.app</a>. The tool reads the shutter count directly from the file's MakerNote data in your browser &mdash; no upload required.</p>
+
+  <h3>What is the rated shutter life of the Canon EOS R6?</h3>
+  <p>Canon rates the <strong>EOS R6</strong> shutter at <strong>300,000 actuations</strong> and the <strong>EOS R6 Mark II</strong> at <strong>500,000 actuations</strong>. These are manufacturer-estimated median values; individual shutters may last longer or fail earlier.</p>
+
+  <h3>Can the shutter count on a Canon R6 be reset or faked?</h3>
+  <p>The hardware counter can only be reset by a Canon authorised service centre after a physical shutter replacement. Software tools that rewrite EXIF metadata do not change the internal counter stored in the camera's firmware. Always verify from an original CR3 RAW file &mdash; never from a screenshot or exported image.</p>
+
+  <h3>Does using the electronic shutter on the Canon R6 affect the count?</h3>
+  <p>No. The electronic shutter bypasses the mechanical curtain entirely and does not increment the shutter count. Only mechanical shutter and EFCS exposures are counted.</p>
+
+  <h3>What RAW file format does the Canon R6 use?</h3>
+  <p>Both the EOS R6 and R6 Mark II produce <strong>CR3</strong> files. CR3 is Canon's ISOBMFF-based container format introduced with the EOS R system. It stores a full EXIF block &mdash; including the MakerNote containing the shutter count &mdash; inside the file container.</p>
+
+  <h3>Is ShutterCount free to use?</h3>
+  <p>Yes, completely free. <a href="/">ShutterCount.app</a> processes everything in your browser using JavaScript. No account, no upload, no limit on the number of files.</p>
+</div>
+
+<div class="section">
+  <h2>Other Cameras</h2>
+  <p>ShutterCount supports the full Canon EOS R system and all major mirrorless brands. See related guides:</p>
+  <div class="related">
+    <a href="/canon-r5-shutter-count/">Canon EOS R5</a>
+    <a href="/canon-r7-shutter-count/">Canon EOS R7</a>
+    <a href="/nikon-z6-iii-shutter-count/">Nikon Z6 III</a>
+    <a href="/sony-a7-iv-shutter-count/">Sony A7 IV</a>
+    <a href="/fujifilm-x-t5-shutter-count/">Fujifilm X-T5</a>
+    <a href="/">All supported cameras &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&#8592; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>
