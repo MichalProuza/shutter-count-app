@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7088JCNHD');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fujifilm X-H2 Shutter Count — How to Check & What It Means | ShutterCount</title>
+<meta name="description" content="Check the shutter count of your Fujifilm X-H2 for free — directly in your browser from a RAF file. No upload required. Rated lifespan: 300,000 actuations. Important: RAF counter resets after card formatting.">
+<meta name="keywords" content="fujifilm x-h2 shutter count, fujifilm xh2 shutter count, check shutter count fujifilm x-h2, fujifilm x-h2 actuations, fujifilm xh2 shutter life, fujifilm x-h2 used">
+<link rel="canonical" href="https://shuttercount.app/fujifilm-x-h2-shutter-count/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:title" content="Fujifilm X-H2 Shutter Count — How to Check & What It Means">
+<meta property="og:description" content="Free browser-based Fujifilm X-H2 shutter count checker. Drop a RAF file and get the actuation count. Rated lifespan: 300,000 actuations. Counter reset caveat explained.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/fujifilm-x-h2-shutter-count/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fujifilm X-H2 Shutter Count — How to Check & What It Means">
+<meta name="twitter:description" content="Check Fujifilm X-H2 shutter count free from a RAF file. Rated lifespan: 300,000. Counter resets after card format.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),transparent)}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}.section strong{color:var(--text)}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}.spec-table .ok{color:var(--accent)}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,170,71,.06);border:1px solid rgba(255,170,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ffaa47}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebPage","name":"Fujifilm X-H2 Shutter Count — How to Check & What It Means","url":"https://shuttercount.app/fujifilm-x-h2-shutter-count/","description":"Complete guide to checking the shutter count of a Fujifilm X-H2 from a RAF file, including the card-format counter reset caveat, rated lifespan, X-H2 vs X-H2S comparison, and a free browser-based checker tool.","inLanguage":"en","isPartOf":{"@type":"WebSite","url":"https://shuttercount.app/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ShutterCount","item":"https://shuttercount.app/"},{"@type":"ListItem","position":2,"name":"Fujifilm X-H2 Shutter Count","item":"https://shuttercount.app/fujifilm-x-h2-shutter-count/"}]}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I check the shutter count of my Fujifilm X-H2?","acceptedAnswer":{"@type":"Answer","text":"Take a still photo with your Fujifilm X-H2 using the mechanical shutter and locate the resulting RAF file. Drop it into shuttercount.app — the tool reads MakerNote tag 0x1438 in your browser, no upload required. Important: use a file from after the last card format to get the current counter value."}},
+{"@type":"Question","name":"What is the rated shutter life of the Fujifilm X-H2?","acceptedAnswer":{"@type":"Answer","text":"Fujifilm rates the X-H2 shutter at 300,000 actuations — the same as the X-H2S. The X-H2 is the high-resolution version (40.2 MP) while the X-H2S uses a stacked 26.1 MP sensor for speed."}},
+{"@type":"Question","name":"What is the difference between the Fujifilm X-H2 and X-H2S?","acceptedAnswer":{"@type":"Answer","text":"The X-H2S uses a 26.1 MP stacked CMOS sensor for extremely fast readout — enabling 40fps electronic burst and a 500,000-actuation shutter. The X-H2 uses a 40.2 MP non-stacked BSI CMOS for higher resolution but slower burst (15fps mechanical) and a 300,000-actuation shutter. Choose X-H2S for action, X-H2 for resolution."}},
+{"@type":"Question","name":"Why does the Fujifilm X-H2 shutter count reset to zero?","acceptedAnswer":{"@type":"Answer","text":"The RAF MakerNote tag 0x1438 counts actuations since the last memory card format. If the card has been formatted, the counter resets to zero. This affects all Fujifilm cameras. The hardware mechanical counter inside the camera is unaffected but is not readable without Fujifilm service tools."}},
+{"@type":"Question","name":"What is a good shutter count when buying a used Fujifilm X-H2?","acceptedAnswer":{"@type":"Answer","text":"For a used X-H2 (300,000 rated), a count below 15,000 since the last format is low but requires verifying no recent format occurred. 15,000–80,000 is moderate use. Above 200,000 since last format represents heavy use approaching the rated limit."}}
+]}
+]}
+</script>
+</head>
+<body>
+<div class="breadcrumb"><a href="/">ShutterCount</a> &rsaquo; Fujifilm X-H2 Shutter Count</div>
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon · Nikon · Sony · Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>Fujifilm X-H2 Shutter Count:<br>Check It Free in Your Browser</h1>
+  <p>Drop a RAF file from your <strong>Fujifilm X-H2</strong> and get the mechanical shutter actuation count in seconds &mdash; processed entirely in your browser, never uploaded anywhere. <strong>Important: see the card-format reset caveat below.</strong></p>
+  <a class="btn-cta" href="/">Check Shutter Count &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Fujifilm X-H2 &mdash; Shutter Rating &amp; X-H2 vs X-H2S</h2>
+  <p>The Fujifilm X-H2 (2022) is the high-resolution member of Fujifilm's flagship X-H mirrorless pair. Its 40.2 MP X-Trans CMOS 5 HR sensor delivers the highest resolution in the APS-C mirrorless market. Unlike its sibling, the X-H2S, which uses a stacked sensor optimised for speed, the X-H2 trades burst performance for pixel count. Both share the same X-H2 body design with in-body image stabilisation, dual card slots (CFexpress Type B + SD), and a 300,000-actuation mechanical shutter &mdash; though the X-H2S has an additional 500,000-actuation tier due to its stacked architecture.</p>
+
+  <table class="spec-table">
+    <thead><tr><th>Model</th><th>Sensor</th><th>Max Burst</th><th>Rated Shutter</th><th>Use Case</th></tr></thead>
+    <tbody>
+      <tr><td class="val">Fujifilm X-H2</td><td>40.2 MP X-Trans CMOS 5 HR</td><td>15 fps mechanical</td><td style="color:#ffaa47">300,000</td><td>Resolution / studio</td></tr>
+      <tr><td class="val">Fujifilm X-H2S</td><td>26.1 MP X-Trans CMOS 5 HS (stacked)</td><td>40 fps electronic</td><td class="ok">500,000</td><td>Action / sports</td></tr>
+      <tr><td class="val">Fujifilm X-T5</td><td>40.2 MP X-Trans CMOS 5 HR (same sensor)</td><td>20 fps electronic</td><td class="ok">300,000</td><td>Resolution / travel</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn-box">
+    <strong>Card format reset:</strong> Fujifilm's RAF MakerNote tag 0x1438 counts actuations since the last memory card format &mdash; not the total lifetime count. If the card has been formatted, the counter resets to zero. Always request a RAF file shot recently with an unformatted card. The hardware mechanical counter inside the camera is unaffected by card formats but is only readable by Fujifilm service tools.
+  </div>
+</div>
+
+<div class="section">
+  <h2>How to Check Shutter Count on the Fujifilm X-H2</h2>
+  <ol class="steps">
+    <li>Take a still photo with your Fujifilm X-H2 using the <strong>mechanical shutter</strong> on a card that has <strong>not been recently formatted</strong>. Locate the <strong>.RAF</strong> file.</li>
+    <li>Open <a href="/">shuttercount.app</a> in any modern browser.</li>
+    <li>Drag the RAF file onto the drop zone, or click to open a file picker.</li>
+    <li>The shutter count appears instantly, read from MakerNote tag 0x1438 in your browser.</li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>What Is a Good Shutter Count for a Used Fujifilm X-H2?</h2>
+
+  <table class="spec-table">
+    <thead><tr><th>Count (since last format)</th><th>% of Rated Life</th><th>Assessment</th></tr></thead>
+    <tbody>
+      <tr><td class="val">0 – 5,000</td><td>&lt; 2 %</td><td style="color:#ffaa47">Low &mdash; verify card has not been recently formatted</td></tr>
+      <tr><td class="val">5,000 – 60,000</td><td>2 – 20 %</td><td class="ok">Moderate use on current card</td></tr>
+      <tr><td class="val">60,000 – 150,000</td><td>20 – 50 %</td><td class="ok">Normal to heavy use since last format</td></tr>
+      <tr><td class="val">150,000 – 270,000</td><td>50 – 90 %</td><td style="color:#ffaa47">Heavy use — inspect carefully</td></tr>
+      <tr><td class="val">270,000 +</td><td>90 %+</td><td style="color:var(--accent2)">Near or past rated life</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>How Does ShutterCount Read the Fujifilm X-H2 Shutter Count?</h2>
+  <p>Fujifilm RAF files embed the shutter count in <strong>MakerNote tag 0x1438</strong>. ShutterCount reads this tag directly from the RAF file in your browser — no encryption is required. The same tag is used across all modern Fujifilm X-series and GFX cameras. The value represents actuations since the last card format, not the total lifetime count.</p>
+</div>
+
+<div class="section">
+  <h2>Fujifilm X-H2 Shutter Count &mdash; FAQ</h2>
+
+  <h3>How do I check the shutter count of my Fujifilm X-H2?</h3>
+  <p>Shoot a mechanical RAF frame from a non-recently-formatted card and drop it into <a href="/">shuttercount.app</a>. The count is read from MakerNote tag 0x1438 in your browser.</p>
+
+  <h3>What is the rated shutter life of the Fujifilm X-H2?</h3>
+  <p>Fujifilm rates the X-H2 at <strong>300,000 actuations</strong>. The X-H2S uses a stacked sensor and achieves a higher 500,000-actuation rating.</p>
+
+  <h3>Should I buy the X-H2 or X-H2S?</h3>
+  <p>For landscape, studio, commercial, and travel photography where resolution is paramount: X-H2 (40.2MP). For wildlife, sports, and action where burst speed and minimal rolling shutter matter: X-H2S (40fps electronic, stacked sensor, 500k shutter). If you regularly need both, the X-H2 pairs well as a studio body alongside an X-H2S action body.</p>
+
+  <h3>Does the X-H2's pixel shift multi-shot mode affect the count?</h3>
+  <p>Yes. Pixel Shift Multi-Shot mode uses multiple mechanical shutter actuations per composite capture. Each individual frame increments the counter. Heavy pixel shift use will accumulate actuations faster than single-frame shooting.</p>
+
+  <h3>Can the Fujifilm X-H2 shutter count be reset?</h3>
+  <p>The RAF tag 0x1438 resets to zero when the memory card is formatted in-camera. The hardware mechanical counter cannot be reset without Fujifilm service tools. A low count on an older body may simply indicate a recent card format.</p>
+</div>
+
+<div class="section">
+  <h2>Other Fujifilm &amp; Mirrorless Cameras</h2>
+  <div class="related">
+    <a href="/fujifilm-x-h2s-shutter-count/">Fujifilm X-H2S</a>
+    <a href="/fujifilm-x-t5-shutter-count/">Fujifilm X-T5</a>
+    <a href="/fujifilm-x-t4-shutter-count/">Fujifilm X-T4</a>
+    <a href="/fujifilm-x-s20-shutter-count/">Fujifilm X-S20</a>
+    <a href="/fujifilm-gfx-100s-ii-shutter-count/">Fujifilm GFX 100S II</a>
+    <a href="/">All supported cameras &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&#8592; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+</body>
+</html>
