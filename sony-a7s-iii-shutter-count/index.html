@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7088JCNHD');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sony A7S III Shutter Count — How to Check & What It Means | ShutterCount</title>
+<meta name="description" content="Check the shutter count of your Sony A7S III (ILCE-7SM3) for free — directly in your browser from an ARW file. No upload required. Rated lifespan: 500,000 actuations. Sony's low-light video flagship.">
+<meta name="keywords" content="sony a7s iii shutter count, sony a7s3 shutter count, check shutter count sony a7s iii, sony ilce-7sm3 shutter count, sony a7s mark iii actuations, sony a7siii shutter count">
+<link rel="canonical" href="https://shuttercount.app/sony-a7s-iii-shutter-count/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:title" content="Sony A7S III Shutter Count — How to Check & What It Means">
+<meta property="og:description" content="Free browser-based Sony A7S III shutter count checker. Drop an ARW file and get the exact actuation count. Rated lifespan: 500,000 actuations. Video use caveat explained.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/sony-a7s-iii-shutter-count/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sony A7S III Shutter Count — How to Check & What It Means">
+<meta name="twitter:description" content="Check Sony A7S III shutter count free from an ARW file. Rated lifespan: 500,000 actuations. Video use caveat explained.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),transparent)}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}.section strong{color:var(--text)}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}.spec-table .ok{color:var(--accent)}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,170,71,.06);border:1px solid rgba(255,170,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ffaa47}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebPage","name":"Sony A7S III Shutter Count — How to Check & What It Means","url":"https://shuttercount.app/sony-a7s-iii-shutter-count/","description":"Complete guide to checking the shutter count of a Sony A7S III from an ARW file, including the video use caveat, rated lifespan, and a free browser-based checker tool.","inLanguage":"en","isPartOf":{"@type":"WebSite","url":"https://shuttercount.app/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ShutterCount","item":"https://shuttercount.app/"},{"@type":"ListItem","position":2,"name":"Sony A7S III Shutter Count","item":"https://shuttercount.app/sony-a7s-iii-shutter-count/"}]}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I check the shutter count of my Sony A7S III?","acceptedAnswer":{"@type":"Answer","text":"Take a still photo with your Sony A7S III using the mechanical shutter, then drop the resulting ARW file into shuttercount.app. The tool decrypts and reads MakerNote tag 0x9050 in your browser — no upload required."}},
+{"@type":"Question","name":"What is the rated shutter life of the Sony A7S III?","acceptedAnswer":{"@type":"Answer","text":"Sony rates the A7S III shutter at 500,000 actuations — the highest tier in Sony's full-frame lineup, matching the A1, A7R V, and A9 III."}},
+{"@type":"Question","name":"Does video recording on the Sony A7S III affect the shutter count?","acceptedAnswer":{"@type":"Answer","text":"No. Video recording does not use the mechanical shutter and does not increment the counter. The A7S III is primarily a video camera — many owners rarely use the mechanical shutter for stills, so a low count does not necessarily indicate light use."}},
+{"@type":"Question","name":"What is a good shutter count when buying a used Sony A7S III?","acceptedAnswer":{"@type":"Answer","text":"For a used A7S III (500,000 rated), a count below 50,000–100,000 is low mechanical use. However, because the A7S III is video-focused, the mechanical count is a poor proxy for total usage. Inspect the body for general wear, overheating history, and recording hour estimates."}},
+{"@type":"Question","name":"How does the Sony A7S III differ from the ZV-E1?","acceptedAnswer":{"@type":"Answer","text":"Both use the same 12.1 MP full-frame sensor, but the A7S III is the professional cinema-grade body with dual CFexpress/SD slots, full-size HDMI, better heat management, and a 500,000-actuation shutter. The ZV-E1 is a compact consumer vlogging derivative of the same sensor with simpler controls and lower build quality."}}
+]}
+]}
+</script>
+</head>
+<body>
+<div class="breadcrumb"><a href="/">ShutterCount</a> &rsaquo; Sony A7S III Shutter Count</div>
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon · Nikon · Sony · Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>Sony A7S III Shutter Count:<br>Check It Free in Your Browser</h1>
+  <p>Drop an ARW file from your <strong>Sony A7S III</strong> (ILCE-7SM3) and get the exact mechanical shutter actuation count in seconds &mdash; processed entirely in your browser, never uploaded anywhere.</p>
+  <a class="btn-cta" href="/">Check Shutter Count &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Sony A7S III &mdash; Shutter Rating &amp; Video Context</h2>
+  <p>The Sony A7S III is Sony's 2020 professional cinema mirrorless camera. It uses a 12.1 MP full-frame BSI CMOS sensor with massive individual photosites for extraordinary low-light video performance &mdash; the same sensor found in the consumer ZV-E1. But where the ZV-E1 is a simplified vlogging tool, the A7S III is the full professional cinema package: dual CFexpress Type A / SD slots, 4K/120p video, full-size HDMI, active heat management, and a shutter rated at 500,000 actuations.</p>
+
+  <table class="spec-table">
+    <thead><tr><th>Model</th><th>Release</th><th>Sensor</th><th>Rated Shutter Life</th><th>Primary Use</th></tr></thead>
+    <tbody>
+      <tr><td class="val">Sony A7S III (ILCE-7SM3)</td><td>2020</td><td>12.1 MP full-frame BSI</td><td class="ok">500,000</td><td>Cinema / low-light video</td></tr>
+      <tr><td class="val">Sony ZV-E1 <span style="font-weight:400;color:var(--muted)">(consumer derivative)</span></td><td>2023</td><td>12.1 MP full-frame BSI (same sensor)</td><td style="color:#ffaa47">200,000</td><td>Vlogging</td></tr>
+      <tr><td class="val">Sony A7R V <span style="font-weight:400;color:var(--muted)">(resolution)</span></td><td>2022</td><td>61 MP full-frame BSI</td><td class="ok">500,000</td><td>Photo / studio</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn-box">
+    <strong>Video use caveat:</strong> The A7S III's mechanical shutter count is an especially unreliable indicator of overall usage. Professional videographers using the A7S III for full cinema productions may accumulate hundreds of hours of video with fewer than a thousand mechanical shutter actuations. A used A7S III with 200 actuations may have been used extensively for commercial work. Evaluate body condition, port wear, and recording history alongside the shutter count.
+  </div>
+</div>
+
+<div class="section">
+  <h2>How to Check Shutter Count on the Sony A7S III</h2>
+  <ol class="steps">
+    <li>Take a still photo with your Sony A7S III using the mechanical shutter and locate the <strong>.ARW</strong> file.</li>
+    <li>Open <a href="/">shuttercount.app</a> in any modern browser.</li>
+    <li>Drag the ARW file onto the drop zone, or click to open a file picker.</li>
+    <li>The mechanical shutter count appears instantly. Remember: this may be very low even on a heavily used body.</li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>What Is a Good Shutter Count for a Used Sony A7S III?</h2>
+
+  <table class="spec-table">
+    <thead><tr><th>Mechanical Count</th><th>% of Rated Life</th><th>Assessment</th></tr></thead>
+    <tbody>
+      <tr><td class="val">0 – 1,000</td><td>&lt; 1 %</td><td class="ok">Very low &mdash; expected for a video-only user</td></tr>
+      <tr><td class="val">1,000 – 50,000</td><td>0.2 – 10 %</td><td class="ok">Low mechanical use &mdash; may still be heavily used for video</td></tr>
+      <tr><td class="val">50,000 – 200,000</td><td>10 – 40 %</td><td style="color:#ffaa47">Moderate mechanical use alongside video</td></tr>
+      <tr><td class="val">200,000 – 450,000</td><td>40 – 90 %</td><td style="color:#ffaa47">Heavy still use &mdash; unusual for an A7S III owner</td></tr>
+      <tr><td class="val">450,000 +</td><td>90 %+</td><td style="color:var(--accent2)">Near or past rated life</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>How Does ShutterCount Read the A7S III Shutter Count?</h2>
+  <p>The Sony A7S III stores the mechanical shutter count encrypted in ARW MakerNote tag <strong>0x9050</strong>. ShutterCount applies Sony's cubic residue decryption (modulo 249) and reads the count from byte offset <strong>0x003a</strong> &mdash; the same offset used by the A7 IV, A7 III, A7R V, A9 III, and A1. All decryption is done locally in your browser.</p>
+</div>
+
+<div class="section">
+  <h2>Sony A7S III Shutter Count &mdash; FAQ</h2>
+
+  <h3>How do I check the shutter count of my Sony A7S III?</h3>
+  <p>Shoot a mechanical ARW frame, then drop it into <a href="/">shuttercount.app</a>. The count is decrypted from tag 0x9050 at offset 0x003a in your browser.</p>
+
+  <h3>What is the rated shutter life of the Sony A7S III?</h3>
+  <p>Sony rates the A7S III at <strong>500,000 actuations</strong> &mdash; Sony's top tier, shared with the A1, A7R V, and A9 III.</p>
+
+  <h3>Is the A7S III or ZV-E1 a better buy for a videographer?</h3>
+  <p>The A7S III is the professional choice: better heat management for long recordings, dual card slots for redundancy, full-size HDMI, and a 500,000-actuation shutter (vs ZV-E1's 200,000). For casual vlogging and social content, the ZV-E1 offers the same sensor in a much smaller package at lower cost.</p>
+
+  <h3>Can the A7S III shutter count be reset?</h3>
+  <p>Only a Sony authorised service centre can reset the hardware counter. Always verify from an original ARW file, not a screenshot.</p>
+</div>
+
+<div class="section">
+  <h2>Other Sony &amp; Mirrorless Cameras</h2>
+  <div class="related">
+    <a href="/sony-zv-e1-shutter-count/">Sony ZV-E1</a>
+    <a href="/sony-a1-shutter-count/">Sony A1</a>
+    <a href="/sony-a7r-v-shutter-count/">Sony A7R V</a>
+    <a href="/sony-a9-iii-shutter-count/">Sony A9 III</a>
+    <a href="/sony-a7c-ii-shutter-count/">Sony A7C II</a>
+    <a href="/">All supported cameras &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&#8592; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+</body>
+</html>
