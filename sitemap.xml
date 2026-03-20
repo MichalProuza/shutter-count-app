@@ -31,7 +31,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://shuttercount.app/canon-r10-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-r50-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Nikon -->
+  <url>
+    <loc>https://shuttercount.app/nikon-z5-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://shuttercount.app/nikon-z6-iii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
@@ -74,12 +89,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://shuttercount.app/sony-a7c-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://shuttercount.app/sony-a7r-v-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a9-iii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-zv-e1-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -91,6 +116,11 @@
   </url>
   <url>
     <loc>https://shuttercount.app/fujifilm-x-h2s-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x-s20-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

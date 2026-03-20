@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7088JCNHD');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sony ZV-E1 Shutter Count — How to Check & What It Means | ShutterCount</title>
+<meta name="description" content="Check the shutter count of your Sony ZV-E1 for free — directly in your browser from an ARW file. No upload required. Sony's full-frame vlogging camera. Mechanical count vs video use explained.">
+<meta name="keywords" content="sony zv-e1 shutter count, sony zve1 shutter count, check shutter count sony zv-e1, sony zv e1 actuations, sony zv-e1 shutter life, ARW shutter count sony zv-e1">
+<link rel="canonical" href="https://shuttercount.app/sony-zv-e1-shutter-count/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:title" content="Sony ZV-E1 Shutter Count — How to Check & What It Means">
+<meta property="og:description" content="Free browser-based Sony ZV-E1 shutter count checker. Drop an ARW file and get the exact actuation count instantly. Full-frame vlogging camera.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/sony-zv-e1-shutter-count/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sony ZV-E1 Shutter Count — How to Check & What It Means">
+<meta name="twitter:description" content="Check Sony ZV-E1 shutter count free from an ARW file in your browser. Full-frame vlogging camera — video use caveat explained.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),transparent)}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}.section strong{color:var(--text)}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}.spec-table .ok{color:var(--accent)}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,170,71,.06);border:1px solid rgba(255,170,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ffaa47}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebPage","name":"Sony ZV-E1 Shutter Count — How to Check & What It Means","url":"https://shuttercount.app/sony-zv-e1-shutter-count/","description":"Complete guide to checking the shutter count of a Sony ZV-E1 from an ARW file, including the critical video use caveat, and a free browser-based checker tool.","inLanguage":"en","isPartOf":{"@type":"WebSite","url":"https://shuttercount.app/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ShutterCount","item":"https://shuttercount.app/"},{"@type":"ListItem","position":2,"name":"Sony ZV-E1 Shutter Count","item":"https://shuttercount.app/sony-zv-e1-shutter-count/"}]}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I check the shutter count of my Sony ZV-E1?","acceptedAnswer":{"@type":"Answer","text":"Take a still photo with your Sony ZV-E1 using the mechanical shutter, then drop the resulting ARW file into shuttercount.app. The tool decrypts and reads MakerNote tag 0x9050 in your browser — no upload required."}},
+{"@type":"Question","name":"What is the rated shutter life of the Sony ZV-E1?","acceptedAnswer":{"@type":"Answer","text":"Sony rates the ZV-E1 shutter at 200,000 actuations. As a vlogging-focused camera, the ZV-E1 is primarily used for video — which does not increment the mechanical counter. Its mechanical count is likely to be far lower than total camera usage."}},
+{"@type":"Question","name":"Does video recording on the Sony ZV-E1 count toward the shutter count?","acceptedAnswer":{"@type":"Answer","text":"No. Video recording does not use the mechanical shutter and does not increment the counter. A ZV-E1 used for 500 hours of vlogging may have fewer than 500 mechanical shutter actuations. When buying a used ZV-E1, the shutter count tells you almost nothing about how heavily the camera has been used for its primary purpose."}},
+{"@type":"Question","name":"Is the Sony ZV-E1 shutter count a reliable indicator of usage?","acceptedAnswer":{"@type":"Answer","text":"No — less so than for any other camera in this guide. The ZV-E1 is purpose-built for video. Most owners rarely use the still mechanical shutter. A very low count is expected and normal, not a sign of light use. Evaluate overall body condition, sensor hours, and overheating history instead."}},
+{"@type":"Question","name":"What is the Sony ZV-E1 sensor?","acceptedAnswer":{"@type":"Answer","text":"The Sony ZV-E1 uses the same 12.1 MP full-frame BSI CMOS sensor as the Sony A7S III — optimised for video with massive photosites for exceptional low-light performance. The 12 MP resolution is intentionally low by photo standards to maximise individual pixel size."}}
+]}
+]}
+</script>
+</head>
+<body>
+<div class="breadcrumb"><a href="/">ShutterCount</a> &rsaquo; Sony ZV-E1 Shutter Count</div>
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon · Nikon · Sony · Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>Sony ZV-E1 Shutter Count:<br>Check It Free in Your Browser</h1>
+  <p>Drop an ARW file from your <strong>Sony ZV-E1</strong> and get the exact mechanical shutter actuation count in seconds &mdash; processed entirely in your browser, never uploaded anywhere.</p>
+  <a class="btn-cta" href="/">Check Shutter Count &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Sony ZV-E1 &mdash; Shutter Rating &amp; Video Caveat</h2>
+  <p>The Sony ZV-E1 is Sony's 2023 compact full-frame vlogging camera, built around the same 12.1 MP sensor as the A7S III. It combines class-leading low-light video capability with a compact, lightweight body optimised for selfie-style recording, AI-powered auto-framing, and long continuous recording. Despite its full-frame sensor, the ZV-E1 is unambiguously a video-first camera.</p>
+
+  <table class="spec-table">
+    <thead><tr><th>Model</th><th>Release</th><th>Sensor</th><th>Rated Shutter Life</th><th>Primary Use</th></tr></thead>
+    <tbody>
+      <tr><td class="val">Sony ZV-E1</td><td>2023</td><td>12.1 MP full-frame BSI (A7S III sensor)</td><td style="color:#ffaa47">200,000</td><td>Video / vlogging</td></tr>
+      <tr><td class="val">Sony A7C II <span style="font-weight:400;color:var(--muted)">(photo-focused)</span></td><td>2023</td><td>33 MP full-frame BSI</td><td style="color:#ffaa47">200,000</td><td>Photo / hybrid</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn-box">
+    <strong>Critical caveat &mdash; the shutter count barely matters for ZV-E1:</strong> The ZV-E1 is designed to be used almost exclusively for video. Video does not use the mechanical shutter. A ZV-E1 with 100 hours of footage and 200 shutter actuations is a heavily used camera from a wear perspective — the mechanical count tells you almost nothing. When evaluating a used ZV-E1, prioritise cosmetic condition, overheating history, and video quality over the shutter count.
+  </div>
+</div>
+
+<div class="section">
+  <h2>How to Check Shutter Count on the Sony ZV-E1</h2>
+  <ol class="steps">
+    <li>Take a still photo with your ZV-E1 using the mechanical shutter and locate the <strong>.ARW</strong> file.</li>
+    <li>Open <a href="/">shuttercount.app</a> in any modern browser.</li>
+    <li>Drag the ARW file onto the drop zone, or click to open a file picker.</li>
+    <li>The mechanical shutter count appears. Remember: this number may be very low even on a heavily used body.</li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>What Does the Shutter Count Tell You on a Used ZV-E1?</h2>
+
+  <table class="spec-table">
+    <thead><tr><th>Mechanical Count</th><th>% of Rated Life</th><th>Assessment</th></tr></thead>
+    <tbody>
+      <tr><td class="val">0 – 500</td><td>&lt; 1 %</td><td class="ok">Expected for a video-only user — not meaningful</td></tr>
+      <tr><td class="val">500 – 10,000</td><td>0.25 – 5 %</td><td class="ok">Still barely meaningful — check video hours instead</td></tr>
+      <tr><td class="val">10,000 – 60,000</td><td>5 – 30 %</td><td style="color:#ffaa47">Moderate still use alongside video</td></tr>
+      <tr><td class="val">60,000 – 180,000</td><td>30 – 90 %</td><td style="color:#ffaa47">Heavy still use — unusual for a ZV-E1 owner</td></tr>
+      <tr><td class="val">180,000 +</td><td>90 %+</td><td style="color:var(--accent2)">Near or past rated life</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>How Does ShutterCount Read the ZV-E1 Shutter Count?</h2>
+  <p>The Sony ZV-E1 stores the mechanical shutter count encrypted in ARW MakerNote tag <strong>0x9050</strong>. ShutterCount applies Sony's cubic residue decryption and reads the count from the appropriate byte offset based on the camera model. All processing is done locally in your browser.</p>
+</div>
+
+<div class="section">
+  <h2>Sony ZV-E1 Shutter Count &mdash; FAQ</h2>
+
+  <h3>Should I even check the shutter count when buying a used ZV-E1?</h3>
+  <p>Yes &mdash; but treat it as just one data point, not the primary one. A very low count is expected and doesn't mean the camera is lightly used. Focus on sensor condition, overheating behaviour during long recordings, and cosmetic wear.</p>
+
+  <h3>What is the rated shutter life of the Sony ZV-E1?</h3>
+  <p>Sony rates the ZV-E1 at <strong>200,000 mechanical actuations</strong>. Given its video-first use profile, most bodies will never approach this limit.</p>
+
+  <h3>Is the ZV-E1 good for still photography?</h3>
+  <p>It can shoot stills, but its 12 MP sensor is optimised for low-light video, not high-resolution photos. Photographers who primarily shoot stills would be better served by the A7C II (33 MP, 200k rated), A7 IV (33 MP, 150k rated), or other photo-focused bodies.</p>
+
+  <h3>Can the ZV-E1 shutter count be reset?</h3>
+  <p>Only a Sony authorised service centre can reset the hardware counter. Always verify from an original ARW file.</p>
+</div>
+
+<div class="section">
+  <h2>Other Sony &amp; Mirrorless Cameras</h2>
+  <div class="related">
+    <a href="/sony-a7c-ii-shutter-count/">Sony A7C II</a>
+    <a href="/sony-a6700-shutter-count/">Sony A6700</a>
+    <a href="/sony-a7-iv-shutter-count/">Sony A7 IV</a>
+    <a href="/sony-a1-shutter-count/">Sony A1</a>
+    <a href="/">All supported cameras &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&#8592; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+</body>
+</html>
