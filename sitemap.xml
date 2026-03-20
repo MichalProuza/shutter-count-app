@@ -1,252 +1,403 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage with hreflang for all 50 language variants -->
   <url>
     <loc>https://shuttercount.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://shuttercount.app/"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://shuttercount.app/"/>
+    <xhtml:link rel="alternate" hreflang="af"        href="https://shuttercount.app/af/"/>
+    <xhtml:link rel="alternate" hreflang="ar"        href="https://shuttercount.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="az"        href="https://shuttercount.app/az/"/>
+    <xhtml:link rel="alternate" hreflang="bg"        href="https://shuttercount.app/bg/"/>
+    <xhtml:link rel="alternate" hreflang="bn"        href="https://shuttercount.app/bn/"/>
+    <xhtml:link rel="alternate" hreflang="ca"        href="https://shuttercount.app/ca/"/>
+    <xhtml:link rel="alternate" hreflang="cs"        href="https://shuttercount.app/cz/"/>
+    <xhtml:link rel="alternate" hreflang="da"        href="https://shuttercount.app/da/"/>
+    <xhtml:link rel="alternate" hreflang="de"        href="https://shuttercount.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el"        href="https://shuttercount.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://shuttercount.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="et"        href="https://shuttercount.app/et/"/>
+    <xhtml:link rel="alternate" hreflang="fa"        href="https://shuttercount.app/fa/"/>
+    <xhtml:link rel="alternate" hreflang="fi"        href="https://shuttercount.app/fi/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://shuttercount.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="he"        href="https://shuttercount.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="hi"        href="https://shuttercount.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hr"        href="https://shuttercount.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="hu"        href="https://shuttercount.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id"        href="https://shuttercount.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://shuttercount.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="ja"        href="https://shuttercount.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="kk"        href="https://shuttercount.app/kk/"/>
+    <xhtml:link rel="alternate" hreflang="ko"        href="https://shuttercount.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="lt"        href="https://shuttercount.app/lt/"/>
+    <xhtml:link rel="alternate" hreflang="lv"        href="https://shuttercount.app/lv/"/>
+    <xhtml:link rel="alternate" hreflang="mr"        href="https://shuttercount.app/mr/"/>
+    <xhtml:link rel="alternate" hreflang="ms"        href="https://shuttercount.app/ms/"/>
+    <xhtml:link rel="alternate" hreflang="nl"        href="https://shuttercount.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="no"        href="https://shuttercount.app/no/"/>
+    <xhtml:link rel="alternate" hreflang="pl"        href="https://shuttercount.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://shuttercount.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro"        href="https://shuttercount.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://shuttercount.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="sk"        href="https://shuttercount.app/sk/"/>
+    <xhtml:link rel="alternate" hreflang="sl"        href="https://shuttercount.app/sl/"/>
+    <xhtml:link rel="alternate" hreflang="sq"        href="https://shuttercount.app/sq/"/>
+    <xhtml:link rel="alternate" hreflang="sr"        href="https://shuttercount.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv"        href="https://shuttercount.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="sw"        href="https://shuttercount.app/sw/"/>
+    <xhtml:link rel="alternate" hreflang="ta"        href="https://shuttercount.app/ta/"/>
+    <xhtml:link rel="alternate" hreflang="te"        href="https://shuttercount.app/te/"/>
+    <xhtml:link rel="alternate" hreflang="th"        href="https://shuttercount.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tl"        href="https://shuttercount.app/tl/"/>
+    <xhtml:link rel="alternate" hreflang="tr"        href="https://shuttercount.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="uk"        href="https://shuttercount.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ur"        href="https://shuttercount.app/ur/"/>
+    <xhtml:link rel="alternate" hreflang="vi"        href="https://shuttercount.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh"        href="https://shuttercount.app/zh/"/>
   </url>
+  <!-- Language variant pages -->
+  <url><loc>https://shuttercount.app/af/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/ar/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/az/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/bg/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/bn/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/ca/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/cz/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/da/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/de/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/el/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/es/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/et/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/fa/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/fi/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/fr/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/he/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/hi/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/hr/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/hu/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/id/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/it/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/ja/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/kk/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/ko/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/lt/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/lv/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/mr/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/ms/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/nl/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/no/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/pl/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/pt/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/ro/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/ru/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/sk/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/sl/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/sq/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/sr/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/sv/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/sw/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/ta/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/te/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/th/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/tl/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/tr/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/uk/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/ur/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/vi/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/zh/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
   <!-- Canon -->
   <url>
     <loc>https://shuttercount.app/canon-r1-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/canon-r5-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/canon-r6-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/canon-r7-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/canon-r8-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/canon-r10-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/canon-r50-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <!-- Nikon -->
   <url>
     <loc>https://shuttercount.app/nikon-z5-ii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/nikon-z6-iii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/nikon-z7-ii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/nikon-z8-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/nikon-z30-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/nikon-z50-ii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <!-- Sony -->
   <url>
     <loc>https://shuttercount.app/sony-a1-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a6700-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a7-iv-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a7c-ii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a7r-v-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a9-iii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-zv-e1-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <!-- Fujifilm -->
   <url>
     <loc>https://shuttercount.app/fujifilm-x-t5-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/fujifilm-x-h2s-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/fujifilm-x-s20-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/fujifilm-x100vi-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/canon-r6-mark-ii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a7c-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a7s-iii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/nikon-zf-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/nikon-zfc-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/fujifilm-gfx-100s-ii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/nikon-z9-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a7-iii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/canon-r3-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/fujifilm-x-t4-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/nikon-z6-ii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a7r-iv-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a9-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a9-ii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a7cr-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/fujifilm-x-h2-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/canon-r-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/nikon-d850-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/canon-rp-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/nikon-z7-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a7r-iii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/fujifilm-x-t3-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/nikon-d750-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a6600-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
   </url>
 </urlset>
