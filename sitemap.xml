@@ -400,4 +400,65 @@
     <priority>0.8</priority>
     <lastmod>2026-03-20</lastmod>
   </url>
+  <!-- New camera pages -->
+  <url>
+    <loc>https://shuttercount.app/canon-r100-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-z5-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-z50-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d500-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-a6400-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-a7-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-zv-e10-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x-t50-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x-s10-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x-e4-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-22</lastmod>
+  </url>
 </urlset>
