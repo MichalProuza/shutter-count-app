@@ -151,6 +151,18 @@
     <priority>0.8</priority>
     <lastmod>2026-03-20</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/canon-r5-mark-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-r6-mark-iii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
   <!-- Nikon -->
   <url>
     <loc>https://shuttercount.app/nikon-z5-ii-shutter-count/</loc>
@@ -188,12 +200,30 @@
     <priority>0.8</priority>
     <lastmod>2026-03-20</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d6-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d780-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-23</lastmod>
+  </url>
   <!-- Sony -->
   <url>
     <loc>https://shuttercount.app/sony-a1-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-03-20</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-a1-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-23</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/sony-a6700-shutter-count/</loc>
