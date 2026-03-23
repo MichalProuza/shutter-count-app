@@ -1,0 +1,84 @@
+# ShutterCount
+
+> Free camera shutter count checker. Drop a RAW photo file and instantly read the shutter actuations directly in your browser — no server upload, no account required. Supports Canon CR3/CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, Adobe DNG, and JPEG/JPG. Validated on 60+ camera models.
+
+ShutterCount is a static, client-side web application hosted at shuttercount.app. All RAW file parsing happens entirely in the browser using JavaScript. No file content ever leaves the user's device. The shutter count is extracted from the EXIF MakerNote data embedded in the RAW file.
+
+## Main Application
+
+- [ShutterCount — Free Camera Shutter Count Checker](https://shuttercount.app/): The main tool. Drag and drop or select any supported RAW file to instantly display the camera's shutter count, camera model, and other EXIF metadata. Supports Canon, Nikon, Sony, Fujifilm, Olympus, Panasonic, and DNG files.
+
+## Canon Camera Shutter Count Pages
+
+- [Canon EOS R Shutter Count](https://shuttercount.app/canon-r-shutter-count/): Shutter count guide for the Canon EOS R mirrorless camera. Explains how to read CR3 shutter count from EXIF, rated shutter life, and what the count means when buying used.
+- [Canon EOS R1 Shutter Count](https://shuttercount.app/canon-r1-shutter-count/): Shutter count information for the Canon EOS R1 flagship mirrorless camera.
+- [Canon EOS R3 Shutter Count](https://shuttercount.app/canon-r3-shutter-count/): Shutter count guide for the Canon EOS R3. Covers the electronic and mechanical shutter, rated life, and how to extract count from CR3 files.
+- [Canon EOS R5 Shutter Count](https://shuttercount.app/canon-r5-shutter-count/): Shutter count guide for the Canon EOS R5. Includes rated mechanical shutter life (500,000 actuations), how to check via CR3 RAW file, and buying-used advice.
+- [Canon EOS R6 Shutter Count](https://shuttercount.app/canon-r6-shutter-count/): Shutter count information for the Canon EOS R6, including rated shutter life and CR3 EXIF extraction.
+- [Canon EOS R6 Mark II Shutter Count](https://shuttercount.app/canon-r6-mark-ii-shutter-count/): Shutter count guide for the Canon EOS R6 Mark II.
+- [Canon EOS R7 Shutter Count](https://shuttercount.app/canon-r7-shutter-count/): Shutter count information for the Canon EOS R7 APS-C mirrorless camera.
+- [Canon EOS R8 Shutter Count](https://shuttercount.app/canon-r8-shutter-count/): Shutter count guide for the Canon EOS R8 entry-level full-frame mirrorless camera.
+- [Canon EOS R10 Shutter Count](https://shuttercount.app/canon-r10-shutter-count/): Shutter count information for the Canon EOS R10 APS-C mirrorless camera.
+- [Canon EOS R50 Shutter Count](https://shuttercount.app/canon-r50-shutter-count/): Shutter count guide for the Canon EOS R50 compact mirrorless camera.
+- [Canon EOS R100 Shutter Count](https://shuttercount.app/canon-r100-shutter-count/): Shutter count information for the Canon EOS R100 entry-level mirrorless camera.
+- [Canon EOS RP Shutter Count](https://shuttercount.app/canon-rp-shutter-count/): Shutter count guide for the Canon EOS RP full-frame mirrorless camera.
+
+## Nikon Camera Shutter Count Pages
+
+- [Nikon D500 Shutter Count](https://shuttercount.app/nikon-d500-shutter-count/): Shutter count guide for the Nikon D500 APS-C DSLR. Covers rated shutter life (200,000 actuations) and NEF EXIF extraction.
+- [Nikon D750 Shutter Count](https://shuttercount.app/nikon-d750-shutter-count/): Shutter count information for the Nikon D750 full-frame DSLR.
+- [Nikon D850 Shutter Count](https://shuttercount.app/nikon-d850-shutter-count/): Shutter count guide for the Nikon D850. Includes rated shutter life (200,000 actuations) and NEF EXIF count extraction.
+- [Nikon Z5 Shutter Count](https://shuttercount.app/nikon-z5-shutter-count/): Shutter count guide for the Nikon Z5 entry-level full-frame mirrorless camera.
+- [Nikon Z5 II Shutter Count](https://shuttercount.app/nikon-z5-ii-shutter-count/): Shutter count information for the Nikon Z5 II.
+- [Nikon Z6 Shutter Count](https://shuttercount.app/nikon-z6-shutter-count/): Shutter count guide for the Nikon Z6 full-frame mirrorless camera.
+- [Nikon Z6 II Shutter Count](https://shuttercount.app/nikon-z6-ii-shutter-count/): Shutter count information for the Nikon Z6 II.
+- [Nikon Z6 III Shutter Count](https://shuttercount.app/nikon-z6-iii-shutter-count/): Shutter count guide for the Nikon Z6 III with partial stacked sensor.
+- [Nikon Z7 Shutter Count](https://shuttercount.app/nikon-z7-shutter-count/): Shutter count information for the Nikon Z7 high-resolution full-frame mirrorless camera.
+- [Nikon Z7 II Shutter Count](https://shuttercount.app/nikon-z7-ii-shutter-count/): Shutter count guide for the Nikon Z7 II.
+- [Nikon Z8 Shutter Count](https://shuttercount.app/nikon-z8-shutter-count/): Shutter count guide for the Nikon Z8. Unlike the Z9, the Z8 has a mechanical shutter rated at 500,000 actuations.
+- [Nikon Z9 Shutter Count](https://shuttercount.app/nikon-z9-shutter-count/): The Nikon Z9 has no mechanical shutter — its shutter count is always 0. Explains why the Z9 shutter count reads zero from NEF files and what to assess instead when buying used.
+- [Nikon Z30 Shutter Count](https://shuttercount.app/nikon-z30-shutter-count/): Shutter count information for the Nikon Z30 vlog-oriented APS-C mirrorless camera.
+- [Nikon Z50 Shutter Count](https://shuttercount.app/nikon-z50-shutter-count/): Shutter count guide for the Nikon Z50 APS-C mirrorless camera.
+- [Nikon Z50 II Shutter Count](https://shuttercount.app/nikon-z50-ii-shutter-count/): Shutter count information for the Nikon Z50 II.
+- [Nikon Zf Shutter Count](https://shuttercount.app/nikon-zf-shutter-count/): Shutter count guide for the Nikon Zf retro-styled full-frame mirrorless camera.
+- [Nikon Zfc Shutter Count](https://shuttercount.app/nikon-zfc-shutter-count/): Shutter count information for the Nikon Zfc retro APS-C mirrorless camera.
+
+## Sony Camera Shutter Count Pages
+
+- [Sony A1 Shutter Count](https://shuttercount.app/sony-a1-shutter-count/): Shutter count guide for the Sony Alpha 1 flagship mirrorless camera. Covers ARW EXIF extraction and the 500,000-actuation rated shutter life.
+- [Sony A6400 Shutter Count](https://shuttercount.app/sony-a6400-shutter-count/): Shutter count information for the Sony A6400 APS-C mirrorless camera.
+- [Sony A6600 Shutter Count](https://shuttercount.app/sony-a6600-shutter-count/): Shutter count guide for the Sony A6600 APS-C mirrorless camera.
+- [Sony A6700 Shutter Count](https://shuttercount.app/sony-a6700-shutter-count/): Shutter count information for the Sony A6700 APS-C mirrorless camera.
+- [Sony A7 II Shutter Count](https://shuttercount.app/sony-a7-ii-shutter-count/): Shutter count guide for the Sony A7 II full-frame mirrorless camera.
+- [Sony A7 III Shutter Count](https://shuttercount.app/sony-a7-iii-shutter-count/): Shutter count information for the Sony A7 III, including rated 200,000-actuation shutter life.
+- [Sony A7 IV Shutter Count](https://shuttercount.app/sony-a7-iv-shutter-count/): Shutter count guide for the Sony A7 IV. Covers ARW shutter count extraction and rated shutter life.
+- [Sony A7C Shutter Count](https://shuttercount.app/sony-a7c-shutter-count/): Shutter count information for the Sony A7C compact full-frame mirrorless camera.
+- [Sony A7C II Shutter Count](https://shuttercount.app/sony-a7c-ii-shutter-count/): Shutter count guide for the Sony A7C II.
+- [Sony A7CR Shutter Count](https://shuttercount.app/sony-a7cr-shutter-count/): Shutter count information for the Sony A7CR high-resolution compact full-frame camera.
+- [Sony A7R III Shutter Count](https://shuttercount.app/sony-a7r-iii-shutter-count/): Shutter count guide for the Sony A7R III high-resolution mirrorless camera.
+- [Sony A7R IV Shutter Count](https://shuttercount.app/sony-a7r-iv-shutter-count/): Shutter count information for the Sony A7R IV 61 MP mirrorless camera.
+- [Sony A7R V Shutter Count](https://shuttercount.app/sony-a7r-v-shutter-count/): Shutter count guide for the Sony A7R V flagship high-resolution mirrorless camera.
+- [Sony A7S III Shutter Count](https://shuttercount.app/sony-a7s-iii-shutter-count/): Shutter count information for the Sony A7S III video-oriented full-frame mirrorless camera.
+- [Sony A9 Shutter Count](https://shuttercount.app/sony-a9-shutter-count/): Shutter count guide for the Sony A9 sports mirrorless camera.
+- [Sony A9 II Shutter Count](https://shuttercount.app/sony-a9-ii-shutter-count/): Shutter count information for the Sony A9 II.
+- [Sony A9 III Shutter Count](https://shuttercount.app/sony-a9-iii-shutter-count/): Shutter count guide for the Sony A9 III with global shutter sensor. Explains the electronic shutter implications for shutter count.
+- [Sony ZV-E1 Shutter Count](https://shuttercount.app/sony-zv-e1-shutter-count/): Shutter count information for the Sony ZV-E1 full-frame vlog camera.
+- [Sony ZV-E10 Shutter Count](https://shuttercount.app/sony-zv-e10-shutter-count/): Shutter count guide for the Sony ZV-E10 APS-C vlog camera.
+
+## Fujifilm Camera Shutter Count Pages
+
+- [Fujifilm GFX 100S II Shutter Count](https://shuttercount.app/fujifilm-gfx-100s-ii-shutter-count/): Shutter count guide for the Fujifilm GFX 100S II medium format mirrorless camera.
+- [Fujifilm X-E4 Shutter Count](https://shuttercount.app/fujifilm-x-e4-shutter-count/): Shutter count information for the Fujifilm X-E4 rangefinder-style APS-C mirrorless camera.
+- [Fujifilm X-H2 Shutter Count](https://shuttercount.app/fujifilm-x-h2-shutter-count/): Shutter count guide for the Fujifilm X-H2 high-resolution APS-C mirrorless camera.
+- [Fujifilm X-H2S Shutter Count](https://shuttercount.app/fujifilm-x-h2s-shutter-count/): Shutter count information for the Fujifilm X-H2S stacked-sensor sports APS-C camera.
+- [Fujifilm X-S10 Shutter Count](https://shuttercount.app/fujifilm-x-s10-shutter-count/): Shutter count guide for the Fujifilm X-S10 compact APS-C mirrorless camera.
+- [Fujifilm X-S20 Shutter Count](https://shuttercount.app/fujifilm-x-s20-shutter-count/): Shutter count information for the Fujifilm X-S20.
+- [Fujifilm X-T3 Shutter Count](https://shuttercount.app/fujifilm-x-t3-shutter-count/): Shutter count guide for the Fujifilm X-T3 enthusiast APS-C mirrorless camera.
+- [Fujifilm X-T4 Shutter Count](https://shuttercount.app/fujifilm-x-t4-shutter-count/): Shutter count information for the Fujifilm X-T4, including its 300,000-actuation rated shutter life.
+- [Fujifilm X-T5 Shutter Count](https://shuttercount.app/fujifilm-x-t5-shutter-count/): Shutter count guide for the Fujifilm X-T5 40 MP APS-C mirrorless camera.
+- [Fujifilm X-T50 Shutter Count](https://shuttercount.app/fujifilm-x-t50-shutter-count/): Shutter count information for the Fujifilm X-T50.
+- [Fujifilm X100VI Shutter Count](https://shuttercount.app/fujifilm-x100vi-shutter-count/): Shutter count guide for the Fujifilm X100VI compact fixed-lens camera.
+
+## Optional
+
+- [llms-full.txt](https://shuttercount.app/llms-full.txt): Extended version with full page descriptions and FAQ content for each camera model page.
