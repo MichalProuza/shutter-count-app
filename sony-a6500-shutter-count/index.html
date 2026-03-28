@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sony A6500 Shutter Count — Read Actuations from ARW File</title>
+  <meta name="description" content="Check your Sony A6500 shutter count instantly. Upload an ARW file and read the shutter actuations. Rated 200,000 cycles — learn how close your camera is to its limit.">
+  <link rel="canonical" href="https://shuttercount.app/sony-a6500-shutter-count/">
+  <link type="text/plain" rel="llmstxt" href="/llms.txt">
+  <meta property="og:title" content="Sony A6500 Shutter Count — Read Actuations from ARW File">
+  <meta property="og:description" content="Check your Sony A6500 shutter count instantly. Upload an ARW file and read the shutter actuations. Rated 200,000 cycles.">
+  <meta property="og:url" content="https://shuttercount.app/sony-a6500-shutter-count/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sony A6500 Shutter Count">
+  <meta name="twitter:description" content="Read your Sony A6500 shutter actuations from an ARW file. Rated 200,000 cycles.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H7088JCNHD');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I check the shutter count on a Sony A6500?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Take a photo in single-shot mode, upload the ARW file to shuttercount.app, and the tool reads shutter actuations from the MakerNote tag at offset 0x003a in the encrypted 0x9050 block. The result is displayed immediately — no software installation needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Sony A6500 shutter life rating?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sony rates the A6500 shutter at 200,000 actuations. This is the same rating as the A6600 and A7 III, placing it in the mid-tier durability range for Sony mirrorless cameras."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the Sony A6500 shutter count include electronic shutter shots?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Only mechanical shutter shots increment the counter. Photos taken with the silent electronic shutter do not affect the count recorded in the ARW MakerNote."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is 50,000 shutter count high for a used Sony A6500?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "50,000 actuations on an A6500 is 25% of the rated lifespan. This indicates light to moderate use. Counts under 30,000 suggest light use; above 150,000 means heavy use approaching the rating."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Sony A6500 and A6600 for shutter count checking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both models use the same MakerNote offset 0x003a in the encrypted tag 0x9050 block. Both are rated at 200,000 actuations. Shuttercount.app handles both automatically — the process is identical."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Shutter Count",
+        "item": "https://shuttercount.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sony A6500 Shutter Count",
+        "item": "https://shuttercount.app/sony-a6500-shutter-count/"
+      }
+    ]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f1117; --surface: #1a1d27; --accent: #4f8ef7;
+      --text: #e8eaf0; --muted: #8b90a0; --border: #2a2d3a;
+      --warn: #f7a94f; --good: #4fc87a; --danger: #f74f4f;
+    }
+    body { background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; }
+    header .logo { font-size: 1.2rem; font-weight: 700; color: var(--text); }
+    header .logo span { color: var(--accent); }
+    .hero { background: linear-gradient(135deg, #1a1d27 0%, #141720 100%); border-bottom: 1px solid var(--border); padding: 3rem 1.5rem; text-align: center; }
+    .hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 0.75rem; }
+    .hero p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; }
+    .cta-btn { display: inline-block; background: var(--accent); color: #fff; padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; font-size: 1rem; transition: opacity .2s; }
+    .cta-btn:hover { opacity: .85; text-decoration: none; }
+    .badge { display: inline-block; background: #1e3a5f; color: var(--accent); padding: .25rem .7rem; border-radius: 99px; font-size: .8rem; font-weight: 600; margin-left: .5rem; vertical-align: middle; }
+    main { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+    h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: var(--text); }
+    h3 { font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 .5rem; color: var(--text); }
+    p { margin-bottom: 1rem; color: var(--text); }
+    .specs-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; }
+    .specs-table th, .specs-table td { padding: .65rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: .95rem; }
+    .specs-table th { background: var(--surface); color: var(--muted); font-weight: 600; }
+    .specs-table td:first-child { color: var(--muted); width: 40%; }
+    .steps { counter-reset: step; list-style: none; padding: 0; margin: 1rem 0 1.5rem; }
+    .steps li { counter-increment: step; display: flex; gap: 1rem; margin-bottom: 1rem; }
+    .steps li::before { content: counter(step); background: var(--accent); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .85rem; flex-shrink: 0; margin-top: .1rem; }
+    .info-box { background: var(--surface); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1rem 0 1.5rem; font-size: .95rem; }
+    .warn-box { background: #2a2010; border-left: 4px solid var(--warn); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1rem 0 1.5rem; font-size: .95rem; }
+    .warn-box strong { color: var(--warn); }
+    .assessment-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; }
+    .assessment-table th, .assessment-table td { padding: .65rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: .95rem; }
+    .assessment-table th { background: var(--surface); color: var(--muted); font-weight: 600; }
+    .tag { display: inline-block; padding: .2rem .6rem; border-radius: 99px; font-size: .8rem; font-weight: 600; }
+    .tag-good { background: #0f2e1a; color: var(--good); }
+    .tag-warn { background: #2e1f0a; color: var(--warn); }
+    .tag-danger { background: #2e0f0f; color: var(--danger); }
+    .related { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+    .related h3 { margin-top: 0; }
+    .related-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+    .related-links a { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: .35rem .75rem; font-size: .9rem; color: var(--text); }
+    .related-links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: .9rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+<header>
+  <a href="/" class="logo">shutter<span>count</span>.app</a>
+</header>
+
+<div class="hero">
+  <h1>Sony A6500 Shutter Count <span class="badge">APS-C</span></h1>
+  <p>Check your Sony A6500 (ILCE-6500) shutter actuations instantly. Upload an ARW file — no software needed.</p>
+  <a href="/" class="cta-btn">Check My A6500 Shutter Count →</a>
+</div>
+
+<main>
+  <h2>Sony A6500 at a Glance</h2>
+  <p>The Sony A6500, released in November 2016, was Sony's first APS-C mirrorless camera with in-body image stabilization (IBIS). Packing a 24.2 MP Exmor CMOS sensor, 425 phase-detection AF points, and 11 fps continuous shooting, it became the go-to choice for action photographers and videographers who needed a compact, capable body.</p>
+  <p>The A6500 shutter is rated at <strong>200,000 actuations</strong> — the same as its successor, the A6600. Understanding the shutter count is essential when buying or selling a used A6500, especially given the camera's age in 2026.</p>
+
+  <table class="specs-table">
+    <thead><tr><th>Specification</th><th>Value</th></tr></thead>
+    <tbody>
+      <tr><td>Camera model</td><td>Sony A6500 (ILCE-6500)</td></tr>
+      <tr><td>Sensor</td><td>24.2 MP APS-C Exmor CMOS</td></tr>
+      <tr><td>Shutter rating</td><td>200,000 actuations</td></tr>
+      <tr><td>File format</td><td>ARW (Sony Raw)</td></tr>
+      <tr><td>MakerNote offset</td><td>0x003a (encrypted tag 0x9050)</td></tr>
+      <tr><td>Released</td><td>November 2016</td></tr>
+      <tr><td>Shutter type</td><td>Focal-plane mechanical + electronic</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How to Check Sony A6500 Shutter Count</h2>
+  <ol class="steps">
+    <li>Set your A6500 to <strong>single-shot mechanical shutter mode</strong> (not silent/electronic).</li>
+    <li>Take a fresh photo of any subject — indoors is fine.</li>
+    <li>Transfer the ARW file to your computer via USB or SD card reader.</li>
+    <li>Go to <a href="/">shuttercount.app</a> and upload the ARW file.</li>
+    <li>The shutter count appears within seconds — no account or installation needed.</li>
+  </ol>
+
+  <div class="info-box">
+    <strong>Technical note:</strong> Sony embeds shutter actuations in an encrypted MakerNote block (EXIF tag 0x9050). For the A6500, the count is stored at offset <strong>0x003a</strong> using a cubic residue cipher modulo 249. Shuttercount.app decrypts and reads this automatically.
+  </div>
+
+  <h2>Does Electronic Shutter Affect the Count?</h2>
+  <p>No. The Sony A6500 supports silent electronic shutter shooting, but these exposures do <strong>not</strong> increment the mechanical shutter counter in the ARW MakerNote. Only physical mechanical shutter actuations are counted.</p>
+
+  <div class="warn-box">
+    <strong>Buyer warning:</strong> If a seller has used the A6500 extensively in silent mode (e.g., for indoor events or video work), the mechanical count will appear lower than the total camera use. Always ask about usage patterns alongside the shutter count figure.
+  </div>
+
+  <h2>Understanding Your A6500 Shutter Count</h2>
+  <table class="assessment-table">
+    <thead><tr><th>Shutter Count</th><th>% of Rated Life</th><th>Assessment</th></tr></thead>
+    <tbody>
+      <tr><td>0 – 15,000</td><td>0–7.5%</td><td><span class="tag tag-good">Excellent</span> Barely used</td></tr>
+      <tr><td>15,000 – 50,000</td><td>7.5–25%</td><td><span class="tag tag-good">Very Good</span> Light use</td></tr>
+      <tr><td>50,000 – 100,000</td><td>25–50%</td><td><span class="tag tag-good">Good</span> Moderate use</td></tr>
+      <tr><td>100,000 – 160,000</td><td>50–80%</td><td><span class="tag tag-warn">Fair</span> Heavy use — negotiate price</td></tr>
+      <tr><td>160,000 – 200,000</td><td>80–100%</td><td><span class="tag tag-warn">Caution</span> Approaching limit</td></tr>
+      <tr><td>200,000+</td><td>100%+</td><td><span class="tag tag-danger">High Risk</span> Beyond rated life</td></tr>
+    </tbody>
+  </table>
+  <p>Sony's 200,000 rating is a statistical median — roughly half of shutters survive beyond this point. Many A6500 bodies continue shooting well past 200k, but failure risk increases meaningfully after the rating is exceeded.</p>
+
+  <h2>Sony A6500 vs A6600: What Changed?</h2>
+  <p>The Sony A6600 (2019) is the A6500's successor. Key differences relevant to shutter count checking:</p>
+  <table class="specs-table">
+    <thead><tr><th>Feature</th><th>A6500</th><th>A6600</th></tr></thead>
+    <tbody>
+      <tr><td>Released</td><td>2016</td><td>2019</td></tr>
+      <tr><td>Sensor</td><td>24.2 MP APS-C</td><td>24.2 MP APS-C</td></tr>
+      <tr><td>Shutter rating</td><td>200,000</td><td>200,000</td></tr>
+      <tr><td>MakerNote offset</td><td>0x003a</td><td>0x003a</td></tr>
+      <tr><td>Battery</td><td>NP-FW50 (310 shots)</td><td>NP-FZ100 (810 shots)</td></tr>
+      <tr><td>Body age (2026)</td><td>~10 years</td><td>~7 years</td></tr>
+    </tbody>
+  </table>
+  <p>Both models use the same MakerNote offset <code>0x003a</code> and share identical shutter ratings. The A6600 added the larger NP-FZ100 battery, real-time eye AF, and a deeper grip. Shuttercount.app handles both identically.</p>
+
+  <div class="warn-box">
+    <strong>Age consideration:</strong> The A6500 was released in 2016 — bodies on the used market in 2026 are approximately <strong>10 years old</strong>. Beyond shutter count, inspect the sensor for dust, check the touchscreen for dead spots, and test IBIS functionality. Battery degradation is common on older NP-FW50 bodies.
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>How do I check the shutter count on a Sony A6500?</h3>
+  <p>Take a mechanical shutter photo, upload the ARW file to <a href="/">shuttercount.app</a>, and the tool reads the count from the encrypted MakerNote at offset 0x003a. The result is instant and requires no software installation.</p>
+
+  <h3>What is the Sony A6500 shutter life rating?</h3>
+  <p>Sony rates the A6500 shutter at <strong>200,000 actuations</strong>. This matches the A6600 and A7 III, placing it in the mid-tier durability range for Sony mirrorless cameras.</p>
+
+  <h3>Does the Sony A6500 shutter count include electronic shutter shots?</h3>
+  <p>No. Only mechanical shutter actuations are counted. Silent electronic shutter shots do not increment the counter in the ARW MakerNote.</p>
+
+  <h3>Is 50,000 shutter count high for a used Sony A6500?</h3>
+  <p>No — 50,000 is 25% of the 200,000 rating. This indicates light to moderate use and is a good buy at the right price. Counts above 150,000 warrant more scrutiny.</p>
+
+  <h3>What is the difference between Sony A6500 and A6600 for shutter count checking?</h3>
+  <p>Both models use the same MakerNote offset <code>0x003a</code> in the encrypted tag 0x9050 block. Same shutter rating (200,000), same encoding. Shuttercount.app handles both automatically.</p>
+
+  <div class="related">
+    <a href="/sony-a1-shutter-count/">Sony A1</a>
+    <a href="/sony-a6600-shutter-count/">Sony A6600</a>
+    <a href="/sony-a6700-shutter-count/">Sony A6700</a>
+    <a href="/sony-a7-iii-shutter-count/">Sony A7 III</a>
+    <a href="/sony-a7-iv-shutter-count/">Sony A7 IV</a>
+    <a href="/sony-a7c-shutter-count/">Sony A7C</a>
+    <a href="/sony-a7r-iii-shutter-count/">Sony A7R III</a>
+    <a href="/sony-a7r-iv-shutter-count/">Sony A7R IV</a>
+    <a href="/sony-a7r-v-shutter-count/">Sony A7R V</a>
+    <a href="/sony-a9-shutter-count/">Sony A9</a>
+    <a href="/sony-zv-e1-shutter-count/">Sony ZV-E1</a>
+    <a href="/canon-r5-shutter-count/">Canon EOS R5</a>
+    <a href="/nikon-z8-shutter-count/">Nikon Z8</a>
+    <a href="/fujifilm-x-t5-shutter-count/">Fujifilm X-T5</a>
+    <a href="/">All supported cameras &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 shuttercount.app — Free online shutter count checker for Sony, Canon, Nikon, and Fujifilm cameras.</p>
+  <p style="margin-top:.5rem"><a href="/">Home</a> · <a href="/sony-a6500-shutter-count/">Sony A6500</a></p>
+</footer>
+</body>
+</html>

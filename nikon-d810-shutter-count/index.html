@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikon D810 Shutter Count — Read Actuations from NEF File</title>
+  <meta name="description" content="Check your Nikon D810 shutter count instantly. Upload a NEF file and read the shutter actuations. Rated 200,000 cycles — learn how close your camera is to its limit.">
+  <link rel="canonical" href="https://shuttercount.app/nikon-d810-shutter-count/">
+  <link type="text/plain" rel="llmstxt" href="/llms.txt">
+  <meta property="og:title" content="Nikon D810 Shutter Count — Read Actuations from NEF File">
+  <meta property="og:description" content="Check your Nikon D810 shutter count instantly. Upload a NEF file and read the shutter actuations. Rated 200,000 cycles.">
+  <meta property="og:url" content="https://shuttercount.app/nikon-d810-shutter-count/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nikon D810 Shutter Count">
+  <meta name="twitter:description" content="Read your Nikon D810 shutter actuations from a NEF file. Rated 200,000 cycles.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H7088JCNHD');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I check the shutter count on a Nikon D810?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Take a photo, upload the NEF file to shuttercount.app, and the tool reads shutter actuations from the MakerNote tag 0x00A7 (ShutterCount). The result is displayed immediately — no software installation needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Nikon D810 shutter life rating?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nikon rates the D810 shutter at 200,000 actuations. This matches other professional Nikon DSLRs like the D800 and D750. Many D810 shutters exceed this rating before failure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I check the Nikon D810 shutter count from a JPEG file?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Nikon embeds the shutter count in JPEG EXIF data as well as NEF. However, NEF files provide the most reliable reading. Upload either format to shuttercount.app for instant results."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is 80,000 shutter count high for a used Nikon D810?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "80,000 actuations on a D810 is 40% of the rated 200,000 lifespan. This is moderate use. Counts under 50,000 indicate light use; above 150,000 warrants extra scrutiny and price negotiation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Nikon D810 and D850 for shutter count?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both use the same MakerNote tag 0x00A7 for shutter count. The D850 is rated at 200,000 actuations (same as D810). Shuttercount.app reads both identically — Nikon's NEF format is consistent across all modern bodies."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Shutter Count",
+        "item": "https://shuttercount.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Nikon D810 Shutter Count",
+        "item": "https://shuttercount.app/nikon-d810-shutter-count/"
+      }
+    ]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f1117; --surface: #1a1d27; --accent: #4f8ef7;
+      --text: #e8eaf0; --muted: #8b90a0; --border: #2a2d3a;
+      --warn: #f7a94f; --good: #4fc87a; --danger: #f74f4f;
+    }
+    body { background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; }
+    header .logo { font-size: 1.2rem; font-weight: 700; color: var(--text); }
+    header .logo span { color: var(--accent); }
+    .hero { background: linear-gradient(135deg, #1a1d27 0%, #141720 100%); border-bottom: 1px solid var(--border); padding: 3rem 1.5rem; text-align: center; }
+    .hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 0.75rem; }
+    .hero p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; }
+    .cta-btn { display: inline-block; background: var(--accent); color: #fff; padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; font-size: 1rem; transition: opacity .2s; }
+    .cta-btn:hover { opacity: .85; text-decoration: none; }
+    .badge { display: inline-block; background: #1e3a5f; color: var(--accent); padding: .25rem .7rem; border-radius: 99px; font-size: .8rem; font-weight: 600; margin-left: .5rem; vertical-align: middle; }
+    main { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+    h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: var(--text); }
+    h3 { font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 .5rem; color: var(--text); }
+    p { margin-bottom: 1rem; color: var(--text); }
+    .specs-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; }
+    .specs-table th, .specs-table td { padding: .65rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: .95rem; }
+    .specs-table th { background: var(--surface); color: var(--muted); font-weight: 600; }
+    .specs-table td:first-child { color: var(--muted); width: 40%; }
+    .steps { counter-reset: step; list-style: none; padding: 0; margin: 1rem 0 1.5rem; }
+    .steps li { counter-increment: step; display: flex; gap: 1rem; margin-bottom: 1rem; }
+    .steps li::before { content: counter(step); background: var(--accent); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .85rem; flex-shrink: 0; margin-top: .1rem; }
+    .info-box { background: var(--surface); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1rem 0 1.5rem; font-size: .95rem; }
+    .warn-box { background: #2a2010; border-left: 4px solid var(--warn); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1rem 0 1.5rem; font-size: .95rem; }
+    .warn-box strong { color: var(--warn); }
+    .assessment-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; }
+    .assessment-table th, .assessment-table td { padding: .65rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: .95rem; }
+    .assessment-table th { background: var(--surface); color: var(--muted); font-weight: 600; }
+    .tag { display: inline-block; padding: .2rem .6rem; border-radius: 99px; font-size: .8rem; font-weight: 600; }
+    .tag-good { background: #0f2e1a; color: var(--good); }
+    .tag-warn { background: #2e1f0a; color: var(--warn); }
+    .tag-danger { background: #2e0f0f; color: var(--danger); }
+    .related { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+    .related h3 { margin-top: 0; }
+    .related-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+    .related-links a { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: .35rem .75rem; font-size: .9rem; color: var(--text); }
+    .related-links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: .9rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+<header>
+  <a href="/" class="logo">shutter<span>count</span>.app</a>
+</header>
+
+<div class="hero">
+  <h1>Nikon D810 Shutter Count <span class="badge">Full-Frame DSLR</span></h1>
+  <p>Check your Nikon D810 shutter actuations instantly. Upload a NEF file — no software needed.</p>
+  <a href="/" class="cta-btn">Check My D810 Shutter Count →</a>
+</div>
+
+<main>
+  <h2>Nikon D810 at a Glance</h2>
+  <p>The Nikon D810, released in July 2014, was Nikon's flagship high-resolution full-frame DSLR. With a 36.3 MP sensor (no optical low-pass filter), exceptional dynamic range, and a robust magnesium-alloy body, it became a benchmark for landscape, studio, and commercial photographers. It remains a highly sought-after used camera in 2026.</p>
+  <p>The D810 shutter is rated at <strong>200,000 actuations</strong>. This is Nikon's standard professional-tier rating, matching bodies like the D800, D750, and D850.</p>
+
+  <table class="specs-table">
+    <thead><tr><th>Specification</th><th>Value</th></tr></thead>
+    <tbody>
+      <tr><td>Camera model</td><td>Nikon D810</td></tr>
+      <tr><td>Sensor</td><td>36.3 MP Full-Frame CMOS (no AA filter)</td></tr>
+      <tr><td>Shutter rating</td><td>200,000 actuations</td></tr>
+      <tr><td>File format</td><td>NEF (Nikon Electronic Format)</td></tr>
+      <tr><td>MakerNote tag</td><td>0x00A7 (ShutterCount)</td></tr>
+      <tr><td>Released</td><td>July 2014</td></tr>
+      <tr><td>Shutter type</td><td>Focal-plane mechanical</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How to Check Nikon D810 Shutter Count</h2>
+  <ol class="steps">
+    <li>Take a fresh photo with your D810 — any subject will do.</li>
+    <li>Transfer the NEF (or JPEG) file to your computer via USB or SD card reader.</li>
+    <li>Go to <a href="/">shuttercount.app</a> and upload the file.</li>
+    <li>The shutter count appears within seconds — no account or installation needed.</li>
+  </ol>
+
+  <div class="info-box">
+    <strong>Technical note:</strong> Nikon stores the shutter count in MakerNote tag <strong>0x00A7</strong> (ShutterCount) in every NEF file. This tag is unencrypted and consistent across all modern Nikon bodies from the D40 onward. The D810 also writes the count to JPEG EXIF, making it one of the easiest cameras to check.
+  </div>
+
+  <h2>Nikon D810 Shutter Count from JPEG</h2>
+  <p>Unlike Sony and Canon cameras, Nikon embeds shutter count in <strong>both NEF and JPEG files</strong>. You can upload either format to shuttercount.app. This is particularly convenient when the seller only provides JPEG samples — you can still verify the count.</p>
+
+  <div class="warn-box">
+    <strong>Note:</strong> Some image editing software strips MakerNote data from JPEG files. If a JPEG doesn't yield a result, ask the seller for the original unedited NEF or JPEG straight from the camera.
+  </div>
+
+  <h2>Understanding Your D810 Shutter Count</h2>
+  <table class="assessment-table">
+    <thead><tr><th>Shutter Count</th><th>% of Rated Life</th><th>Assessment</th></tr></thead>
+    <tbody>
+      <tr><td>0 – 15,000</td><td>0–7.5%</td><td><span class="tag tag-good">Excellent</span> Barely used</td></tr>
+      <tr><td>15,000 – 50,000</td><td>7.5–25%</td><td><span class="tag tag-good">Very Good</span> Light use</td></tr>
+      <tr><td>50,000 – 100,000</td><td>25–50%</td><td><span class="tag tag-good">Good</span> Moderate use</td></tr>
+      <tr><td>100,000 – 160,000</td><td>50–80%</td><td><span class="tag tag-warn">Fair</span> Heavy use — negotiate price</td></tr>
+      <tr><td>160,000 – 200,000</td><td>80–100%</td><td><span class="tag tag-warn">Caution</span> Approaching limit</td></tr>
+      <tr><td>200,000+</td><td>100%+</td><td><span class="tag tag-danger">High Risk</span> Beyond rated life</td></tr>
+    </tbody>
+  </table>
+  <p>Nikon's 200,000 rating is conservative — many D810 bodies survive well past 300,000 actuations. However, bodies with counts above the rating carry increased risk of shutter failure, and a replacement costs $200–400.</p>
+
+  <h2>Nikon D810 vs D850: What Changed?</h2>
+  <p>The Nikon D850 (2017) is the D810's successor. Key differences:</p>
+  <table class="specs-table">
+    <thead><tr><th>Feature</th><th>D810</th><th>D850</th></tr></thead>
+    <tbody>
+      <tr><td>Released</td><td>2014</td><td>2017</td></tr>
+      <tr><td>Sensor</td><td>36.3 MP (no AA filter)</td><td>45.7 MP BSI CMOS</td></tr>
+      <tr><td>Shutter rating</td><td>200,000</td><td>200,000</td></tr>
+      <tr><td>MakerNote tag</td><td>0x00A7</td><td>0x00A7</td></tr>
+      <tr><td>ISO range</td><td>64–12,800</td><td>64–25,600</td></tr>
+      <tr><td>AF system</td><td>51-point (Multi-CAM 3500FX)</td><td>153-point (Multi-CAM 20K)</td></tr>
+      <tr><td>Body age (2026)</td><td>~12 years</td><td>~9 years</td></tr>
+    </tbody>
+  </table>
+  <p>Both use the same MakerNote tag <code>0x00A7</code> and share the 200,000-actuation rating. The D850 added more resolution, better AF, and a BSI sensor — but the D810 remains remarkably capable and is often a better value on the used market.</p>
+
+  <div class="warn-box">
+    <strong>Age consideration:</strong> The D810 was released in 2014 — bodies on the used market in 2026 are approximately <strong>12 years old</strong>. Beyond shutter count, check for rubber grip peeling (common on D810), inspect the AF system calibration, and test all buttons and dials. Battery grip contacts may also show wear.
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>How do I check the shutter count on a Nikon D810?</h3>
+  <p>Take a photo, upload the NEF or JPEG file to <a href="/">shuttercount.app</a>, and the tool reads the count from MakerNote tag 0x00A7. The result is instant and requires no software installation.</p>
+
+  <h3>What is the Nikon D810 shutter life rating?</h3>
+  <p>Nikon rates the D810 shutter at <strong>200,000 actuations</strong>. This is the standard professional-tier rating shared with the D800, D750, and D850.</p>
+
+  <h3>Can I check the Nikon D810 shutter count from a JPEG file?</h3>
+  <p>Yes. Nikon writes the shutter count to both NEF and JPEG EXIF data. Upload either format to shuttercount.app. Ensure the JPEG is unedited — some software strips MakerNote data.</p>
+
+  <h3>Is 80,000 shutter count high for a used Nikon D810?</h3>
+  <p>No — 80,000 is 40% of the 200,000 rating. This indicates moderate use. Counts under 50,000 suggest light use; above 150,000 warrants careful inspection and price negotiation.</p>
+
+  <h3>What is the difference between Nikon D810 and D850 for shutter count?</h3>
+  <p>Both use the same MakerNote tag <code>0x00A7</code>. Same 200,000 shutter rating, same checking process. Shuttercount.app reads both identically — Nikon's NEF format is consistent across all modern bodies.</p>
+
+  <div class="related">
+    <a href="/nikon-d850-shutter-count/">Nikon D850</a>
+    <a href="/nikon-d800-shutter-count/">Nikon D800</a>
+    <a href="/nikon-d750-shutter-count/">Nikon D750</a>
+    <a href="/nikon-z8-shutter-count/">Nikon Z8</a>
+    <a href="/nikon-z9-shutter-count/">Nikon Z9</a>
+    <a href="/nikon-z6-iii-shutter-count/">Nikon Z6 III</a>
+    <a href="/nikon-z7-ii-shutter-count/">Nikon Z7 II</a>
+    <a href="/nikon-zf-shutter-count/">Nikon Zf</a>
+    <a href="/sony-a7r-iv-shutter-count/">Sony A7R IV</a>
+    <a href="/canon-r5-shutter-count/">Canon EOS R5</a>
+    <a href="/fujifilm-x-t5-shutter-count/">Fujifilm X-T5</a>
+    <a href="/">All supported cameras &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 shuttercount.app — Free online shutter count checker for Sony, Canon, Nikon, and Fujifilm cameras.</p>
+  <p style="margin-top:.5rem"><a href="/">Home</a> · <a href="/nikon-d810-shutter-count/">Nikon D810</a></p>
+</footer>
+</body>
+</html>
