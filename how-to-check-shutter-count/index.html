@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Check Shutter Count — Canon, Nikon, Sony, Fujifilm | ShutterCount</title>
+<meta name="description" content="Step-by-step guide: how to check shutter count on any camera for free. Works with Canon CR3, Nikon NEF, Sony ARW, Fujifilm RAF and more — no software to install.">
+<meta name="keywords" content="how to check shutter count, check camera shutter actuations, check shutter count canon, check shutter count nikon, check shutter count sony, check shutter count fujifilm, free shutter count checker">
+<link rel="canonical" href="https://shuttercount.app/how-to-check-shutter-count/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="How to Check Shutter Count — Canon, Nikon, Sony, Fujifilm">
+<meta property="og:description" content="Step-by-step guide to checking shutter count on any camera for free. Supports CR3, NEF, ARW, RAF and more — entirely in your browser, nothing uploaded.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/how-to-check-shutter-count/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Check Shutter Count — Canon, Nikon, Sony, Fujifilm">
+<meta name="twitter:description" content="Free, browser-based shutter count checker. Drop a RAW file from any supported camera and get the result instantly.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,71,71,.06);border:1px solid rgba(255,71,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ff8080}
+.brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.brand-card{border:1px solid var(--border);border-radius:8px;padding:14px 16px}
+.brand-card h3{font-family:var(--sans);font-size:.82rem;font-weight:700;color:var(--text);margin:0 0 6px}
+.brand-card p{font-size:.72rem;color:var(--muted);line-height:1.6;margin:0}
+.brand-card code{color:var(--accent);font-size:.72rem}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}
+.spec-table .ok{color:var(--accent)}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}.brand-grid{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "name": "How to Check Shutter Count on Any Camera",
+      "description": "Step-by-step guide to checking the shutter count of a Canon, Nikon, Sony, or Fujifilm camera for free using shuttercount.app.",
+      "url": "https://shuttercount.app/how-to-check-shutter-count/",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Take a RAW photo",
+          "text": "Take any photo with your camera using the mechanical or EFCS shutter — not silent/electronic mode. Make sure the camera is set to save RAW files."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Transfer the RAW file to your computer",
+          "text": "Copy the RAW file from the memory card to your computer. Supported formats: CR3 or CR2 (Canon), NEF (Nikon), ARW (Sony), RAF (Fujifilm), ORF (Olympus), RW2 (Panasonic), DNG."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Open shuttercount.app",
+          "text": "Go to shuttercount.app in any modern browser — Chrome, Firefox, Safari, or Edge. No account or installation required."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Drop the file onto the page",
+          "text": "Drag the RAW file onto the drop zone, or click to select it with a file picker. The shutter count is read from the file's EXIF MakerNote and displayed instantly."
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "How to Check Shutter Count — Canon, Nikon, Sony, Fujifilm",
+      "url": "https://shuttercount.app/how-to-check-shutter-count/",
+      "inLanguage": "en",
+      "isPartOf": { "@type": "WebSite", "url": "https://shuttercount.app/" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/" },
+          { "@type": "ListItem", "position": 2, "name": "How to Check Shutter Count", "item": "https://shuttercount.app/how-to-check-shutter-count/" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I check shutter count without software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use shuttercount.app — a free, browser-based tool that reads shutter count directly from a RAW file. No software installation, no account, no upload. Just drop the RAW file onto the page and the count appears instantly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I check shutter count from a JPEG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most cameras do not embed the shutter counter in JPEG files. You need a RAW file (CR3, NEF, ARW, RAF, etc.). If your camera can shoot RAW, switch to RAW mode, take a test shot, and use that file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check the shutter count on a Canon camera?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Take a photo with your Canon camera and save the CR3 (or CR2 for older models) RAW file. Drop the file into shuttercount.app. The tool reads the shutter count from the Canon MakerNote in your browser — no upload required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check shutter count on a Nikon camera?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Take a photo with your Nikon and use the NEF RAW file. Drop it into shuttercount.app. Nikon embeds the shutter count in a dedicated ShutterCount EXIF tag, making it one of the most straightforward cameras to read."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; How to Check Shutter Count
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon &middot; Nikon &middot; Sony &middot; Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>How to Check Shutter Count<br>on Any Camera — Free</h1>
+  <p>Check the shutter count of your Canon, Nikon, Sony, or Fujifilm camera in seconds. Drop a RAW file into the tool below &mdash; everything is processed in your browser, nothing is ever uploaded.</p>
+  <a class="btn-cta" href="/">Check Shutter Count Now &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>The Quickest Way — 4 Steps</h2>
+  <ol class="steps">
+    <li>
+      <div>
+        <strong>Take a RAW photo.</strong> Use the mechanical or EFCS shutter — not silent/electronic mode. Make sure the camera is saving RAW files (CR3, NEF, ARW, RAF, etc.), not only JPEG.
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Copy the RAW file to your computer.</strong> Use a card reader, USB cable, or Wi-Fi transfer. The file needs to be accessible from your browser — a local file is fine.
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Open <a href="/">shuttercount.app</a></strong> in any modern browser (Chrome, Firefox, Safari, Edge). No account, no installation, no plugins.
+      </div>
+    </li>
+    <li>
+      <div>
+        <strong>Drop the RAW file onto the drop zone</strong> — or click to open a file picker. The shutter count and remaining life percentage appear instantly.
+      </div>
+    </li>
+  </ol>
+
+  <div class="highlight-box">
+    <strong>Tip:</strong> You can drop multiple RAW files at once to batch-check an entire shooting session, or compare two camera bodies side by side.
+  </div>
+</div>
+
+<div class="section">
+  <h2>Supported File Formats by Brand</h2>
+  <div class="brand-grid">
+    <div class="brand-card">
+      <h3>Canon</h3>
+      <p>Format: <code>.CR3</code> (R-series mirrorless)<br><code>.CR2</code> (older DSLRs)<br>Supported: EOS R1, R3, R5, R6, R7, R8, R10, R50, R100, RP, and more.</p>
+    </div>
+    <div class="brand-card">
+      <h3>Nikon</h3>
+      <p>Format: <code>.NEF</code><br>Supported: Z-series (Z5–Z9, Zf, Zfc, Z30, Z50) and D-series DSLRs (D80 through D850).</p>
+    </div>
+    <div class="brand-card">
+      <h3>Sony</h3>
+      <p>Format: <code>.ARW</code><br>Supported: A1, A7 series, A9 series, A6xxx series, FX3, ZV-E1, ZV-E10.</p>
+    </div>
+    <div class="brand-card">
+      <h3>Fujifilm</h3>
+      <p>Format: <code>.RAF</code><br>Supported: X-T series, X-H series, X-S series, X100 series, GFX series.</p>
+    </div>
+  </div>
+  <p style="margin-top:14px">Also supported: <strong>Olympus/OM System</strong> (.ORF), <strong>Panasonic</strong> (.RW2), and <strong>Adobe DNG</strong> (.DNG) files.</p>
+</div>
+
+<div class="section">
+  <h2>Why You Need a RAW File (Not a JPEG)</h2>
+  <p>Most cameras embed the shutter count in the <strong>MakerNote section of EXIF metadata</strong> inside RAW files. JPEG files produced by the same camera typically do not include this data — Canon, Nikon, and Sony all omit it from JPEG exports.</p>
+
+  <div class="warn-box">
+    <strong>Watch out:</strong> When checking a used camera you're considering buying, always ask for a freshly shot RAW file — not a screenshot or a file provided in advance by the seller. EXIF metadata in files can be edited; the in-camera hardware counter cannot.
+  </div>
+
+  <h3>What if my camera only shoots JPEG?</h3>
+  <p>If your camera is JPEG-only (rare in modern ILCs), try dropping a JPEG into ShutterCount anyway — a small number of cameras do include the counter in JPEG MakerNotes. Otherwise, the shutter count is not accessible without connecting to an authorised service tool.</p>
+</div>
+
+<div class="section">
+  <h2>Brand-Specific Notes</h2>
+
+  <h3>Canon EOS R-series (CR3)</h3>
+  <p>The CR3 format is an ISOBMFF container. ShutterCount parses the box hierarchy to locate the embedded EXIF, then reads the Canon MakerNote CameraInfo block. Different R-series models use different byte offsets; the tool auto-detects the model. Use the <strong>CR3 RAW file</strong>, not the JPEG sidecar.</p>
+
+  <h3>Nikon Z-series and D-series (NEF)</h3>
+  <p>Nikon cameras write the shutter count into a dedicated <code>ShutterCount</code> tag in the NEF MakerNote. This is the most straightforward format to read and is reliably present in NEF files from all supported models. Both Z-series mirrorless and D-series DSLR bodies are supported.</p>
+
+  <h3>Sony Alpha (ARW)</h3>
+  <p>Sony ARW files store the counter in the Sony MakerNote. On most Alpha bodies the count is embedded in the primary RAW file. Note: Sony A7 III and older models may occasionally require a freshly shot file (not one transferred via Sony Imaging Edge, which can strip some MakerNote data).</p>
+
+  <h3>Fujifilm (RAF)</h3>
+  <p>Fujifilm RAF files use a proprietary dual-structure format. ShutterCount reads the Fujifilm MakerNote from the JPEG-preview section embedded in the RAF container. All X-series and GFX bodies are supported.</p>
+</div>
+
+<div class="section">
+  <h2>Checking Shutter Count When Buying a Used Camera</h2>
+  <p>If you're evaluating a used camera body before purchase:</p>
+  <ol class="steps">
+    <li><div><strong>Ask the seller to take a fresh test shot</strong> in front of you (in person) or to send you a RAW file shot after your conversation (remotely). This prevents them from providing a pre-edited file.</div></li>
+    <li><div><strong>Check the file metadata</strong> — the date/time embedded in the EXIF should match when the seller says the shot was taken.</div></li>
+    <li><div><strong>Drop the file into <a href="/">shuttercount.app</a></strong> and note both the count and the percentage of rated life consumed.</div></li>
+    <li><div><strong>Cross-reference with the <a href="/shutter-count-limits/">rated shutter life</a></strong> for that specific model to understand what the count means.</div></li>
+  </ol>
+  <p>For a complete checklist of what else to verify, see the <a href="/used-camera-buying-guide/">used camera buying guide</a>.</p>
+</div>
+
+<div class="section">
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Does checking shutter count increment the counter?</h3>
+  <p>No. ShutterCount reads the value already embedded in the RAW file — it does not communicate with the camera in any way. The act of reading the file has zero effect on the camera's internal counter.</p>
+
+  <h3>My count shows as 0 or blank. What's wrong?</h3>
+  <p>A zero or missing count usually means: (a) the file is a JPEG, not a RAW file; (b) you shot in silent/electronic shutter mode — try a shot in mechanical mode; or (c) the camera model is not yet supported. Check the <a href="/">main page</a> for the full supported model list.</p>
+
+  <h3>Can I check shutter count on a phone?</h3>
+  <p>Yes. ShutterCount.app works in mobile browsers. Transfer the RAW file to your phone (via Files app, Google Drive, etc.) and open it from the browser's file picker. The parsing is done on-device — no data leaves your phone.</p>
+
+  <h3>Is it safe to share my RAW file?</h3>
+  <p>With ShutterCount, you don't share anything — the file never leaves your device. However, as a general rule, RAW files contain EXIF metadata including GPS coordinates (if location tagging is enabled on your camera), camera serial number, and lens information. Consider stripping sensitive metadata before sharing RAW files publicly.</p>
+</div>
+
+<div class="section">
+  <h2>Check by Camera Model</h2>
+  <div class="related">
+    <a href="/canon-r5-shutter-count/">Canon EOS R5</a>
+    <a href="/canon-r6-mark-ii-shutter-count/">Canon EOS R6 II</a>
+    <a href="/nikon-z6-iii-shutter-count/">Nikon Z6 III</a>
+    <a href="/nikon-z8-shutter-count/">Nikon Z8</a>
+    <a href="/sony-a7-iv-shutter-count/">Sony A7 IV</a>
+    <a href="/sony-a7r-v-shutter-count/">Sony A7R V</a>
+    <a href="/fujifilm-x-t5-shutter-count/">Fujifilm X-T5</a>
+    <a href="/fujifilm-x100vi-shutter-count/">Fujifilm X100VI</a>
+    <a href="/what-is-shutter-count/">What is shutter count?</a>
+    <a href="/shutter-count-limits/">Shutter count limits by model</a>
+    <a href="/used-camera-buying-guide/">Used camera buying guide</a>
+    <a href="/">All supported cameras &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&#8592; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>

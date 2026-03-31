@@ -108,6 +108,37 @@
   <url><loc>https://shuttercount.app/ur/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/vi/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/zh/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <!-- Informational / SEO pages -->
+  <url>
+    <loc>https://shuttercount.app/what-is-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/shutter-count-limits/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/how-to-check-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/used-camera-buying-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/shutter-count-free-tool/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-31</lastmod>
+  </url>
   <!-- Canon -->
   <url>
     <loc>https://shuttercount.app/canon-r1-shutter-count/</loc>
