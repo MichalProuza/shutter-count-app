@@ -757,4 +757,34 @@
     <priority>0.8</priority>
     <lastmod>2026-03-30</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d610-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d7100-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x100v-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-fx30-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x-pro3-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-31</lastmod>
+  </url>
 </urlset>
