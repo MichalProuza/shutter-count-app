@@ -108,6 +108,25 @@
   <url><loc>https://shuttercount.app/ur/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/vi/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/zh/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <!-- FAQ pages -->
+  <url>
+    <loc>https://shuttercount.app/faq/how-many-shutter-actuations-is-too-many/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/faq/does-shutter-count-affect-camera-value/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/faq/what-shutter-count-is-good-for-used-camera/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-03-31</lastmod>
+  </url>
   <!-- Informational / SEO pages -->
   <url>
     <loc>https://shuttercount.app/what-is-shutter-count/</loc>
