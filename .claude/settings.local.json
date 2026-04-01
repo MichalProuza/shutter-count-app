@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/michal.prouza/Documents/GitHub/shutter-count-app -type f -name *.json -o -name *.yml -o -name *.yaml)"
+    ]
+  }
+}

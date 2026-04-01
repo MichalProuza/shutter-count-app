@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electronic vs Mechanical Shutter: Does It Affect Shutter Count? | ShutterCount</title>
+<meta name="description" content="Does using the electronic shutter add to your camera's shutter count? Learn the difference between mechanical, EFCS, and electronic shutters — and which ones wear out your camera.">
+<meta name="keywords" content="electronic shutter vs mechanical shutter, does electronic shutter affect shutter count, electronic shutter count, silent shutter actuations, EFCS shutter count, mechanical shutter wear">
+<link rel="canonical" href="https://shuttercount.app/electronic-vs-mechanical-shutter/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:title" content="Electronic vs Mechanical Shutter: Does It Affect Shutter Count?">
+<meta property="og:description" content="Learn the difference between mechanical, EFCS, and fully electronic shutters — and which ones actually increment your shutter count.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/electronic-vs-mechanical-shutter/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Electronic vs Mechanical Shutter: Does It Affect Shutter Count?">
+<meta name="twitter:description" content="Mechanical, EFCS, or silent electronic shutter — learn which modes add to your camera's shutter count and which don't.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.section ol{padding-left:1.4em;margin-top:8px}
+.section ol li{margin-bottom:6px}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}
+.spec-table .ok{color:var(--accent)}
+.spec-table .no{color:var(--muted);font-style:italic}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,170,71,.06);border:1px solid rgba(255,170,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ffaa47}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Electronic vs Mechanical Shutter: Does It Affect Shutter Count?",
+      "url": "https://shuttercount.app/electronic-vs-mechanical-shutter/",
+      "description": "A complete guide to the difference between mechanical, electronic front-curtain (EFCS), and fully electronic shutters, including which modes increment the shutter count and affect camera lifespan.",
+      "inLanguage": "en",
+      "isPartOf": { "@type": "WebSite", "url": "https://shuttercount.app/" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Electronic vs Mechanical Shutter", "item": "https://shuttercount.app/electronic-vs-mechanical-shutter/" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does using the electronic shutter add to the shutter count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The fully electronic shutter (also called 'silent shutter') bypasses the mechanical curtain entirely. Because no physical shutter mechanism moves, the camera does not increment the shutter counter. Only the mechanical shutter and EFCS modes add to the count."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Electronic Front Curtain Shutter (EFCS) count toward shutter actuations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. In EFCS mode, the front curtain is replaced by an electronic scan, but the rear curtain is still mechanical. The mechanical rear curtain movement is counted as a shutter actuation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between mechanical and electronic shutter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A mechanical shutter uses physical curtains that travel across the sensor to control exposure. An electronic shutter controls exposure by turning the sensor's pixel readout on and off electronically, with no moving parts. EFCS is a hybrid: the opening is electronic but the closing curtain is mechanical."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I use electronic shutter to save shutter life?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can, but it's rarely necessary for most photographers. Electronic shutter has trade-offs: rolling shutter distortion on fast-moving subjects, potential banding under artificial lighting, and reduced flash sync capability. For everyday shooting, the mechanical shutter is fine — modern cameras have rated lifespans of 150,000–500,000+ actuations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which cameras support a fully electronic shutter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most modern mirrorless cameras support a fully electronic shutter, including Canon EOS R series, Nikon Z series, Sony Alpha, and Fujifilm X series. Some DSLRs with live view also offer a limited electronic shutter mode. Global-shutter sensors (like the Sony A9 III) eliminate rolling shutter entirely."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check my actual shutter count from mechanical exposures?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Drop a RAW file taken with the mechanical shutter into shuttercount.app. The tool reads the shutter count embedded in the file's EXIF MakerNote data. Only mechanical and EFCS exposures are reflected in this count."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; Electronic vs Mechanical Shutter
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon · Nikon · Sony · Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>Electronic vs Mechanical Shutter:<br>Does It Affect Shutter Count?</h1>
+  <p>Silent mode, EFCS, or classic mechanical &mdash; only some of these shutter modes wear out your camera. Here's exactly what counts and what doesn't.</p>
+  <a class="btn-cta" href="/">Check Your Shutter Count &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Three Shutter Modes, Three Different Answers</h2>
+  <p>Modern cameras offer up to three distinct shutter modes. They look the same from the outside &mdash; press the button, get a photo &mdash; but they affect your camera's mechanical lifespan very differently.</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Shutter Mode</th>
+        <th>Moving Parts?</th>
+        <th>Adds to Count?</th>
+        <th>Common Use Case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="val">Mechanical</td>
+        <td>Yes &mdash; both curtains</td>
+        <td class="ok">Yes</td>
+        <td>General shooting, flash sync</td>
+      </tr>
+      <tr>
+        <td class="val">EFCS (Electronic Front Curtain)</td>
+        <td>Yes &mdash; rear curtain only</td>
+        <td class="ok">Yes</td>
+        <td>Reduced vibration, faster sync</td>
+      </tr>
+      <tr>
+        <td class="val">Electronic (Silent)</td>
+        <td>None</td>
+        <td class="no">No</td>
+        <td>Silence, burst speed, video</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box">
+    <strong>Bottom line:</strong> Only exposures that involve a mechanical curtain movement increment the shutter counter. Fully electronic shutter shots do not wear out the shutter mechanism and are not counted.
+  </div>
+</div>
+
+<div class="section">
+  <h2>How a Mechanical Shutter Works</h2>
+  <p>A mechanical focal-plane shutter consists of two curtains &mdash; a front curtain and a rear curtain &mdash; that travel across the sensor in sequence. When you press the shutter button:</p>
+  <ul>
+    <li>The front curtain opens, exposing the sensor to light.</li>
+    <li>After the set exposure time, the rear curtain closes, ending the exposure.</li>
+    <li>Both curtains then reset (re-cock) for the next shot.</li>
+  </ul>
+  <p>Each complete cycle of this mechanism constitutes one <strong>shutter actuation</strong>. Manufacturers rate their shutters for a specific number of these cycles &mdash; typically 150,000 to 500,000 for enthusiast and professional cameras.</p>
+
+  <h3>Why the Count Matters</h3>
+  <p>The shutter curtain is a precision mechanical component with finite life. A high actuation count on a used camera signals more wear. It doesn't mean the camera is broken &mdash; rated counts are medians, not hard cutoffs &mdash; but it's an important data point when buying or pricing a second-hand body.</p>
+</div>
+
+<div class="section">
+  <h2>Electronic Front Curtain Shutter (EFCS) Explained</h2>
+  <p>EFCS is a hybrid mode offered by most modern mirrorless cameras (and some DSLRs in live view). Instead of a physical front curtain opening to start the exposure, the sensor is electronically activated row-by-row to simulate the curtain sweep. The rear curtain, however, remains mechanical.</p>
+
+  <p><strong>Does EFCS count as an actuation?</strong> Yes. Because the rear curtain still physically moves to end the exposure, the camera registers this as a shutter actuation. The counter increments with every EFCS shot just as it would with a full mechanical shot.</p>
+
+  <h3>EFCS Advantages</h3>
+  <ul>
+    <li>Less mechanical shock at the start of exposure &mdash; reduces camera shake at the shutter-open moment.</li>
+    <li>Slightly faster maximum sync speeds on some cameras.</li>
+    <li>Quieter than full mechanical (no front curtain click).</li>
+  </ul>
+
+  <div class="warn-box">
+    <strong>Note:</strong> EFCS can cause uneven bokeh at wide apertures and very fast shutter speeds due to the rolling start of the electronic scan combined with a physical close. This is a known limitation in bright light with large-aperture lenses.
+  </div>
+</div>
+
+<div class="section">
+  <h2>Fully Electronic Shutter (Silent Mode)</h2>
+  <p>In fully electronic shutter mode, exposure is controlled entirely by the sensor's readout circuitry &mdash; no curtains move at all. The sensor begins reading pixels from top to bottom electronically, controlling how long each row is exposed.</p>
+
+  <p>Because <strong>no mechanical part moves</strong>, the camera does not register these shots in its shutter counter. You can shoot thousands of frames in electronic shutter mode without adding a single actuation to your count.</p>
+
+  <h3>Trade-offs of Electronic Shutter</h3>
+  <ul>
+    <li><strong>Rolling shutter:</strong> The row-by-row readout takes time, causing distortion of fast-moving subjects (the "jello effect").</li>
+    <li><strong>Banding:</strong> Under artificial lighting (fluorescent, LED), the sensor's scan frequency may not align with the light's flicker, causing horizontal banding.</li>
+    <li><strong>No flash sync:</strong> Standard flashes cannot sync with electronic shutter. Some cameras support special silent flash modes with limitations.</li>
+    <li><strong>Bit depth / RAW limitations:</strong> A small number of cameras apply different processing in electronic shutter mode.</li>
+  </ul>
+
+  <h3>Global Shutter: The Exception</h3>
+  <p>Cameras with a global shutter sensor (e.g., Sony A9 III) read all pixels simultaneously, eliminating rolling shutter distortion entirely. Global shutter is still an electronic mode &mdash; it doesn't increment the mechanical shutter count &mdash; but it removes the main quality trade-off of traditional electronic shutters.</p>
+</div>
+
+<div class="section">
+  <h2>Should You Use Electronic Shutter to Preserve Shutter Life?</h2>
+  <p>In theory, yes. In practice, for most photographers, it's unnecessary. Here's why:</p>
+  <ul>
+    <li>A camera rated at 200,000 actuations used at 500 shots per month would take 33 years to hit its rated limit from normal use.</li>
+    <li>Even professional event photographers shooting 2,000 frames per day would take 100 days of continuous shooting to reach a 200,000 count.</li>
+    <li>Mechanical shutters regularly exceed their rated lifespan &mdash; the rated count is a median, not a maximum.</li>
+  </ul>
+  <p>The trade-offs of electronic shutter (rolling shutter distortion, banding, flash incompatibility) will affect image quality in many situations long before mechanical wear becomes a real concern.</p>
+
+  <div class="highlight-box">
+    <strong>Recommendation:</strong> Use the shutter mode that produces the best image quality for your scene. Switch to electronic shutter when silence is essential (concerts, ceremonies, wildlife). Don't worry about preserving the mechanical shutter under normal shooting conditions.
+  </div>
+</div>
+
+<div class="section">
+  <h2>How to Check Your Mechanical Shutter Count</h2>
+  <p>Your camera's shutter count only reflects mechanical and EFCS exposures. To see where your camera stands:</p>
+  <ol style="padding-left:1.4em;margin-top:8px">
+    <li style="margin-bottom:6px">Take a photo using <strong>mechanical shutter mode</strong> (not silent/electronic).</li>
+    <li style="margin-bottom:6px">Transfer the <strong>RAW file</strong> to your computer (CR3, NEF, ARW, RAF, etc.).</li>
+    <li style="margin-bottom:6px">Drop the file into <a href="/">shuttercount.app</a> &mdash; no upload, processed entirely in your browser.</li>
+    <li style="margin-bottom:6px">The exact shutter actuation count appears instantly, along with a remaining life estimate.</li>
+  </ol>
+  <p>JPEG files from some cameras may not include the shutter count in their metadata. Always use a RAW file for reliable results.</p>
+</div>
+
+<div class="section">
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Does video recording use the mechanical shutter?</h3>
+  <p>No. Video is always recorded using the electronic shutter (the sensor reads continuously). Video recording does not increment the shutter counter, regardless of how long you record.</p>
+
+  <h3>Does Live View use the mechanical shutter?</h3>
+  <p>On most cameras, Live View uses the electronic shutter for display but switches to the mechanical shutter when you take a photo. The photo itself is counted; the live view display is not.</p>
+
+  <h3>If I shoot in electronic shutter mode, can I still check the mechanical count?</h3>
+  <p>Yes. The shutter counter only reflects mechanical/EFCS actuations. Even if you shoot 10,000 frames in silent mode, the counter will still show the number of mechanical exposures. The electronic shots are simply not recorded.</p>
+
+  <h3>Does the mechanical shutter engage during autofocus?</h3>
+  <p>No. Phase-detect autofocus and sensor-based contrast-detect AF operate without triggering the shutter. Only the moment of taking a photo (pressing the shutter button fully) actuates the shutter mechanism in mechanical mode.</p>
+
+  <h3>Do mirrorless cameras have a mechanical shutter?</h3>
+  <p>Most do &mdash; they include a focal-plane shutter for compatibility with flash and to avoid rolling shutter in certain situations. Some newer cameras (like the Nikon Z8/Z9) have removed the physical shutter entirely, relying on an electronic shutter with stacked sensor technology to minimise rolling shutter.</p>
+</div>
+
+<div class="section">
+  <h2>Related Guides</h2>
+  <div class="related">
+    <a href="/what-is-shutter-count/">What Is Shutter Count?</a>
+    <a href="/shutter-count-limits/">Shutter Life Expectancy by Camera</a>
+    <a href="/how-to-check-shutter-count/">How to Check Shutter Count</a>
+    <a href="/used-camera-buying-guide/">Used Camera Buying Guide</a>
+    <a href="/mirrorless-vs-dslr-shutter-count/">Mirrorless vs DSLR Shutter Life</a>
+    <a href="/camera-shutter-replacement-cost/">Shutter Replacement Cost</a>
+    <a href="/">Check Shutter Count Free &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&larr; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>
