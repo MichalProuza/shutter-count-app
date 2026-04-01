@@ -787,4 +787,52 @@
     <priority>0.8</priority>
     <lastmod>2026-03-31</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/pt/verificar-disparos/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pt/contador-disparos/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pt/canon/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pt/nikon/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pt/vida-util-camera/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pt/sony/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pt/disparos-maximos/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pt/exif-disparos-gratis/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-01</lastmod>
+  </url>
 </urlset>
