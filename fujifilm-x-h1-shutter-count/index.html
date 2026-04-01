@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fujifilm X-H1 Shutter Count — Read Actuations from RAF File</title>
+  <meta name="description" content="Check your Fujifilm X-H1 shutter count instantly. Upload a RAF file and read the image counter. Rated 200,000 cycles — learn how close your camera is to its limit.">
+  <link rel="canonical" href="https://shuttercount.app/fujifilm-x-h1-shutter-count/">
+  <link type="text/plain" rel="llmstxt" href="/llms.txt">
+  <meta property="og:title" content="Fujifilm X-H1 Shutter Count — Read Actuations from RAF File">
+  <meta property="og:description" content="Check your Fujifilm X-H1 shutter count instantly. Upload a RAF file and read the image counter. Rated 200,000 cycles.">
+  <meta property="og:url" content="https://shuttercount.app/fujifilm-x-h1-shutter-count/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fujifilm X-H1 Shutter Count">
+  <meta name="twitter:description" content="Read your Fujifilm X-H1 image counter from a RAF file. Rated 200,000 cycles.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H7088JCNHD');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I check the shutter count on a Fujifilm X-H1?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Take a photo, upload the RAF file to shuttercount.app, and the tool reads the image counter from MakerNote tag 0x1438. The result is displayed immediately — no software installation needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Fujifilm X-H1 shutter life rating?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fujifilm rates the X-H1 shutter at 200,000 actuations. This is the highest rating among Fujifilm X-series cameras, reflecting its professional-grade build quality."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does formatting the SD card reset the Fujifilm X-H1 shutter count?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fujifilm's MakerNote tag 0x1438 stores an image counter, not a true mechanical shutter count. This counter can reset when the camera storage is formatted. It reflects total images taken since last format, not lifetime shutter actuations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is 50,000 shutter count high for a used Fujifilm X-H1?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "50,000 actuations on an X-H1 is 25% of the rated 200,000 lifespan. This indicates light to moderate use. However, remember that the counter may have been reset by formatting, so the actual lifetime count could be higher."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Fujifilm X-H1 and X-H2 for shutter count?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both use the same MakerNote tag 0x1438 for the image counter. Both are rated at 200,000 actuations. The X-H2 adds a 40 MP sensor, 8K video, and a new processor, but the shutter count checking process is identical on shuttercount.app."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Shutter Count",
+        "item": "https://shuttercount.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Fujifilm X-H1 Shutter Count",
+        "item": "https://shuttercount.app/fujifilm-x-h1-shutter-count/"
+      }
+    ]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f1117; --surface: #1a1d27; --accent: #4f8ef7;
+      --text: #e8eaf0; --muted: #8b90a0; --border: #2a2d3a;
+      --warn: #f7a94f; --good: #4fc87a; --danger: #f74f4f;
+    }
+    body { background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; }
+    header .logo { font-size: 1.2rem; font-weight: 700; color: var(--text); }
+    header .logo span { color: var(--accent); }
+    .hero { background: linear-gradient(135deg, #1a1d27 0%, #141720 100%); border-bottom: 1px solid var(--border); padding: 3rem 1.5rem; text-align: center; }
+    .hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 0.75rem; }
+    .hero p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; }
+    .cta-btn { display: inline-block; background: var(--accent); color: #fff; padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; font-size: 1rem; transition: opacity .2s; }
+    .cta-btn:hover { opacity: .85; text-decoration: none; }
+    .badge { display: inline-block; background: #1e3a5f; color: var(--accent); padding: .25rem .7rem; border-radius: 99px; font-size: .8rem; font-weight: 600; margin-left: .5rem; vertical-align: middle; }
+    main { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+    h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: var(--text); }
+    h3 { font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 .5rem; color: var(--text); }
+    p { margin-bottom: 1rem; color: var(--text); }
+    .specs-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; }
+    .specs-table th, .specs-table td { padding: .65rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: .95rem; }
+    .specs-table th { background: var(--surface); color: var(--muted); font-weight: 600; }
+    .specs-table td:first-child { color: var(--muted); width: 40%; }
+    .steps { counter-reset: step; list-style: none; padding: 0; margin: 1rem 0 1.5rem; }
+    .steps li { counter-increment: step; display: flex; gap: 1rem; margin-bottom: 1rem; }
+    .steps li::before { content: counter(step); background: var(--accent); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .85rem; flex-shrink: 0; margin-top: .1rem; }
+    .info-box { background: var(--surface); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1rem 0 1.5rem; font-size: .95rem; }
+    .warn-box { background: #2a2010; border-left: 4px solid var(--warn); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1rem 0 1.5rem; font-size: .95rem; }
+    .warn-box strong { color: var(--warn); }
+    .assessment-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; }
+    .assessment-table th, .assessment-table td { padding: .65rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: .95rem; }
+    .assessment-table th { background: var(--surface); color: var(--muted); font-weight: 600; }
+    .tag { display: inline-block; padding: .2rem .6rem; border-radius: 99px; font-size: .8rem; font-weight: 600; }
+    .tag-good { background: #0f2e1a; color: var(--good); }
+    .tag-warn { background: #2e1f0a; color: var(--warn); }
+    .tag-danger { background: #2e0f0f; color: var(--danger); }
+    .related { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+    .related h3 { margin-top: 0; }
+    .related-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+    .related-links a { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: .35rem .75rem; font-size: .9rem; color: var(--text); }
+    .related-links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: .9rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+<header>
+  <a href="/" class="logo">shutter<span>count</span>.app</a>
+</header>
+
+<div class="hero">
+  <h1>Fujifilm X-H1 Shutter Count <span class="badge">APS-C</span></h1>
+  <p>Check your Fujifilm X-H1 image counter instantly. Upload a RAF file — no software needed.</p>
+  <a href="/" class="cta-btn">Check My X-H1 Shutter Count →</a>
+</div>
+
+<main>
+  <h2>Fujifilm X-H1 at a Glance</h2>
+  <p>The Fujifilm X-H1, released in March 2018, was Fujifilm's first X-series camera with in-body image stabilization (IBIS). Built for professional use with a large, weather-sealed magnesium-alloy body, it features a 24.3 MP X-Trans CMOS III sensor, a sub-LCD information display, and enhanced video capabilities including Cinema 4K (DCI) recording.</p>
+  <p>The X-H1 shutter is rated at <strong>200,000 actuations</strong> — the highest tier in the X-series lineup. Understanding the image counter is useful when evaluating a used X-H1, though Fujifilm's counter has caveats worth knowing.</p>
+
+  <table class="specs-table">
+    <thead><tr><th>Specification</th><th>Value</th></tr></thead>
+    <tbody>
+      <tr><td>Camera model</td><td>Fujifilm X-H1</td></tr>
+      <tr><td>Sensor</td><td>24.3 MP APS-C X-Trans CMOS III</td></tr>
+      <tr><td>Shutter rating</td><td>200,000 actuations</td></tr>
+      <tr><td>File format</td><td>RAF (Fujifilm Raw)</td></tr>
+      <tr><td>MakerNote tag</td><td>0x1438 (ImageCount)</td></tr>
+      <tr><td>Released</td><td>March 2018</td></tr>
+      <tr><td>Shutter type</td><td>Focal-plane mechanical + electronic</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How to Check Fujifilm X-H1 Shutter Count</h2>
+  <ol class="steps">
+    <li>Take a fresh photo with your X-H1 — any subject will do.</li>
+    <li>Transfer the RAF file to your computer via USB or SD card reader.</li>
+    <li>Go to <a href="/">shuttercount.app</a> and upload the RAF file.</li>
+    <li>The image counter appears within seconds — no account or installation needed.</li>
+  </ol>
+
+  <div class="info-box">
+    <strong>Technical note:</strong> Fujifilm stores the image counter in MakerNote tag <strong>0x1438</strong> (ImageCount) inside RAF files. Unlike Sony's encrypted system, this tag is stored in plaintext within the Fujifilm-specific IFD. Shuttercount.app reads it directly from the RAF container.
+  </div>
+
+  <h2>Important: Fujifilm Counter Reset Behavior</h2>
+  <p>Fujifilm's MakerNote tag 0x1438 stores an <strong>image counter</strong>, not a true mechanical shutter count. This counter can <strong>reset when the camera storage is formatted</strong>. It reflects the number of images taken since the last format, not the lifetime total of shutter actuations.</p>
+
+  <div class="warn-box">
+    <strong>Buyer warning:</strong> A low image count on a used Fujifilm X-H1 does not guarantee low lifetime use. If the previous owner formatted the SD card, the counter restarted from zero. Use the image counter as one data point alongside physical condition, overall wear, and the seller's description of usage history.
+  </div>
+
+  <h2>Understanding Your X-H1 Image Count</h2>
+  <table class="assessment-table">
+    <thead><tr><th>Image Count</th><th>% of Rated Life</th><th>Assessment</th></tr></thead>
+    <tbody>
+      <tr><td>0 – 15,000</td><td>0–7.5%</td><td><span class="tag tag-good">Excellent</span> Low count (or recently formatted)</td></tr>
+      <tr><td>15,000 – 50,000</td><td>7.5–25%</td><td><span class="tag tag-good">Very Good</span> Light use</td></tr>
+      <tr><td>50,000 – 100,000</td><td>25–50%</td><td><span class="tag tag-good">Good</span> Moderate use</td></tr>
+      <tr><td>100,000 – 160,000</td><td>50–80%</td><td><span class="tag tag-warn">Fair</span> Heavy use — negotiate price</td></tr>
+      <tr><td>160,000 – 200,000</td><td>80–100%</td><td><span class="tag tag-warn">Caution</span> Approaching limit</td></tr>
+      <tr><td>200,000+</td><td>100%+</td><td><span class="tag tag-danger">High Risk</span> Beyond rated life</td></tr>
+    </tbody>
+  </table>
+  <p>Due to the format-reset behavior, high counts on a Fujifilm are more trustworthy than low counts. A count of 80,000+ reliably indicates at least that much use, while a count of 500 could mean either a new camera or a recently formatted one.</p>
+
+  <h2>Fujifilm X-H1 vs X-H2: What Changed?</h2>
+  <p>The Fujifilm X-H2 (2022) is the X-H1's successor. Key differences:</p>
+  <table class="specs-table">
+    <thead><tr><th>Feature</th><th>X-H1</th><th>X-H2</th></tr></thead>
+    <tbody>
+      <tr><td>Released</td><td>2018</td><td>2022</td></tr>
+      <tr><td>Sensor</td><td>24.3 MP X-Trans III</td><td>40.2 MP X-Trans V</td></tr>
+      <tr><td>Shutter rating</td><td>200,000</td><td>200,000</td></tr>
+      <tr><td>MakerNote tag</td><td>0x1438</td><td>0x1438</td></tr>
+      <tr><td>Video</td><td>Cinema 4K (DCI)</td><td>8K 30p / 4K 120p</td></tr>
+      <tr><td>IBIS</td><td>5-axis (5.5 stops)</td><td>5-axis (7 stops)</td></tr>
+      <tr><td>Body age (2026)</td><td>~8 years</td><td>~4 years</td></tr>
+    </tbody>
+  </table>
+  <p>Both use the same MakerNote tag <code>0x1438</code> and share the same 200,000-actuation rating. The X-H2 is a massive upgrade in resolution and video, but the shutter count checking process is identical.</p>
+
+  <div class="warn-box">
+    <strong>Age consideration:</strong> The X-H1 was released in 2018 — bodies on the used market in 2026 are approximately <strong>8 years old</strong>. Beyond the image counter, check the IBIS unit (listen for unusual sounds), inspect the sub-LCD for dead pixels, and test the weather-sealing gaskets. Battery grip contacts may show corrosion on heavily-used bodies.
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>How do I check the shutter count on a Fujifilm X-H1?</h3>
+  <p>Take a photo, upload the RAF file to <a href="/">shuttercount.app</a>, and the tool reads the image counter from MakerNote tag 0x1438. The result is instant and requires no software installation.</p>
+
+  <h3>What is the Fujifilm X-H1 shutter life rating?</h3>
+  <p>Fujifilm rates the X-H1 shutter at <strong>200,000 actuations</strong>. This is the highest tier in the Fujifilm X-series, reflecting its professional build quality.</p>
+
+  <h3>Does formatting the SD card reset the Fujifilm X-H1 shutter count?</h3>
+  <p>Yes. Fujifilm's tag 0x1438 is an image counter that can reset when the camera storage is formatted. It does not track lifetime shutter actuations the way Sony or Nikon systems do.</p>
+
+  <h3>Is 50,000 shutter count high for a used Fujifilm X-H1?</h3>
+  <p>50,000 is 25% of the 200,000 rating — moderate use. However, the actual lifetime count could be higher if the card was formatted at some point. Use the count as a guideline alongside physical condition.</p>
+
+  <h3>What is the difference between Fujifilm X-H1 and X-H2 for shutter count?</h3>
+  <p>Both use MakerNote tag <code>0x1438</code>. Same 200,000 rating, same format-reset behavior. The X-H2 adds a 40 MP sensor and 8K video, but the shutter count checking process is identical on shuttercount.app.</p>
+
+  <div class="related">
+    <a href="/fujifilm-x-h2-shutter-count/">Fujifilm X-H2</a>
+    <a href="/fujifilm-x-h2s-shutter-count/">Fujifilm X-H2S</a>
+    <a href="/fujifilm-x-t5-shutter-count/">Fujifilm X-T5</a>
+    <a href="/fujifilm-x-t4-shutter-count/">Fujifilm X-T4</a>
+    <a href="/fujifilm-x-t3-shutter-count/">Fujifilm X-T3</a>
+    <a href="/fujifilm-x-s20-shutter-count/">Fujifilm X-S20</a>
+    <a href="/fujifilm-x100vi-shutter-count/">Fujifilm X100VI</a>
+    <a href="/fujifilm-gfx100-ii-shutter-count/">Fujifilm GFX100 II</a>
+    <a href="/sony-a7-iv-shutter-count/">Sony A7 IV</a>
+    <a href="/canon-r5-shutter-count/">Canon EOS R5</a>
+    <a href="/nikon-z8-shutter-count/">Nikon Z8</a>
+    <a href="/">All supported cameras &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 shuttercount.app — Free online shutter count checker for Sony, Canon, Nikon, and Fujifilm cameras.</p>
+  <p style="margin-top:.5rem"><a href="/">Home</a> · <a href="/fujifilm-x-h1-shutter-count/">Fujifilm X-H1</a></p>
+</footer>
+</body>
+</html>
