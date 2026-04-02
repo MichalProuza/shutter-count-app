@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ver Disparos de la C&aacute;mara por Datos EXIF &mdash; Gratis Online | ShutterCount</title>
+<meta name="description" content="Los datos EXIF de la fotograf&iacute;a contienen el contador de disparos. Aprende c&oacute;mo leer esos datos gratis y online con ShutterCount &mdash; sin instalar software.">
+<link rel="canonical" href="https://shuttercount.app/es/datos-exif-gratis/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="Ver Disparos de la C&aacute;mara por Datos EXIF &mdash; Gratis Online | ShutterCount">
+<meta property="og:description" content="Los datos EXIF de la fotograf&iacute;a contienen el contador de disparos. Aprende c&oacute;mo leer esos datos gratis y online con ShutterCount &mdash; sin instalar software.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/es/datos-exif-gratis/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ver Disparos de la C&aacute;mara por Datos EXIF &mdash; Gratis Online | ShutterCount">
+<meta name="twitter:description" content="Los datos EXIF de la fotograf&iacute;a contienen el contador de disparos. Aprende c&oacute;mo leer esos datos gratis y online con ShutterCount &mdash; sin instalar software.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.section code{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:.75rem;color:var(--accent)}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.warn-box{background:rgba(255,71,71,.06);border:1px solid rgba(255,71,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ff8080}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Ver Disparos de la C\u00e1mara por Datos EXIF \u2014 Gratis y Online",
+      "url": "https://shuttercount.app/es/datos-exif-gratis/",
+      "inLanguage": "es",
+      "isPartOf": {"@type": "WebSite", "url": "https://shuttercount.app/"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/"},
+          {"@type": "ListItem", "position": 2, "name": "Espa\u00f1ol", "item": "https://shuttercount.app/es/"},
+          {"@type": "ListItem", "position": 3, "name": "Datos EXIF Gratis", "item": "https://shuttercount.app/es/datos-exif-gratis/"}
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "\u00bfQu\u00e9 son los datos EXIF de una fotograf\u00eda?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Los datos EXIF son informaci\u00f3n t\u00e9cnica grabada autom\u00e1ticamente por la c\u00e1mara en cada fotograf\u00eda: fecha y hora, ajustes de exposici\u00f3n, modelo de la c\u00e1mara y el n\u00famero de disparos del obturador, almacenado en la secci\u00f3n MakerNote."}
+        },
+        {
+          "@type": "Question",
+          "name": "\u00bfPuedo ver los disparos a partir de una foto enviada por WhatsApp?",
+          "acceptedAnswer": {"@type": "Answer", "text": "No. WhatsApp, Instagram y Facebook eliminan autom\u00e1ticamente los metadatos EXIF de las fotograf\u00edas. Para ver los disparos, sube siempre el archivo original directamente de la c\u00e1mara o de la tarjeta de memoria."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; <a href="/es/">Espa&ntilde;ol</a> &rsaquo; Datos EXIF Gratis
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon &middot; Nikon &middot; Sony &middot; Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; Sin subida &mdash; 100% local</span>
+  <h1>Ver Disparos de la C&aacute;mara por Datos EXIF<br>&mdash; Gratis y Online</h1>
+  <p>Cada fotograf&iacute;a digital contiene metadatos invisibles llamados EXIF (<em>Exchangeable Image File Format</em>). Entre esos datos est&aacute; grabado el n&uacute;mero total de disparos de la c&aacute;mara. ShutterCount lee esos datos autom&aacute;ticamente &mdash; sin software, sin cuenta, sin pagar nada.</p>
+  <a class="btn-cta" href="/">Ver disparos por EXIF &mdash; gratis &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>&iquest;Qu&eacute; son los datos EXIF?</h2>
+  <p>Los datos EXIF son informaci&oacute;n t&eacute;cnica grabada autom&aacute;ticamente en cada fotograf&iacute;a por la c&aacute;mara. Incluyen:</p>
+  <ul>
+    <li>Fecha y hora en que se tom&oacute; la fotograf&iacute;a</li>
+    <li>Ajustes de exposici&oacute;n (apertura, velocidad, ISO)</li>
+    <li>Modelo y n&uacute;mero de serie de la c&aacute;mara</li>
+    <li><strong>N&uacute;mero de disparos del obturador</strong> (campo <code>MakerNote</code>, espec&iacute;fico de cada fabricante)</li>
+  </ul>
+  <p>El contador de disparos est&aacute; almacenado en una secci&oacute;n privada de los metadatos EXIF llamada <em>MakerNote</em> &mdash; un &aacute;rea propietaria de cada fabricante. ShutterCount sabe c&oacute;mo leer esa secci&oacute;n para los principales fabricantes.</p>
+</div>
+
+<div class="section">
+  <h2>C&oacute;mo ver los datos EXIF del contador de disparos &mdash; paso a paso</h2>
+  <ol class="steps">
+    <li>
+      <div>Toma una fotograf&iacute;a con la c&aacute;mara que quieres comprobar.</div>
+    </li>
+    <li>
+      <div>Transfiere la fotograf&iacute;a al ordenador o m&oacute;vil &mdash; <strong>no uses fotos enviadas por WhatsApp o redes sociales</strong>: estas plataformas eliminan los metadatos EXIF.</div>
+    </li>
+    <li>
+      <div>Sube el archivo JPEG o RAW en <a href="/">ShutterCount</a>.</div>
+    </li>
+    <li>
+      <div>El contador de disparos aparece de inmediato.</div>
+    </li>
+  </ol>
+
+  <div class="warn-box">
+    <strong>Atenci&oacute;n:</strong> Las fotograf&iacute;as compartidas por WhatsApp, Instagram o Facebook tienen los datos EXIF eliminados autom&aacute;ticamente. Sube siempre el archivo original directamente de la c&aacute;mara o de la tarjeta de memoria.
+  </div>
+</div>
+
+<div class="section">
+  <h2>Alternativas gratuitas para leer EXIF</h2>
+  <p>Adem&aacute;s de ShutterCount, existen otras formas de leer los datos EXIF:</p>
+  <ul>
+    <li><strong>ExifTool</strong> &mdash; software gratuito de l&iacute;nea de comandos, muy completo pero t&eacute;cnico.</li>
+    <li><strong>Jeffrey's Exif Viewer</strong> &mdash; visor online de EXIF gen&eacute;rico.</li>
+    <li><strong>Opanda IExif</strong> &mdash; extensi&oacute;n para el Explorador de Windows.</li>
+  </ul>
+  <p>Ninguna de estas alternativas muestra el contador de disparos de forma tan directa y sencilla como ShutterCount.</p>
+</div>
+
+<div class="section">
+  <h2>M&aacute;s sobre disparos</h2>
+  <div class="related">
+    <a href="/es/verificar-disparos/">Verificar disparos online</a>
+    <a href="/es/contador-disparos/">&iquest;Qu&eacute; es el contador de disparos?</a>
+    <a href="/es/vida-util-camara/">Vida &uacute;til de la c&aacute;mara</a>
+    <a href="/es/disparos-maximos/">Tabla de disparos m&aacute;ximos</a>
+    <a href="/">Todas las c&aacute;maras compatibles &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/es/" style="color:var(--accent)">&#8592; Volver a ShutterCount en Espa&ntilde;ol</a></p>
+  <p style="margin-top:12px">Contacto: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>
