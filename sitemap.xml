@@ -866,6 +866,36 @@
     <lastmod>2026-04-02</lastmod>
   </url>
   <url>
+    <loc>https://shuttercount.app/de/ausloesungen-auslesen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/de/ausloesungen-kamera/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/de/maximale-ausloesungen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/de/exif-daten-kostenlos/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/de/lebensdauer-verschluss/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-02</lastmod>
+  </url>
+  <url>
     <loc>https://shuttercount.app/nikon-d90-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
