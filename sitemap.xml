@@ -836,6 +836,36 @@
     <lastmod>2026-04-01</lastmod>
   </url>
   <url>
+    <loc>https://shuttercount.app/es/contador-disparos/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/es/verificar-disparos/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/es/vida-util-camara/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/es/disparos-maximos/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/es/datos-exif-gratis/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-02</lastmod>
+  </url>
+  <url>
     <loc>https://shuttercount.app/nikon-d90-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
