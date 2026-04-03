@@ -985,4 +985,35 @@
     <priority>0.8</priority>
     <lastmod>2026-04-03</lastmod>
   </url>
+  <!-- New camera pages – April 2026 -->
+  <url>
+    <loc>https://shuttercount.app/sony-a6000-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-03</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d3100-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-03</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d5200-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-03</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d3400-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-03</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x-e3-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-03</lastmod>
+  </url>
 </urlset>
