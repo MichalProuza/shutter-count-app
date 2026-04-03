@@ -955,4 +955,34 @@
     <priority>0.8</priority>
     <lastmod>2026-04-02</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/it/contatore-scatti/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-03</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/it/verificare-scatti/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-03</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/it/dati-exif-gratis/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-03</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/it/vita-utile-otturatore/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-03</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/it/scatti-massimi/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-03</lastmod>
+  </url>
 </urlset>
