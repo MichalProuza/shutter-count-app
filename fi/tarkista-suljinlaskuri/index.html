@@ -12,19 +12,19 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suljinlaskuri &mdash; Tarkista kameran laukaisumäärä ilmaiseksi verkossa | ShutterCount</title>
-<meta name="description" content="Lue kamerasi suljinlaskuri ilmaiseksi verkossa — ilman ohjelmistoa, ilman latausta. Toimii Canonin, Nikonin, Sonyn ja Fujifilmin kanssa sekunneissa.">
-<link rel="canonical" href="https://shuttercount.app/fi/suljinlaskuri/">
+<title>Tarkista suljinlaskuri &mdash; Ilmainen verkkotyökalu | ShutterCount</title>
+<meta name="description" content="Tarkista kamerasi suljinlaskuri ilmaiseksi verkossa. Ilman ohjelmistoa, ilman tiliä. Toimii Canonin, Nikonin, Sonyn ja Fujifilmin kanssa.">
+<link rel="canonical" href="https://shuttercount.app/fi/tarkista-suljinlaskuri/">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link type="text/plain" rel="llmstxt" href="/llms.txt">
-<meta property="og:title" content="Suljinlaskuri &mdash; Tarkista kameran laukaisumäärä ilmaiseksi verkossa | ShutterCount">
-<meta property="og:description" content="Lue kamerasi suljinlaskuri ilmaiseksi verkossa — ilman ohjelmistoa, ilman latausta. Toimii Canonin, Nikonin, Sonyn ja Fujifilmin kanssa sekunneissa.">
+<meta property="og:title" content="Tarkista suljinlaskuri &mdash; Ilmainen verkkotyökalu | ShutterCount">
+<meta property="og:description" content="Tarkista kamerasi suljinlaskuri ilmaiseksi verkossa. Ilman ohjelmistoa, ilman tiliä. Toimii Canonin, Nikonin, Sonyn ja Fujifilmin kanssa.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://shuttercount.app/fi/suljinlaskuri/">
+<meta property="og:url" content="https://shuttercount.app/fi/tarkista-suljinlaskuri/">
 <meta property="og:image" content="https://shuttercount.app/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Suljinlaskuri &mdash; Tarkista kameran laukaisumäärä ilmaiseksi verkossa | ShutterCount">
-<meta name="twitter:description" content="Lue kamerasi suljinlaskuri ilmaiseksi verkossa — ilman ohjelmistoa, ilman latausta. Toimii Canonin, Nikonin, Sonyn ja Fujifilmin kanssa sekunneissa.">
+<meta name="twitter:title" content="Tarkista suljinlaskuri &mdash; Ilmainen verkkotyökalu | ShutterCount">
+<meta name="twitter:description" content="Tarkista kamerasi suljinlaskuri ilmaiseksi verkossa. Ilman ohjelmistoa, ilman tiliä. Toimii Canonin, Nikonin, Sonyn ja Fujifilmin kanssa.">
 <meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
@@ -56,6 +56,8 @@ header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-wid
 .steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
 .steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
 .steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.warn-box{background:rgba(255,71,71,.06);border:1px solid rgba(255,71,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ff8080}
 .highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
 .highlight-box strong{color:var(--accent)}
 .related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
@@ -70,19 +72,19 @@ footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:
   "@graph": [
     {
       "@type": "HowTo",
-      "name": "Kameran suljinlaskurin lukeminen",
-      "description": "Vaiheittainen opas suljinlaskurin ilmaiseen lukemiseen verkossa Canonin, Nikonin, Sonyn ja Fujifilmin kameroissa.",
-      "url": "https://shuttercount.app/fi/suljinlaskuri/",
+      "name": "Kuinka tarkistaa kameran suljinlaskuri",
+      "description": "Kattava opas kameran suljinlaskurin tarkistamiseen ilmaiseksi verkossa Canonin, Nikonin, Sonyn tai Fujifilmin kameralla.",
+      "url": "https://shuttercount.app/fi/tarkista-suljinlaskuri/",
       "step": [
-        {"@type": "HowToStep", "position": 1, "name": "Ota valokuva", "text": "Ota mik\u00e4 tahansa valokuva kameralla, jonka suljinlaskurin haluat tarkistaa."},
-        {"@type": "HowToStep", "position": 2, "name": "Lataa tiedosto", "text": "Lataa JPEG- tai RAW-tiedosto suoraan ShutterCountiin muistikortilta tai kamerasta."},
-        {"@type": "HowToStep", "position": 3, "name": "Lue tulos", "text": "Laukaisumäär\u00e4 luetaan v\u00e4litt\u00f6m\u00e4sti EXIF-tiedoista ja n\u00e4ytet\u00e4\u00e4n ruudulla."}
+        {"@type": "HowToStep", "position": 1, "name": "Ota koekuva", "text": "Ota valokuva kameralla, jonka laukaisumäär\u00e4n haluat tarkistaa."},
+        {"@type": "HowToStep", "position": 2, "name": "Siirrä alkuperäinen tiedosto", "text": "Kopioi JPEG- tai RAW-tiedosto tietokoneellesi suoraan muistikortilta. \u00c4l\u00e4 k\u00e4yt\u00e4 WhatsAppin tai sosiaalisen median kautta jaettua kuvaa, sill\u00e4 EXIF-tiedot poistetaan."},
+        {"@type": "HowToStep", "position": 3, "name": "Lataa ShutterCountiin", "text": "Pudota tiedosto ShutterCountiin. Laukaisumäär\u00e4 n\u00e4kyy v\u00e4litt\u00f6m\u00e4sti."}
       ]
     },
     {
       "@type": "WebPage",
-      "name": "Suljinlaskuri \u2014 Tarkista kameran laukaisumäär\u00e4 ilmaiseksi verkossa",
-      "url": "https://shuttercount.app/fi/suljinlaskuri/",
+      "name": "Tarkista suljinlaskuri \u2014 Ilmainen verkkotyökalu",
+      "url": "https://shuttercount.app/fi/tarkista-suljinlaskuri/",
       "inLanguage": "fi",
       "isPartOf": {"@type": "WebSite", "url": "https://shuttercount.app/"},
       "breadcrumb": {
@@ -90,7 +92,7 @@ footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:
         "itemListElement": [
           {"@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/"},
           {"@type": "ListItem", "position": 2, "name": "Suomi", "item": "https://shuttercount.app/fi/"},
-          {"@type": "ListItem", "position": 3, "name": "Suljinlaskuri", "item": "https://shuttercount.app/fi/suljinlaskuri/"}
+          {"@type": "ListItem", "position": 3, "name": "Tarkista suljinlaskuri", "item": "https://shuttercount.app/fi/tarkista-suljinlaskuri/"}
         ]
       }
     }
@@ -101,7 +103,7 @@ footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:
 <body>
 
 <div class="breadcrumb">
-  <a href="/">ShutterCount</a> &rsaquo; <a href="/fi/">Suomi</a> &rsaquo; Suljinlaskuri
+  <a href="/">ShutterCount</a> &rsaquo; <a href="/fi/">Suomi</a> &rsaquo; Tarkista suljinlaskuri
 </div>
 
 <header>
@@ -111,60 +113,57 @@ footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:
 
 <div class="hero">
   <span class="badge">&#128274; Ei latausta &mdash; 100 % paikallinen</span>
-  <h1>Suljinlaskuri<br>&mdash; Ilmaiseksi ja verkossa</h1>
-  <p>Haluatko tietää, kuinka monta laukaisua kamerassasi on? ShutterCount lukee suljinlaskurin suoraan valokuviesi EXIF-tiedoista &mdash; ilmaiseksi, verkossa ja ilman ohjelmiston asennusta.</p>
-  <a class="btn-cta" href="/">Tarkista suljinlaskuri nyt &rarr;</a>
+  <h1>Tarkista suljinlaskuri<br>&mdash; Ilmaiseksi verkossa</h1>
+  <p>Haluatko tarkistaa kamerasi suljinlaskurin ennen ostoa tai myyntiä? ShutterCount lukee laukaisumäärän sekunneissa suoraan selaimessa &mdash; ilman tietojen lähettämistä palvelimelle.</p>
+  <a class="btn-cta" href="/">Tarkista suljinlaskuri &rarr;</a>
 </div>
 
 <div class="section">
-  <h2>Näin luet kamerasi suljinlaskurin</h2>
+  <h2>Kuinka tarkistaa kameran suljinlaskuri?</h2>
   <ol class="steps">
     <li>
-      <div><strong>Ota valokuva</strong> &mdash; Ota mikä tahansa valokuva kameralla, jonka suljinlaskurin haluat tarkistaa.</div>
+      <div><strong>Ota koekuva</strong> &mdash; Ota valokuva kameralla, jonka laukaisumäärän haluat tarkistaa.</div>
     </li>
     <li>
-      <div><strong>Lataa tiedosto</strong> &mdash; Lataa JPEG- tai RAW-tiedosto suoraan tällä sivulla muistikortilta tai kamerasta. Älä käytä sosiaalisen median kautta jaettuja kuvia, sillä EXIF-tiedot poistetaan.</div>
+      <div><strong>Siirrä alkuperäinen tiedosto</strong> &mdash; Kopioi JPEG- tai RAW-tiedosto tietokoneellesi suoraan muistikortilta. Älä käytä WhatsAppin tai sosiaalisen median kautta jaettua kuvaa, sillä EXIF-tiedot poistetaan.</div>
     </li>
     <li>
-      <div><strong>Lue tulos</strong> &mdash; Laukaisumäärä luetaan välittömästi EXIF-tiedoista ja näytetään ruudulla.</div>
+      <div><strong>Lataa ShutterCountiin</strong> &mdash; Pudota tiedosto ShutterCountiin tai napsauta ladataksesi. Laukaisumäärä näkyy välittömästi.</div>
     </li>
   </ol>
-  <div class="highlight-box">
-    <strong>Huomio:</strong> Kuvaasi ei ladata palvelimelle. Koko analyysi tapahtuu paikallisesti selaimessasi &mdash; 100 % yksityisesti.
+  <div class="warn-box">
+    <strong>Varoitus:</strong> WhatsAppin, Instagramin tai Facebookin kautta jaetut kuvat eivät enää sisällä EXIF-tietoja. Käytä aina alkuperäistä tiedostoa suoraan kamerasta tai muistikortilta.
   </div>
 </div>
 
 <div class="section">
-  <h2>Mikä on suljinlaskuri?</h2>
-  <p>Suljinlaskuri (englanniksi <em>shutter count</em> tai <em>shutter actuations</em>) kertoo, kuinka monta kertaa kameran mekaaninen suljin on lauennut. Jokainen otettu valokuva kasvattaa laskuria yhdellä.</p>
-  <p>Suljin on kameran kuluvin osa. Valmistajat ilmoittavat sertifioidun enimmäislaukaisumäärän, jonka jälkeen suljin saattaa alkaa vikaantua. Tyypilliset arvot vaihtelevat 100&thinsp;000:sta (aloittelijoiden kamerat) aina 500&thinsp;000:een (ammattikamerat).</p>
+  <h2>Miksi tarkistaa suljinlaskuri ennen käytetyn kameran ostoa?</h2>
+  <p>Laukaisumäärä on luotettavin mittari kameran kulumiselle. Toisin kuin ulkonäkö, sitä on vaikea väärentää. Kamera, jonka suljin lähestyy nimellisrajaa, tarvitsee pian kalliin korjauksen.</p>
   <ul>
-    <li>Suljinlaskuri auttaa arvioimaan kameran todellisen kulumistason.</li>
-    <li>Se on erityisen tärkeä käytettyä kameraa ostettaessa tai myytäessä.</li>
-    <li>Korkea laukaisumäärä ei tarkoita, että kamera on käyttökelvoton &mdash; mutta se on hyvä tietää.</li>
+    <li>Aloittelijoiden peilirefleksikamera on yleensä sertifioitu noin <strong>100&thinsp;000 laukaisulle</strong>.</li>
+    <li>Puoliammattilaisen kamera noin <strong>150&thinsp;000–200&thinsp;000 laukaisulle</strong>.</li>
+    <li>Ammattikamerat kestävät <strong>300&thinsp;000–500&thinsp;000 laukaista</strong>.</li>
   </ul>
+  <div class="highlight-box">
+    <strong>Vinkki:</strong> Jos myyjä kieltäytyy näyttämästä suljinlaskuria, se on varoitusmerkki. Vaadi aina tämä tieto ennen ostoa.
+  </div>
 </div>
 
 <div class="section">
-  <h2>Mitkä kamerat ovat tuettuja?</h2>
-  <p>ShutterCount tukee useimpia järjestelmä- ja peilirefleksikameroita johtavilta valmistajilta: <strong>Canon</strong> (CR3, CR2), <strong>Nikon</strong> (NEF), <strong>Sony</strong> (ARW), <strong>Fujifilm</strong> (RAF) sekä Olympus ja Panasonic. Myös JPEG-tiedostot ovat tuettuja.</p>
-</div>
-
-<div class="section">
-  <h2>Vaihtoehdot suljinlaskurin lukemiseen</h2>
-  <p>ShutterCountin lisäksi on muitakin tapoja:</p>
+  <h2>Vaihtoehdot suljinlaskurin tarkistamiseen</h2>
+  <p>Muita tapoja tarkistaa suljinlaskuri:</p>
   <ul>
-    <li><strong>ExifTool</strong> &mdash; ilmainen komentorivityökalu, erittäin tehokas mutta tekninen.</li>
-    <li><strong>Kameran valikko</strong> &mdash; jotkin Nikon- ja Pentax-mallit näyttävät laskurin järjestelmätiedoissa.</li>
-    <li><strong>Huoltokeskus</strong> &mdash; valmistaja voi lukea laukaisumäärän, mutta se vie aikaa.</li>
+    <li><strong>ExifTool</strong> &mdash; ilmainen komentorivityökalu, kattava mutta tekninen.</li>
+    <li><strong>Kameran järjestelmävalikko</strong> &mdash; jotkin Nikon- ja Pentax-mallit näyttävät laskurin suoraan valikossa.</li>
+    <li><strong>Valmistajan huolto</strong> &mdash; valmistaja voi lukea laukaisumäärän, mutta se on hidasta ja maksullista.</li>
   </ul>
-  <p>Nopein ja helpoin tapa on lukea suljinlaskuri verkossa ShutterCountilla.</p>
+  <p>ShutterCount on nopein ja yksinkertaisin tapa tarkistaa suljinlaskuri verkossa.</p>
 </div>
 
 <div class="section">
   <h2>Muita aiheita</h2>
   <div class="related">
-    <a href="/fi/tarkista-suljinlaskuri/">Tarkista suljinlaskuri</a>
+    <a href="/fi/suljinlaskuri/">Suljinlaskuri</a>
     <a href="/fi/suljimen-maksimilaukaisut/">Suljimen maksimilaukaisut</a>
     <a href="/fi/exif-laukaisut-ilmaiseksi/">EXIF laukaisut ilmaiseksi</a>
     <a href="/fi/suljimen-elinika/">Suljimen elinikä</a>
