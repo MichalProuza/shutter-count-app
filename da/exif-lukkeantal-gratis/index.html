@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXIF lukkeantal gratis &mdash; L&aelig;s EXIF-data online | ShutterCount</title>
+<meta name="description" content="L&aelig;s EXIF-data fra dine fotos gratis og find lukkeantallet. Uden registrering, uden software &mdash; direkte i browseren.">
+<link rel="canonical" href="https://shuttercount.app/da/exif-lukkeantal-gratis/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="EXIF lukkeantal gratis &mdash; L&aelig;s EXIF-data online | ShutterCount">
+<meta property="og:description" content="L&aelig;s EXIF-data fra dine fotos gratis og find lukkeantallet. Uden registrering, uden software &mdash; direkte i browseren.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/da/exif-lukkeantal-gratis/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EXIF lukkeantal gratis &mdash; L&aelig;s EXIF-data online | ShutterCount">
+<meta name="twitter:description" content="L&aelig;s EXIF-data fra dine fotos gratis og find lukkeantallet. Uden registrering, uden software &mdash; direkte i browseren.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.section code{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-size:.75rem;color:var(--accent)}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.warn-box{background:rgba(255,71,71,.06);border:1px solid rgba(255,71,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ff8080}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "EXIF lukkeantal gratis \u2014 L\u00e6s EXIF-data online",
+      "url": "https://shuttercount.app/da/exif-lukkeantal-gratis/",
+      "inLanguage": "da",
+      "isPartOf": {"@type": "WebSite", "url": "https://shuttercount.app/"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/"},
+          {"@type": "ListItem", "position": 2, "name": "Dansk", "item": "https://shuttercount.app/da/"},
+          {"@type": "ListItem", "position": 3, "name": "EXIF lukkeantal gratis", "item": "https://shuttercount.app/da/exif-lukkeantal-gratis/"}
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hvad er EXIF-data?",
+          "acceptedAnswer": {"@type": "Answer", "text": "EXIF-data (Exchangeable Image File Format) er tekniske oplysninger, som kameraet automatisk skriver ind i hvert foto: dato, eksponeringsindstillinger, kameramodel og lukkeantal i MakerNote-sektionen."}
+        },
+        {
+          "@type": "Question",
+          "name": "Kan jeg l\u00e6se lukkeantallet fra et WhatsApp-foto?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Nej. WhatsApp, Instagram og Facebook fjerner automatisk EXIF-dataene, herunder lukkeantallet. Brug altid originalfilen direkte fra kameraet eller hukommelseskortet."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; <a href="/da/">Dansk</a> &rsaquo; EXIF lukkeantal gratis
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon &middot; Nikon &middot; Sony &middot; Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; Ingen upload &mdash; 100 % lokalt</span>
+  <h1>EXIF lukkeantal gratis<br>&mdash; L&aelig;s EXIF-data online</h1>
+  <p>Hvert digitalt foto indeholder usynlige metadata &mdash; de s&aring;kaldte EXIF-data (<em>Exchangeable Image File Format</em>). I disse data gemmes ogs&aring; lukkeantallet. ShutterCount l&aelig;ser dem automatisk &mdash; gratis, uden software og uden konto.</p>
+  <a class="btn-cta" href="/">L&aelig;s EXIF-data nu &mdash; gratis &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Hvad er EXIF-data?</h2>
+  <p>EXIF-data er tekniske oplysninger, som kameraet automatisk skriver ind i hvert foto. De indeholder blandt andet:</p>
+  <ul>
+    <li>Dato og tidspunkt for optagelsen</li>
+    <li>Eksponeringsindstillinger (blende, lukkertid, ISO)</li>
+    <li>Kameramodel og serienummer</li>
+    <li><strong>Lukkeantal</strong> (i producentspecifik <code>MakerNote</code>-sektion)</li>
+  </ul>
+  <p>Lukkeantallet gemmes i et propriet&aelig;rt omr&aring;de af EXIF-dataene kaldet <em>MakerNote</em>. ShutterCount kan dekode dette omr&aring;de for de vigtigste kameraproducenter.</p>
+</div>
+
+<div class="section">
+  <h2>S&aring;dan l&aelig;ser du EXIF-data trin for trin</h2>
+  <ol class="steps">
+    <li>
+      <div>Tag et foto med det kamera, hvis lukkeantal du vil kontrollere.</div>
+    </li>
+    <li>
+      <div>Overflt filen til computeren eller smartphonen &mdash; <strong>brug ikke fotos fra WhatsApp eller sociale netv&aelig;rk</strong>, da de fjerner EXIF-dataene.</div>
+    </li>
+    <li>
+      <div>Upload JPEG- eller RAW-filen p&aring; <a href="/">ShutterCount</a>.</div>
+    </li>
+    <li>
+      <div>Lukkeantallet vises straks.</div>
+    </li>
+  </ol>
+
+  <div class="warn-box">
+    <strong>Advarsel:</strong> Fotos delt via WhatsApp, Instagram eller Facebook har ikke l&aelig;ngere EXIF-data. Brug altid originalfilen direkte fra kameraet eller hukommelseskortet.
+  </div>
+</div>
+
+<div class="section">
+  <h2>Gratis alternativer til at l&aelig;se EXIF-data</h2>
+  <p>Ud over ShutterCount er der andre muligheder for at l&aelig;se EXIF-data:</p>
+  <ul>
+    <li><strong>ExifTool</strong> &mdash; gratis kommandolinje-program, meget omfangsrigt men teknisk kr&aelig;vende.</li>
+    <li><strong>Jeffrey&rsquo;s Exif Viewer</strong> &mdash; generel online EXIF-visning.</li>
+    <li><strong>Opanda IExif</strong> &mdash; udvidelse til Windows Stifinder.</li>
+  </ul>
+  <p>Ingen af disse alternativer viser lukkeantallet s&aring; direkte og enkelt som ShutterCount.</p>
+</div>
+
+<div class="section">
+  <h2>Relaterede emner</h2>
+  <div class="related">
+    <a href="/da/lukketaeller/">Lukket&aelig;ller</a>
+    <a href="/da/tjek-lukkeantal/">Tjek lukkeantal</a>
+    <a href="/da/maksimalt-lukkeantal/">Maksimalt lukkeantal</a>
+    <a href="/da/lukkerens-levetid/">Lukkerens levetid</a>
+    <a href="/">Alle underst&oslash;ttede kameraer &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/da/" style="color:var(--accent)">&#8592; Tilbage til ShutterCount p&aring; dansk</a></p>
+  <p style="margin-top:12px">Kontakt: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>
