@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compteur de d&eacute;clenchements &mdash; V&eacute;rifier le nombre de d&eacute;clenchements en ligne | ShutterCount</title>
+<meta name="description" content="Lisez le compteur de d&eacute;clenchements de votre appareil photo gratuitement en ligne &mdash; sans logiciel, sans t&eacute;l&eacute;chargement. Compatible Canon, Nikon, Sony, Fujifilm en quelques secondes.">
+<link rel="canonical" href="https://shuttercount.app/fr/compteur-declenchements/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="Compteur de d&eacute;clenchements &mdash; V&eacute;rifier le nombre de d&eacute;clenchements en ligne | ShutterCount">
+<meta property="og:description" content="Lisez le compteur de d&eacute;clenchements de votre appareil photo gratuitement en ligne &mdash; sans logiciel, sans t&eacute;l&eacute;chargement. Compatible Canon, Nikon, Sony, Fujifilm en quelques secondes.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/fr/compteur-declenchements/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Compteur de d&eacute;clenchements &mdash; V&eacute;rifier le nombre de d&eacute;clenchements en ligne | ShutterCount">
+<meta name="twitter:description" content="Lisez le compteur de d&eacute;clenchements de votre appareil photo gratuitement en ligne &mdash; sans logiciel, sans t&eacute;l&eacute;chargement. Compatible Canon, Nikon, Sony, Fujifilm en quelques secondes.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "name": "Comment lire le compteur de d\u00e9clenchements d\u2019un appareil photo",
+      "description": "Guide pas \u00e0 pas pour lire gratuitement le nombre de d\u00e9clenchements sur Canon, Nikon, Sony et Fujifilm.",
+      "url": "https://shuttercount.app/fr/compteur-declenchements/",
+      "step": [
+        {"@type": "HowToStep", "position": 1, "name": "Prendre une photo", "text": "Prenez n\u2019importe quelle photo avec l\u2019appareil photo dont vous voulez conna\u00eetre le compteur de d\u00e9clenchements."},
+        {"@type": "HowToStep", "position": 2, "name": "Charger le fichier", "text": "D\u00e9posez le fichier JPEG ou RAW directement sur ShutterCount."},
+        {"@type": "HowToStep", "position": 3, "name": "Lire le r\u00e9sultat", "text": "Le nombre de d\u00e9clenchements est lu instantan\u00e9ment depuis les donn\u00e9es EXIF et affich\u00e9 \u00e0 l\u2019\u00e9cran."}
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "Compteur de d\u00e9clenchements \u2014 V\u00e9rifier le nombre de d\u00e9clenchements en ligne",
+      "url": "https://shuttercount.app/fr/compteur-declenchements/",
+      "inLanguage": "fr",
+      "isPartOf": {"@type": "WebSite", "url": "https://shuttercount.app/"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/"},
+          {"@type": "ListItem", "position": 2, "name": "Fran\u00e7ais", "item": "https://shuttercount.app/fr/"},
+          {"@type": "ListItem", "position": 3, "name": "Compteur de d\u00e9clenchements", "item": "https://shuttercount.app/fr/compteur-declenchements/"}
+        ]
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; <a href="/fr/">Fran&ccedil;ais</a> &rsaquo; Compteur de d&eacute;clenchements
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon &middot; Nikon &middot; Sony &middot; Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; Aucun envoi &mdash; 100&thinsp;% local</span>
+  <h1>Compteur de d&eacute;clenchements<br>&mdash; Gratuit et en ligne</h1>
+  <p>Vous voulez conna&icirc;tre le nombre de d&eacute;clenchements de votre appareil photo ? Avec ShutterCount, lisez le compteur de d&eacute;clenchements directement depuis les donn&eacute;es EXIF de vos photos &mdash; gratuitement, en ligne, sans installer de logiciel.</p>
+  <a class="btn-cta" href="/">Lire le compteur maintenant &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Comment lire le compteur de d&eacute;clenchements ?</h2>
+  <ol class="steps">
+    <li>
+      <div><strong>Prenez une photo</strong> &mdash; avec l&rsquo;appareil photo dont vous souhaitez conna&icirc;tre le nombre de d&eacute;clenchements.</div>
+    </li>
+    <li>
+      <div><strong>Chargez le fichier</strong> &mdash; d&eacute;posez le fichier JPEG ou RAW directement sur cette page.</div>
+    </li>
+    <li>
+      <div><strong>Lisez le r&eacute;sultat</strong> &mdash; le compteur de d&eacute;clenchements est affich&eacute; instantan&eacute;ment depuis les donn&eacute;es EXIF.</div>
+    </li>
+  </ol>
+  <div class="highlight-box">
+    <strong>Confidentialit&eacute;&nbsp;:</strong> Votre photo n&rsquo;est jamais envoy&eacute;e sur un serveur. L&rsquo;analyse s&rsquo;effectue enti&egrave;rement dans votre navigateur &mdash; 100&thinsp;% priv&eacute;.
+  </div>
+</div>
+
+<div class="section">
+  <h2>Pourquoi v&eacute;rifier le compteur de d&eacute;clenchements ?</h2>
+  <p>Le compteur de d&eacute;clenchements indique l&rsquo;usure r&eacute;elle de l&rsquo;obturateur m&eacute;canique. C&rsquo;est essentiel lorsque vous&nbsp;:</p>
+  <ul>
+    <li>Souhaitez <strong>acheter un appareil photo d&rsquo;occasion</strong> et conna&icirc;tre son &eacute;tat r&eacute;el.</li>
+    <li>Voulez <strong>vendre votre appareil</strong> et fournir des informations fiables &agrave; l&rsquo;acheteur.</li>
+    <li>D&eacute;sirez simplement savoir <strong>combien de photos</strong> votre appareil a d&eacute;j&agrave; prises.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Qu&rsquo;est-ce que le compteur de d&eacute;clenchements ?</h2>
+  <p>Le compteur de d&eacute;clenchements (aussi appel&eacute; &laquo;&nbsp;nombre d&rsquo;actuations&nbsp;&raquo; ou &laquo;&nbsp;shutter count&nbsp;&raquo; en anglais) est un compteur interne qui s&rsquo;incr&eacute;mente &agrave; chaque prise de vue. Il est stock&eacute; dans la section <em>MakerNote</em> des donn&eacute;es EXIF de chaque photo et ne peut pas &ecirc;tre remis &agrave; z&eacute;ro facilement.</p>
+  <p>Ce compteur est comparable au kilom&eacute;trage d&rsquo;une voiture d&rsquo;occasion : plus il est &eacute;lev&eacute;, plus l&rsquo;obturateur est us&eacute;.</p>
+</div>
+
+<div class="section">
+  <h2>Quels appareils sont support&eacute;s ?</h2>
+  <p>ShutterCount supporte la plupart des reflex et hybrides des grandes marques&nbsp;: <strong>Canon</strong> (CR3, CR2), <strong>Nikon</strong> (NEF), <strong>Sony</strong> (ARW), <strong>Fujifilm</strong> (RAF), ainsi qu&rsquo;Olympus et Panasonic. Les fichiers JPEG sont &eacute;galement support&eacute;s.</p>
+</div>
+
+<div class="section">
+  <h2>Autres ressources</h2>
+  <div class="related">
+    <a href="/fr/verifier-declenchements/">V&eacute;rifier les d&eacute;clenchements</a>
+    <a href="/fr/declenchements-maximum/">D&eacute;clenchements maximum par mod&egrave;le</a>
+    <a href="/fr/exif-declenchements-gratuit/">EXIF d&eacute;clenchements gratuit</a>
+    <a href="/fr/duree-vie-obturateur/">Dur&eacute;e de vie de l&rsquo;obturateur</a>
+    <a href="/">Tous les appareils support&eacute;s &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/fr/" style="color:var(--accent)">&#8592; Retour &agrave; ShutterCount en fran&ccedil;ais</a></p>
+  <p style="margin-top:12px">Contact&nbsp;: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>
