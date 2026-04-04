@@ -896,6 +896,36 @@
     <lastmod>2026-04-02</lastmod>
   </url>
   <url>
+    <loc>https://shuttercount.app/fr/compteur-declenchements/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fr/verifier-declenchements/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fr/declenchements-maximum/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fr/exif-declenchements-gratuit/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fr/duree-vie-obturateur/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
     <loc>https://shuttercount.app/nikon-d90-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
