@@ -1165,4 +1165,34 @@
     <priority>0.8</priority>
     <lastmod>2026-04-04</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-df-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-06</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d3x-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-06</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d100-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-06</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d2h-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-06</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d1-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-06</lastmod>
+  </url>
 </urlset>

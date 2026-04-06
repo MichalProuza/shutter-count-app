@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7088JCNHD');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikon D1 Shutter Count — How to Check & What It Means | ShutterCount</title>
+<meta name="description" content="Check the shutter count of your Nikon D1 for free — directly in your browser from a NEF file. No upload required. Reads MakerNote tag 0x00A7.">
+<meta name="keywords" content="nikon d1 shutter count, nikon d1 actuations, check shutter count nikon d1, nikon d1 shutter life, NEF shutter count">
+<link rel="canonical" href="https://shuttercount.app/nikon-d1-shutter-count/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="Nikon D1 Shutter Count — How to Check & What It Means">
+<meta property="og:description" content="Free browser-based Nikon D1 shutter count checker. Drop a NEF file and get the exact actuation count instantly — no upload, no account.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/nikon-d1-shutter-count/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nikon D1 Shutter Count — How to Check & What It Means">
+<meta name="twitter:description" content="Check Nikon D1 shutter count free from a NEF file. MakerNote tag 0x00A7.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),transparent)}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}.spec-table .ok{color:var(--accent)}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,170,71,.06);border:1px solid rgba(255,170,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ffaa47}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebPage","name":"Nikon D1 Shutter Count — How to Check & What It Means","url":"https://shuttercount.app/nikon-d1-shutter-count/","description":"Complete guide to checking the shutter count of a Nikon D1 from a NEF file, including rated lifespan, actuation ranges, and a free browser-based checker tool.","inLanguage":"en","isPartOf":{"@type":"WebSite","url":"https://shuttercount.app/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ShutterCount","item":"https://shuttercount.app/"},{"@type":"ListItem","position":2,"name":"Nikon D1 Shutter Count","item":"https://shuttercount.app/nikon-d1-shutter-count/"}]}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I check the shutter count of my Nikon D1?","acceptedAnswer":{"@type":"Answer","text":"Take a still photo with your Nikon D1 and locate the resulting NEF file. Drop it into shuttercount.app — the tool reads MakerNote tag 0x00A7 in your browser, no upload required."}},
+{"@type":"Question","name":"What is the rated shutter life of the Nikon D1?","acceptedAnswer":{"@type":"Answer","text":"Nikon never published an official rating for the original D1. As Nikon's first fully self-developed pro DSLR, real-world units typically achieved around 100,000–150,000 actuations before service."}},
+{"@type":"Question","name":"What is a good shutter count when buying a used Nikon D1?","acceptedAnswer":{"@type":"Answer","text":"Given that the D1 launched in 1999, virtually any working D1 today is a collector's piece. Below 10,000 is exceptional, 10,000–50,000 is moderate, and above 80,000 is high."}},
+{"@type":"Question","name":"What is the difference between the D1, D1H and D1X?","acceptedAnswer":{"@type":"Answer","text":"The original D1 (1999) is 2.74 MP. The D1H (2001) is the speed-oriented refresh, also 2.74 MP at 5 fps with a larger buffer. The D1X (2001) uses a 5.3 MP sensor for higher resolution at lower speed."}},
+{"@type":"Question","name":"Can the Nikon D1 shutter count be reset?","acceptedAnswer":{"@type":"Answer","text":"Only Nikon authorised service centres can reset the hardware counter. Always verify from an original NEF file, not a screenshot or JPEG."}}
+]}
+]}
+</script>
+</head>
+<body>
+<div class="breadcrumb"><a href="/">ShutterCount</a> &rsaquo; Nikon D1 Shutter Count</div>
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon · Nikon · Sony · Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>Nikon D1 Shutter Count:<br>Check It Free in Your Browser</h1>
+  <p>Drop a NEF file from your <strong>Nikon D1</strong> and get the exact mechanical shutter actuation count in seconds &mdash; processed entirely in your browser, never uploaded anywhere.</p>
+  <a class="btn-cta" href="/">Check Shutter Count &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Nikon D1 &mdash; Shutter Rating &amp; Overview</h2>
+  <p>The Nikon D1 (1999) is one of the most historically important digital cameras ever made. As Nikon's first fully self-designed professional DSLR, it brought digital photography to working photojournalists at a price that &mdash; for its time &mdash; was revolutionary. Featuring a 2.74 MP DX CCD sensor and 4.5 fps shooting in a robust integrated-grip body, the D1 effectively launched the modern professional DSLR era. Nikon never published an official shutter life figure; <strong>real-world units typically achieve 100,000–150,000 actuations</strong>.</p>
+
+  <table class="spec-table">
+    <thead><tr><th>Camera</th><th>Type</th><th>Sensor</th><th>Rated Shutter</th><th>NEF Tag</th></tr></thead>
+    <tbody>
+      <tr><td class="val">Nikon D1</td><td>DSLR</td><td>2.74 MP DX CCD</td><td style="color:var(--muted)">Not officially rated</td><td class="ok">0x00A7</td></tr>
+      <tr><td class="val">Nikon D1H <span style="font-weight:400;color:var(--muted)">(speed)</span></td><td>DSLR</td><td>2.74 MP DX CCD</td><td style="color:var(--muted)">Not officially rated</td><td class="ok">0x00A7</td></tr>
+      <tr><td class="val">Nikon D1X <span style="font-weight:400;color:var(--muted)">(resolution)</span></td><td>DSLR</td><td>5.3 MP DX CCD</td><td style="color:var(--muted)">Not officially rated</td><td class="ok">0x00A7</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn-box">
+    <strong>Historical body:</strong> The D1 is over 25 years old. Beyond shutter count, expect aged batteries (EN-4 NiMH packs), worn rubber grips, and yellowing rear LCDs. Original CompactFlash compatibility is also limited.
+  </div>
+</div>
+
+<div class="section">
+  <h2>How to Check Shutter Count on the Nikon D1</h2>
+  <ol class="steps">
+    <li>Take a still photo with your Nikon D1 and locate the <strong>.NEF</strong> file.</li>
+    <li>Open <a href="/">shuttercount.app</a> in any modern browser.</li>
+    <li>Drag the NEF file onto the drop zone, or click to open a file picker.</li>
+    <li>The mechanical shutter count appears instantly, read from MakerNote tag 0x00A7 in your browser.</li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>What Is a Good Shutter Count for a Used Nikon D1?</h2>
+
+  <table class="spec-table">
+    <thead><tr><th>Shutter Count</th><th>Assessment</th></tr></thead>
+    <tbody>
+      <tr><td class="val">0 – 10,000</td><td class="ok">Exceptional &mdash; collector grade</td></tr>
+      <tr><td class="val">10,000 – 30,000</td><td class="ok">Low &mdash; well-preserved body</td></tr>
+      <tr><td class="val">30,000 – 80,000</td><td style="color:#ffaa47">Moderate &mdash; typical hobby/working use</td></tr>
+      <tr><td class="val">80,000 – 130,000</td><td style="color:#ffaa47">High &mdash; press-used body</td></tr>
+      <tr><td class="val">130,000 +</td><td style="color:var(--accent2)">Very high &mdash; consider only as collector display</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:14px">Most original D1 bodies in circulation today saw heavy professional use during their working life. Buying primarily as a historical or collector item is the most realistic motivation in 2026.</p>
+</div>
+
+<div class="section">
+  <h2>How Does ShutterCount Read the Nikon D1 Shutter Count?</h2>
+  <p>The Nikon D1 stores the mechanical shutter count in NEF MakerNote EXIF tag <strong>0x00A7</strong> (decimal 167). This is the standard Nikon shutter count field, used identically across all Nikon DSLRs and Z-series mirrorless cameras. ShutterCount reads this tag directly in your browser &mdash; no upload, no decryption required.</p>
+
+  <div class="highlight-box">
+    <strong>100% local:</strong> All processing happens in your browser. The NEF file never leaves your device.
+  </div>
+</div>
+
+<div class="section">
+  <h2>Nikon D1 Shutter Count &mdash; FAQ</h2>
+
+  <h3>How do I check the shutter count of my Nikon D1?</h3>
+  <p>Shoot a NEF frame and drop it into <a href="/">shuttercount.app</a>. The count is read from MakerNote tag 0x00A7 in your browser, instantly and privately.</p>
+
+  <h3>Is the D1 still usable today?</h3>
+  <p>Functionally yes, but the 2.74 MP files, NiMH battery dependency and ageing electronics make it impractical for serious work. Its main appeal today is historical and collector-driven.</p>
+
+  <h3>What is the difference between the D1, D1H and D1X?</h3>
+  <p>The original <strong>D1</strong> (1999) shoots 2.74 MP at 4.5 fps. The <strong>D1H</strong> (2001) is the speed-oriented refresh at 5 fps with a larger buffer. The <strong>D1X</strong> (2001) trades speed for a 5.3 MP sensor.</p>
+
+  <h3>Can the Nikon D1 shutter count be reset?</h3>
+  <p>Only Nikon authorised service centres can reset the hardware counter. Always verify from an original NEF file, not a screenshot or JPEG.</p>
+</div>
+
+<div class="section">
+  <h2>Other Historic &amp; Pro Nikon DSLRs</h2>
+  <div class="related">
+    <a href="/nikon-d100-shutter-count/">Nikon D100</a>
+    <a href="/nikon-d2x-shutter-count/">Nikon D2X</a>
+    <a href="/nikon-d2h-shutter-count/">Nikon D2H</a>
+    <a href="/nikon-d3-shutter-count/">Nikon D3</a>
+    <a href="/nikon-d3x-shutter-count/">Nikon D3X</a>
+    <a href="/nikon-d3s-shutter-count/">Nikon D3s</a>
+    <a href="/nikon-d4-shutter-count/">Nikon D4</a>
+    <a href="/">All supported cameras &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&#8592; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+</body>
+</html>
