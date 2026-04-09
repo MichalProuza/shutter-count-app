@@ -102,19 +102,19 @@ footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:
   </table>
 
   <div class="highlight-box">
-    <strong>Ultra-light DSLR:</strong> At just 395 g (with battery and card), the D3400 is one of the lightest Nikon DSLRs ever made, paired with a class-leading 1,200-shot CIPA battery rating.
+    <strong>Same NEF tag as all Nikons:</strong> The Nikon D3400 stores its shutter count in NEF MakerNote tag <strong>0x00A7</strong> &mdash; the same tag used by every Nikon DSLR and Z-series mirrorless camera.
   </div>
 </div>
 
 <div class="section">
   <h2>How to Check Shutter Count on the Nikon D3400</h2>
   <ol class="steps">
-    <li>Take a still photo with your Nikon D3400 and locate the <strong>.NEF</strong> file.</li>
+    <li>Take a still photo with your Nikon D3400 and locate the <strong>.NEF</strong> file on the SD card.</li>
     <li>Open <a href="/">shuttercount.app</a> in any modern browser.</li>
     <li>Drag the NEF file onto the drop zone, or click to open a file picker.</li>
     <li>The mechanical shutter count appears instantly, read from MakerNote tag 0x00A7 in your browser.</li>
   </ol>
-  <p style="margin-top:12px">The D3400 does not have a silent or electronic shutter mode &mdash; every frame increments the mechanical shutter counter.</p>
+  <p style="margin-top:12px">The D3400 uses a mechanical shutter for all exposures &mdash; every photo increments the counter. SnapBridge transfers only JPEGs, so you need to access the SD card directly for NEF files.</p>
 </div>
 
 <div class="section">
@@ -123,27 +123,20 @@ footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:
   <table class="spec-table">
     <thead><tr><th>Shutter Count</th><th>% of Rated Life</th><th>Assessment</th></tr></thead>
     <tbody>
-      <tr><td class="val">0 – 5,000</td><td>&lt; 5 %</td><td class="ok">Lightly used</td></tr>
-      <tr><td class="val">5,000 – 30,000</td><td>5 – 30 %</td><td class="ok">Normal use for age</td></tr>
-      <tr><td class="val">30,000 – 60,000</td><td>30 – 60 %</td><td style="color:#ffaa47">Moderate to heavy use</td></tr>
-      <tr><td class="val">60,000 – 90,000</td><td>60 – 90 %</td><td style="color:#ffaa47">Heavy use &mdash; budget for service</td></tr>
-      <tr><td class="val">90,000 +</td><td>90 %+</td><td style="color:var(--accent2)">Near or past rated life</td></tr>
+      <tr><td class="val">0 – 5,000</td><td>&lt; 5 %</td><td class="ok">Like new</td></tr>
+      <tr><td class="val">5,000 – 25,000</td><td>5 – 25 %</td><td class="ok">Normal hobby use</td></tr>
+      <tr><td class="val">25,000 – 60,000</td><td>25 – 60 %</td><td style="color:#ffaa47">Moderate use</td></tr>
+      <tr><td class="val">60,000 – 85,000</td><td>60 – 85 %</td><td style="color:#ffaa47">Heavy use &mdash; price should reflect this</td></tr>
+      <tr><td class="val">85,000 +</td><td>85 %+</td><td style="color:var(--accent2)">Near or past rated life</td></tr>
     </tbody>
   </table>
 
-  <p style="margin-top:14px">The D3400 is a popular beginner and travel camera. Most used units have 5,000&ndash;25,000 actuations. Low counts are common since many owners are casual photographers.</p>
+  <p style="margin-top:14px">As a beginner-oriented camera, most D3400 bodies on the used market have relatively low shutter counts. Units above 50,000 are uncommon unless the camera saw heavy use in event or school photography.</p>
 </div>
 
 <div class="section">
   <h2>How Does ShutterCount Read the Nikon D3400 Shutter Count?</h2>
-  <p>The Nikon D3400 stores the mechanical shutter count in NEF MakerNote EXIF tag <strong>0x00A7</strong> (decimal 167). This is the standard Nikon shutter count field. ShutterCount reads this tag directly in your browser &mdash; no encryption or decryption needed.</p>
-
-  <div class="highlight-box">
-    <strong>100% local:</strong> All processing happens in your browser. The NEF file never leaves your device.
-  </div>
-
-  <h3>Can I use a JPEG instead of a NEF file?</h3>
-  <p>JPEGs from the D3400 do not contain the MakerNote data needed to read the shutter count. Always use the original <strong>.NEF</strong> raw file for an accurate reading.</p>
+  <p>The Nikon D3400 stores the mechanical shutter count in NEF MakerNote EXIF tag <strong>0x00A7</strong> (decimal 167). This is the universal Nikon shutter count field, used identically across all Nikon DSLRs and Z-series mirrorless cameras. ShutterCount reads this tag directly in your browser &mdash; no encryption or special processing is needed.</p>
 </div>
 
 <div class="section">
@@ -153,28 +146,30 @@ footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:
   <p>Shoot a NEF frame and drop it into <a href="/">shuttercount.app</a>. The count is read from MakerNote tag 0x00A7 in your browser, instantly and privately.</p>
 
   <h3>What is the rated shutter life of the Nikon D3400?</h3>
-  <p>Nikon rates the D3400 at <strong>100,000 actuations</strong>. Many units exceed this figure, but the failure risk increases after the rated limit.</p>
+  <p>Nikon rates the D3400 at <strong>100,000 actuations</strong>. Many entry-level Nikon shutters exceed this figure under typical hobby use.</p>
 
-  <h3>How does the D3400 compare to the D3500?</h3>
-  <p>The D3500 is a minor refinement of the D3400 with a slightly deeper grip, simplified button layout, and marginally better battery life (1,550 shots vs 1,200). The sensor and image quality are effectively identical between the two models.</p>
+  <h3>What is the difference between the D3400 and D3500?</h3>
+  <p>The D3500 (2018) is a minor refresh of the D3400 with slightly improved ergonomics, better battery life (1,550 vs 1,200 shots), and a simplified button layout. The sensor and image quality are virtually identical. Both share the same 100,000-actuation shutter rating.</p>
+
+  <h3>Does the D3400 shoot in RAW?</h3>
+  <p>Yes. The D3400 shoots 12-bit NEF RAW files. You need a RAW (NEF) file to check the shutter count &mdash; JPEG files do not contain the MakerNote shutter count tag.</p>
 
   <h3>Can the Nikon D3400 shutter count be reset?</h3>
   <p>Only Nikon authorised service centres can reset the hardware counter. Always verify from an original NEF file, not a screenshot or JPEG.</p>
 </div>
 
 <div class="section">
-  <h2>Other Nikon &amp; Entry-Level Cameras</h2>
+  <h2>Other Nikon Cameras</h2>
   <div class="related">
-    <a href="/nikon-d3100-shutter-count/">Nikon D3100</a>
-    <a href="/nikon-d3200-shutter-count/">Nikon D3200</a>
-    <a href="/nikon-d3300-shutter-count/">Nikon D3300</a>
     <a href="/nikon-d3500-shutter-count/">Nikon D3500</a>
+    <a href="/nikon-d3300-shutter-count/">Nikon D3300</a>
+    <a href="/nikon-d3200-shutter-count/">Nikon D3200</a>
     <a href="/nikon-d5300-shutter-count/">Nikon D5300</a>
-    <a href="/nikon-d5500-shutter-count/">Nikon D5500</a>
     <a href="/nikon-d5600-shutter-count/">Nikon D5600</a>
+    <a href="/nikon-d7200-shutter-count/">Nikon D7200</a>
+    <a href="/nikon-d750-shutter-count/">Nikon D750</a>
     <a href="/nikon-z50-shutter-count/">Nikon Z50</a>
-    <a href="/canon-r100-shutter-count/">Canon EOS R100</a>
-    <a href="/sony-a6000-shutter-count/">Sony A6000</a>
+    <a href="/nikon-zfc-shutter-count/">Nikon Z fc</a>
     <a href="/">All supported cameras &rarr;</a>
   </div>
 </div>

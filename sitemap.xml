@@ -896,6 +896,156 @@
     <lastmod>2026-04-02</lastmod>
   </url>
   <url>
+    <loc>https://shuttercount.app/fr/compteur-declenchements/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fr/verifier-declenchements/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fr/declenchements-maximum/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fr/exif-declenchements-gratuit/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fr/duree-vie-obturateur/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sv/slutarraknare/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sv/kontrollera-slutarrakning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sv/maximalt-slutarantal/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sv/exif-slutarrakning-gratis/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sv/slutarens-livslangd/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/no/lukkerteller/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/no/sjekke-lukkertelling/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/no/maksimalt-lukkerantal/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/no/exif-lukkertelling-gratis/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/no/lukkerens-levetid/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/da/lukketaeller/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/da/tjek-lukkeantal/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/da/maksimalt-lukkeantal/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/da/exif-lukkeantal-gratis/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/da/lukkerens-levetid/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fi/suljinlaskuri/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fi/tarkista-suljinlaskuri/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fi/suljimen-maksimilaukaisut/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fi/exif-laukaisut-ilmaiseksi/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fi/suljimen-elinika/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
     <loc>https://shuttercount.app/nikon-d90-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -985,35 +1135,64 @@
     <priority>0.8</priority>
     <lastmod>2026-04-03</lastmod>
   </url>
-  <!-- New camera pages – April 2026 -->
   <url>
-    <loc>https://shuttercount.app/sony-a6000-shutter-count/</loc>
+    <loc>https://shuttercount.app/canon-r50-v-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-04</lastmod>
   </url>
   <url>
-    <loc>https://shuttercount.app/nikon-d3100-shutter-count/</loc>
+    <loc>https://shuttercount.app/nikon-d300s-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-04</lastmod>
   </url>
   <url>
-    <loc>https://shuttercount.app/nikon-d5200-shutter-count/</loc>
+    <loc>https://shuttercount.app/nikon-d3s-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-04</lastmod>
   </url>
   <url>
-    <loc>https://shuttercount.app/nikon-d3400-shutter-count/</loc>
+    <loc>https://shuttercount.app/nikon-d3000-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-04</lastmod>
   </url>
   <url>
-    <loc>https://shuttercount.app/fujifilm-x-e3-shutter-count/</loc>
+    <loc>https://shuttercount.app/nikon-d40x-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-df-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-06</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d3x-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-06</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d100-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-06</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d2h-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-06</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d1-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-06</lastmod>
   </url>
 </urlset>
