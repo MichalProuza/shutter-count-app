@@ -1224,6 +1224,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-04-08</lastmod>
+  </url>
+  <url>
     <loc>https://shuttercount.app/canon-5d-mark-iii-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1252,5 +1254,35 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-04-09</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-5d-mark-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-10</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-5d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-10</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-7d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-10</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-6d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-10</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-1dx-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-10</lastmod>
   </url>
 </urlset>
