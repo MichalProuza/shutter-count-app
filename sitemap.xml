@@ -58,6 +58,7 @@
     <xhtml:link rel="alternate" hreflang="vi"        href="https://shuttercount.app/vi/"/>
     <xhtml:link rel="alternate" hreflang="zh"        href="https://shuttercount.app/zh/"/>
   </url>
+  <url><loc>https://shuttercount.app/supported-cameras/</loc><changefreq>weekly</changefreq><priority>0.8</priority><lastmod>2026-04-12</lastmod></url>
   <!-- Language variant pages -->
   <url><loc>https://shuttercount.app/af/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/ar/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
