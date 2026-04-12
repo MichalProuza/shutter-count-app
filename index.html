@@ -1202,7 +1202,13 @@ function parseRAF(buf) {
 function parseFile(buf){
   const u=new Uint8Array(buf);
   // CR3: ISOBMFF (ftyp box at offset 4)
-  if(s4(u,4)==='ftyp') return parseCR3(buf) || parseExif(buf);
+  if(s4(u,4)==='ftyp'){
+    try{
+      const cr3=parseCR3(buf);
+      if(cr3)return cr3;
+    }catch{}
+    return parseExif(buf);
+  }
   // RAF: FUJIFILM proprietary (magic at offset 0)
   if(s4(u,0)==='FUJI' && s4(u,4)==='FILM') return parseRAF(buf) || parseExif(buf);
   // Everything else: TIFF/EXIF (NEF, ARW, CR2, ORF, DNG, JPEG)
