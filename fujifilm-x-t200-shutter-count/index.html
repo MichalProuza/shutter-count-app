@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7088JCNHD');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fujifilm X-T200 Shutter Count — How to Check & What It Means | ShutterCount</title>
+<meta name="description" content="Check the shutter count of your Fujifilm X-T200 for free — directly in your browser from a RAF RAW file. No upload required. Uses MakerNote tag 0x1438 (ImageCount).">
+<meta name="keywords" content="fujifilm x-t200 shutter count, fuji xt200 shutter count, check shutter count fujifilm x-t200, fujifilm x-t200 actuations, fujifilm x-t200 shutter life, RAF shutter count">
+<link rel="canonical" href="https://shuttercount.app/fujifilm-x-t200-shutter-count/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="Fujifilm X-T200 Shutter Count — How to Check & What It Means">
+<meta property="og:description" content="Free browser-based Fujifilm X-T200 shutter count checker. Drop a RAF RAW file and get the exact actuation count instantly — no upload, no account.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/fujifilm-x-t200-shutter-count/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fujifilm X-T200 Shutter Count — How to Check & What It Means">
+<meta name="twitter:description" content="Check Fujifilm X-T200 shutter count free from a RAF file. MakerNote tag 0x1438 (ImageCount).">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),transparent)}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}.spec-table .ok{color:var(--accent)}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,170,71,.06);border:1px solid rgba(255,170,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ffaa47}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebPage","name":"Fujifilm X-T200 Shutter Count — How to Check & What It Means","url":"https://shuttercount.app/fujifilm-x-t200-shutter-count/","description":"Complete guide to checking the shutter count of a Fujifilm X-T200 from a RAF RAW file, including expected shutter life, typical actuation ranges, and a free browser-based checker tool.","inLanguage":"en","isPartOf":{"@type":"WebSite","url":"https://shuttercount.app/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ShutterCount","item":"https://shuttercount.app/"},{"@type":"ListItem","position":2,"name":"Fujifilm X-T200 Shutter Count","item":"https://shuttercount.app/fujifilm-x-t200-shutter-count/"}]}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I check the shutter count of my Fujifilm X-T200?","acceptedAnswer":{"@type":"Answer","text":"Take a photo with your Fujifilm X-T200, then drop the resulting RAF RAW file into shuttercount.app. The tool reads the ImageCount from MakerNote tag 0x1438 entirely in your browser — no upload required."}},
+{"@type":"Question","name":"What is the expected shutter life of the Fujifilm X-T200?","acceptedAnswer":{"@type":"Answer","text":"Fujifilm does not publish an official shutter rating for the X-T200. As an entry-level mirrorless camera, expect approximately 100,000 mechanical shutter actuations based on its class and construction."}},
+{"@type":"Question","name":"Does the Fujifilm X-T200 shutter count reset on format?","acceptedAnswer":{"@type":"Answer","text":"The ImageCount field (MakerNote tag 0x1438) may reset when the camera's memory is formatted. This is standard behaviour across Fujifilm cameras. Always check from a file taken before formatting for the most accurate count."}},
+{"@type":"Question","name":"Can the shutter count on a Fujifilm X-T200 be faked?","acceptedAnswer":{"@type":"Answer","text":"EXIF-editing tools can overwrite metadata in a file copy, but they cannot change what the camera writes into future RAF files. Always verify from an original, unedited RAW file."}},
+{"@type":"Question","name":"Does the X-T200 use an X-Trans sensor?","acceptedAnswer":{"@type":"Answer","text":"No. Unlike most Fujifilm X-series cameras, the X-T200 uses a conventional 24.2 MP Bayer CMOS sensor rather than an X-Trans sensor. It still writes RAF RAW files with the same MakerNote structure."}}
+]}
+]}
+</script>
+</head>
+<body>
+<div class="breadcrumb"><a href="/">ShutterCount</a> &rsaquo; Fujifilm X-T200 Shutter Count</div>
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon &middot; Nikon &middot; Sony &middot; Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>Fujifilm X-T200 Shutter Count:<br>Check It Free in Your Browser</h1>
+  <p>Drop a RAF RAW file from your <strong>Fujifilm X-T200</strong> and get the image count in seconds &mdash; processed entirely in your browser, never uploaded anywhere.</p>
+  <a class="btn-cta" href="/">Check Shutter Count &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Fujifilm X-T200 &mdash; Shutter Rating</h2>
+  <p>The Fujifilm X-T200 is an entry-level mirrorless camera released in 2020. Designed for beginners and vloggers, it features a 24.2 MP APS-C Bayer CMOS sensor, a large 3.5-inch tilting touchscreen, and 4K video recording. It is one of Fujifilm's most affordable interchangeable-lens cameras.</p>
+
+  <table class="spec-table">
+    <thead><tr><th>Model</th><th>Release</th><th>Sensor</th><th>Shutter Count Field</th><th>RAW Format</th></tr></thead>
+    <tbody>
+      <tr><td class="val">Fujifilm X-T200</td><td>2020</td><td>24.2 MP APS-C Bayer</td><td class="ok">ImageCount (0x1438)</td><td>RAF</td></tr>
+      <tr><td class="val">Fujifilm X-T100</td><td>2018</td><td>24.2 MP APS-C Bayer</td><td class="ok">ImageCount (0x1438)</td><td>RAF</td></tr>
+      <tr><td class="val">Fujifilm X-T30</td><td>2019</td><td>26.1 MP APS-C X-Trans IV</td><td class="ok">ImageCount (0x1438)</td><td>RAF</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn-box">
+    <strong>Important:</strong> Fujifilm's ImageCount (tag 0x1438) is an image counter that resets when the camera's memory is formatted. This is standard across Fujifilm cameras. For accurate readings, use a file taken before formatting.
+  </div>
+</div>
+
+<div class="section">
+  <h2>How to Check Shutter Count on the Fujifilm X-T200</h2>
+  <p>Fujifilm does not display the shutter count in the camera menus. The image counter is embedded in every RAF RAW file.</p>
+
+  <ol class="steps">
+    <li>Take any photo with your Fujifilm X-T200 and locate the <strong>.RAF</strong> file.</li>
+    <li>Open <a href="/">shuttercount.app</a> in any modern browser.</li>
+    <li>Drag the RAF file onto the drop zone, or click to open a file picker.</li>
+    <li>The image count appears instantly. No upload, no account, no plugins required.</li>
+  </ol>
+
+  <p>For the most accurate count, use a file shot <strong>before</strong> formatting the card, as formatting resets the ImageCount field.</p>
+</div>
+
+<div class="section">
+  <h2>What Is a Good Shutter Count for a Used Fujifilm X-T200?</h2>
+  <p>Fujifilm does not publish an official shutter rating for the X-T200. As an entry-level camera, expect approximately 100,000 actuations.</p>
+
+  <table class="spec-table">
+    <thead><tr><th>Image Count</th><th>Assessment</th></tr></thead>
+    <tbody>
+      <tr><td class="val">0 &ndash; 10,000</td><td class="ok">Very low use &mdash; near new condition</td></tr>
+      <tr><td class="val">10,000 &ndash; 30,000</td><td class="ok">Low to moderate use &mdash; plenty of life remaining</td></tr>
+      <tr><td class="val">30,000 &ndash; 60,000</td><td>Moderate use &mdash; still within expected life</td></tr>
+      <tr><td class="val">60,000+</td><td>Heavy use for this camera class</td></tr>
+    </tbody>
+  </table>
+
+  <p>The X-T200 is an entry-level body with a lighter-duty shutter mechanism. At very high counts, consider the price of the camera versus potential shutter replacement cost.</p>
+</div>
+
+<div class="section">
+  <h2>How Does ShutterCount Read the X-T200 Shutter Count?</h2>
+  <p>The Fujifilm X-T200 writes images in Fujifilm's <strong>RAF</strong> format. ShutterCount parses the EXIF MakerNote and reads the <strong>ImageCount</strong> field at tag <code>0x1438</code> &mdash; the same tag used across the Fujifilm camera lineup.</p>
+
+  <div class="highlight-box">
+    <strong>100% local:</strong> All processing happens in your browser. The RAF file never leaves your device.
+  </div>
+
+  <h3>Bayer vs X-Trans</h3>
+  <p>Unlike most Fujifilm X-series cameras that use X-Trans sensors, the X-T200 uses a conventional Bayer CMOS sensor. However, it still writes RAF files with the same MakerNote structure, so the ImageCount tag is present and readable.</p>
+</div>
+
+<div class="section">
+  <h2>Fujifilm X-T200 Shutter Count &mdash; FAQ</h2>
+
+  <h3>How do I check the shutter count of my Fujifilm X-T200?</h3>
+  <p>Shoot a RAF RAW file and drop it into <a href="/">shuttercount.app</a>. The ImageCount is read from MakerNote tag 0x1438 in your browser &mdash; no upload needed.</p>
+
+  <h3>Does the X-T200 shutter count reset on format?</h3>
+  <p>Yes. The ImageCount field resets when the camera's memory card is formatted. For the most reliable reading, check a file taken before formatting.</p>
+
+  <h3>Can the shutter count be faked?</h3>
+  <p>EXIF tools can modify metadata in a file copy but cannot change what the camera writes into future RAF files. Always verify from an original, unedited file.</p>
+
+  <h3>Does the X-T200 use an X-Trans sensor?</h3>
+  <p>No. The X-T200 uses a 24.2 MP conventional Bayer CMOS sensor, not Fujifilm's X-Trans array. It still writes standard Fujifilm RAF files.</p>
+</div>
+
+<div class="section">
+  <h2>Other Fujifilm &amp; Entry-Level Cameras</h2>
+  <p>ShutterCount supports a wide range of Fujifilm cameras. See related guides:</p>
+  <div class="related">
+    <a href="/fujifilm-x-t30-shutter-count/">Fujifilm X-T30</a>
+    <a href="/fujifilm-x-t20-shutter-count/">Fujifilm X-T20</a>
+    <a href="/fujifilm-x-t50-shutter-count/">Fujifilm X-T50</a>
+    <a href="/fujifilm-x-e2-shutter-count/">Fujifilm X-E2</a>
+    <a href="/fujifilm-x-e3-shutter-count/">Fujifilm X-E3</a>
+    <a href="/fujifilm-x-e4-shutter-count/">Fujifilm X-E4</a>
+    <a href="/fujifilm-x-s10-shutter-count/">Fujifilm X-S10</a>
+    <a href="/fujifilm-x-s20-shutter-count/">Fujifilm X-S20</a>
+    <a href="/fujifilm-x100vi-shutter-count/">Fujifilm X100VI</a>
+    <a href="/sony-a6400-shutter-count/">Sony A6400</a>
+    <a href="/sony-zv-e10-ii-shutter-count/">Sony ZV-E10 II</a>
+    <a href="/">All supported cameras &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&#8592; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+</body>
+</html>
