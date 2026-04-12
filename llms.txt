@@ -7,6 +7,7 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 ## Main Application
 
 - [ShutterCount — Free Camera Shutter Count Checker](https://shuttercount.app/): The main tool. Drag and drop or select any supported RAW file to instantly display the camera's shutter count, camera model, and other EXIF metadata. Supports Canon, Nikon, Sony, Fujifilm, Olympus, Panasonic, and DNG files.
+- [Supported Camera Landing Pages](https://shuttercount.app/supported-cameras/): Central directory for model-specific camera landing pages with technical notes and shutter-count guidance.
 
 ## Canon Camera Shutter Count Pages
 
