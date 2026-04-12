@@ -649,6 +649,7 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
     <a href="/canon-1d-mark-ii-shutter-count/" style="color:var(--accent)">Canon EOS-1D Mark II</a> &middot;
     <a href="/nikon-1-v1-shutter-count/" style="color:var(--accent)">Nikon 1 V1</a>
   </p>
+  <p style="margin-top:10px"><a href="/supported-cameras/" style="color:var(--accent)">Browse all camera landing pages →</a></p>
 
   <div id="faqSection"></div>
 </div>
@@ -1202,7 +1203,13 @@ function parseRAF(buf) {
 function parseFile(buf){
   const u=new Uint8Array(buf);
   // CR3: ISOBMFF (ftyp box at offset 4)
-  if(s4(u,4)==='ftyp') return parseCR3(buf) || parseExif(buf);
+  if(s4(u,4)==='ftyp'){
+    try{
+      const cr3=parseCR3(buf);
+      if(cr3)return cr3;
+    }catch{}
+    return parseExif(buf);
+  }
   // RAF: FUJIFILM proprietary (magic at offset 0)
   if(s4(u,0)==='FUJI' && s4(u,4)==='FILM') return parseRAF(buf) || parseExif(buf);
   // Everything else: TIFF/EXIF (NEF, ARW, CR2, ORF, DNG, JPEG)
