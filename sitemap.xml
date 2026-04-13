@@ -1346,4 +1346,34 @@
     <priority>0.8</priority>
     <lastmod>2026-04-12</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/zh/kuaimen-cishu/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-13</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/zh/erjishou-xiangji/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-13</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/zh/kuaimen-shouming/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-13</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/zh/canon/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-13</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/zh/exif-kuaimen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-13</lastmod>
+  </url>
 </urlset>

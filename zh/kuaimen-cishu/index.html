@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>相机快门次数查询 — 什么是快门次数及如何查看 | ShutterCount</title>
+<meta name="description" content="了解什么是相机快门次数，为何重要，以及如何用 ShutterCount 免费在线查询快门次数 — 无需上传，本地处理，秒出结果。">
+<link rel="canonical" href="https://shuttercount.app/zh/kuaimen-cishu/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="相机快门次数查询 — 什么是快门次数及如何查看 | ShutterCount">
+<meta property="og:description" content="了解什么是相机快门次数，为何重要，以及如何用 ShutterCount 免费在线查询快门次数 — 无需上传，本地处理，秒出结果。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/zh/kuaimen-cishu/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="相机快门次数查询 — 什么是快门次数及如何查看 | ShutterCount">
+<meta name="twitter:description" content="了解什么是相机快门次数，为何重要，以及如何用 ShutterCount 免费在线查询快门次数 — 无需上传，本地处理，秒出结果。">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "相机快门次数查询 \u2014 什么是快门次数及如何查看",
+      "url": "https://shuttercount.app/zh/kuaimen-cishu/",
+      "inLanguage": "zh-Hans",
+      "isPartOf": {"@type": "WebSite", "url": "https://shuttercount.app/"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/"},
+          {"@type": "ListItem", "position": 2, "name": "中文", "item": "https://shuttercount.app/zh/"},
+          {"@type": "ListItem", "position": 3, "name": "快门次数查询", "item": "https://shuttercount.app/zh/kuaimen-cishu/"}
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "什么是相机快门次数？",
+          "acceptedAnswer": {"@type": "Answer", "text": "快门次数（Shutter Count 或 Shutter Actuations）是指相机从出厂到现在已拍摄的总张数。它相当于汽车的行驶里程表，反映了机械快门的磨损程度。"}
+        },
+        {
+          "@type": "Question",
+          "name": "如何在线查询相机快门次数？",
+          "acceptedAnswer": {"@type": "Answer", "text": "使用 ShutterCount 最为便捷：用相机拍一张 JPEG 照片，将其拖入 ShutterCount 页面，快门次数即刻显示，无需安装任何软件，文件不会上传至服务器。"}
+        },
+        {
+          "@type": "Question",
+          "name": "快门次数对相机有多重要？",
+          "acceptedAnswer": {"@type": "Answer", "text": "快门次数直接反映机械快门的使用寿命。入门级相机额定快门寿命约 10 万次，专业级可达 50 万次。购买二手相机时，快门次数是评估相机成色的核心指标。"}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; <a href="/zh/">中文</a> &rsaquo; 快门次数查询
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon &middot; Nikon &middot; Sony &middot; Fujifilm &middot; Olympus &middot; Panasonic</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; 文件不上传 &mdash; 100% 本地处理</span>
+  <h1>相机快门次数查询<br>&mdash; 一切你需要了解的</h1>
+  <p>快门次数（英文：Shutter Count 或 Shutter Actuations）是指相机快门从出厂至今已触发的总次数。简单来说，它就是相机的"行驶里程表"——次数越高，机械快门越接近使用极限。</p>
+  <a class="btn-cta" href="/">立即查询快门次数 &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>什么是快门，为什么会磨损？</h2>
+  <p>机械快门是相机内部每次拍照时开合的物理部件。作为机械装置，它有固定的使用寿命，通常在 <strong>10 万至 50 万次</strong>之间，具体取决于机型和定位档次。</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr><th>相机档次</th><th>典型快门额定寿命</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>入门级（如 Canon 200D II）</td><td class="val">约 10 万次</td></tr>
+      <tr><td>中端（如 Nikon D7500）</td><td class="val">约 15 万次</td></tr>
+      <tr><td>准专业（如 Sony A7 IV）</td><td class="val">约 20 万次</td></tr>
+      <tr><td>专业级（如 Nikon D6）</td><td class="val">约 40&ndash;50 万次</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>如何查询相机的快门次数？</h2>
+  <p>有三种常见方法可以查看快门次数：</p>
+  <ol class="steps">
+    <li>
+      <div><strong>在线使用 ShutterCount</strong> &mdash; 最快捷的方式。用相机拍一张 JPEG，拖入页面，数秒内即可看到结果，无需安装软件。</div>
+    </li>
+    <li>
+      <div><strong>使用第三方软件</strong> &mdash; 如 ExifTool、Opanda IExif 等工具可读取 EXIF 元数据，但需要下载安装。</div>
+    </li>
+    <li>
+      <div><strong>相机菜单查看</strong> &mdash; 部分尼康（Nikon）和宾得（Pentax）机型可在系统信息菜单中直接显示快门次数。</div>
+    </li>
+  </ol>
+  <p>对大多数用户而言，在线工具是最简便快捷的选择。</p>
+</div>
+
+<div class="section">
+  <h2>快门次数为什么重要？</h2>
+  <p>快门次数能直观反映相机的真实磨损程度。在以下场景中尤为重要：</p>
+  <ul style="padding-left:1.4em;margin-top:8px">
+    <li style="margin-bottom:6px">在<strong>闲鱼、转转或二手相机市场</strong>购买二手相机时，了解相机的实际状态。</li>
+    <li style="margin-bottom:6px">出售自己的相机时，提供客观数据以增加买家信任。</li>
+    <li style="margin-bottom:6px">单纯想了解自己手中器材的<strong>使用程度</strong>。</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>相关内容</h2>
+  <div class="related">
+    <a href="/zh/erjishou-xiangji/">二手相机快门次数</a>
+    <a href="/zh/kuaimen-shouming/">相机快门寿命</a>
+    <a href="/zh/exif-kuaimen/">免费查 EXIF 快门数据</a>
+    <a href="/zh/canon/">Canon 相机快门次数</a>
+    <a href="/">所有支持的相机型号 &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/zh/" style="color:var(--accent)">&#8592; 返回 ShutterCount 中文版</a></p>
+  <p style="margin-top:12px">联系我们：<a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>
