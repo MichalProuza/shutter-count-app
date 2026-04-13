@@ -80,6 +80,16 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Fujifilm X-T50 Shutter Count](https://shuttercount.app/fujifilm-x-t50-shutter-count/): Shutter count information for the Fujifilm X-T50.
 - [Fujifilm X100VI Shutter Count](https://shuttercount.app/fujifilm-x100vi-shutter-count/): Shutter count guide for the Fujifilm X100VI compact fixed-lens camera.
 
+## Chinese Language Pages (中文)
+
+SEO-optimized content pages in Simplified Chinese targeting high-volume Baidu search queries.
+
+- [快门次数查询 — 什么是快门次数及如何查看](https://shuttercount.app/zh/kuaimen-cishu/): Explains what shutter count is, why it matters, and how to check it online for free using ShutterCount. Targets the query 快门次数查询 (shutter count check).
+- [购买二手相机前必查快门次数](https://shuttercount.app/zh/erjishou-xiangji/): Guide for buying used cameras in China (闲鱼, 转转 marketplaces). Explains how to verify shutter count before purchase, with a condition rating table. Targets 二手相机快门次数 (used camera shutter count).
+- [相机快门寿命 — 各品牌机型快门额定次数完整表](https://shuttercount.app/zh/kuaimen-shouming/): Full shutter lifespan reference table for Canon, Nikon, Sony, Fujifilm, and Olympus models. Targets 相机快门寿命 (camera shutter lifespan).
+- [Canon 相机快门次数在线查询 — 免费](https://shuttercount.app/zh/canon/): Canon brand page in Chinese listing all supported EOS R mirrorless and EOS DSLR models with their rated shutter lives. Targets Canon相机快门次数 (Canon camera shutter count).
+- [免费查 EXIF 快门次数数据 — 在线工具](https://shuttercount.app/zh/exif-kuaimen/): Explains how EXIF metadata stores shutter count, how ShutterCount reads it locally without uploading files, and which file formats are supported. Targets EXIF快门数据免费查 (free EXIF shutter data check).
+
 ## Optional
 
 - [llms-full.txt](https://shuttercount.app/llms-full.txt): Extended version with full page descriptions and FAQ content for each camera model page.
