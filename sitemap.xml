@@ -1376,4 +1376,35 @@
     <priority>0.8</priority>
     <lastmod>2026-04-13</lastmod>
   </url>
+  <!-- New camera pages (2026-04-13) -->
+  <url>
+    <loc>https://shuttercount.app/canon-250d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-13</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-850d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-13</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-m50-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-13</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/olympus-om-1-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-13</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/panasonic-s9-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-13</lastmod>
+  </url>
 </urlset>
