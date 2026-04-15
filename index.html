@@ -1818,7 +1818,7 @@ function cookieDecline(){
 (function(){
   const c=localStorage.getItem('sc_cookie');
   if(c==='1')loadGA();
-  else if(!c)document.getElementById('cookieBanner').style.display='flex';
+  else if(!c)document.addEventListener('DOMContentLoaded',function(){document.getElementById('cookieBanner').style.display='flex';});
 })();
 </script>
 <footer style="width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)">
