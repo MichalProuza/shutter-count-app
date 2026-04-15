@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-H7088JCNHD');
-</script>
+<!-- Google Analytics — loaded only after cookie consent -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}</script>
 <meta charset="UTF-8">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -189,7 +183,7 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(circle,rgba(232,255,71,.04) 1px,transparent 1px);background-size:28px 28px}
 @keyframes fadeUp{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}
 header{animation:fadeUp .65s cubic-bezier(.22,1,.36,1) both}
-.lang-switcher{animation:fadeUp .65s .06s cubic-bezier(.22,1,.36,1) both}
+.lang-switcher{animation:fadeUp .65s .06s cubic-bezier(.22,1,.36,1) both;z-index:2}
 .dropzone{animation:fadeUp .65s .12s cubic-bezier(.22,1,.36,1) both}
 .drop-actions{animation:fadeUp .65s .17s cubic-bezier(.22,1,.36,1) both}
 @keyframes accentPulse{0%,100%{text-shadow:0 0 20px rgba(232,255,71,.2)}50%{text-shadow:0 0 44px rgba(232,255,71,.55),0 0 80px rgba(232,255,71,.18)}}
@@ -202,6 +196,11 @@ header{animation:fadeUp .65s cubic-bezier(.22,1,.36,1) both}
 .status-dot.err{animation:pulseErr 2s ease-in-out infinite}
 .life-bar-fill{transition:width 1.1s cubic-bezier(.34,1.56,.64,1)}
 .dropzone.dragover{box-shadow:0 0 0 2px var(--accent),inset 0 0 60px rgba(232,255,71,.04)}
+#cookieBanner{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);padding:14px 24px;display:flex;align-items:center;justify-content:center;gap:20px;z-index:9999;flex-wrap:wrap}
+.cookie-text{font-size:.72rem;color:var(--muted);line-height:1.5}
+.cookie-text strong{color:var(--text);margin-right:5px}
+.cookie-btns{display:flex;gap:8px;flex-shrink:0}
+@media(max-width:480px){#cookieBanner{flex-direction:column;align-items:stretch;text-align:center}.cookie-btns{justify-content:center}}
 </style>
 <script type="application/ld+json">
 {
@@ -1799,9 +1798,38 @@ document.addEventListener('click',e=>{
 });
 window.addEventListener('popstate',()=>detectLang());
 detectLang();
+
+// ── Cookie consent ────────────────────────────────────────────────────────────
+function loadGA(){
+  const s=document.createElement('script');
+  s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD';
+  document.head.appendChild(s);
+  s.onload=function(){gtag('js',new Date());gtag('config','G-H7088JCNHD');};
+}
+function cookieAccept(){
+  localStorage.setItem('sc_cookie','1');
+  document.getElementById('cookieBanner').style.display='none';
+  loadGA();
+}
+function cookieDecline(){
+  localStorage.setItem('sc_cookie','0');
+  document.getElementById('cookieBanner').style.display='none';
+}
+(function(){
+  const c=localStorage.getItem('sc_cookie');
+  if(c==='1')loadGA();
+  else if(!c)document.getElementById('cookieBanner').style.display='flex';
+})();
 </script>
 <footer style="width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)">
   Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent);text-decoration:none">info@shuttercount.app</a>
 </footer>
+<div id="cookieBanner" style="display:none" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-text"><strong>Analytics cookies</strong>We use Google Analytics to understand how this tool is used. No personal data from your RAW files is ever collected.</div>
+  <div class="cookie-btns">
+    <button class="btn btn-sm" onclick="cookieDecline()">Decline</button>
+    <button class="btn btn-sm btn-accent" onclick="cookieAccept()">Accept</button>
+  </div>
+</div>
 </body>
 </html>
