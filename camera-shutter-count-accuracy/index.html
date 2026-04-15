@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Accurate Is Camera Shutter Count? Can It Be Faked? | ShutterCount</title>
+<meta name="description" content="Is the shutter count from your camera reliable? Learn how shutter count data is stored, whether it can be manipulated or faked, and how to verify it properly when buying a used camera.">
+<meta name="keywords" content="is shutter count accurate, can shutter count be faked, how reliable is shutter count, shutter count manipulation, verify camera shutter count, camera shutter count trust, shutter count cheating">
+<link rel="canonical" href="https://shuttercount.app/camera-shutter-count-accuracy/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:title" content="How Accurate Is Camera Shutter Count? Can It Be Faked?">
+<meta property="og:description" content="The shutter count in a file's EXIF can be edited — but the internal hardware counter cannot. Learn how to get a trustworthy reading and spot red flags when buying used.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/camera-shutter-count-accuracy/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Accurate Is Camera Shutter Count? Can It Be Faked?">
+<meta name="twitter:description" content="EXIF shutter count in files can be edited. The hardware counter cannot. Here's how to verify authenticity when buying a used camera.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.section ol{padding-left:1.4em;margin-top:8px}
+.section ol li{margin-bottom:6px}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}
+.spec-table .ok{color:var(--accent)}
+.spec-table .mid{color:#ffaa47}
+.spec-table .bad{color:var(--accent2)}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,170,71,.06);border:1px solid rgba(255,170,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ffaa47}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "How Accurate Is Camera Shutter Count? Can It Be Faked?",
+      "url": "https://shuttercount.app/camera-shutter-count-accuracy/",
+      "description": "A guide to shutter count reliability — how the data is stored in hardware vs. file EXIF, whether it can be manipulated, and how to get a trustworthy reading when buying or selling a used camera.",
+      "inLanguage": "en",
+      "isPartOf": { "@type": "WebSite", "url": "https://shuttercount.app/" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Is Shutter Count Accurate?", "item": "https://shuttercount.app/camera-shutter-count-accuracy/" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can shutter count be faked or manipulated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The EXIF metadata in a RAW file can be edited using software tools, so a single file shown by a seller could have a manipulated count. However, the internal hardware counter inside the camera itself cannot be changed by editing files. This is why you must always read shutter count from an original, unedited RAW file taken directly from the camera's memory card — not from a file that has been transferred through editing software."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is the shutter count reading from a RAW file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "From an original, unedited RAW file taken straight from the camera's memory card, shutter count is highly accurate — it reflects the actual mechanical actuation count stored by the camera's hardware. The count is exact, not an estimate. Accuracy concerns only arise when the file may have been edited or handled by third-party software that could modify EXIF data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a firmware update reset the shutter count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Standard firmware updates do not reset or modify the shutter counter. The counter is stored in non-volatile hardware memory that persists across firmware updates, power cycles, and battery changes. Only an authorised service centre replacing the shutter mechanism will reset the count."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the shutter count sometimes differ between tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Different tools may read different counters stored in the MakerNote. Some cameras maintain separate counts for total exposures (including electronic shutter) and mechanical-only exposures. A difference between tools usually means they're reading different tags. ShutterCount.app reads the mechanical shutter actuation counter specifically — the most relevant number for assessing mechanical wear."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; Is Shutter Count Accurate?
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon · Nikon · Sony · Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>How Accurate Is Shutter Count?<br>Can It Be Faked?</h1>
+  <p>The shutter count embedded in a RAW file is highly accurate &mdash; but only if the file is original and unedited. Here's what you need to know before trusting a count when buying a used camera.</p>
+  <a class="btn-cta" href="/">Verify Shutter Count Free &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Two Places the Shutter Count Lives</h2>
+  <p>Understanding shutter count accuracy requires knowing there are two distinct places the counter exists &mdash; with very different security properties:</p>
+
+  <h3>1. The Internal Hardware Counter</h3>
+  <p>Inside every camera is a non-volatile hardware counter that increments by 1 every time the mechanical shutter fires. This counter:</p>
+  <ul>
+    <li>Is stored in protected firmware memory on the camera's main board.</li>
+    <li><strong>Cannot be modified by editing image files</strong> &mdash; it's completely separate from file data.</li>
+    <li>Persists through firmware updates, battery removal, power cycles, and factory resets.</li>
+    <li>Can only be reset by an authorised service centre after physically replacing the shutter mechanism.</li>
+  </ul>
+
+  <h3>2. The EXIF Metadata in Each RAW File</h3>
+  <p>When a photo is taken, the camera copies the current hardware counter value into the RAW file's EXIF MakerNote section. This copy:</p>
+  <ul>
+    <li>Accurately reflects the hardware counter <em>at the moment of capture</em>.</li>
+    <li><strong>Can be modified</strong> using EXIF editing software &mdash; the copy in the file is just data.</li>
+    <li>Is what tools like shuttercount.app, ExifTool, and similar read.</li>
+    <li>Is reliable only if the file is original and unedited.</li>
+  </ul>
+
+  <div class="warn-box">
+    <strong>Key distinction:</strong> The hardware counter cannot be faked. The file's EXIF copy can be edited. <em>Always read shutter count from an original, unedited RAW file straight from the camera's memory card.</em>
+  </div>
+</div>
+
+<div class="section">
+  <h2>How Accurate Is Shutter Count from an Original RAW?</h2>
+  <p>From a genuine, unedited original RAW file, the shutter count reading is <strong>exact</strong> &mdash; not an estimate, not a range. It's the precise value the camera's hardware recorded at the moment of capture.</p>
+  <p>For supported camera models (Canon, Nikon, Sony, Fujifilm and others), shuttercount.app reads the correct MakerNote tag for that specific model and returns the exact mechanical actuation count. There is no margin of error in the reading itself &mdash; only the question of whether the source file is trustworthy.</p>
+</div>
+
+<div class="section">
+  <h2>Can Shutter Count Be Faked?</h2>
+  <p>Yes &mdash; with important limitations. A dishonest seller can edit the EXIF metadata in a RAW file to show a lower shutter count. Here's how that attack works and why it's detectable:</p>
+
+  <h3>What a Seller Can Fake</h3>
+  <ul>
+    <li>Edit the MakerNote shutter count field in a specific RAW file using tools like ExifTool.</li>
+    <li>Send you that modified file, which will show a falsified count.</li>
+    <li>Share a screenshot of a low count (which proves nothing at all).</li>
+    <li>Share a JPEG export or converted DNG from editing software (which may strip or modify MakerNote data).</li>
+  </ul>
+
+  <h3>What a Seller Cannot Fake</h3>
+  <ul>
+    <li>The internal hardware counter in the camera &mdash; this can only be reset by authorised service with physical shutter replacement.</li>
+    <li>A fresh RAW file taken live in front of you (in person, or verified via video call) from the camera's memory card without any post-processing.</li>
+    <li>The consistency of shutter count across multiple files from different shooting sessions &mdash; a manipulated file will typically be inconsistent with surrounding files if you examine a batch.</li>
+  </ul>
+
+  <div class="highlight-box">
+    <strong>The one rule that protects you:</strong> Request a freshly-taken RAW file directly from the camera's memory card, transferred to you without any editing software involvement. Drop it into shuttercount.app. If the seller refuses or cannot provide this, treat the count as unverified.
+  </div>
+</div>
+
+<div class="section">
+  <h2>Red Flags When Buying a Used Camera</h2>
+  <p>Be alert to these warning signs that a shutter count claim may not be trustworthy:</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Red Flag</th>
+        <th>Why It's Suspicious</th>
+        <th>What to Do</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="val">Seller provides a screenshot</td>
+        <td>Screenshots can be photoshopped or taken from any file</td>
+        <td class="mid">Reject &mdash; ask for the actual RAW file</td>
+      </tr>
+      <tr>
+        <td class="val">File was exported from Lightroom or Photoshop</td>
+        <td>Export may strip or modify MakerNote data</td>
+        <td class="mid">Ask for the original camera RAW, not an export</td>
+      </tr>
+      <tr>
+        <td class="val">Suspiciously round shutter count (e.g. exactly 1,000)</td>
+        <td>Natural counts are irregular; round numbers may indicate editing</td>
+        <td class="mid">Ask for multiple files to cross-check</td>
+      </tr>
+      <tr>
+        <td class="val">Count inconsistent with camera age and claimed use</td>
+        <td>A 5-year-old "professional" camera with 2,000 actuations is unusual</td>
+        <td class="mid">Ask for more files; request in-person or video verification</td>
+      </tr>
+      <tr>
+        <td class="val">Seller refuses to provide a fresh RAW file</td>
+        <td>Legitimate sellers have nothing to hide</td>
+        <td class="bad">Major red flag &mdash; consider walking away</td>
+      </tr>
+      <tr>
+        <td class="val">File metadata shows editing software in the MakerNote</td>
+        <td>Any processing software could have modified data</td>
+        <td class="mid">Cross-reference with other file metadata fields</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>How to Get a Trustworthy Shutter Count Reading</h2>
+  <p>Follow these steps whether you're verifying your own camera or checking a used purchase:</p>
+  <ol>
+    <li>Take a photo with the camera set to <strong>mechanical shutter mode</strong> (disable silent/electronic).</li>
+    <li>Remove the memory card and copy the RAW file directly to your computer &mdash; do <strong>not</strong> import via Lightroom, Photos, or any application that might process the file.</li>
+    <li>Drop the original RAW file into <a href="/">shuttercount.app</a>. The file never leaves your computer &mdash; it's parsed locally in your browser.</li>
+    <li>The exact shutter count from the hardware counter (as recorded at the moment of capture) is displayed.</li>
+  </ol>
+  <p>For buying a used camera remotely: ask the seller to perform steps 1&ndash;2 on camera and send you the raw file directly from the card &mdash; ideally over a shared folder or transfer service where they upload from the card, not from their Lightroom catalogue.</p>
+
+  <div class="highlight-box">
+    <strong>Best practice:</strong> When meeting in person to buy a used camera, bring a laptop, insert the seller's memory card yourself, copy a RAW file directly, and verify the count on the spot with shuttercount.app. This is the most reliable verification method available.
+  </div>
+</div>
+
+<div class="section">
+  <h2>Why Different Tools Sometimes Show Different Counts</h2>
+  <p>If you've read the shutter count with one tool and then tried another and got a different number, there are a few possible explanations:</p>
+  <ul>
+    <li><strong>Different tags being read:</strong> Some cameras store multiple counters in the MakerNote &mdash; e.g., total exposures (including electronic shutter) vs. mechanical-only. Different tools may read different tags.</li>
+    <li><strong>Model-specific offset differences:</strong> Parsing the proprietary MakerNote is not officially documented by manufacturers. Reverse-engineered offsets can vary between tools, especially for newer camera models.</li>
+    <li><strong>Newer camera not yet supported:</strong> If a camera model is very recent, some tools may not yet have the correct offset. ShutterCount.app is updated regularly to support new models.</li>
+  </ul>
+  <p>The mechanical shutter actuation counter &mdash; which is what matters for assessing shutter wear &mdash; is the number reported by shuttercount.app.</p>
+</div>
+
+<div class="section">
+  <h2>Related Guides</h2>
+  <div class="related">
+    <a href="/raw-file-exif-explained/">RAW File EXIF Explained</a>
+    <a href="/what-is-shutter-count/">What Is Shutter Count?</a>
+    <a href="/how-to-check-shutter-count/">How to Check Shutter Count</a>
+    <a href="/used-camera-buying-guide/">Used Camera Buying Guide</a>
+    <a href="/shutter-count-limits/">Shutter Life Expectancy</a>
+    <a href="/does-shutter-count-matter/">Does Shutter Count Matter?</a>
+    <a href="/">Verify Shutter Count Free &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&larr; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shutter Speed vs Shutter Count: What's the Difference? | ShutterCount</title>
+<meta name="description" content="Shutter speed and shutter count sound similar but mean completely different things. One controls exposure, the other measures camera wear. Here's the clear explanation.">
+<meta name="keywords" content="shutter speed vs shutter count, difference shutter speed shutter count, is shutter speed same as shutter count, shutter speed explained, shutter count vs shutter speed, camera shutter terminology">
+<link rel="canonical" href="https://shuttercount.app/shutter-speed-vs-shutter-count/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:title" content="Shutter Speed vs Shutter Count: What's the Difference?">
+<meta property="og:description" content="Two different camera concepts that share a word. Shutter speed controls how long the sensor is exposed. Shutter count tracks total mechanical wear. Here's everything you need to know.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/shutter-speed-vs-shutter-count/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shutter Speed vs Shutter Count: What's the Difference?">
+<meta name="twitter:description" content="Shutter speed is an exposure setting. Shutter count is a wear indicator. Learn how they're related — and why they're not the same thing.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.section ol{padding-left:1.4em;margin-top:8px}
+.section ol li{margin-bottom:6px}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}
+.spec-table .ok{color:var(--accent)}
+.spec-table .mid{color:#ffaa47}
+.spec-table .bad{color:var(--accent2)}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,170,71,.06);border:1px solid rgba(255,170,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ffaa47}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Shutter Speed vs Shutter Count: What's the Difference?",
+      "url": "https://shuttercount.app/shutter-speed-vs-shutter-count/",
+      "description": "A clear explanation of the difference between shutter speed (an exposure setting) and shutter count (a camera wear indicator) — two concepts frequently confused by new photographers.",
+      "inLanguage": "en",
+      "isPartOf": { "@type": "WebSite", "url": "https://shuttercount.app/" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Shutter Speed vs Shutter Count", "item": "https://shuttercount.app/shutter-speed-vs-shutter-count/" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is shutter speed the same as shutter count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Shutter speed is an exposure setting that controls how long the sensor is exposed to light during a single photograph — measured in fractions of a second (e.g. 1/500s). Shutter count is a cumulative counter of total mechanical shutter actuations over the camera's lifetime — it grows by 1 every time the shutter fires."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a faster shutter speed mean more shutter count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Every photo taken with the mechanical shutter adds exactly 1 to the shutter count, regardless of whether the shutter speed was 1/8000s or 30 seconds. Shutter speed affects exposure; shutter count tracks total usage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check my camera's shutter count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Take a photo using the mechanical shutter mode, then drop the original RAW file into shuttercount.app. The app reads the actuation counter directly from the file's EXIF MakerNote data — no upload required, works in your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I see shutter speed in a photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Shutter speed is recorded in every photo's EXIF data as 'ExposureTime'. You can see it in Lightroom's metadata panel, your camera's file review screen, or any EXIF viewer. It's displayed as a fraction (1/250) or in seconds (0.5s) for slow exposures."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; Shutter Speed vs Shutter Count
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon · Nikon · Sony · Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>Shutter Speed vs Shutter Count:<br>What&rsquo;s the Difference?</h1>
+  <p>Two camera terms, one confusing word. Shutter speed and shutter count are completely unrelated &mdash; one is an exposure setting you change per photo, the other is a lifetime wear counter for your camera.</p>
+  <a class="btn-cta" href="/">Check Your Shutter Count &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>The Short Answer</h2>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Term</th>
+        <th>What It Is</th>
+        <th>Example</th>
+        <th>Changes Per Shot?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="val">Shutter Speed</td>
+        <td>Duration the sensor is exposed to light</td>
+        <td>1/500 s, 1/60 s, 2 s</td>
+        <td class="ok">Yes &mdash; set by photographer</td>
+      </tr>
+      <tr>
+        <td class="val">Shutter Count</td>
+        <td>Total mechanical actuations since new</td>
+        <td>12,450 actuations</td>
+        <td class="mid">+1 per mechanical shot</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box">
+    <strong>One-line summary:</strong> Shutter speed is a creative tool you control. Shutter count is a wear odometer you monitor.
+  </div>
+</div>
+
+<div class="section">
+  <h2>What Is Shutter Speed?</h2>
+  <p>Shutter speed &mdash; more precisely called <strong>exposure time</strong> &mdash; is the length of time the camera's shutter remains open during a single photograph. It is one of the three pillars of exposure alongside aperture and ISO.</p>
+
+  <h3>How It Works</h3>
+  <ul>
+    <li>A fast shutter speed (e.g. <strong>1/2000 s</strong>) freezes motion &mdash; used for sports, birds in flight, water droplets.</li>
+    <li>A slow shutter speed (e.g. <strong>1/30 s</strong> or longer) blurs motion &mdash; used for waterfalls, light trails, low-light photography.</li>
+    <li>Each doubling of shutter speed halves the light entering the sensor; each halving doubles it.</li>
+  </ul>
+
+  <h3>How to Change It</h3>
+  <p>In Manual (M) or Shutter Priority (Tv/S) mode, you set the shutter speed directly using the command dial. In Auto and Aperture Priority modes, the camera selects it based on your aperture, ISO, and metering reading.</p>
+
+  <h3>Where It's Recorded</h3>
+  <p>Shutter speed is recorded in every image's EXIF data as the <code style="color:var(--accent);background:rgba(232,255,71,.08);padding:2px 6px;border-radius:4px">ExposureTime</code> tag. You can see it in Lightroom, your camera's playback info screen, or any EXIF reader.</p>
+</div>
+
+<div class="section">
+  <h2>What Is Shutter Count?</h2>
+  <p>Shutter count &mdash; also called <strong>shutter actuations</strong> or the actuation count &mdash; is the total number of times the camera's mechanical shutter has fired since the camera was manufactured. It's a cumulative, ever-increasing number stored in the camera's internal hardware and written into each RAW file's metadata.</p>
+
+  <h3>How It Works</h3>
+  <ul>
+    <li>Every photo taken with the <strong>mechanical shutter</strong> increments the counter by 1 &mdash; regardless of shutter speed.</li>
+    <li>A photo at 1/8000 s and a 30-second long exposure each add exactly 1 actuation.</li>
+    <li>Photos taken with the fully <strong>electronic shutter (silent mode)</strong> do not increment the counter, because no mechanical parts move.</li>
+    <li>Video recording does not increment the counter.</li>
+  </ul>
+
+  <h3>Why It Matters</h3>
+  <p>The mechanical shutter is a precision component with a finite rated lifespan (typically 100,000&ndash;500,000 actuations depending on camera tier). A high shutter count signals more wear, which is particularly relevant when buying or selling a used camera &mdash; similar to checking mileage on a car.</p>
+
+  <h3>Where It's Stored</h3>
+  <p>Shutter count is stored in the <strong>MakerNote</strong> section of the EXIF data inside each RAW file &mdash; a proprietary block used by each manufacturer (Canon, Nikon, Sony, Fujifilm) to store camera-specific data not covered by the standard EXIF spec.</p>
+</div>
+
+<div class="section">
+  <h2>Side-by-Side Comparison</h2>
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Shutter Speed</th>
+        <th>Shutter Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="val">What it measures</td>
+        <td>Duration of exposure per photo</td>
+        <td>Total mechanical actuations (lifetime)</td>
+      </tr>
+      <tr>
+        <td class="val">Unit</td>
+        <td>Seconds (1/500 s, 2 s, etc.)</td>
+        <td>Number (e.g. 45,230 actuations)</td>
+      </tr>
+      <tr>
+        <td class="val">Who sets it</td>
+        <td>Photographer (or camera auto mode)</td>
+        <td>Camera hardware &mdash; automatic, can't be set</td>
+      </tr>
+      <tr>
+        <td class="val">Resets?</td>
+        <td>Yes &mdash; every shot can be different</td>
+        <td>Only after authorised shutter replacement</td>
+      </tr>
+      <tr>
+        <td class="val">Affects exposure?</td>
+        <td>Yes &mdash; core exposure variable</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td class="val">Affects camera wear?</td>
+        <td>Indirectly (more shots = higher count)</td>
+        <td>Yes &mdash; it IS the wear indicator</td>
+      </tr>
+      <tr>
+        <td class="val">Where to find it</td>
+        <td>EXIF ExposureTime, camera display</td>
+        <td>EXIF MakerNote (requires dedicated tool)</td>
+      </tr>
+      <tr>
+        <td class="val">Relevant when...</td>
+        <td>Choosing exposure settings</td>
+        <td>Buying/selling used cameras, planning service</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>How Are They Related?</h2>
+  <p>Shutter speed and shutter count are connected in one way: every mechanical-shutter photo adds 1 to the count, regardless of the shutter speed used. That's the only relationship.</p>
+  <p>A photographer who mostly shoots long-exposure night photography at 30 seconds will accumulate shutter count just as fast as one shooting at 1/4000 s &mdash; if they take the same number of photos. The speed of the shutter does not cause more or less wear per actuation.</p>
+
+  <div class="warn-box">
+    <strong>Common misconception:</strong> &ldquo;I shoot with slow shutter speeds, so my shutter must wear out faster.&rdquo; This is not true. Each actuation &mdash; fast or slow &mdash; is one cycle of the curtain mechanism. The rated lifespan is measured in cycles, not in total time the curtain was open.
+  </div>
+</div>
+
+<div class="section">
+  <h2>How to Check Each</h2>
+
+  <h3>Checking Shutter Speed</h3>
+  <p>Shutter speed is visible in:</p>
+  <ul>
+    <li>Your camera's viewfinder or LCD display while shooting.</li>
+    <li>The EXIF data of any photo (ExposureTime tag) &mdash; readable in Lightroom, Preview, Windows File Explorer properties, or any EXIF viewer.</li>
+    <li>The camera's image review playback screen (press Info/Display to cycle through data overlays).</li>
+  </ul>
+
+  <h3>Checking Shutter Count</h3>
+  <p>Shutter count requires a dedicated tool because it's stored in the proprietary MakerNote section:</p>
+  <ol>
+    <li>Take a photo with the <strong>mechanical shutter</strong> (not silent/electronic mode).</li>
+    <li>Transfer the <strong>original RAW file</strong> to your computer &mdash; don't convert or edit it.</li>
+    <li>Drop it into <a href="/">shuttercount.app</a> &mdash; free, no upload, runs in your browser.</li>
+    <li>Your exact actuation count appears instantly alongside a remaining life estimate.</li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Does a very fast shutter speed (1/8000 s) wear out the shutter more than 1/60 s?</h3>
+  <p>No. Each actuation counts as one regardless of the shutter speed. The mechanical curtain completes one full travel cycle per shot at any speed &mdash; though at fast speeds, both curtains travel simultaneously rather than one after the other.</p>
+
+  <h3>I changed my shutter speed setting &mdash; did that add to the shutter count?</h3>
+  <p>No. Only pressing the shutter button and taking a photo increments the count. Changing settings, half-pressing to focus, reviewing photos in playback, or adjusting any menu options do not affect the shutter count.</p>
+
+  <h3>Can the shutter count ever go down?</h3>
+  <p>Only after an authorised manufacturer service centre replaces the shutter mechanism and resets the counter to zero. No setting, firmware update, or file editing can decrease the internal hardware counter.</p>
+
+  <h3>Is there a "good" shutter speed for preserving shutter life?</h3>
+  <p>No specific shutter speed preserves shutter life better than another. If you want to reduce shutter count accumulation, use <a href="/electronic-vs-mechanical-shutter/">electronic shutter (silent mode)</a> when conditions allow &mdash; electronic shots do not increment the counter at all.</p>
+</div>
+
+<div class="section">
+  <h2>Related Guides</h2>
+  <div class="related">
+    <a href="/what-is-shutter-count/">What Is Shutter Count?</a>
+    <a href="/how-to-check-shutter-count/">How to Check Shutter Count</a>
+    <a href="/shutter-count-limits/">Shutter Life Expectancy</a>
+    <a href="/electronic-vs-mechanical-shutter/">Electronic vs Mechanical Shutter</a>
+    <a href="/shutter-count-for-video/">Does Video Affect Shutter Count?</a>
+    <a href="/used-camera-buying-guide/">Used Camera Buying Guide</a>
+    <a href="/">Check Shutter Count Free &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&larr; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>

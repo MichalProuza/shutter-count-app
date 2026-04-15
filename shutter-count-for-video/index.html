@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Does Video Recording Affect Shutter Count? | ShutterCount</title>
+<meta name="description" content="Video recording does not increment your camera's shutter count. Learn exactly why, what actually happens inside the camera during video, and what this means for hybrid photo/video shooters.">
+<meta name="keywords" content="does video recording affect shutter count, shutter count video cameras, video shutter count, does recording video use mechanical shutter, video camera shutter actuations, hybrid shooter shutter count">
+<link rel="canonical" href="https://shuttercount.app/shutter-count-for-video/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:title" content="Does Video Recording Affect Shutter Count?">
+<meta property="og:description" content="Video uses the electronic shutter — no mechanical parts move, nothing is counted. Here's the full explanation for hybrid shooters and videographers.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/shutter-count-for-video/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Does Video Recording Affect Shutter Count?">
+<meta name="twitter:description" content="No — video recording doesn't add to shutter count. Here's why and what it means for video-heavy shooters on Canon, Nikon, Sony, and Fujifilm cameras.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.section ol{padding-left:1.4em;margin-top:8px}
+.section ol li{margin-bottom:6px}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}
+.spec-table .ok{color:var(--accent)}
+.spec-table .no{color:var(--muted);font-style:italic}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,170,71,.06);border:1px solid rgba(255,170,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ffaa47}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Does Video Recording Affect Shutter Count?",
+      "url": "https://shuttercount.app/shutter-count-for-video/",
+      "description": "Video recording uses the electronic shutter and does not increment the mechanical shutter counter. This guide explains why, and what it means for hybrid photo/video shooters using Canon, Nikon, Sony, and Fujifilm cameras.",
+      "inLanguage": "en",
+      "isPartOf": { "@type": "WebSite", "url": "https://shuttercount.app/" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Shutter Count for Video", "item": "https://shuttercount.app/shutter-count-for-video/" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does video recording add to shutter count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Video recording always uses the electronic shutter — the sensor reads continuously without any mechanical curtain movement. Because no mechanical parts move, the shutter counter does not increment during video recording, regardless of how long you record."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Live View affect shutter count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Live View itself does not increment the shutter count — the display uses continuous electronic sensor readout. However, taking a still photo while in Live View does fire the mechanical shutter and adds 1 actuation. The display time is not counted; only the moment of capture."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "If I shoot mostly video, will my shutter count be low?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Video-heavy shooters often have disproportionately low shutter counts relative to the camera's age and overall use. A camera used primarily for video work could have thousands of hours of footage with only a few thousand shutter actuations — because all video was captured electronically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does taking a still photo during video increment the shutter count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the camera and mode. On some cameras, taking a still photo during video recording uses the electronic shutter (and does not count). On others — especially DSLRs — the mechanical shutter fires for a still capture during video, adding 1 actuation. Check your camera's manual for its specific behaviour."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; Shutter Count for Video
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon · Nikon · Sony · Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>Does Video Recording<br>Affect Shutter Count?</h1>
+  <p>Short answer: <strong>no</strong>. Video recording uses the electronic shutter &mdash; no mechanical parts move, and nothing is added to the shutter counter. Here's the full explanation for hybrid and video-first shooters.</p>
+  <a class="btn-cta" href="/">Check Your Shutter Count &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Why Video Doesn't Affect the Shutter Counter</h2>
+  <p>When your camera records video, the sensor reads its pixels continuously in a rolling scan &mdash; frame by frame, typically at 24, 30, or 60 frames per second. This readout is entirely <strong>electronic</strong>: there is no physical curtain opening and closing between frames.</p>
+  <p>The mechanical shutter &mdash; the precision curtain assembly that the shutter count tracks &mdash; is parked open during video. The sensor is exposed continuously through the open curtain, with exposure controlled by the sensor's electronic readout timing, not by curtain movement.</p>
+  <p>Since the curtain mechanism doesn't move during video, <strong>the shutter counter does not increment</strong>. You can record hours of footage without adding a single actuation to your count.</p>
+
+  <div class="highlight-box">
+    <strong>Practical implication:</strong> A camera used heavily for video work will have a much lower shutter count relative to its actual age and usage than a stills-only camera. Low shutter count alone does not mean a camera is "barely used" if it was a video workhorse.
+  </div>
+</div>
+
+<div class="section">
+  <h2>What Does and Doesn't Increment the Shutter Count?</h2>
+  <p>The mechanical shutter counter only tracks events that cause physical curtain movement:</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Action</th>
+        <th>Adds to Shutter Count?</th>
+        <th>Why</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="val">Mechanical shutter photo</td>
+        <td class="ok">Yes &mdash; +1</td>
+        <td>Both curtains cycle physically</td>
+      </tr>
+      <tr>
+        <td class="val">EFCS photo (Electronic Front Curtain)</td>
+        <td class="ok">Yes &mdash; +1</td>
+        <td>Rear curtain still moves mechanically</td>
+      </tr>
+      <tr>
+        <td class="val">Electronic shutter (silent) photo</td>
+        <td class="no">No</td>
+        <td>No mechanical curtain movement</td>
+      </tr>
+      <tr>
+        <td class="val">Video recording</td>
+        <td class="no">No</td>
+        <td>Electronic sensor readout; shutter stays open</td>
+      </tr>
+      <tr>
+        <td class="val">Live View display</td>
+        <td class="no">No</td>
+        <td>Continuous electronic readout, no actuation</td>
+      </tr>
+      <tr>
+        <td class="val">Autofocus operation</td>
+        <td class="no">No</td>
+        <td>AF uses sensor or phase-detect; no shutter movement</td>
+      </tr>
+      <tr>
+        <td class="val">Still photo taken during video</td>
+        <td class="ok">Depends on model</td>
+        <td>Some use electronic shutter; some use mechanical</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>What About Cameras Used Primarily for Video?</h2>
+  <p>Cameras like the Sony FX3, Sony A7S III, Canon EOS R5 C, and Nikon Z6 III are popular for professional video work. A camera used primarily for video can easily accumulate <strong>hundreds of hours of recording</strong> while maintaining a very low shutter count.</p>
+
+  <h3>Evaluating Video-First Cameras in the Used Market</h3>
+  <p>When buying a used camera that was primarily used for video, shutter count tells only part of the story. Equally important factors for video-heavy cameras include:</p>
+  <ul>
+    <li><strong>Thermal wear:</strong> Extended video recording generates significant heat. Cameras with history of long recording sessions may have aged heat-related components (capacitors, thermal pads) faster than shutter count suggests.</li>
+    <li><strong>Card slot wear:</strong> Heavy video use means more frequent card writes. CFexpress and SD card slots are generally durable, but heavy use is worth noting.</li>
+    <li><strong>Port wear:</strong> HDMI, USB-C, and XLR ports on video cameras can show wear from frequent cable connection.</li>
+    <li><strong>Autofocus motor wear:</strong> Continuous AF during long video clips can wear the lens and body AF components.</li>
+    <li><strong>General cosmetic wear:</strong> Grip rubber, button wear, and body condition give independent clues about how heavily a camera was used.</li>
+  </ul>
+
+  <div class="warn-box">
+    <strong>Buyer advice:</strong> Don't dismiss a video camera as heavily used just because it has a low shutter count. And don't assume a video-heavy camera is in pristine condition because the shutter count is low. Evaluate holistically.
+  </div>
+</div>
+
+<div class="section">
+  <h2>Does Live View Affect Shutter Count?</h2>
+  <p>Live View operation itself does not increment the shutter count. While Live View is active, the camera reads the sensor electronically and displays the feed without mechanical curtain movement.</p>
+  <p>However, <strong>taking a still photo while in Live View does fire the mechanical shutter</strong> on most cameras (unless you've enabled electronic shutter / silent mode). The Live View display time accumulates no actuations; only the moment you press the shutter release to capture a photo adds 1 to the count.</p>
+  <p>On mirrorless cameras, Live View is the default shooting mode &mdash; the viewfinder and rear screen are always showing a live electronic feed. All mirrorless cameras effectively "use Live View" for all shooting, which is one reason their shutter mechanisms are simpler than DSLRs.</p>
+</div>
+
+<div class="section">
+  <h2>Practical Advice for Hybrid Shooters</h2>
+  <p>If you shoot both stills and video:</p>
+  <ul>
+    <li>Your shutter count reflects only stills taken with the mechanical or EFCS shutter. It doesn't reflect your total camera usage time.</li>
+    <li>For high-volume still bursts, consider switching to <strong>electronic shutter mode</strong> during video intervals to avoid accumulating actuations during setup shots.</li>
+    <li>When selling your camera, be transparent about its video use history &mdash; a low shutter count on a video workhorse doesn't fully represent the camera's usage.</li>
+    <li>When buying, ask whether the camera was used primarily for stills or video &mdash; then check the shutter count in context of the answer.</li>
+  </ul>
+
+  <a class="btn-cta" href="/" style="display:inline-block;margin-top:16px">Check Shutter Count Free &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Does the camera record shutter count somewhere for video?</h3>
+  <p>No. There is no separate "video recording time" counter embedded in the camera's accessible metadata. The shutter counter only tracks mechanical actuations. Some professional cinema cameras track total power-on time or rolling time, but this is not a standard feature on mirrorless or DSLR cameras.</p>
+
+  <h3>I shot thousands of video clips but my shutter count seems very low. Is something wrong?</h3>
+  <p>No &mdash; this is expected. Video does not increment the counter. Your low count is accurate. If you want to verify the count is being read correctly, take a fresh mechanical-shutter photo and drop it into shuttercount.app to confirm the reading matches your expectations based on your stills shooting history.</p>
+
+  <h3>Does recording a timelapse (using interval shooting) affect shutter count?</h3>
+  <p>Yes. Timelapse sequences taken with the mechanical shutter add 1 actuation per frame. A timelapse of 3,000 frames = 3,000 actuations. If your camera supports in-camera timelapse using electronic shutter, you can avoid this. Otherwise, timelapse can accumulate shutter count faster than regular shooting.</p>
+
+  <h3>Do Canon / Nikon / Sony / Fujifilm cameras all handle video + shutter count the same way?</h3>
+  <p>Yes &mdash; all modern mirrorless cameras from these brands use the electronic shutter for video recording and do not increment the mechanical shutter counter during video. The specific camera model affects how stills-during-video work (electronic vs. mechanical), but video recording itself is universally electronic across these platforms.</p>
+</div>
+
+<div class="section">
+  <h2>Related Guides</h2>
+  <div class="related">
+    <a href="/electronic-vs-mechanical-shutter/">Electronic vs Mechanical Shutter</a>
+    <a href="/what-is-shutter-count/">What Is Shutter Count?</a>
+    <a href="/shutter-speed-vs-shutter-count/">Shutter Speed vs Shutter Count</a>
+    <a href="/how-to-extend-camera-shutter-life/">Extend Shutter Life</a>
+    <a href="/used-camera-buying-guide/">Used Camera Buying Guide</a>
+    <a href="/shutter-count-limits/">Shutter Life Expectancy</a>
+    <a href="/">Check Shutter Count Free &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&larr; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>

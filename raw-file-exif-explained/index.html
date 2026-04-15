@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAW File EXIF Data Explained: Where Camera Metadata Is Stored | ShutterCount</title>
+<meta name="description" content="Learn what EXIF data is in RAW files, where shutter count is hidden inside camera metadata, and how to read it from Canon CR3, Nikon NEF, Sony ARW, and Fujifilm RAF files.">
+<meta name="keywords" content="raw file EXIF data, camera EXIF metadata, what is EXIF data, EXIF shutter count, RAW file metadata explained, MakerNote EXIF, camera RAW file data, EXIF data camera">
+<link rel="canonical" href="https://shuttercount.app/raw-file-exif-explained/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:title" content="RAW File EXIF Data Explained: Where Camera Metadata Is Stored">
+<meta property="og:description" content="What EXIF data is stored in a RAW file — and where shutter count hides inside the MakerNote tag for Canon, Nikon, Sony, and Fujifilm cameras.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/raw-file-exif-explained/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RAW File EXIF Data Explained: Where Camera Metadata Is Stored">
+<meta name="twitter:description" content="EXIF data in RAW files contains far more than JPEG — including the hidden MakerNote fields where shutter count lives.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.section ol{padding-left:1.4em;margin-top:8px}
+.section ol li{margin-bottom:6px}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}
+.spec-table .ok{color:var(--accent)}
+.spec-table .mid{color:#ffaa47}
+.spec-table .no{color:var(--muted);font-style:italic}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,170,71,.06);border:1px solid rgba(255,170,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ffaa47}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "RAW File EXIF Data Explained: Where Camera Metadata Is Stored",
+      "url": "https://shuttercount.app/raw-file-exif-explained/",
+      "description": "A complete guide to EXIF metadata in RAW files — including what data is stored, how the MakerNote works, and where shutter count is embedded by Canon, Nikon, Sony, and Fujifilm.",
+      "inLanguage": "en",
+      "isPartOf": { "@type": "WebSite", "url": "https://shuttercount.app/" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/" },
+          { "@type": "ListItem", "position": 2, "name": "RAW File EXIF Data Explained", "item": "https://shuttercount.app/raw-file-exif-explained/" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is EXIF data in a camera RAW file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EXIF (Exchangeable Image File Format) data is metadata embedded in every photo file. It records information about how and when the photo was taken — including shutter speed, aperture, ISO, focal length, camera model, lens, date, GPS location, and camera-specific data like shutter count stored in the MakerNote field."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is the shutter count stored in a RAW file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Shutter count is stored inside the MakerNote section of the EXIF data. This is a manufacturer-proprietary section — each brand uses different tag offsets and encoding. Canon stores it differently from Nikon, Sony, and Fujifilm. ShutterCount.app knows the exact offsets for each supported model and reads the count directly from the file in your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do JPEG files contain shutter count in EXIF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some cameras embed shutter count in JPEG MakerNote data, but this is inconsistent. Many cameras only reliably include it in RAW files. For an accurate shutter count reading, always use a RAW file (CR3, NEF, ARW, RAF, etc.) rather than a JPEG or edited export."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can EXIF data be edited or removed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Software tools can edit or strip EXIF data from image files. However, the internal hardware counter inside the camera is separate from the file's EXIF — it cannot be changed by editing image files. Only the copied metadata in the file is affected. This is why an original, unedited RAW file straight from the camera card is the only reliable way to verify shutter count."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the MakerNote in EXIF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The MakerNote is a proprietary EXIF sub-block that each camera manufacturer uses to store custom data not covered by the standard EXIF spec. This includes shutter count, focus point data, image stabilisation settings, lens corrections, and more. The format is specific to each manufacturer and even varies between models."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; RAW File EXIF Data Explained
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon · Nikon · Sony · Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>RAW File EXIF Data Explained:<br>Where Camera Metadata Is Stored</h1>
+  <p>Every RAW file carries a rich set of metadata beyond the image itself &mdash; shutter speed, lens, GPS, and buried inside a proprietary block called the MakerNote, your camera's shutter count.</p>
+  <a class="btn-cta" href="/">Read Shutter Count from RAW &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>What Is EXIF Data?</h2>
+  <p>EXIF stands for <strong>Exchangeable Image File Format</strong>. It's a standard for embedding metadata inside image files &mdash; established in the 1990s and now used by virtually every digital camera and smartphone on the market.</p>
+  <p>When your camera takes a photo, it writes two things into the file: the image data itself, and a block of structured metadata describing the capture conditions. This metadata block is the EXIF data.</p>
+  <p>EXIF data is why you can open a photo years later and still know exactly when it was shot, at what focal length, which aperture, and with which camera body. It travels with the file automatically &mdash; no input required from the photographer.</p>
+
+  <div class="highlight-box">
+    <strong>Key point:</strong> EXIF metadata is not just about exposure settings. Modern cameras embed dozens of fields &mdash; including proprietary data that reveals the camera's total shutter actuation count.
+  </div>
+</div>
+
+<div class="section">
+  <h2>Standard EXIF Fields</h2>
+  <p>The EXIF standard defines a common set of fields that all cameras use consistently. These are readable by any image viewer or EXIF editor:</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>EXIF Field</th>
+        <th>What It Contains</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="val">Make / Model</td>
+        <td>Camera brand and model name</td>
+        <td>Canon EOS R6 Mark II</td>
+      </tr>
+      <tr>
+        <td class="val">DateTimeOriginal</td>
+        <td>Date and time the photo was captured</td>
+        <td>2025:03:14 09:41:00</td>
+      </tr>
+      <tr>
+        <td class="val">ExposureTime</td>
+        <td>Shutter speed used</td>
+        <td>1/500 s</td>
+      </tr>
+      <tr>
+        <td class="val">FNumber</td>
+        <td>Aperture (f-stop)</td>
+        <td>f/2.8</td>
+      </tr>
+      <tr>
+        <td class="val">ISO</td>
+        <td>Sensor sensitivity setting</td>
+        <td>ISO 800</td>
+      </tr>
+      <tr>
+        <td class="val">FocalLength</td>
+        <td>Focal length of the lens</td>
+        <td>85 mm</td>
+      </tr>
+      <tr>
+        <td class="val">LensModel</td>
+        <td>Lens name as reported by the camera</td>
+        <td>RF 85mm F1.2 L USM</td>
+      </tr>
+      <tr>
+        <td class="val">GPSInfo</td>
+        <td>GPS coordinates (if location was enabled)</td>
+        <td>50.0755° N, 14.4378° E</td>
+      </tr>
+      <tr>
+        <td class="val">Flash</td>
+        <td>Whether flash fired and flash mode</td>
+        <td>Flash did not fire</td>
+      </tr>
+      <tr>
+        <td class="val">WhiteBalance</td>
+        <td>White balance setting used</td>
+        <td>Auto</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>The MakerNote: Where Shutter Count Is Hidden</h2>
+  <p>The standard EXIF fields above cover general photographic information. But each camera manufacturer also needs to store data that doesn't fit the standard &mdash; things like focus point positions, image stabilisation data, in-camera processing settings, and critically: <strong>the mechanical shutter actuation counter</strong>.</p>
+  <p>This is stored in a block called the <strong>MakerNote</strong> (EXIF tag 0x927C). It's a private, manufacturer-controlled section inside the EXIF data where each brand writes whatever proprietary information they choose, in whatever format they choose.</p>
+
+  <h3>How Each Brand Stores Shutter Count</h3>
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Brand</th>
+        <th>RAW Format</th>
+        <th>MakerNote Type</th>
+        <th>Shutter Count Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="val">Canon</td>
+        <td>CR2, CR3</td>
+        <td>Canon IFD sub-block</td>
+        <td>Tag 0x0001 entry [2] (ShutterCount)</td>
+      </tr>
+      <tr>
+        <td class="val">Nikon</td>
+        <td>NEF, NRW</td>
+        <td>Encrypted Nikon sub-IFD</td>
+        <td>ShutterCount tag in Nikon MakerNote</td>
+      </tr>
+      <tr>
+        <td class="val">Sony</td>
+        <td>ARW, SR2</td>
+        <td>Sony IFD chain</td>
+        <td>Tag 0x9999 / model-specific offset</td>
+      </tr>
+      <tr>
+        <td class="val">Fujifilm</td>
+        <td>RAF</td>
+        <td>Fujifilm proprietary block</td>
+        <td>RAF header + EXIF sub-block</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="warn-box">
+    <strong>Important:</strong> MakerNote formats are not publicly documented by manufacturers. The offsets and encoding are reverse-engineered by the photography community and tools like ExifTool. ShutterCount.app maintains up-to-date parsing for all supported camera models.
+  </div>
+</div>
+
+<div class="section">
+  <h2>RAW Files vs. JPEG: EXIF Differences</h2>
+  <p>Both RAW and JPEG files can contain EXIF data, but there are important differences &mdash; especially when it comes to shutter count.</p>
+
+  <h3>RAW Files</h3>
+  <ul>
+    <li>Contain the full, unmodified MakerNote written directly by the camera firmware.</li>
+    <li>Shutter count is reliably present in supported camera models.</li>
+    <li>No in-camera processing that could affect metadata.</li>
+    <li>Larger files (20&ndash;80 MB depending on model and sensor).</li>
+  </ul>
+
+  <h3>JPEG Files</h3>
+  <ul>
+    <li>May have reduced MakerNote data &mdash; some cameras strip or truncate proprietary fields during JPEG compression.</li>
+    <li>Shutter count may or may not be present depending on camera model and firmware.</li>
+    <li>If the JPEG was exported from editing software (Lightroom, Photoshop, Capture One), the MakerNote may have been removed entirely.</li>
+    <li>Always prefer an <strong>original RAW file straight from the camera card</strong> for reliable shutter count extraction.</li>
+  </ul>
+
+  <div class="highlight-box">
+    <strong>Best practice:</strong> For shutter count verification &mdash; especially when evaluating a used camera &mdash; ask for an original, unedited RAW file. Do not accept a screenshot, a JPEG export, or a file that has passed through editing software.
+  </div>
+</div>
+
+<div class="section">
+  <h2>How to Read EXIF Data from a RAW File</h2>
+  <p>There are several ways to inspect EXIF metadata:</p>
+
+  <h3>Using ShutterCount.app (Recommended for Shutter Count)</h3>
+  <ol>
+    <li>Take a photo in <strong>mechanical shutter mode</strong> (not silent/electronic).</li>
+    <li>Transfer the RAW file to your computer &mdash; do not edit or convert it.</li>
+    <li>Drop the file into <a href="/">shuttercount.app</a>. No upload &mdash; the file is parsed entirely in your browser.</li>
+    <li>The shutter count is extracted from the MakerNote and displayed instantly.</li>
+  </ol>
+
+  <h3>Using ExifTool (Full EXIF Dump)</h3>
+  <p>ExifTool by Phil Harvey is the most comprehensive command-line tool for reading all EXIF data including MakerNote fields. Run <code style="color:var(--accent);background:rgba(232,255,71,.08);padding:2px 6px;border-radius:4px">exiftool -all filename.cr3</code> to dump every tag. The shutter count will appear as <code style="color:var(--accent);background:rgba(232,255,71,.08);padding:2px 6px;border-radius:4px">ShutterCount</code> or similar depending on brand.</p>
+
+  <h3>Using Adobe Lightroom / Bridge</h3>
+  <p>Lightroom shows basic EXIF data (exposure, lens, date) in the Metadata panel, but does not expose MakerNote shutter count fields. It is not suitable for verifying shutter count.</p>
+</div>
+
+<div class="section">
+  <h2>Why EXIF Metadata Matters When Buying a Used Camera</h2>
+  <p>EXIF data from an original RAW file provides the most reliable source of objective information about a camera's history. Here's what to check:</p>
+  <ul>
+    <li><strong>Shutter count</strong> &mdash; Total mechanical actuations, compared against the rated shutter lifespan.</li>
+    <li><strong>DateTimeOriginal</strong> &mdash; When the camera was last used. A camera claimed to be "barely used" with timestamps from three years of regular shooting tells a different story.</li>
+    <li><strong>Camera model</strong> &mdash; Confirms the file genuinely came from the camera being sold, not a different body.</li>
+    <li><strong>GPS data</strong> &mdash; If location data is present, it can indicate usage history and region.</li>
+  </ul>
+
+  <div class="warn-box">
+    <strong>Warning:</strong> EXIF metadata in image files can be edited using widely available software. The internal hardware counter inside the camera cannot be changed by editing files. Only the <em>file's copy</em> of the metadata is affected. Always verify with an unedited original RAW file for trustworthy results.
+  </div>
+</div>
+
+<div class="section">
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Does every RAW file format store EXIF the same way?</h3>
+  <p>No. RAW formats &mdash; CR3, NEF, ARW, RAF, RW2, ORF, DNG, and others &mdash; each have different internal structures. However, all embed EXIF metadata as part of their file format. The standard EXIF fields are consistent, but the MakerNote format varies by brand and sometimes by model generation.</p>
+
+  <h3>Does converting a RAW to DNG preserve the shutter count?</h3>
+  <p>Adobe DNG conversion preserves the original MakerNote in an embedded sub-block, so the data is technically retained. However, some tools do not read shutter count from DNG wrappers as reliably as from native formats. For verification purposes, use the original native RAW file (CR3, NEF, ARW, etc.).</p>
+
+  <h3>Why does ExifTool show a different shutter count than ShutterCount.app?</h3>
+  <p>Rarely, there can be differences if a camera stores multiple counters (e.g., total exposures including electronic shutter, vs. mechanical-only actuations). ShutterCount.app extracts the mechanical shutter counter specifically. If you see a discrepancy, the mechanical-shutter counter is the relevant number for assessing shutter wear.</p>
+
+  <h3>Is GPS location always stored in RAW files?</h3>
+  <p>Only if the camera has GPS capability and location services are enabled. Most dedicated cameras (Canon, Nikon, Sony, Fujifilm) do not have built-in GPS &mdash; the GPS fields would only be present if a GPS accessory was attached, or if geotagging was applied in post. Smartphones always embed GPS unless location access is denied.</p>
+</div>
+
+<div class="section">
+  <h2>Related Guides</h2>
+  <div class="related">
+    <a href="/what-is-shutter-count/">What Is Shutter Count?</a>
+    <a href="/how-to-check-shutter-count/">How to Check Shutter Count</a>
+    <a href="/shutter-count-limits/">Shutter Life Expectancy</a>
+    <a href="/used-camera-buying-guide/">Used Camera Buying Guide</a>
+    <a href="/camera-shutter-count-accuracy/">Is Shutter Count Accurate?</a>
+    <a href="/electronic-vs-mechanical-shutter/">Electronic vs Mechanical Shutter</a>
+    <a href="/">Check Shutter Count Free &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&larr; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>
