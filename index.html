@@ -189,7 +189,7 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(circle,rgba(232,255,71,.04) 1px,transparent 1px);background-size:28px 28px}
 @keyframes fadeUp{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}
 header{animation:fadeUp .65s cubic-bezier(.22,1,.36,1) both}
-.lang-switcher{animation:fadeUp .65s .06s cubic-bezier(.22,1,.36,1) both}
+.lang-switcher{animation:fadeUp .65s .06s cubic-bezier(.22,1,.36,1) both;z-index:2}
 .dropzone{animation:fadeUp .65s .12s cubic-bezier(.22,1,.36,1) both}
 .drop-actions{animation:fadeUp .65s .17s cubic-bezier(.22,1,.36,1) both}
 @keyframes accentPulse{0%,100%{text-shadow:0 0 20px rgba(232,255,71,.2)}50%{text-shadow:0 0 44px rgba(232,255,71,.55),0 0 80px rgba(232,255,71,.18)}}
