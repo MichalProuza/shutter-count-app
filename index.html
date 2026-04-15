@@ -185,6 +185,23 @@ header{text-align:center;margin-bottom:56px;position:relative;width:100%;max-wid
 .lang-item.active{color:var(--accent)}
 .lang-item-flag{width:22px;text-align:center;flex-shrink:0}
 @media(max-width:480px){.lang-btn{font-size:.65rem;padding:4px 8px}}
+/* ── Fancy animations & effects ─────────────────────────────────────────── */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(circle,rgba(232,255,71,.04) 1px,transparent 1px);background-size:28px 28px}
+@keyframes fadeUp{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}
+header{animation:fadeUp .65s cubic-bezier(.22,1,.36,1) both}
+.lang-switcher{animation:fadeUp .65s .06s cubic-bezier(.22,1,.36,1) both}
+.dropzone{animation:fadeUp .65s .12s cubic-bezier(.22,1,.36,1) both}
+.drop-actions{animation:fadeUp .65s .17s cubic-bezier(.22,1,.36,1) both}
+@keyframes accentPulse{0%,100%{text-shadow:0 0 20px rgba(232,255,71,.2)}50%{text-shadow:0 0 44px rgba(232,255,71,.55),0 0 80px rgba(232,255,71,.18)}}
+.logo span{animation:accentPulse 4s ease-in-out infinite}
+.result-card{transition:box-shadow .2s,border-color .2s,transform .18s}
+.result-card:hover{border-color:rgba(232,255,71,.35);box-shadow:0 4px 28px rgba(232,255,71,.08),0 0 0 1px rgba(232,255,71,.15);transform:translateY(-2px)}
+@keyframes pulseOk{0%,100%{box-shadow:0 0 0 0 rgba(71,255,138,0)}55%{box-shadow:0 0 0 5px rgba(71,255,138,.22)}}
+@keyframes pulseErr{0%,100%{box-shadow:0 0 0 0 rgba(255,71,71,0)}55%{box-shadow:0 0 0 5px rgba(255,71,71,.22)}}
+.status-dot.ok{animation:pulseOk 2.4s ease-in-out infinite}
+.status-dot.err{animation:pulseErr 2s ease-in-out infinite}
+.life-bar-fill{transition:width 1.1s cubic-bezier(.34,1.56,.64,1)}
+.dropzone.dragover{box-shadow:0 0 0 2px var(--accent),inset 0 0 60px rgba(232,255,71,.04)}
 </style>
 <script type="application/ld+json">
 {
@@ -1415,8 +1432,14 @@ function card(file,r,err){
     (!sc && r._cr3BlockSize)?`<div class="field full-width"><div class="field-label">CR3 Diagnostics</div><div class="field-value" style="font-size:.72rem;color:var(--muted)">Block 0x000D: <code style="background:var(--border);padding:1px 5px;border-radius:3px;color:var(--accent)">${r._cr3BlockSize} B (0x${r._cr3BlockSize.toString(16).toUpperCase()})</code> — please report offset + block on GitHub Issues</div></div>`:'',
   ].filter(Boolean).join('');
   const c=document.createElement('div');c.className='result-card';
+  const _d=Math.min(rs.children.length*55,440);
+  c.style.animationDelay=`${_d}ms`;
   c.innerHTML=`<div class="card-header"><div class="card-filename">${esc(file.name)}</div><div class="card-size">${fmtSz(file.size)}</div></div><div class="card-body"><div class="field"><div class="field-label">Shutter Count</div>${sh}</div><div class="field"><div class="field-label">Shutter Life</div>${ph}</div>${rows}</div><div class="status-bar"><div class="status-dot ${dc}"></div>${dm}</div>`;
   rs.prepend(c);
+  // Animate life bar from 0 → target width
+  if(pct!=null){const _b=c.querySelector('.life-bar-fill');if(_b){const _w=_b.style.width;_b.style.transition='none';_b.style.width='0';setTimeout(()=>{_b.style.transition='';_b.style.width=_w;},_d+130);}}
+  // Animate shutter count rolling up from 0
+  if(sc!=null){const _h=c.querySelector('.field-value.highlight');if(_h){const _t=sc,_dur=850;let _s=null;_h.textContent='0';const _go=()=>requestAnimationFrame(function _f(ts){if(!_s)_s=ts;const _p=Math.min((ts-_s)/_dur,1),_e=1-Math.pow(1-_p,3);_h.textContent=Math.round(_e*_t).toLocaleString('en-US');if(_p<1)requestAnimationFrame(_f);});setTimeout(_go,_d+80);}}
 }
 
 // ── i18n ─────────────────────────────────────────────────────────────────────
