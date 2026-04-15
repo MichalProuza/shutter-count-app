@@ -1376,6 +1376,37 @@
     <priority>0.8</priority>
     <lastmod>2026-04-13</lastmod>
   </url>
+  <!-- Japanese SEO pages (2026-04-15) -->
+  <url>
+    <loc>https://shuttercount.app/ja/shutter-kaisu/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-15</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ja/shutter-kaisu-kakunin/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-15</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ja/chuko-camera/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-15</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ja/shutter-jumyo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-15</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ja/shutter-maisuu/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-15</lastmod>
+  </url>
   <!-- New camera pages (2026-04-13) -->
   <url>
     <loc>https://shuttercount.app/canon-250d-shutter-count/</loc>
