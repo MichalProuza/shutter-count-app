@@ -80,6 +80,19 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Fujifilm X-T50 Shutter Count](https://shuttercount.app/fujifilm-x-t50-shutter-count/): Shutter count information for the Fujifilm X-T50.
 - [Fujifilm X100VI Shutter Count](https://shuttercount.app/fujifilm-x100vi-shutter-count/): Shutter count guide for the Fujifilm X100VI compact fixed-lens camera.
 
+## OM System / Olympus Camera Shutter Count Pages
+
+- [OM System OM-1 Shutter Count](https://shuttercount.app/olympus-om-1-shutter-count/): Shutter count guide for the OM System OM-1 flagship Micro Four Thirds mirrorless camera. Rated at 400,000 actuations. Notes that in-file shutter count is not confirmed for OM System ORF files and recommends checking via the camera menu.
+- [OM System OM-1 Mark II Shutter Count](https://shuttercount.app/om-system-om-1-mark-ii-shutter-count/): Shutter count guide for the OM System OM-1 Mark II (2024). Covers the 400,000-actuation rated shutter life, improvements over the original OM-1 (expanded AI AF, 120 fps burst, 4K/120p video), and how to check the count via camera menu since ORF files do not store a confirmed shutter-count tag.
+- [OM System OM-5 Shutter Count](https://shuttercount.app/om-system-om-5-shutter-count/): Shutter count guide for the OM System OM-5 (2022) mid-range Micro Four Thirds mirrorless camera. Estimated shutter life around 200,000 actuations (not officially rated by OM System). Explains the difference from the OM-1, weather sealing features, and how to check via camera menu.
+
+## Panasonic Camera Shutter Count Pages
+
+- [Panasonic Lumix S9 Shutter Count](https://shuttercount.app/panasonic-s9-shutter-count/): Shutter count guide for the Panasonic Lumix S9 (2024). The S9 uses a fully electronic shutter — no mechanical shutter exists, so traditional shutter count does not apply. Explains what to check instead when buying used.
+- [Panasonic Lumix S5 II Shutter Count](https://shuttercount.app/panasonic-lumix-s5-ii-shutter-count/): Shutter count guide for the Panasonic Lumix S5 II (2023). Covers the 200,000-actuation rated mechanical shutter, why Panasonic does not store shutter count in RW2 files, how to check via camera menu or Lumix Sync app, and the difference between S5 II and S5 IIX.
+- [Panasonic Lumix GH6 Shutter Count](https://shuttercount.app/panasonic-lumix-gh6-shutter-count/): Shutter count guide for the Panasonic Lumix GH6 (2022). Covers the 200,000-actuation rated shutter, why RW2 files don't store the count, the impact of video-heavy use on mechanical shutter wear, and buying guidance for this video-first camera.
+- [Panasonic Lumix GH5 Shutter Count](https://shuttercount.app/panasonic-lumix-gh5-shutter-count/): Shutter count guide for the iconic Panasonic Lumix GH5 (2017). Covers the 200,000-actuation rated shutter, how to check via camera menu since RW2 files don't include the count, and why video-focused GH5 bodies often have very low mechanical shutter counts despite heavy use.
+
 ## Chinese Language Pages (中文)
 
 SEO-optimized content pages in Simplified Chinese targeting high-volume Baidu search queries.
