@@ -1,47 +1,66 @@
 # ShutterCount
 
-ShutterCount is a static browser app for reading shutter count and basic EXIF metadata from local RAW files.
+ShutterCount is a static browser app for reading shutter count and basic EXIF metadata from local RAW files. Live at **[shuttercount.app](https://shuttercount.app)**.
 
 Everything runs client-side in `index.html`. Files are opened with `FileReader` and are not uploaded anywhere.
 
 ## Supported formats
 
-- `CR3`
-- `CR2`
-- `NEF`
-- `ARW`
-- `RAF`
-- `ORF`
-- `RW2`
-- `DNG`
+- `CR3` — Canon mirrorless (EOS R-series, M-series)
+- `CR2` — Canon DSLR
+- `NEF` — Nikon
+- `ARW` — Sony Alpha
+- `RAF` — Fujifilm
+- `ORF` — Olympus / OM System
+- `RW2` — Panasonic
+- `DNG` — Adobe DNG (Sigma, smartphones: iPhone, Pixel, Samsung, Xiaomi, Honor)
 - `JPG` / `JPEG`
 
 ## Current support summary
 
-- Nikon `NEF`: broad support via MakerNote tag `0x00A7`
-- Canon `CR3`: confirmed support for known model-specific offsets on `R5`, `R5 Mark II`, `R6`, `R6 Mark II`, `R8`, `R50`, `R5 C`, `R6 Mark III`, `R50 V`, `R1`
-- Canon `CR2`: in-file shutter count is generally available only for pro `1D / 1Ds` families
-- Sony `ARW`: supported for many Alpha bodies via encrypted MakerNote tag `0x9050`
-- Fujifilm `RAF`: supported on modern bodies exposing MakerNote tag `0x1438` (`ImageCount`)
-- Olympus / OM System `ORF`: EXIF parsing works, but release validation has not confirmed a reliable in-file shutter-count tag
-- Panasonic `RW2`: EXIF parsing works, shutter count is not stored in RAW files
+| Brand | Format | Shutter count | Notes |
+|---|---|---|---|
+| **Nikon** | NEF | Broad | MakerNote tag `0x00A7`; confirmed across Z-series mirrorless and a wide DSLR range |
+| **Canon** | CR3 | Partial | CTMD tag `0x000D`; confirmed offsets for R, R3, R5, R5 Mark II, R5 C, R6, R6 Mark II, R6 Mark III, R7, R8, R10, R50, R50 V, R100, RP, M50, M50 Mark II, M6 Mark II, 1D X Mark III |
+| **Canon** | CR2 | Limited | In-file shutter count available only for pro `1D / 1Ds` families; consumer bodies expose file number only |
+| **Sony** | ARW | Broad | Encrypted MakerNote tag `0x9050`; confirmed for A1, A1 II, A6100, A6300, A6400, A6600, A6700, A7, A7 II, A7 III, A7 IV, A7C, A7CR, A7R II, A7R III, A7R IV, A7R V, A7S, A7S II, A7S III, A9, A9 II, A9 III, ZV-E1, ZV-E10, RX100 VII |
+| **Fujifilm** | RAF | Broad | MakerNote tag `0x1438` (`ImageCount`); confirmed for X-T1–X-T5, X-T20, X-T30, X-H1, X-H2, X-H2S, X-S20, X-Pro3, X100V, X100VI, GFX 50S II, GFX 100S II, GFX100 II |
+| **Sigma** | DNG | Partial | EXIF make/model reads correctly; shutter count availability varies by body |
+| **Olympus / OM System** | ORF | None | EXIF parsing works; no reliable in-file shutter-count tag confirmed |
+| **Panasonic** | RW2 | None | EXIF parsing works; shutter count is not stored in RAW files |
+| **Smartphones** | DNG | N/A | EXIF metadata reads correctly; shutter count field not applicable |
+
+## Features
+
+- **100% local** — files never leave the browser
+- **Multi-file** — drop or select multiple files at once; results shown as cards
+- **CSV export** — export all results to a spreadsheet
+- **Life bar** — visual indicator of shutter usage vs. rated lifespan
+- **50+ languages** — full UI localisation with a language switcher
+- **GDPR cookie banner** — analytics loaded only after consent
+- **Camera subpages** — dedicated SEO pages for 100+ camera models
 
 ## Repository layout
 
-- `index.html`: UI and parser implementation
-- `validate.mjs`: Node-based validator that extracts parser code from `index.html`
-- `validate_raws.ps1`: PowerShell validator for bundled and downloaded RAW corpora
-- `Raws_small_truncated`: bundled tiny sample set
+| Path | Description |
+|---|---|
+| `index.html` | UI and parser implementation (single-file app) |
+| `validate.mjs` | Node.js validator — extracts parser code from `index.html` and runs it against sample files |
+| `validate_raws.ps1` | PowerShell validator for bundled and downloaded RAW corpora |
+| `Raws_small_truncated/` | Bundled 32 KB sample snippets (~110 files across all supported brands) |
+| `vercel.json` | Vercel deployment config |
+| `<lang>/` | Localised index pages (e.g. `de/`, `fr/`, `ja/`) |
+| `<model>-shutter-count/` | Camera-specific SEO landing pages |
 
 ## Validation
 
-Bundled samples:
+Run against bundled samples:
 
-```powershell
+```bash
 node validate.mjs
 ```
 
-Recursive validation over a corpus:
+Recursive validation over a full corpus:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -NoProfile -File .\validate_raws.ps1 -Path .\releases_full -Recurse
@@ -49,9 +68,9 @@ powershell -ExecutionPolicy Bypass -NoProfile -File .\validate_raws.ps1 -Path .\
 
 Notes:
 
-- `validate.mjs` prefers `Raws_small_truncated` and falls back to `Samples` if present
+- `validate.mjs` prefers `Raws_small_truncated/` and falls back to `Samples/` if present
 - `releases_full/` is intentionally ignored by Git because it can contain large downloaded RAW corpora
-- `Raws_small_truncated` contains 32 KB snippets, so some files validate make/model but still miss shutter-count blocks
+- `Raws_small_truncated/` contains 32 KB snippets, so some files validate make/model but still miss shutter-count blocks
 
 ## Verified release corpus
 
@@ -59,10 +78,12 @@ Support claims were checked against full GitHub release batches `Zoner_D` throug
 
 Highlights:
 
-- Canon EOS R5 Mark II shutter count confirmed at CTMD tag 0x000D offset 0x069C (uint32), from Zoner_D5
-- Nikon shutter count confirmed across modern Z bodies and a wide DSLR range
-- Sony shutter count confirmed for multiple Alpha bodies including `A1`, `A1 II`, `A7`, `A7 II`, `A7 III`, `A7 IV`, `A9`, `A9 II`, `A9 III`, `A6700`, `ZV-E10`
-- Fujifilm shutter count confirmed for `X100F`, `X-H2`, `X-H2S`, `X-S20`, `X-E4`, `X-T1`, `X-T2`, `X-T3`, `X-T4`, `X-T5`, `X-T30`, `GFX50S II`, `GFX100 II`
+- Canon EOS R5 Mark II shutter count confirmed at CTMD tag `0x000D` offset `0x069C` (uint32), from Zoner_D5
+- Canon R6 Mark III shutter count confirmed via Zoner corpus samples
+- Nikon shutter count confirmed across modern Z-series bodies and a wide DSLR range (D3–D850, Z5–Z9)
+- Sony shutter count confirmed for A1, A1 II, A6100/A6300/A6400/A6600, A6700, A7/II/III/IV, A7C, A7CR, A7R III/IV/V, A7S/II/III, A9/II/III, ZV-E1, ZV-E10, RX100 VII
+- Fujifilm shutter count confirmed for X100F/V/VI, X-H2/H2S, X-S20, X-E4, X-T1–T5, X-T30, GFX 50S II, GFX100 II
+- Nikon 1 J1/V1: confirmed via Zoner corpus
 - Olympus / OM System `ORF` did not yield a confirmed reliable in-file shutter counter in the tested release corpus
 
 ## Limitations
@@ -70,3 +91,4 @@ Highlights:
 - Some formats still depend on model-specific offsets, especially Canon `CR3` and Sony `ARW`
 - Unsupported does not always mean impossible; it can also mean no reliable offset has been validated yet
 - The app is intentionally a single-file page, so parser logic, tested-camera notes and UI messaging need to stay in sync carefully
+- `Raws_small_truncated` samples are truncated to 32 KB — enough to read make/model and most EXIF tags, but some shutter-count blocks appear later in the file
