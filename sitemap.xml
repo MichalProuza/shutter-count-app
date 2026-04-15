@@ -83,7 +83,7 @@
   <url><loc>https://shuttercount.app/it/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/ja/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/kk/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
-  <url><loc>https://shuttercount.app/ko/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/ko/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-15</lastmod></url>
   <url><loc>https://shuttercount.app/lt/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/lv/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/mr/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
@@ -1403,6 +1403,37 @@
   </url>
   <url>
     <loc>https://shuttercount.app/ja/shutter-maisuu/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-15</lastmod>
+  </url>
+  <!-- Korean SEO pages (2026-04-15) -->
+  <url>
+    <loc>https://shuttercount.app/ko/shutter-hoetsu/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-15</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ko/shutter-hoetsu-hwakgin/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-15</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ko/junggo-kamera/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-15</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ko/shutter-sumyeong/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-15</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ko/exif-shutter/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-04-15</lastmod>

@@ -100,6 +100,16 @@ SEO-optimized content pages in Japanese targeting high-volume Google Japan searc
 - [カメラのシャッター寿命 — メーカー別の耐久回数の目安](https://shuttercount.app/ja/shutter-jumyo/): Full shutter lifespan reference tables for Canon, Nikon, Sony, Fujifilm, and OM System models. Includes advice on extending shutter life. Targets シャッター寿命 (shutter lifespan).
 - [シャッター枚数とは — 回数との違いと無料確認ツール](https://shuttercount.app/ja/shutter-maisuu/): Clarifies that シャッター枚数 (shutter maisuu) and シャッター回数 are synonymous terms for shutter actuations. Answers common questions about electronic shutter, video, and burst shooting. Targets シャッター枚数 (shutter shot count).
 
+## Korean SEO Pages (/ko/)
+
+SEO-optimized content pages in Korean targeting high-volume Google Korea search queries. South Korea has one of the highest camera ownership rates per capita, with active used camera markets (당근마켓, 중고나라).
+
+- [셔터 횟수란? — 카메라 셔터 횟수 무료 확인](https://shuttercount.app/ko/shutter-hoetsu/): Overview page explaining what shutter count is, why it matters, and how to check it. Includes shutter lifespan table by camera class (entry/mid/enthusiast/pro). Targets 셔터 횟수 (shutter count).
+- [셔터 횟수 확인 방법 — 무료 온라인으로 간단 체크](https://shuttercount.app/ko/shutter-hoetsu-hwakgin/): Step-by-step HowTo guide for checking shutter count using ShutterCount, with a comparison table of methods (online tool vs ExifTool vs camera menu) and supported file formats. Targets 셔터 횟수 확인 (check shutter count).
+- [중고 카메라 셔터 횟수 — 구매 전 반드시 확인하세요](https://shuttercount.app/ko/junggo-kamera/): Buyer's guide for used cameras on Korean marketplaces (당근마켓, 중고나라). Includes condition rating table (A–D) by usage percentage and a used camera buying checklist. Targets 중고 카메라 셔터 횟수 (used camera shutter count).
+- [카메라 셔터 수명 — 브랜드별 내구 횟수 완전 정리](https://shuttercount.app/ko/shutter-sumyeong/): Full shutter lifespan reference tables for Canon, Nikon, Sony, and Fujifilm models. Includes shutter failure symptoms and replacement cost guidance. Targets 셔터 수명 (shutter lifespan).
+- [EXIF 셔터 횟수 무료 확인 — 온라인 도구](https://shuttercount.app/ko/exif-shutter/): Explains how EXIF MakerNote metadata stores shutter count, how ShutterCount reads it locally without uploading files, and which RAW/JPEG formats are supported per manufacturer. Targets EXIF 셔터 횟수 (EXIF shutter count).
+
 ## Optional
 
 - [llms-full.txt](https://shuttercount.app/llms-full.txt): Extended version with full page descriptions and FAQ content for each camera model page.
