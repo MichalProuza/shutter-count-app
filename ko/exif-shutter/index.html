@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXIF 셔터 횟수 무료 확인 — 온라인 도구 | ShutterCount</title>
+<meta name="description" content="EXIF 데이터에서 카메라 셔터 횟수를 무료로 확인하는 방법을 안내합니다. ShutterCount는 파일을 서버에 업로드하지 않고 브라우저에서 EXIF MakerNote를 직접 분석합니다.">
+<meta name="keywords" content="EXIF 셔터 횟수, EXIF 데이터 확인, 카메라 EXIF, 셔터 횟수 EXIF, EXIF 무료 확인">
+<link rel="canonical" href="https://shuttercount.app/ko/exif-shutter/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="EXIF 셔터 횟수 무료 확인 — 온라인 도구 | ShutterCount">
+<meta property="og:description" content="EXIF 데이터에서 카메라 셔터 횟수를 무료로 확인하는 방법을 안내합니다. 파일 업로드 없이 브라우저에서 즉시 확인합니다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuttercount.app/ko/exif-shutter/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EXIF 셔터 횟수 무료 확인 — 온라인 도구 | ShutterCount">
+<meta name="twitter:description" content="EXIF 데이터에서 카메라 셔터 횟수를 무료로 확인하는 방법을 안내합니다.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "EXIF 셔터 횟수 무료 확인 \u2014 온라인 도구",
+      "url": "https://shuttercount.app/ko/exif-shutter/",
+      "inLanguage": "ko",
+      "isPartOf": {"@type": "WebSite", "url": "https://shuttercount.app/"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/"},
+          {"@type": "ListItem", "position": 2, "name": "한국어", "item": "https://shuttercount.app/ko/"},
+          {"@type": "ListItem", "position": 3, "name": "EXIF 셔터 횟수 확인", "item": "https://shuttercount.app/ko/exif-shutter/"}
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "EXIF 데이터에 셔터 횟수가 포함되어 있나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "예. 대부분의 카메라는 RAW 파일의 EXIF MakerNote 섹션에 셔터 횟수를 기록합니다. JPEG에도 포함되는 경우가 많지만, RAW 파일이 더 신뢰할 수 있습니다. ShutterCount는 이 데이터를 브라우저에서 직접 읽습니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "EXIF 셔터 횟수를 확인하려면 어떤 파일이 필요한가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Canon의 CR3/CR2, Nikon의 NEF, Sony의 ARW, Fujifilm의 RAF 등 각 제조사의 RAW 파일이 가장 정확합니다. JPEG도 지원되지만 일부 카메라는 JPEG에 셔터 횟수를 기록하지 않을 수 있습니다."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; <a href="/ko/">한국어</a> &rsaquo; EXIF 셔터 횟수 확인
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon &middot; Nikon &middot; Sony &middot; Fujifilm &middot; Olympus &middot; Panasonic</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; 파일 업로드 없음 &mdash; 100% 로컬 처리</span>
+  <h1>EXIF 셔터 횟수 무료 확인<br>&mdash; 온라인 도구</h1>
+  <p>카메라 사진 파일에는 EXIF 데이터가 포함되어 있으며, 여기에 셔터 횟수 정보가 담겨 있습니다. ShutterCount는 이 EXIF MakerNote 데이터를 브라우저에서 직접 읽어 즉시 표시합니다. 파일이 서버에 전송되지 않습니다.</p>
+  <a class="btn-cta" href="/">EXIF 셔터 횟수 지금 확인 &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>EXIF 데이터란 무엇인가요?</h2>
+  <p>EXIF(Exchangeable Image File Format)는 디지털 카메라가 사진 파일에 자동으로 저장하는 메타데이터 표준입니다. EXIF에는 다음과 같은 정보가 포함됩니다.</p>
+  <ul>
+    <li>촬영 날짜 및 시간</li>
+    <li>카메라 모델 및 제조사</li>
+    <li>셔터 속도, 조리개, ISO</li>
+    <li>GPS 위치 정보 (지원 기종에 한함)</li>
+    <li><strong>셔터 횟수</strong> (MakerNote 섹션에 저장, 제조사마다 방식이 다름)</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>셔터 횟수는 EXIF 어디에 저장되나요?</h2>
+  <p>셔터 횟수는 표준 EXIF 태그가 아니라 각 제조사 고유의 <strong>MakerNote</strong> 섹션에 저장됩니다. 위치와 형식이 제조사별로 다르기 때문에 일반적인 EXIF 뷰어로는 확인이 어렵습니다.</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr><th>제조사</th><th>RAW 형식</th><th>EXIF 지원</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Canon</td><td>CR3, CR2</td><td class="val">지원</td></tr>
+      <tr><td>Nikon</td><td>NEF</td><td class="val">지원</td></tr>
+      <tr><td>Sony</td><td>ARW</td><td class="val">지원</td></tr>
+      <tr><td>Fujifilm</td><td>RAF</td><td class="val">지원</td></tr>
+      <tr><td>Olympus / OM System</td><td>ORF</td><td class="val">지원</td></tr>
+      <tr><td>Panasonic</td><td>RW2</td><td class="val">지원</td></tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box">
+    <strong>보안:</strong> ShutterCount는 모든 파일 분석을 사용자의 브라우저 안에서만 처리합니다. 파일 내용이 외부 서버로 전송되는 일은 없습니다.
+  </div>
+</div>
+
+<div class="section">
+  <h2>ShutterCount가 표시하는 EXIF 정보</h2>
+  <p>셔터 횟수 외에도 ShutterCount는 다음 EXIF 정보를 표시합니다.</p>
+  <ul>
+    <li>카메라 제조사 및 모델명</li>
+    <li>파일 형식 (CR3, NEF, ARW 등)</li>
+    <li>촬영 날짜</li>
+    <li>셔터 수명 대비 사용률 시각화 (라이프바)</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>관련 페이지</h2>
+  <div class="related">
+    <a href="/ko/shutter-hoetsu/">셔터 횟수란?</a>
+    <a href="/ko/shutter-hoetsu-hwakgin/">셔터 횟수 확인 방법</a>
+    <a href="/ko/junggo-kamera/">중고 카메라와 셔터 횟수</a>
+    <a href="/ko/shutter-sumyeong/">셔터 수명 기준</a>
+    <a href="/">지원 카메라 목록 &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/ko/" style="color:var(--accent)">&#8592; ShutterCount 한국어 버전으로 돌아가기</a></p>
+  <p style="margin-top:12px">문의: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>
