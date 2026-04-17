@@ -94,6 +94,36 @@
   <url><loc>https://shuttercount.app/pt/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/ro/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/ru/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <url>
+    <loc>https://shuttercount.app/ru/probeg-fotoapparata/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-17</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ru/schetchik-zatvora/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-17</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ru/resurs-zatvora/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-17</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ru/kak-uznat-probeg/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-17</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ru/maksimalny-resurs-zatvora/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-17</lastmod>
+  </url>
   <url><loc>https://shuttercount.app/sk/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/sl/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/sq/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
