@@ -1695,4 +1695,35 @@
     <priority>0.7</priority>
     <lastmod>2026-04-18</lastmod>
   </url>
+  <!-- Russian SEO pages (added 2026-04-18) -->
+  <url>
+    <loc>https://shuttercount.app/ru/schetchik-zatvora/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ru/proverit-zatvor/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ru/resurs-zatvora/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ru/srabatyvaniia-zatvora/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ru/kupit-bu-fotoaparat/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
 </urlset>
