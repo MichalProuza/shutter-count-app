@@ -23,6 +23,7 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Canon EOS R50 Shutter Count](https://shuttercount.app/canon-r50-shutter-count/): Shutter count guide for the Canon EOS R50 compact mirrorless camera.
 - [Canon EOS R100 Shutter Count](https://shuttercount.app/canon-r100-shutter-count/): Shutter count information for the Canon EOS R100 entry-level mirrorless camera.
 - [Canon EOS RP Shutter Count](https://shuttercount.app/canon-rp-shutter-count/): Shutter count guide for the Canon EOS RP full-frame mirrorless camera.
+- [Canon EOS 2000D Shutter Count](https://shuttercount.app/canon-2000d-shutter-count/): Shutter count guide for the Canon EOS 2000D (Rebel T7 / 1500D, 2018) entry-level DSLR. Covers the 100,000-actuation rated shutter, CR2 RAW format (DIGIC 4+), how to check via shuttercount.app, and what counts are typical when buying this popular beginner camera used.
 
 ## Nikon Camera Shutter Count Pages
 
@@ -65,6 +66,7 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Sony A9 III Shutter Count](https://shuttercount.app/sony-a9-iii-shutter-count/): Shutter count guide for the Sony A9 III with global shutter sensor. Explains the electronic shutter implications for shutter count.
 - [Sony ZV-E1 Shutter Count](https://shuttercount.app/sony-zv-e1-shutter-count/): Shutter count information for the Sony ZV-E1 full-frame vlog camera.
 - [Sony ZV-E10 Shutter Count](https://shuttercount.app/sony-zv-e10-shutter-count/): Shutter count guide for the Sony ZV-E10 APS-C vlog camera.
+- [Sony A5100 Shutter Count](https://shuttercount.app/sony-a5100-shutter-count/): Shutter count guide for the Sony A5100 (ILCE-5100, 2014) — the world's smallest APS-C mirrorless at launch. Covers the 100,000-actuation rated shutter, ARW MakerNote tag 0x9050 (encrypted cubic residue cipher), how to check via shuttercount.app, and buying guidance for this popular compact E-mount camera.
 
 ## Fujifilm Camera Shutter Count Pages
 
@@ -79,6 +81,7 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Fujifilm X-T5 Shutter Count](https://shuttercount.app/fujifilm-x-t5-shutter-count/): Shutter count guide for the Fujifilm X-T5 40 MP APS-C mirrorless camera.
 - [Fujifilm X-T50 Shutter Count](https://shuttercount.app/fujifilm-x-t50-shutter-count/): Shutter count information for the Fujifilm X-T50.
 - [Fujifilm X100VI Shutter Count](https://shuttercount.app/fujifilm-x100vi-shutter-count/): Shutter count guide for the Fujifilm X100VI compact fixed-lens camera.
+- [Fujifilm X-E1 Shutter Count](https://shuttercount.app/fujifilm-x-e1-shutter-count/): Shutter count guide for the Fujifilm X-E1 (2012) — the first X-E rangefinder-style camera. Covers the estimated ~150,000-actuation shutter life (Fujifilm doesn't publish official ratings), RAF MakerNote ImageCount tag 0x1438, the format-reset caveat, and what to look for when buying this vintage APS-C X-Trans I camera used.
 
 ## OM System / Olympus Camera Shutter Count Pages
 
@@ -99,12 +102,14 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Panasonic Lumix G9 Shutter Count](https://shuttercount.app/panasonic-lumix-g9-shutter-count/): Shutter count guide for the Panasonic Lumix G9 (2017) stills-focused Micro Four Thirds flagship. Covers the 200,000-actuation rated shutter, RW2 file behavior (count not embedded), how to check via camera menu, the G9's 20 fps burst capability, and 6.5-stop Dual IS 2 IBIS system.
 - [Panasonic Lumix G85 Shutter Count](https://shuttercount.app/panasonic-lumix-g85-shutter-count/): Shutter count guide for the Panasonic Lumix G85 (G80 outside North America, 2016). Covers the 200,000-actuation rated shutter, why RW2 files don't store the count, weather sealing (splash/dust), 5-axis Dual IS 2 IBIS, and 4K Photo mode which uses the electronic shutter and adds no mechanical wear.
 - [Panasonic Lumix GH7 Shutter Count](https://shuttercount.app/panasonic-lumix-gh7-shutter-count/): Shutter count guide for the Panasonic Lumix GH7 (2024), the latest GH flagship and first GH camera with phase-detection AF. Covers the 200,000-actuation rated shutter, RW2 file behavior, internal ProRes recording, and why video-heavy use results in very low mechanical shutter counts.
+- [Panasonic Lumix GH4 Shutter Count](https://shuttercount.app/panasonic-lumix-gh4-shutter-count/): Shutter count guide for the Panasonic Lumix GH4 (2014) — the first consumer camera with internal 4K/UHD video. Covers the 150,000-actuation rated shutter, why RW2 files don't store the count, how to check via camera menu or ExifTool, and why video-heavy use results in very low mechanical shutter counts on used GH4 bodies.
 
 ## Pentax Camera Shutter Count Pages
 
 - [Pentax K-1 Mark II Shutter Count](https://shuttercount.app/pentax-k-1-mark-ii-shutter-count/): Shutter count guide for the Pentax K-1 Mark II (2018) — Pentax's only full-frame DSLR. Covers the ~300,000-actuation rated shutter, how to extract the count from PEF RAW files via ExifTool (PEF not yet supported in shuttercount.app browser tool), camera menu method, weather sealing, and IBIS with Pixel Shift Resolution.
 - [Pentax K-3 Mark III Shutter Count](https://shuttercount.app/pentax-k-3-mark-iii-shutter-count/): Shutter count guide for the Pentax K-3 Mark III (2021) APS-C flagship DSLR. Covers the ~300,000-actuation rated shutter, PEF ExifTool extraction method, built-in GPS Astrotracer II, 92-point weather sealing, and buying guidance for this sports and wildlife photographer's DSLR.
 - [Pentax K-1 Shutter Count](https://shuttercount.app/pentax-k-1-shutter-count/): Shutter count guide for the Pentax K-1 (2016) — Pentax's first full-frame DSLR. Covers the ~300,000-actuation rated shutter, how to extract the count from PEF RAW files via ExifTool (PEF not yet supported in the browser tool), 87 weather seals, 36.4 MP sensor, Pixel Shift Resolution System, and how Pixel Shift use multiplies shutter actuations 4× per scene.
+- [Pentax K-3 Mark II Shutter Count](https://shuttercount.app/pentax-k-3-mark-ii-shutter-count/): Shutter count guide for the Pentax K-3 Mark II (2015) APS-C DSLR. Covers the ~200,000-actuation rated shutter, PEF MakerNote ExifTool extraction (PEF not yet supported in the browser tool), built-in GPS with AstroTracer, Real Resolution (Pixel Shift) system, and what to check when buying used — including GPS function and weather sealing.
 
 ## Chinese Language Pages (中文)
 
