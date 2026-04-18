@@ -6,6 +6,7 @@
     <loc>https://shuttercount.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <lastmod>2026-04-18</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shuttercount.app/"/>
     <xhtml:link rel="alternate" hreflang="en"        href="https://shuttercount.app/"/>
     <xhtml:link rel="alternate" hreflang="af"        href="https://shuttercount.app/af/"/>
@@ -1588,5 +1589,110 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-04-17</lastmod>
+  </url>
+  <!-- Previously missing camera pages (added 2026-04-18) -->
+  <url>
+    <loc>https://shuttercount.app/canon-5d-mark-iv-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d3100-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d3400-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d5200-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-a6000-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-a7s-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x-e3-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x-pro2-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <!-- Informational / comparison pages (added 2026-04-18) -->
+  <url>
+    <loc>https://shuttercount.app/shutter-count-by-brand/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/camera-shutter-replacement-cost/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/electronic-vs-mechanical-shutter/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/mirrorless-vs-dslr-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <!-- Previously missing German SEO pages (added 2026-04-18) -->
+  <url>
+    <loc>https://shuttercount.app/de/ausloeserzahl/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/de/ausloeserzahl-pruefen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/de/maximale-ausloesezahl/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/de/verschluss-lebensdauer/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/de/exif-ausloeserzahl-kostenlos/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-18</lastmod>
   </url>
 </urlset>
