@@ -1851,5 +1851,90 @@ function cookieDecline(){
     <button class="btn btn-sm btn-accent" onclick="cookieAccept()">Accept</button>
   </div>
 </div>
+<script>
+// WebMCP: expose ShutterCount tools to in-browser AI agents.
+// Spec: https://webmachinelearning.github.io/webmcp/
+(function(){
+  function register(){
+    var mc = navigator && navigator.modelContext;
+    if(!mc || typeof mc.provideContext !== 'function') return;
+    try {
+      mc.provideContext({
+        tools: [
+          {
+            name: 'open_shutter_count_file_picker',
+            description: 'Open the ShutterCount file picker so the user can select a RAW photo file. Parsing runs locally in the browser — nothing is uploaded. Results render on the page as a card with shutter count, camera model and EXIF metadata.',
+            inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+            execute: async function(){
+              var fi = document.getElementById('fileInput');
+              if(!fi) return { ok:false, error:'File input not found' };
+              fi.click();
+              return { ok:true, message:'File picker opened. The user can now select a RAW file.' };
+            }
+          },
+          {
+            name: 'list_supported_formats',
+            description: 'List the RAW and image file formats ShutterCount can read a shutter actuation count from.',
+            inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+            execute: async function(){
+              return {
+                formats: [
+                  { ext:'CR3', brand:'Canon', note:'Mirrorless R / M series' },
+                  { ext:'CR2', brand:'Canon', note:'Shutter count only on pro 1D / 1Ds bodies' },
+                  { ext:'NEF', brand:'Nikon', note:'Broad DSLR + Z-series coverage' },
+                  { ext:'ARW', brand:'Sony', note:'Alpha mirrorless' },
+                  { ext:'RAF', brand:'Fujifilm', note:'X and GFX series' },
+                  { ext:'ORF', brand:'Olympus / OM System', note:'EXIF only; no reliable count' },
+                  { ext:'RW2', brand:'Panasonic', note:'EXIF only; no count stored' },
+                  { ext:'DNG', brand:'Adobe / Sigma / smartphones', note:'Partial; varies by body' },
+                  { ext:'JPG / JPEG', brand:'any', note:'Only if MakerNote preserved' }
+                ]
+              };
+            }
+          },
+          {
+            name: 'check_shutter_count_from_file',
+            description: 'Parse a user-provided RAW file (File or Blob) and return the shutter count, camera make, model, capture date, and basic EXIF metadata. Everything runs locally in the browser.',
+            inputSchema: {
+              type: 'object',
+              properties: {
+                file: { description: 'A File or Blob object for a CR3, CR2, NEF, ARW, RAF, ORF, RW2, DNG, or JPEG image.' }
+              },
+              required: ['file'],
+              additionalProperties: false
+            },
+            execute: async function(args){
+              var file = args && args.file;
+              if(!file || typeof file.arrayBuffer !== 'function'){
+                return { ok:false, error:'Expected a File or Blob object with arrayBuffer()' };
+              }
+              try {
+                var buf = await file.arrayBuffer();
+                var r = (typeof parseFile === 'function') ? (parseFile(buf) || {}) : {};
+                return {
+                  ok: true,
+                  filename: file.name || null,
+                  size: typeof file.size === 'number' ? file.size : null,
+                  make: r.make || null,
+                  model: r.model || null,
+                  dateTime: r.dateTime || null,
+                  shutterCount: r.shutterCount != null ? r.shutterCount : null
+                };
+              } catch(e){
+                return { ok:false, error: (e && e.message) ? e.message : String(e) };
+              }
+            }
+          }
+        ]
+      });
+    } catch(_){}
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', register);
+  } else {
+    register();
+  }
+})();
+</script>
 </body>
 </html>
