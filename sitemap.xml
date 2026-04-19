@@ -1725,4 +1725,34 @@
     <priority>0.8</priority>
     <lastmod>2026-04-18</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/nl/sluiterteller/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nl/sluiterstand-controleren/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nl/maximale-sluiteringen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nl/exif-sluiterstand-gratis/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/nl/tweedehands-camera-kopen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-19</lastmod>
+  </url>
 </urlset>
