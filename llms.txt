@@ -24,6 +24,37 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Canon EOS R100 Shutter Count](https://shuttercount.app/canon-r100-shutter-count/): Shutter count information for the Canon EOS R100 entry-level mirrorless camera.
 - [Canon EOS RP Shutter Count](https://shuttercount.app/canon-rp-shutter-count/): Shutter count guide for the Canon EOS RP full-frame mirrorless camera.
 - [Canon EOS 2000D Shutter Count](https://shuttercount.app/canon-2000d-shutter-count/): Shutter count guide for the Canon EOS 2000D (Rebel T7 / 1500D, 2018) entry-level DSLR. Covers the 100,000-actuation rated shutter, CR2 RAW format (DIGIC 4+), how to check via shuttercount.app, and what counts are typical when buying this popular beginner camera used.
+- [Canon EOS 200D Shutter Count](https://shuttercount.app/canon-200d-shutter-count/): Shutter count guide for the Canon EOS 200D (Rebel SL2 / Kiss X9). Rated lifespan: 100,000 actuations. CR2 format.
+- [Canon EOS 250D Shutter Count](https://shuttercount.app/canon-250d-shutter-count/): Shutter count guide for the Canon EOS 250D (Rebel SL3). CR3 format; rated lifespan and buying guidance.
+- [Canon EOS 77D Shutter Count](https://shuttercount.app/canon-77d-shutter-count/): Shutter count guide for the Canon EOS 77D. Rated lifespan: 100,000 actuations. CR2 format.
+- [Canon EOS 800D Shutter Count](https://shuttercount.app/canon-800d-shutter-count/): Shutter count guide for the Canon EOS 800D (Rebel T7i / Kiss X9i). Rated lifespan: 100,000 actuations. CR2 format.
+- [Canon EOS 850D Shutter Count](https://shuttercount.app/canon-850d-shutter-count/): Shutter count guide for the Canon EOS 850D (Rebel T8i). CR3 format; rated lifespan and buying guidance.
+- [Canon EOS 80D Shutter Count](https://shuttercount.app/canon-80d-shutter-count/): Shutter count guide for the Canon EOS 80D. Rated lifespan: 100,000 actuations. CR2 format.
+- [Canon EOS 90D Shutter Count](https://shuttercount.app/canon-90d-shutter-count/): Shutter count guide for the Canon EOS 90D. Rated lifespan: 120,000 actuations. CR3 format.
+- [Canon EOS 70D Shutter Count](https://shuttercount.app/canon-70d-shutter-count/): Shutter count guide for the Canon EOS 70D — the DSLR that introduced Dual Pixel AF. Rated lifespan: 100,000 actuations. CR2 format.
+- [Canon EOS 60D Shutter Count](https://shuttercount.app/canon-60d-shutter-count/): Shutter count guide for the Canon EOS 60D — the first xxD with a fully articulating screen. Rated lifespan: 100,000 actuations. CR2 format.
+- [Canon EOS 50D Shutter Count](https://shuttercount.app/canon-50d-shutter-count/): Shutter count guide for the Canon EOS 50D prosumer DSLR. Rated lifespan: 100,000 actuations. CR2 format.
+- [Canon EOS 7D Mark II Shutter Count](https://shuttercount.app/canon-7d-mark-ii-shutter-count/): Shutter count guide for the Canon EOS 7D Mark II. Rated lifespan: 200,000 actuations. CR2 format.
+- [Canon EOS 7D Shutter Count](https://shuttercount.app/canon-7d-shutter-count/): Shutter count guide for the Canon EOS 7D. Rated lifespan: 150,000 actuations. CR2 format.
+- [Canon EOS 6D Mark II Shutter Count](https://shuttercount.app/canon-6d-mark-ii-shutter-count/): Shutter count guide for the Canon EOS 6D Mark II. Rated lifespan: 100,000 actuations. CR2 format.
+- [Canon EOS 6D Shutter Count](https://shuttercount.app/canon-6d-shutter-count/): Shutter count guide for the Canon EOS 6D. Rated lifespan: 100,000 actuations. CR2 format.
+- [Canon EOS 5D Mark IV Shutter Count](https://shuttercount.app/canon-5d-mark-iv-shutter-count/): Shutter count guide for the Canon EOS 5D Mark IV. Rated lifespan: 300,000 actuations. CR2 format.
+- [Canon EOS 5D Mark III Shutter Count](https://shuttercount.app/canon-5d-mark-iii-shutter-count/): Shutter count guide for the Canon EOS 5D Mark III. Rated lifespan: 150,000 actuations. CR2 format.
+- [Canon EOS 5D Mark II Shutter Count](https://shuttercount.app/canon-5d-mark-ii-shutter-count/): Shutter count guide for the Canon EOS 5D Mark II. Rated lifespan: 150,000 actuations. CR2 format.
+- [Canon EOS 5D Shutter Count](https://shuttercount.app/canon-5d-shutter-count/): Shutter count guide for the original Canon EOS 5D. Rated lifespan: 100,000 actuations. CR2 format.
+- [Canon EOS M50 Shutter Count](https://shuttercount.app/canon-m50-shutter-count/): Shutter count guide for the Canon EOS M50. CR3 format; rated lifespan and buying guidance.
+- [Canon EOS M50 Mark II Shutter Count](https://shuttercount.app/canon-m50-mark-ii-shutter-count/): Shutter count guide for the Canon EOS M50 Mark II. 24.1 MP APS-C mirrorless; CR3 format.
+- [Canon EOS M6 Mark II Shutter Count](https://shuttercount.app/canon-m6-mark-ii-shutter-count/): Shutter count guide for the Canon EOS M6 Mark II. 32.5 MP APS-C mirrorless; CR3 format.
+- [Canon EOS R5 Mark II Shutter Count](https://shuttercount.app/canon-r5-mark-ii-shutter-count/): Shutter count guide for the Canon EOS R5 Mark II. Rated lifespan: 500,000 actuations. Shutter count confirmed from CR3 CTMD at offset 0x069C.
+- [Canon EOS R6 Mark III Shutter Count](https://shuttercount.app/canon-r6-mark-iii-shutter-count/): Shutter count guide for the Canon EOS R6 Mark III. Shutter count confirmed from CR3 CTMD at offset 0x086D.
+- [Canon EOS R50 V Shutter Count](https://shuttercount.app/canon-r50-v-shutter-count/): Shutter count guide for the Canon EOS R50 V. CR3 CTMD offset 0x086D.
+- [Canon EOS 1D X Mark III Shutter Count](https://shuttercount.app/canon-1dx-mark-iii-shutter-count/): Shutter count guide for the Canon EOS-1D X Mark III flagship. Rated lifespan: 500,000 actuations. CR3 format.
+- [Canon EOS 1D X Mark II Shutter Count](https://shuttercount.app/canon-1dx-mark-ii-shutter-count/): Shutter count guide for the Canon EOS-1D X Mark II. Rated lifespan: 400,000 actuations. CR2 format.
+- [Canon EOS 1D X Shutter Count](https://shuttercount.app/canon-1dx-shutter-count/): Shutter count guide for the Canon EOS-1D X. Rated lifespan: 400,000 actuations. CR2 format.
+- [Canon EOS 1D Mark IV Shutter Count](https://shuttercount.app/canon-1d-mark-iv-shutter-count/): Shutter count guide for the Canon EOS-1D Mark IV. Rated lifespan: 300,000 actuations. CR2 format; shutter count available from in-file MakerNote.
+- [Canon EOS 1D Mark III Shutter Count](https://shuttercount.app/canon-1d-mark-iii-shutter-count/): Shutter count guide for the Canon EOS-1D Mark III. Rated lifespan: 300,000 actuations. CR2 format; shutter count available from in-file MakerNote.
+- [Canon EOS 1Ds Mark III Shutter Count](https://shuttercount.app/canon-1ds-mark-iii-shutter-count/): Shutter count guide for the Canon EOS-1Ds Mark III. Rated lifespan: 300,000 actuations. CR2 format; shutter count available from in-file MakerNote.
+- [Canon EOS 1D Mark II Shutter Count](https://shuttercount.app/canon-1d-mark-ii-shutter-count/): Shutter count guide for the Canon EOS-1D Mark II / 1D Mark II N. Rated lifespan: 200,000 actuations. CR2 format; shutter count available from in-file MakerNote.
 
 ## Nikon Camera Shutter Count Pages
 
@@ -44,6 +75,53 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Nikon Z50 II Shutter Count](https://shuttercount.app/nikon-z50-ii-shutter-count/): Shutter count information for the Nikon Z50 II.
 - [Nikon Zf Shutter Count](https://shuttercount.app/nikon-zf-shutter-count/): Shutter count guide for the Nikon Zf retro-styled full-frame mirrorless camera.
 - [Nikon Zfc Shutter Count](https://shuttercount.app/nikon-zfc-shutter-count/): Shutter count information for the Nikon Zfc retro APS-C mirrorless camera.
+- [Nikon 1 V1 Shutter Count](https://shuttercount.app/nikon-1-v1-shutter-count/): Shutter count guide for the Nikon 1 V1 / J1 mirrorless cameras. Reads MakerNote tag 0x00A7 from NEF files.
+- [Nikon D6 Shutter Count](https://shuttercount.app/nikon-d6-shutter-count/): Shutter count guide for the Nikon D6 professional DSLR. Rated lifespan: 400,000 actuations. NEF MakerNote tag 0x00A7.
+- [Nikon D5 Shutter Count](https://shuttercount.app/nikon-d5-shutter-count/): Shutter count guide for the Nikon D5 professional DSLR. Rated lifespan: 400,000 actuations.
+- [Nikon D4S Shutter Count](https://shuttercount.app/nikon-d4s-shutter-count/): Shutter count guide for the Nikon D4S. Rated lifespan: 400,000 actuations.
+- [Nikon D4 Shutter Count](https://shuttercount.app/nikon-d4-shutter-count/): Shutter count guide for the Nikon D4 professional DSLR. Rated lifespan: 400,000 actuations.
+- [Nikon D3S Shutter Count](https://shuttercount.app/nikon-d3s-shutter-count/): Shutter count guide for the Nikon D3S. Rated lifespan: 300,000 actuations.
+- [Nikon D3X Shutter Count](https://shuttercount.app/nikon-d3x-shutter-count/): Shutter count guide for the Nikon D3X. Reads MakerNote tag 0x00A7.
+- [Nikon D3 Shutter Count](https://shuttercount.app/nikon-d3-shutter-count/): Shutter count guide for the Nikon D3 flagship DSLR. Rated lifespan: 300,000 actuations.
+- [Nikon D2X Shutter Count](https://shuttercount.app/nikon-d2x-shutter-count/): Shutter count guide for the Nikon D2X / D2Xs. Rated lifespan: 150,000 actuations.
+- [Nikon D2H Shutter Count](https://shuttercount.app/nikon-d2h-shutter-count/): Shutter count guide for the Nikon D2H. Reads MakerNote tag 0x00A7.
+- [Nikon D1 Shutter Count](https://shuttercount.app/nikon-d1-shutter-count/): Shutter count guide for the Nikon D1. Reads MakerNote tag 0x00A7 from NEF files.
+- [Nikon Df Shutter Count](https://shuttercount.app/nikon-df-shutter-count/): Shutter count guide for the Nikon Df retro full-frame DSLR. Reads MakerNote tag 0x00A7.
+- [Nikon D780 Shutter Count](https://shuttercount.app/nikon-d780-shutter-count/): Shutter count guide for the Nikon D780 — Nikon's last enthusiast full-frame DSLR. Rated lifespan: 150,000 actuations.
+- [Nikon D810 Shutter Count](https://shuttercount.app/nikon-d810-shutter-count/): Shutter count guide for the Nikon D810. Rated lifespan: 200,000 actuations.
+- [Nikon D800E Shutter Count](https://shuttercount.app/nikon-d800e-shutter-count/): Shutter count guide for the Nikon D800E (AA-filter-free 36 MP). Rated lifespan: 200,000 actuations.
+- [Nikon D800 Shutter Count](https://shuttercount.app/nikon-d800-shutter-count/): Shutter count guide for the Nikon D800. Rated lifespan: 200,000 actuations.
+- [Nikon D700 Shutter Count](https://shuttercount.app/nikon-d700-shutter-count/): Shutter count guide for the Nikon D700 legendary full-frame DSLR. Rated lifespan: 150,000 actuations.
+- [Nikon D610 Shutter Count](https://shuttercount.app/nikon-d610-shutter-count/): Shutter count guide for the Nikon D610 affordable full-frame DSLR. Rated lifespan: 150,000 actuations.
+- [Nikon D600 Shutter Count](https://shuttercount.app/nikon-d600-shutter-count/): Shutter count guide for the Nikon D600 affordable full-frame DSLR. Rated lifespan: 150,000 actuations.
+- [Nikon D300S Shutter Count](https://shuttercount.app/nikon-d300s-shutter-count/): Shutter count guide for the Nikon D300S semi-pro DX flagship. Rated lifespan: 150,000 actuations.
+- [Nikon D300 Shutter Count](https://shuttercount.app/nikon-d300-shutter-count/): Shutter count guide for the Nikon D300 legendary pro DX DSLR. Rated lifespan: 150,000 actuations.
+- [Nikon D200 Shutter Count](https://shuttercount.app/nikon-d200-shutter-count/): Shutter count guide for the Nikon D200 prosumer DX DSLR. Rated lifespan: 100,000 actuations.
+- [Nikon D100 Shutter Count](https://shuttercount.app/nikon-d100-shutter-count/): Shutter count guide for the Nikon D100. Reads MakerNote tag 0x00A7.
+- [Nikon D7500 Shutter Count](https://shuttercount.app/nikon-d7500-shutter-count/): Shutter count guide for the Nikon D7500 enthusiast DX DSLR. Rated lifespan: 150,000 actuations.
+- [Nikon D7200 Shutter Count](https://shuttercount.app/nikon-d7200-shutter-count/): Shutter count guide for the Nikon D7200 acclaimed enthusiast DX DSLR. Rated lifespan: 150,000 actuations.
+- [Nikon D7100 Shutter Count](https://shuttercount.app/nikon-d7100-shutter-count/): Shutter count guide for the Nikon D7100 enthusiast DX DSLR. Rated lifespan: 150,000 actuations.
+- [Nikon D7000 Shutter Count](https://shuttercount.app/nikon-d7000-shutter-count/): Shutter count guide for the Nikon D7000. Rated lifespan: 150,000 actuations.
+- [Nikon D5600 Shutter Count](https://shuttercount.app/nikon-d5600-shutter-count/): Shutter count guide for the Nikon D5600 mid-range DX DSLR. Rated lifespan: 100,000 actuations.
+- [Nikon D5500 Shutter Count](https://shuttercount.app/nikon-d5500-shutter-count/): Shutter count guide for the Nikon D5500 — Nikon's first touchscreen DSLR.
+- [Nikon D5300 Shutter Count](https://shuttercount.app/nikon-d5300-shutter-count/): Shutter count guide for the Nikon D5300 mid-range DSLR with Wi-Fi and GPS. Rated lifespan: 100,000 actuations.
+- [Nikon D5200 Shutter Count](https://shuttercount.app/nikon-d5200-shutter-count/): Shutter count guide for the Nikon D5200 24 MP mid-range DX DSLR. Rated lifespan: 100,000 actuations.
+- [Nikon D5100 Shutter Count](https://shuttercount.app/nikon-d5100-shutter-count/): Shutter count guide for the Nikon D5100. Rated lifespan: 100,000 actuations.
+- [Nikon D5000 Shutter Count](https://shuttercount.app/nikon-d5000-shutter-count/): Shutter count guide for the Nikon D5000 — Nikon's first DSLR with video and a vari-angle LCD. Rated lifespan: 100,000 actuations.
+- [Nikon D3500 Shutter Count](https://shuttercount.app/nikon-d3500-shutter-count/): Shutter count guide for the Nikon D3500 — Nikon's best-selling entry-level DSLR. Rated lifespan: 100,000 actuations.
+- [Nikon D3400 Shutter Count](https://shuttercount.app/nikon-d3400-shutter-count/): Shutter count guide for the Nikon D3400 lightweight entry-level DSLR. Rated lifespan: 100,000 actuations.
+- [Nikon D3300 Shutter Count](https://shuttercount.app/nikon-d3300-shutter-count/): Shutter count guide for the Nikon D3300 popular 24.2 MP beginner DSLR.
+- [Nikon D3200 Shutter Count](https://shuttercount.app/nikon-d3200-shutter-count/): Shutter count guide for the Nikon D3200 massively popular 24 MP entry-level DSLR. Rated lifespan: 100,000 actuations.
+- [Nikon D3100 Shutter Count](https://shuttercount.app/nikon-d3100-shutter-count/): Shutter count guide for the Nikon D3100 popular entry-level DSLR. Rated lifespan: 100,000 actuations.
+- [Nikon D3000 Shutter Count](https://shuttercount.app/nikon-d3000-shutter-count/): Shutter count guide for the Nikon D3000 entry-level DSLR. Rated lifespan: 100,000 actuations.
+- [Nikon D3S Shutter Count](https://shuttercount.app/nikon-d3s-shutter-count/): Shutter count guide for the Nikon D3S high-ISO flagship. Rated lifespan: 300,000 actuations.
+- [Nikon D90 Shutter Count](https://shuttercount.app/nikon-d90-shutter-count/): Shutter count guide for the Nikon D90 — the iconic 12.3 MP DX DSLR that introduced video to Nikon DSLRs.
+- [Nikon D80 Shutter Count](https://shuttercount.app/nikon-d80-shutter-count/): Shutter count guide for the Nikon D80 classic 10 MP enthusiast DSLR. Rated lifespan: 100,000 actuations.
+- [Nikon D70 Shutter Count](https://shuttercount.app/nikon-d70-shutter-count/): Shutter count guide for the Nikon D70 / D70s — the DSLR that changed everything. Rated lifespan: 100,000 actuations.
+- [Nikon D60 Shutter Count](https://shuttercount.app/nikon-d60-shutter-count/): Shutter count guide for the Nikon D60 compact entry-level DSLR with sensor cleaning.
+- [Nikon D50 Shutter Count](https://shuttercount.app/nikon-d50-shutter-count/): Shutter count guide for the Nikon D50 — Nikon's first truly affordable DSLR.
+- [Nikon D40X Shutter Count](https://shuttercount.app/nikon-d40x-shutter-count/): Shutter count guide for the Nikon D40X classic entry-level DSLR. Rated lifespan: 100,000 actuations.
+- [Nikon D40 Shutter Count](https://shuttercount.app/nikon-d40-shutter-count/): Shutter count guide for the Nikon D40 / D40X compact entry-level DSLR.
 
 ## Sony Camera Shutter Count Pages
 
@@ -67,6 +145,20 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Sony ZV-E1 Shutter Count](https://shuttercount.app/sony-zv-e1-shutter-count/): Shutter count information for the Sony ZV-E1 full-frame vlog camera.
 - [Sony ZV-E10 Shutter Count](https://shuttercount.app/sony-zv-e10-shutter-count/): Shutter count guide for the Sony ZV-E10 APS-C vlog camera.
 - [Sony A5100 Shutter Count](https://shuttercount.app/sony-a5100-shutter-count/): Shutter count guide for the Sony A5100 (ILCE-5100, 2014) — the world's smallest APS-C mirrorless at launch. Covers the 100,000-actuation rated shutter, ARW MakerNote tag 0x9050 (encrypted cubic residue cipher), how to check via shuttercount.app, and buying guidance for this popular compact E-mount camera.
+- [Sony A1 II Shutter Count](https://shuttercount.app/sony-a1-ii-shutter-count/): Shutter count guide for the Sony A1 II (ILCE-1M2) flagship mirrorless camera. Shutter count readable from ARW via MakerNote tag 0x9050.
+- [Sony A6000 Shutter Count](https://shuttercount.app/sony-a6000-shutter-count/): Shutter count guide for the Sony A6000 — Sony's best-selling mirrorless camera. Rated lifespan: 100,000 actuations. ARW MakerNote tag 0x9050.
+- [Sony A6100 Shutter Count](https://shuttercount.app/sony-a6100-shutter-count/): Shutter count guide for the Sony A6100 APS-C mirrorless. Rated lifespan: 100,000 actuations. ARW MakerNote tag 0x9050.
+- [Sony A6300 Shutter Count](https://shuttercount.app/sony-a6300-shutter-count/): Shutter count guide for the Sony A6300 APS-C mirrorless. Rated lifespan: 100,000 actuations. ARW MakerNote tag 0x9050.
+- [Sony A6500 Shutter Count](https://shuttercount.app/sony-a6500-shutter-count/): Shutter count guide for the Sony A6500 APS-C mirrorless. Rated lifespan: 200,000 actuations. ARW MakerNote tag 0x9050.
+- [Sony A7 Shutter Count](https://shuttercount.app/sony-a7-shutter-count/): Shutter count guide for the original Sony A7 (ILCE-7) full-frame mirrorless. Rated lifespan: 100,000 actuations.
+- [Sony A7R Shutter Count](https://shuttercount.app/sony-a7r-shutter-count/): Shutter count guide for the original Sony A7R 36.4 MP full-frame mirrorless. ARW MakerNote tag 0x9050.
+- [Sony A7R II Shutter Count](https://shuttercount.app/sony-a7r-ii-shutter-count/): Shutter count guide for the Sony A7R II. Rated lifespan: 500,000 actuations. ARW MakerNote tag 0x9050.
+- [Sony A7S Shutter Count](https://shuttercount.app/sony-a7s-shutter-count/): Shutter count guide for the Sony A7S full-frame video-oriented mirrorless. Rated lifespan: 100,000 actuations.
+- [Sony A7S II Shutter Count](https://shuttercount.app/sony-a7s-ii-shutter-count/): Shutter count guide for the Sony A7S II. Rated lifespan: approximately 200,000 actuations. ARW MakerNote tag 0x9050.
+- [Sony A7V Shutter Count](https://shuttercount.app/sony-a7v-shutter-count/): Shutter count guide for the Sony A7V full-frame mirrorless. Rated lifespan: 500,000 actuations.
+- [Sony FX3 Shutter Count](https://shuttercount.app/sony-fx3-shutter-count/): Shutter count guide for the Sony FX3 full-frame cinema camera. Rated lifespan: 200,000 actuations. ARW MakerNote tag 0x9050.
+- [Sony FX30 Shutter Count](https://shuttercount.app/sony-fx30-shutter-count/): Shutter count guide for the Sony FX30 APS-C cinema camera with E-mount versatility. ARW MakerNote tag 0x9050.
+- [Sony ZV-E10 II Shutter Count](https://shuttercount.app/sony-zv-e10-ii-shutter-count/): Shutter count guide for the Sony ZV-E10 II APS-C vlog camera. ARW MakerNote tag 0x9050.
 
 ## Fujifilm Camera Shutter Count Pages
 
@@ -82,6 +174,21 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Fujifilm X-T50 Shutter Count](https://shuttercount.app/fujifilm-x-t50-shutter-count/): Shutter count information for the Fujifilm X-T50.
 - [Fujifilm X100VI Shutter Count](https://shuttercount.app/fujifilm-x100vi-shutter-count/): Shutter count guide for the Fujifilm X100VI compact fixed-lens camera.
 - [Fujifilm X-E1 Shutter Count](https://shuttercount.app/fujifilm-x-e1-shutter-count/): Shutter count guide for the Fujifilm X-E1 (2012) — the first X-E rangefinder-style camera. Covers the estimated ~150,000-actuation shutter life (Fujifilm doesn't publish official ratings), RAF MakerNote ImageCount tag 0x1438, the format-reset caveat, and what to look for when buying this vintage APS-C X-Trans I camera used.
+- [Fujifilm X-E2 Shutter Count](https://shuttercount.app/fujifilm-x-e2-shutter-count/): Shutter count guide for the Fujifilm X-E2 rangefinder-style mirrorless. RAF MakerNote ImageCount tag 0x1438.
+- [Fujifilm X-E3 Shutter Count](https://shuttercount.app/fujifilm-x-e3-shutter-count/): Shutter count guide for the Fujifilm X-E3 compact rangefinder-style mirrorless. Rated lifespan: 100,000 actuations.
+- [Fujifilm X-H1 Shutter Count](https://shuttercount.app/fujifilm-x-h1-shutter-count/): Shutter count guide for the Fujifilm X-H1. Rated lifespan: 200,000 actuations. RAF MakerNote ImageCount tag 0x1438.
+- [Fujifilm X-Pro1 Shutter Count](https://shuttercount.app/fujifilm-x-pro1-shutter-count/): Shutter count guide for the Fujifilm X-Pro1 (2012) — the first X-Pro rangefinder-style mirrorless with the original X-Trans sensor. RAF MakerNote ImageCount tag 0x1438.
+- [Fujifilm X-Pro2 Shutter Count](https://shuttercount.app/fujifilm-x-pro2-shutter-count/): Shutter count guide for the Fujifilm X-Pro2. Rated lifespan: approximately 150,000 actuations. RAF MakerNote ImageCount tag 0x1438.
+- [Fujifilm X-Pro3 Shutter Count](https://shuttercount.app/fujifilm-x-pro3-shutter-count/): Shutter count guide for the Fujifilm X-Pro3 rangefinder-style flagship. Rated lifespan: 300,000 actuations.
+- [Fujifilm X-T1 Shutter Count](https://shuttercount.app/fujifilm-x-t1-shutter-count/): Shutter count guide for the Fujifilm X-T1. Rated lifespan: 150,000 actuations. RAF MakerNote ImageCount tag 0x1438.
+- [Fujifilm X-T2 Shutter Count](https://shuttercount.app/fujifilm-x-t2-shutter-count/): Shutter count guide for the Fujifilm X-T2. Rated lifespan: 150,000 actuations. RAF MakerNote ImageCount tag 0x1438.
+- [Fujifilm X-T20 Shutter Count](https://shuttercount.app/fujifilm-x-t20-shutter-count/): Shutter count guide for the Fujifilm X-T20 compact 24.3 MP APS-C mirrorless with retro styling. RAF MakerNote ImageCount tag 0x1438.
+- [Fujifilm X-T30 Shutter Count](https://shuttercount.app/fujifilm-x-t30-shutter-count/): Shutter count guide for the Fujifilm X-T30. RAF MakerNote ImageCount tag 0x1438.
+- [Fujifilm X-T200 Shutter Count](https://shuttercount.app/fujifilm-x-t200-shutter-count/): Shutter count guide for the Fujifilm X-T200. RAF MakerNote ImageCount tag 0x1438.
+- [Fujifilm X100F Shutter Count](https://shuttercount.app/fujifilm-x100f-shutter-count/): Shutter count guide for the Fujifilm X100F fixed-lens compact. RAF MakerNote ImageCount tag 0x1438.
+- [Fujifilm X100V Shutter Count](https://shuttercount.app/fujifilm-x100v-shutter-count/): Shutter count guide for the Fujifilm X100V iconic premium compact. Rated lifespan: 300,000 actuations.
+- [Fujifilm GFX100 II Shutter Count](https://shuttercount.app/fujifilm-gfx100-ii-shutter-count/): Shutter count guide for the Fujifilm GFX100 II medium format mirrorless. RAF MakerNote ImageCount tag 0x1438.
+- [Fujifilm GFX 50S II Shutter Count](https://shuttercount.app/fujifilm-gfx50s-ii-shutter-count/): Shutter count guide for the Fujifilm GFX 50S II medium format mirrorless. Rated lifespan: 150,000 actuations.
 
 ## OM System / Olympus Camera Shutter Count Pages
 
@@ -140,6 +247,120 @@ SEO-optimized content pages in Korean targeting high-volume Google Korea search 
 - [중고 카메라 셔터 횟수 — 구매 전 반드시 확인하세요](https://shuttercount.app/ko/junggo-kamera/): Buyer's guide for used cameras on Korean marketplaces (당근마켓, 중고나라). Includes condition rating table (A–D) by usage percentage and a used camera buying checklist. Targets 중고 카메라 셔터 횟수 (used camera shutter count).
 - [카메라 셔터 수명 — 브랜드별 내구 횟수 완전 정리](https://shuttercount.app/ko/shutter-sumyeong/): Full shutter lifespan reference tables for Canon, Nikon, Sony, and Fujifilm models. Includes shutter failure symptoms and replacement cost guidance. Targets 셔터 수명 (shutter lifespan).
 - [EXIF 셔터 횟수 무료 확인 — 온라인 도구](https://shuttercount.app/ko/exif-shutter/): Explains how EXIF MakerNote metadata stores shutter count, how ShutterCount reads it locally without uploading files, and which RAW/JPEG formats are supported per manufacturer. Targets EXIF 셔터 횟수 (EXIF shutter count).
+
+## Informational / Editorial Pages
+
+- [What Is Shutter Count?](https://shuttercount.app/what-is-shutter-count/): Explains what shutter count is, why it matters when buying a used camera, and how to check it for free. Covers mechanical shutter actuations and the difference between camera classes.
+- [Camera Shutter Count Limits](https://shuttercount.app/shutter-count-limits/): Complete reference table of rated shutter lifespan (actuation counts) for Canon, Nikon, Sony, and Fujifilm cameras — from entry-level to professional bodies.
+- [How to Check Shutter Count](https://shuttercount.app/how-to-check-shutter-count/): Step-by-step guide for checking shutter count on any camera for free using ShutterCount. Works with Canon CR3, Nikon NEF, Sony ARW, Fujifilm RAF, and more — no software to install.
+- [Used Camera Buying Guide](https://shuttercount.app/used-camera-buying-guide/): Complete checklist for buying a used mirrorless or DSLR camera. Covers shutter count verification, sensor check, physical inspection, and price negotiation tips for Canon, Nikon, Sony, and Fujifilm.
+- [Free Shutter Count Checker](https://shuttercount.app/shutter-count-free-tool/): Overview of the free browser-based shutter count checker. Nothing is uploaded; 100% private. Supports Canon, Nikon, Sony, Fujifilm, and more.
+- [Camera Shutter Count by Brand](https://shuttercount.app/shutter-count-by-brand/): Compares rated shutter life expectancy across Canon, Nikon, Sony, and Fujifilm — from entry-level to professional bodies.
+- [Camera Shutter Replacement Cost](https://shuttercount.app/camera-shutter-replacement-cost/): Typical shutter repair costs for Canon, Nikon, Sony, and Fujifilm cameras, and how to decide whether repair or replacement makes more sense based on shutter count.
+- [Electronic vs Mechanical Shutter](https://shuttercount.app/electronic-vs-mechanical-shutter/): Explains the difference between mechanical, EFCS, and electronic shutters — and which ones add to your camera's shutter count.
+- [Mirrorless vs DSLR Shutter Count](https://shuttercount.app/mirrorless-vs-dslr-shutter-count/): Compares shutter life expectancy, mechanical differences, and real-world durability between mirrorless and DSLR cameras.
+
+## FAQ Pages
+
+- [How Many Shutter Actuations Is Too Many?](https://shuttercount.app/faq/how-many-shutter-actuations-is-too-many/): A count above 50–80% of the manufacturer's rated life is considered high. Explains what is acceptable for each camera class.
+- [Does Shutter Count Affect Camera Value?](https://shuttercount.app/faq/does-shutter-count-affect-camera-value/): Yes — explains how shutter count affects used camera value, how buyers and sellers use it to negotiate price, and when it stops being relevant.
+- [What Shutter Count Is Good for a Used Camera?](https://shuttercount.app/faq/what-shutter-count-is-good-for-used-camera/): A good shutter count for a used camera is under 30% of its rated life. Covers what counts to look for by camera brand and model when buying second-hand.
+
+## Portuguese SEO Pages (/pt/)
+
+SEO-optimized content pages in Portuguese targeting Brazil and Portugal search queries.
+
+- [Verificar Disparos da Câmera Online](https://shuttercount.app/pt/verificar-disparos/): How to verify camera shutter actuations online for free — no software, compatible with Canon, Nikon, Sony, and more.
+- [Contador de Disparos da Câmera](https://shuttercount.app/pt/contador-disparos/): Explains what the camera shot counter is, why it matters, and how to read it with ShutterCount.
+- [Canon — Verificar Disparos Online](https://shuttercount.app/pt/canon/): Canon brand page in Portuguese listing supported EOS R mirrorless and EOS DSLR models with rated shutter lives.
+- [Nikon — Verificar Disparos Online](https://shuttercount.app/pt/nikon/): Nikon brand page in Portuguese covering supported D-series DSLR and Z-series mirrorless models.
+- [Sony Alpha — Verificar Disparos Online](https://shuttercount.app/pt/sony/): Sony brand page in Portuguese covering supported Alpha mirrorless and ZV-series models.
+- [Vida Útil de uma Câmera](https://shuttercount.app/pt/vida-util-camera/): Guide on how many shots a camera lasts and how to calculate remaining shutter life — with table by model.
+- [Disparos Máximos por Modelo](https://shuttercount.app/pt/disparos-maximos/): Complete table of maximum certified actuation counts for Canon, Nikon, Sony, Fujifilm, and Olympus cameras.
+- [Ver Disparos pelos Dados EXIF](https://shuttercount.app/pt/exif-disparos-gratis/): Explains how EXIF metadata stores shot count and how to read it for free online with ShutterCount.
+
+## Spanish SEO Pages (/es/)
+
+SEO-optimized content pages in Spanish targeting Spain and Latin America search queries.
+
+- [Contador de Disparos de la Cámara](https://shuttercount.app/es/contador-disparos/): Explains what the shutter count is, why it matters, and how to check it in seconds with ShutterCount — online and free.
+- [Verificar Disparos de la Cámara Online](https://shuttercount.app/es/verificar-disparos/): How to check camera shutter actuations in seconds without installing software — free, compatible with Canon, Nikon, Sony, and more.
+- [Vida Útil del Obturador](https://shuttercount.app/es/vida-util-camara/): Guide on how many shots a camera lasts and how to calculate remaining shutter life — with table by model.
+- [Disparos Máximos por Modelo de Cámara](https://shuttercount.app/es/disparos-maximos/): Complete table of maximum certified actuation counts for Canon, Nikon, Sony, Fujifilm, and Olympus cameras.
+- [Ver Disparos por Datos EXIF](https://shuttercount.app/es/datos-exif-gratis/): Explains how EXIF data stores the shot counter and how to read it for free online with ShutterCount.
+
+## German SEO Pages (/de/)
+
+SEO-optimized content pages in German targeting DACH search queries.
+
+- [Auslösungen auslesen](https://shuttercount.app/de/ausloesungen-auslesen/): How to read camera actuations online for free — without software or upload. Works with Canon, Nikon, Sony, Fujifilm.
+- [Auslösungen Kamera](https://shuttercount.app/de/ausloesungen-kamera/): Explains what camera actuations are, why the shutter count matters, and how to check it for free online.
+- [Maximale Auslösungen](https://shuttercount.app/de/maximale-ausloesungen/): Complete table of maximum certified actuations for Canon, Nikon, Sony, and Fujifilm cameras.
+- [EXIF-Daten auslesen kostenlos](https://shuttercount.app/de/exif-daten-kostenlos/): How to read EXIF data and camera actuations for free online — without software or registration, directly in the browser.
+- [Lebensdauer Verschluss Kamera](https://shuttercount.app/de/lebensdauer-verschluss/): How long does a camera shutter last? Explains rated actuation counts and how to calculate remaining lifespan.
+- [Auslösezahl](https://shuttercount.app/de/ausloeserzahl/): Overview page explaining what the camera shutter count (Auslösezahl) is and how to check it for free with ShutterCount.
+- [Auslösezahl prüfen](https://shuttercount.app/de/ausloeserzahl-pruefen/): How to check camera shutter count online for free in seconds — without software or upload. Canon, Nikon, Sony, Fujifilm.
+- [Maximale Auslösezahl](https://shuttercount.app/de/maximale-ausloesezahl/): Reference table of maximum rated shutter actuations for popular Canon, Nikon, Sony, Fujifilm, and Panasonic models.
+- [Verschluss-Lebensdauer](https://shuttercount.app/de/verschluss-lebensdauer/): How long does a mechanical shutter last, what factors affect its lifespan, and when does a replacement make sense?
+- [EXIF Auslösezahl kostenlos](https://shuttercount.app/de/exif-ausloeserzahl-kostenlos/): How to read shutter count from EXIF data for free online — no software download, no registration. Works with JPEG and RAW files.
+
+## French SEO Pages (/fr/)
+
+SEO-optimized content pages in French targeting France and francophone markets.
+
+- [Compteur de déclenchements](https://shuttercount.app/fr/compteur-declenchements/): How to read the camera shutter count online for free — without software or upload. Compatible with Canon, Nikon, Sony, Fujifilm.
+- [Vérifier les déclenchements](https://shuttercount.app/fr/verifier-declenchements/): How to check camera shutter actuations for free online — without software or account. Works with Canon, Nikon, Sony, Fujifilm.
+- [Déclenchements maximum](https://shuttercount.app/fr/declenchements-maximum/): Complete table of maximum certified shutter actuations for Canon, Nikon, Sony, and Fujifilm cameras.
+- [EXIF déclenchements gratuit](https://shuttercount.app/fr/exif-declenchements-gratuit/): How to read EXIF data from photos for free and get the camera's shutter count — no registration, no software, directly in the browser.
+- [Durée de vie de l'obturateur](https://shuttercount.app/fr/duree-vie-obturateur/): How long does a camera shutter last? Explains certified actuation counts and how to calculate remaining lifespan.
+
+## Swedish SEO Pages (/sv/)
+
+SEO-optimized content pages in Swedish targeting Scandinavia search queries.
+
+- [Slutarräknare](https://shuttercount.app/sv/slutarraknare/): How to read the camera shutter counter online for free — without software or upload. Works with Canon, Nikon, Sony, Fujifilm.
+- [Kontrollera slutarräkning](https://shuttercount.app/sv/kontrollera-slutarrakning/): How to check camera shutter count for free online — without software or account. Works with Canon, Nikon, Sony, Fujifilm.
+- [Maximalt slutarantal](https://shuttercount.app/sv/maximalt-slutarantal/): Complete table of maximum certified shutter actuations for Canon, Nikon, Sony, and Fujifilm cameras.
+- [EXIF slutarräkning gratis](https://shuttercount.app/sv/exif-slutarrakning-gratis/): How to read EXIF data from photos for free and find the shutter counter — no registration, no software, directly in the browser.
+- [Slutarens livslängd](https://shuttercount.app/sv/slutarens-livslangd/): How long does a camera shutter last? Explains how many actuations it can handle and how to calculate remaining lifespan.
+
+## Norwegian SEO Pages (/no/)
+
+SEO-optimized content pages in Norwegian targeting Norway search queries.
+
+- [Lukkerteller](https://shuttercount.app/no/lukkerteller/): How to read the camera shutter counter online for free — without software or upload. Works with Canon, Nikon, Sony, Fujifilm.
+- [Sjekke lukkertelling](https://shuttercount.app/no/sjekke-lukkertelling/): How to check camera shutter count for free online — without software or account. Works with Canon, Nikon, Sony, Fujifilm.
+- [Maksimalt lukkerantal](https://shuttercount.app/no/maksimalt-lukkerantal/): Complete table of maximum certified shutter actuations for Canon, Nikon, Sony, and Fujifilm cameras.
+- [EXIF lukkertelling gratis](https://shuttercount.app/no/exif-lukkertelling-gratis/): How to read EXIF data from photos for free and find the shutter count — no registration, no software, directly in the browser.
+- [Lukkerens levetid](https://shuttercount.app/no/lukkerens-levetid/): How long does a camera shutter last? Explains how many actuations it can handle and how to calculate remaining lifespan.
+
+## Danish SEO Pages (/da/)
+
+SEO-optimized content pages in Danish targeting Denmark search queries.
+
+- [Lukketæller](https://shuttercount.app/da/lukketaeller/): How to read the camera shutter counter online for free — without software or upload. Works with Canon, Nikon, Sony, Fujifilm.
+- [Tjek lukkeantal](https://shuttercount.app/da/tjek-lukkeantal/): How to check camera shutter count for free online — without software or account. Works with Canon, Nikon, Sony, Fujifilm.
+- [Maksimalt lukkeantal](https://shuttercount.app/da/maksimalt-lukkeantal/): Complete table of maximum certified shutter actuations for Canon, Nikon, Sony, and Fujifilm cameras.
+- [EXIF lukkeantal gratis](https://shuttercount.app/da/exif-lukkeantal-gratis/): How to read EXIF data from photos for free and find the shutter count — no registration, no software, directly in the browser.
+- [Lukkerens levetid](https://shuttercount.app/da/lukkerens-levetid/): How long does a camera shutter last? Explains how many actuations it can handle and how to calculate remaining lifespan.
+
+## Finnish SEO Pages (/fi/)
+
+SEO-optimized content pages in Finnish targeting Finland search queries.
+
+- [Suljinlaskuri](https://shuttercount.app/fi/suljinlaskuri/): How to read the camera shutter counter online for free — without software or upload. Works with Canon, Nikon, Sony, Fujifilm.
+- [Tarkista suljinlaskuri](https://shuttercount.app/fi/tarkista-suljinlaskuri/): How to check camera shutter count for free online — without software or account. Works with Canon, Nikon, Sony, Fujifilm.
+- [Suljimen maksimilaukaisut](https://shuttercount.app/fi/suljimen-maksimilaukaisut/): Complete table of maximum certified shutter actuations for Canon, Nikon, Sony, and Fujifilm cameras.
+
+## Italian SEO Pages (/it/)
+
+SEO-optimized content pages in Italian targeting Italy search queries.
+
+- [Contatore Scatti Fotocamera](https://shuttercount.app/it/contatore-scatti/): Explains what the camera shutter count is, why it matters, and how to check it in seconds with ShutterCount — online and free.
+- [Verificare Scatti Fotocamera Online](https://shuttercount.app/it/verificare-scatti/): How to check the number of shots of a camera in seconds without installing software — free, online, compatible with Canon, Nikon, Sony, and more.
+- [Leggere Dati EXIF Fotocamera Gratis](https://shuttercount.app/it/dati-exif-gratis/): How EXIF metadata stores the shutter count and how to read it for free online with ShutterCount.
+- [Vita Utile dell'Otturatore](https://shuttercount.app/it/vita-utile-otturatore/): How many shots does a digital camera last? Guide with table of rated shutter counts by model.
+- [Scatti Massimi per Modello](https://shuttercount.app/it/scatti-massimi/): Complete table of maximum certified actuations for Canon, Nikon, Sony, Fujifilm, and Olympus cameras.
 
 ## Optional
 
