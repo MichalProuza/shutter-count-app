@@ -1,0 +1,9 @@
+{
+  "resource": "https://shuttercount.app",
+  "authorization_servers": ["https://shuttercount.app"],
+  "scopes_supported": [],
+  "bearer_methods_supported": [],
+  "resource_documentation": "https://shuttercount.app/README.md",
+  "resource_name": "ShutterCount",
+  "resource_signing_alg_values_supported": []
+}

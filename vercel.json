@@ -59,6 +59,18 @@
     {
       "source": "/.well-known/api-catalog",
       "destination": "/.well-known/api-catalog.json"
+    },
+    {
+      "source": "/.well-known/oauth-authorization-server",
+      "destination": "/.well-known/oauth-authorization-server.json"
+    },
+    {
+      "source": "/.well-known/openid-configuration",
+      "destination": "/.well-known/oauth-authorization-server.json"
+    },
+    {
+      "source": "/.well-known/oauth-protected-resource",
+      "destination": "/.well-known/oauth-protected-resource.json"
     }
   ],
   "headers": [
@@ -67,7 +79,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/agent-skills/index.json>; rel=\"https://agentskills.io/rel/skills-index\"; type=\"application/json\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </>; rel=\"alternate\"; type=\"text/markdown\", </README.md>; rel=\"service-doc\"; type=\"text/markdown\""
+          "value": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/agent-skills/index.json>; rel=\"https://agentskills.io/rel/skills-index\"; type=\"application/json\", </.well-known/oauth-authorization-server>; rel=\"http://openid.net/specs/connect/1.0/issuer\"; type=\"application/json\", </.well-known/oauth-protected-resource>; rel=\"https://datatracker.ietf.org/doc/html/rfc9728\"; type=\"application/json\", </.well-known/mcp/server-card.json>; rel=\"https://modelcontextprotocol.io/rel/server-card\"; type=\"application/json\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </>; rel=\"alternate\"; type=\"text/markdown\", </README.md>; rel=\"service-doc\"; type=\"text/markdown\""
         },
         { "key": "Vary", "value": "Accept" }
       ]
@@ -87,6 +99,30 @@
     },
     {
       "source": "/.well-known/agent-skills/index.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/.well-known/oauth-authorization-server(\\.json)?",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/.well-known/openid-configuration",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/.well-known/oauth-protected-resource(\\.json)?",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/.well-known/mcp/server-card.json",
       "headers": [
         { "key": "Content-Type", "value": "application/json; charset=utf-8" }
       ]

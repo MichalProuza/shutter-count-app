@@ -1,0 +1,12 @@
+{
+  "issuer": "https://shuttercount.app",
+  "authorization_endpoint": "https://shuttercount.app/.well-known/oauth/authorize",
+  "token_endpoint": "https://shuttercount.app/.well-known/oauth/token",
+  "jwks_uri": "https://shuttercount.app/.well-known/jwks.json",
+  "grant_types_supported": [],
+  "response_types_supported": [],
+  "token_endpoint_auth_methods_supported": ["none"],
+  "scopes_supported": [],
+  "service_documentation": "https://shuttercount.app/README.md",
+  "ui_locales_supported": ["en"]
+}

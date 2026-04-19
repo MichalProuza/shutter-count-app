@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "2025-06-18",
+  "serverInfo": {
+    "name": "shuttercount-webmcp",
+    "title": "ShutterCount",
+    "version": "1.0.0",
+    "vendor": "ShutterCount",
+    "url": "https://shuttercount.app/",
+    "description": "In-browser shutter-count reader for camera RAW files (CR3, CR2, NEF, ARW, RAF, ORF, RW2, DNG, JPEG). Tools are exposed to in-page AI agents via the WebMCP API (navigator.modelContext.provideContext).",
+    "documentation": "https://shuttercount.app/README.md"
+  },
+  "transport": {
+    "type": "webmcp",
+    "endpoint": "https://shuttercount.app/",
+    "note": "Tools are registered client-side via navigator.modelContext.provideContext() on page load. There is no remote MCP server; this card advertises the WebMCP integration."
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    },
+    "resources": {
+      "listChanged": false
+    },
+    "logging": {},
+    "prompts": {
+      "listChanged": false
+    }
+  },
+  "tools": [
+    {
+      "name": "open_shutter_count_file_picker",
+      "description": "Open the ShutterCount file picker so the user can select a RAW photo file. Parsing runs locally; nothing is uploaded.",
+      "inputSchema": { "type": "object", "properties": {}, "additionalProperties": false }
+    },
+    {
+      "name": "list_supported_formats",
+      "description": "List the RAW and image file formats ShutterCount can read a shutter actuation count from.",
+      "inputSchema": { "type": "object", "properties": {}, "additionalProperties": false }
+    },
+    {
+      "name": "check_shutter_count_from_file",
+      "description": "Parse a user-provided RAW file (File/Blob) and return shutter count, camera make, model, capture date, and EXIF metadata. Runs locally in the browser.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file": { "description": "A File or Blob object for a CR3, CR2, NEF, ARW, RAF, ORF, RW2, DNG, or JPEG image." }
+        },
+        "required": ["file"],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "links": {
+    "documentation": "https://shuttercount.app/README.md",
+    "homepage": "https://shuttercount.app/",
+    "skills": "https://shuttercount.app/.well-known/agent-skills/index.json",
+    "apiCatalog": "https://shuttercount.app/.well-known/api-catalog"
+  }
+}
