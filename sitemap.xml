@@ -1755,4 +1755,34 @@
     <priority>0.8</priority>
     <lastmod>2026-04-19</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/ru/probeg-fotoapparata/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ru/schetchik-zatvora/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ru/kolichestvo-srabatyvanii/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ru/resurs-zatvora/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ru/kak-proverit-probeg/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
 </urlset>
