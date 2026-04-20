@@ -1755,4 +1755,34 @@
     <priority>0.8</priority>
     <lastmod>2026-04-19</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/nikon-d3600-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/panasonic-lumix-s1-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/panasonic-lumix-s1r-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-a5000-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-gfx50s-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
 </urlset>
