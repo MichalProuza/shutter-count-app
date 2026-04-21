@@ -44,6 +44,7 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Nikon Z50 II Shutter Count](https://shuttercount.app/nikon-z50-ii-shutter-count/): Shutter count information for the Nikon Z50 II.
 - [Nikon Zf Shutter Count](https://shuttercount.app/nikon-zf-shutter-count/): Shutter count guide for the Nikon Zf retro-styled full-frame mirrorless camera.
 - [Nikon Zfc Shutter Count](https://shuttercount.app/nikon-zfc-shutter-count/): Shutter count information for the Nikon Zfc retro APS-C mirrorless camera.
+- [Nikon D3600 Shutter Count](https://shuttercount.app/nikon-d3600-shutter-count/): Shutter count guide for the Nikon D3600 (2016) entry-level APS-C DSLR. Covers the 100,000-actuation rated shutter, how to read from NEF files via MakerNote tag 0x00A7, the SnapBridge caveat, differences from the D3500, and buying guidance for this popular beginner DSLR.
 
 ## Sony Camera Shutter Count Pages
 
@@ -67,6 +68,7 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Sony ZV-E1 Shutter Count](https://shuttercount.app/sony-zv-e1-shutter-count/): Shutter count information for the Sony ZV-E1 full-frame vlog camera.
 - [Sony ZV-E10 Shutter Count](https://shuttercount.app/sony-zv-e10-shutter-count/): Shutter count guide for the Sony ZV-E10 APS-C vlog camera.
 - [Sony A5100 Shutter Count](https://shuttercount.app/sony-a5100-shutter-count/): Shutter count guide for the Sony A5100 (ILCE-5100, 2014) — the world's smallest APS-C mirrorless at launch. Covers the 100,000-actuation rated shutter, ARW MakerNote tag 0x9050 (encrypted cubic residue cipher), how to check via shuttercount.app, and buying guidance for this popular compact E-mount camera.
+- [Sony a5000 Shutter Count](https://shuttercount.app/sony-a5000-shutter-count/): Shutter count guide for the Sony Alpha a5000 (2014) — Sony's most compact APS-C mirrorless at launch with Wi-Fi/NFC and 20.1 MP sensor. Covers the estimated ~100,000-actuation lifespan (Sony does not publish official ratings for this model), ARW MakerNote tag 0x9050, JPEG MakerNote stripping caveat, and what to look for when buying this entry-level E-mount camera used.
 
 ## Fujifilm Camera Shutter Count Pages
 
@@ -85,6 +87,7 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Fujifilm X-T30 II Shutter Count](https://shuttercount.app/fujifilm-x-t30-ii-shutter-count/): Shutter count guide for the Fujifilm X-T30 II (2021) — an incremental update to the X-T30 with a new rear LCD and backlit controls. Covers the estimated ~150,000-actuation lifespan (not officially published), RAF MakerNote tag 0x1438, the format-reset caveat, and the differences from the original X-T30.
 - [Fujifilm X-M5 Shutter Count](https://shuttercount.app/fujifilm-x-m5-shutter-count/): Shutter count guide for the Fujifilm X-M5 (2024) — Fujifilm's most compact X-mount camera with 26.1 MP X-Trans V sensor and fully articulated LCD. Covers the estimated ~150,000-actuation lifespan, RAF MakerNote tag 0x1438, and buying guidance for this vlog-focused compact.
 - [Fujifilm GFX100S Shutter Count](https://shuttercount.app/fujifilm-gfx100s-shutter-count/): Shutter count guide for the Fujifilm GFX100S (2021) — the original 102 MP compact medium format mirrorless camera. Covers the 150,000-actuation rated shutter, how to read from RAF files via MakerNote tag 0x1438, shutter replacement cost considerations, and how the GFX100S compares to the GFX100S II for used-camera buyers.
+- [Fujifilm GFX 50S Shutter Count](https://shuttercount.app/fujifilm-gfx50s-shutter-count/): Shutter count guide for the Fujifilm GFX 50S (2017) — the camera that launched the GFX medium format system. Covers the 150,000-actuation rated shutter, RAF MakerNote ImageCount tag 0x1438, the format-reset caveat, why medium format shutters have lower ratings than APS-C, shutter replacement cost (~€300–500), and buying guidance for this landmark 51.4 MP camera compared to the GFX 50S II.
 
 ## OM System / Olympus Camera Shutter Count Pages
 
@@ -108,6 +111,8 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Panasonic Lumix GH4 Shutter Count](https://shuttercount.app/panasonic-lumix-gh4-shutter-count/): Shutter count guide for the Panasonic Lumix GH4 (2014) — the first consumer camera with internal 4K/UHD video. Covers the 150,000-actuation rated shutter, why RW2 files don't store the count, how to check via camera menu or ExifTool, and why video-heavy use results in very low mechanical shutter counts on used GH4 bodies.
 - [Panasonic Lumix S5 Shutter Count](https://shuttercount.app/panasonic-lumix-s5-shutter-count/): Shutter count guide for the Panasonic Lumix S5 (2020) — Panasonic's entry-level full-frame L-mount mirrorless camera. Covers the 200,000-actuation rated shutter, why RW2 files don't store the count, how to check via camera menu or Lumix Sync app, and buying guidance for this popular full-frame/video hybrid.
 - [Panasonic Lumix G9 II Shutter Count](https://shuttercount.app/panasonic-lumix-g9-ii-shutter-count/): Shutter count guide for the Panasonic Lumix G9 II (2023) — the first G-series camera with phase-detection AF. Covers the 200,000-actuation rated shutter, why RW2 files don't store the count, how to check via camera menu, and why its high-speed burst capability doesn't wear the mechanical shutter when using electronic shutter mode.
+- [Panasonic Lumix S1 Shutter Count](https://shuttercount.app/panasonic-lumix-s1-shutter-count/): Shutter count guide for the Panasonic Lumix S1 (2019) — the original full-frame L-mount mirrorless body from the L-Mount Alliance. Covers the high 400,000-actuation rated shutter, why RW2 files don't embed the count, how to check via camera menu or Lumix Sync, and buying guidance for this professional-grade full-frame body.
+- [Panasonic Lumix S1R Shutter Count](https://shuttercount.app/panasonic-lumix-s1r-shutter-count/): Shutter count guide for the Panasonic Lumix S1R (2019) — Panasonic's 47.3 MP high-resolution full-frame L-mount mirrorless camera. Covers the 400,000-actuation rated shutter, why RW2 files don't store the count, the important caveat that High Resolution Shot mode consumes 8 mechanical actuations per composite image, and buying guidance.
 
 ## Pentax Camera Shutter Count Pages
 
