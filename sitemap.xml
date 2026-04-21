@@ -1785,4 +1785,34 @@
     <priority>0.8</priority>
     <lastmod>2026-04-20</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/canon-40d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-700d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x-t10-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/panasonic-lumix-g7-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-21</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/olympus-em10-mark-iii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-21</lastmod>
+  </url>
 </urlset>
