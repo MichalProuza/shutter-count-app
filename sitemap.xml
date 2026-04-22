@@ -1726,4 +1726,35 @@
     <priority>0.7</priority>
     <lastmod>2026-04-18</lastmod>
   </url>
+  <!-- New camera subpages (added 2026-04-22) -->
+  <url>
+    <loc>https://shuttercount.app/canon-550d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-600d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-gfx100-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pentax-k-70-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x-a7-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-22</lastmod>
+  </url>
 </urlset>
