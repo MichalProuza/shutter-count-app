@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
 
 # AI / LLM crawlers — explicitly allow for discoverability
 User-agent: GPTBot

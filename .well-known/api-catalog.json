@@ -1,0 +1,40 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://shuttercount.app/",
+      "service-doc": [
+        {
+          "href": "https://shuttercount.app/llms.txt",
+          "type": "text/plain",
+          "title": "ShutterCount — agent-oriented site overview (llms.txt)"
+        },
+        {
+          "href": "https://shuttercount.app/README.md",
+          "type": "text/markdown",
+          "title": "ShutterCount README"
+        }
+      ],
+      "service-desc": [
+        {
+          "href": "https://shuttercount.app/.well-known/agent-skills/index.json",
+          "type": "application/json",
+          "title": "Agent Skills discovery index for ShutterCount"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://shuttercount.app/",
+          "type": "text/html",
+          "title": "Homepage (static site — reachability indicates availability)"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://shuttercount.app/sitemap.xml",
+          "type": "application/xml",
+          "title": "Sitemap of all pages"
+        }
+      ]
+    }
+  ]
+}
