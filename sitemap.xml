@@ -1726,6 +1726,37 @@
     <priority>0.7</priority>
     <lastmod>2026-04-18</lastmod>
   </url>
+  <!-- Polish language subpages (added 2026-04-23) -->
+  <url>
+    <loc>https://shuttercount.app/pl/licznik-migawki/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pl/sprawdz-licznik-migawki/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pl/maksymalna-liczba-migawek/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pl/exif-migawka-darmowo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pl/uzywany-aparat-kupno/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
   <!-- New camera subpages (added 2026-04-22) -->
   <url>
     <loc>https://shuttercount.app/canon-550d-shutter-count/</loc>
