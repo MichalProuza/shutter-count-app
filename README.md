@@ -21,10 +21,10 @@ Everything runs client-side in `index.html`. Files are opened with `FileReader` 
 | Brand | Format | Shutter count | Notes |
 |---|---|---|---|
 | **Nikon** | NEF | Broad | MakerNote tag `0x00A7`; confirmed across Z-series mirrorless and a wide DSLR range |
-| **Canon** | CR3 | Partial | CTMD tag `0x000D`; confirmed offsets for R, R3, R5, R5 Mark II, R5 C, R6, R6 Mark II, R6 Mark III, R7, R8, R10, R50, R50 V, R100, RP, M50, M50 Mark II, M6 Mark II, 1D X Mark III |
+| **Canon** | CR3 | Partial | CTMD tag `0x000D`; confirmed offsets for R, R3, R5, R5 Mark II, R5 C, R6, R6 Mark II, R6 Mark III, R7, R8, R10, R50, R50 V, R100, RP, M50, M50 Mark II, M6 Mark II, 1D X Mark III, 90D, 850D, 250D |
 | **Canon** | CR2 | Limited | In-file shutter count available only for pro `1D / 1Ds` families; consumer bodies expose file number only |
-| **Sony** | ARW | Broad | Encrypted MakerNote tag `0x9050`; confirmed for A1, A1 II, A6100, A6300, A6400, A6600, A6700, A7, A7 II, A7 III, A7 IV, A7C, A7CR, A7R II, A7R III, A7R IV, A7R V, A7S, A7S II, A7S III, A9, A9 II, A9 III, ZV-E1, ZV-E10, RX100 VII |
-| **Fujifilm** | RAF | Broad | MakerNote tag `0x1438` (`ImageCount`); confirmed for X-T1–X-T5, X-T20, X-T30, X-H1, X-H2, X-H2S, X-S20, X-Pro3, X100V, X100VI, GFX 50S II, GFX 100S II, GFX100 II |
+| **Sony** | ARW | Broad | Encrypted MakerNote tag `0x9050`; confirmed for A1, A1 II, A5000, A5100, A6000, A6100, A6300, A6400, A6500, A6600, A6700, A7, A7 II, A7 III, A7 IV, A7C, A7C II, A7CR, A7R, A7R II, A7R III, A7R IV, A7R V, A7S, A7S II, A7S III, A7V, A9, A9 II, A9 III, A77 II, FX3, FX30, ZV-E1, ZV-E10, ZV-E10 II, RX100 VII |
+| **Fujifilm** | RAF | Broad | MakerNote tag `0x1438` (`ImageCount`); confirmed for X-T1–X-T5, X-T10, X-T20, X-T30, X-T30 II, X-T50, X-T200, X-E2–X-E4, X-H1, X-H2, X-H2S, X-S10, X-S20, X-A7, X-M5, X-Pro1–X-Pro3, X100F, X100V, X100VI, GFX 50S, GFX 50S II, GFX 100, GFX100S, GFX 100S II, GFX100 II |
 | **Sigma** | DNG | Partial | EXIF make/model reads correctly; shutter count availability varies by body |
 | **Olympus / OM System** | ORF | None | EXIF parsing works; no reliable in-file shutter-count tag confirmed |
 | **Panasonic** | RW2 | None | EXIF parsing works; shutter count is not stored in RAW files |
@@ -38,7 +38,7 @@ Everything runs client-side in `index.html`. Files are opened with `FileReader` 
 - **Life bar** — visual indicator of shutter usage vs. rated lifespan
 - **50+ languages** — full UI localisation with a language switcher
 - **GDPR cookie banner** — analytics loaded only after consent
-- **Camera subpages** — dedicated SEO pages for 100+ camera models
+- **Camera subpages** — dedicated SEO pages for 210+ camera models
 
 ## Repository layout
 
@@ -81,8 +81,8 @@ Highlights:
 - Canon EOS R5 Mark II shutter count confirmed at CTMD tag `0x000D` offset `0x069C` (uint32), from Zoner_D5
 - Canon R6 Mark III shutter count confirmed via Zoner corpus samples
 - Nikon shutter count confirmed across modern Z-series bodies and a wide DSLR range (D3–D850, Z5–Z9)
-- Sony shutter count confirmed for A1, A1 II, A6100/A6300/A6400/A6600, A6700, A7/II/III/IV, A7C, A7CR, A7R III/IV/V, A7S/II/III, A9/II/III, ZV-E1, ZV-E10, RX100 VII
-- Fujifilm shutter count confirmed for X100F/V/VI, X-H2/H2S, X-S20, X-E4, X-T1–T5, X-T30, GFX 50S II, GFX100 II
+- Sony shutter count confirmed for A1/A1 II, A5000, A5100, A6000, A6100/A6300/A6400/A6500/A6600, A6700, A7/II/III/IV/V, A7C/A7C II/A7CR, A7R/II/III/IV/V, A7S/II/III, A9/II/III, A77 II, FX3, FX30, ZV-E1, ZV-E10/II, RX100 VII
+- Fujifilm shutter count confirmed for X100F/V/VI, X-H1/H2/H2S, X-S10/S20, X-A7, X-M5, X-E2/E3/E4, X-T1–T5, X-T10, X-T20, X-T30/T30 II, X-T50, X-T200, X-Pro1/Pro2/Pro3, GFX 50S/50S II, GFX 100, GFX100S, GFX 100S II, GFX100 II
 - Nikon 1 J1/V1: confirmed via Zoner corpus
 - Olympus / OM System `ORF` did not yield a confirmed reliable in-file shutter counter in the tested release corpus
 
