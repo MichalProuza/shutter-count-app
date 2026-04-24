@@ -1757,4 +1757,35 @@
     <priority>0.8</priority>
     <lastmod>2026-04-22</lastmod>
   </url>
+  <!-- New camera subpages (added 2026-04-23) -->
+  <url>
+    <loc>https://shuttercount.app/canon-750d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/olympus-em10-mark-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/panasonic-lumix-gx9-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pentax-kp-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-a77-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
 </urlset>
