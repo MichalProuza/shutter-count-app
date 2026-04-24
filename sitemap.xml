@@ -6,7 +6,7 @@
     <loc>https://shuttercount.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shuttercount.app/"/>
     <xhtml:link rel="alternate" hreflang="en"        href="https://shuttercount.app/"/>
     <xhtml:link rel="alternate" hreflang="af"        href="https://shuttercount.app/af/"/>
@@ -1695,34 +1695,128 @@
     <priority>0.7</priority>
     <lastmod>2026-04-18</lastmod>
   </url>
+  <!-- Russian SEO pages (added 2026-04-18) -->
   <url>
-    <loc>https://shuttercount.app/fujifilm-x-e1-shutter-count/</loc>
+    <loc>https://shuttercount.app/ru/schetchik-zatvora/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
     <lastmod>2026-04-18</lastmod>
   </url>
   <url>
-    <loc>https://shuttercount.app/sony-a5100-shutter-count/</loc>
+    <loc>https://shuttercount.app/ru/proverit-zatvor/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
     <lastmod>2026-04-18</lastmod>
   </url>
   <url>
-    <loc>https://shuttercount.app/canon-2000d-shutter-count/</loc>
+    <loc>https://shuttercount.app/ru/resurs-zatvora/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
     <lastmod>2026-04-18</lastmod>
   </url>
   <url>
-    <loc>https://shuttercount.app/panasonic-lumix-gh4-shutter-count/</loc>
+    <loc>https://shuttercount.app/ru/srabatyvaniia-zatvora/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
     <lastmod>2026-04-18</lastmod>
   </url>
   <url>
-    <loc>https://shuttercount.app/pentax-k-3-mark-ii-shutter-count/</loc>
+    <loc>https://shuttercount.app/ru/kupit-bu-fotoaparat/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <!-- Polish language subpages (added 2026-04-23) -->
+  <url>
+    <loc>https://shuttercount.app/pl/licznik-migawki/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pl/sprawdz-licznik-migawki/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pl/maksymalna-liczba-migawek/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pl/exif-migawka-darmowo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pl/uzywany-aparat-kupno/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <!-- New camera subpages (added 2026-04-22) -->
+  <url>
+    <loc>https://shuttercount.app/canon-550d-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-600d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-gfx100-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pentax-k-70-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x-a7-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <!-- New camera subpages (added 2026-04-23) -->
+  <url>
+    <loc>https://shuttercount.app/canon-750d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/olympus-em10-mark-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/panasonic-lumix-gx9-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pentax-kp-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-a77-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-23</lastmod>
   </url>
 </urlset>
