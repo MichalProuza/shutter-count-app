@@ -1851,4 +1851,35 @@
     <priority>0.8</priority>
     <lastmod>2026-04-24</lastmod>
   </url>
+  <!-- New camera subpages (added 2026-04-25) -->
+  <url>
+    <loc>https://shuttercount.app/olympus-em5-mark-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/olympus-em1-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-rx100-vii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x-t100-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-650d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
+  </url>
 </urlset>
