@@ -427,6 +427,16 @@ SEO-optimized content pages in Russian targeting Russia and Russian-speaking mar
 - [Ресурс затвора фотоаппарата — сколько срабатываний выдержит камера](https://shuttercount.app/ru/resurs-zatvora/): Узнайте, каков ресурс затвора вашего фотоаппарата Canon, Nikon, Sony или Fujifilm, и как он влияет на стоимость камеры при перепродаже.
 - [Как купить б/у фотоаппарат — проверка затвора перед покупкой](https://shuttercount.app/ru/kupit-bu-fotoaparat/): Руководство по покупке подержанной камеры: как проверить счётчик затвора, на что обратить внимание и как не переплатить. Проверка бесплатно онлайн.
 
+## Arabic SEO Pages (/ar/)
+
+SEO-optimized content pages in Arabic targeting Arabic-speaking markets (Saudi Arabia, UAE, Egypt, and the wider Arab world). All pages are right-to-left (RTL) with full Arabic content.
+
+- [عداد الغالق — ما هو وكيف تتحقق منه](https://shuttercount.app/ar/adad-alghaliq/): Explains what the camera shutter count is, why it matters, and how to check it in seconds with ShutterCount — online and free. Covers shutter lifespan by camera class.
+- [فحص عداد الغالق مجاناً أونلاين](https://shuttercount.app/ar/fahs-alghaliq/): How to check the camera shutter count for free online — without software or account. Works with Canon, Nikon, Sony, Fujifilm. Step-by-step guide with supported formats.
+- [الحد الأقصى لضغطات الغالق](https://shuttercount.app/ar/alsaqf-alghaliq/): Complete table of maximum certified shutter actuations for Canon, Nikon, Sony, and Fujifilm cameras. Helps calculate remaining shutter lifespan.
+- [شراء كاميرا مستعملة — تحقق من عداد الغالق أولاً](https://shuttercount.app/ar/kamera-musta3mala/): Guide to buying a used camera: why checking shutter count is essential, how to evaluate the reading, and what replacement costs to expect for Canon, Nikon, Sony.
+- [قراءة بيانات EXIF مجاناً](https://shuttercount.app/ar/exif-majani/): How EXIF metadata stores the shutter count and how to read it for free online with ShutterCount — no registration, no software, fully local in the browser.
+
 ## Optional
 
 - [llms-full.txt](https://shuttercount.app/llms-full.txt): Extended version with full page descriptions and FAQ content for each camera model page.
