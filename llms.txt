@@ -457,6 +457,16 @@ SEO-optimized content pages in Hindi targeting the Indian market. India has one 
 - [कैमरा शटर की उम्र — ब्रांड के अनुसार पूरी जानकारी](https://shuttercount.app/hi/shutter-umra/): Full shutter lifespan reference tables for Canon, Nikon, Sony, and Fujifilm models in Hindi. Includes shutter failure symptoms and replacement cost guidance. Targets कैमरा शटर उम्र (camera shutter lifespan).
 - [EXIF से शटर काउंट मुफ्त जांचें — ऑनलाइन टूल](https://shuttercount.app/hi/exif-shutter-free/): Explains how EXIF MakerNote metadata stores shutter count per brand, how ShutterCount reads it locally without uploading files, and how to use ExifTool from the command line. Targets EXIF शटर काउंट (EXIF shutter count).
 
+## Indonesian SEO Pages (/id/)
+
+SEO-optimized content pages in Indonesian targeting Indonesia — the world's 4th most populous country (270M+ people) with a rapidly growing photography community and active used-camera markets (OLX, Tokopedia, Shopee, Facebook Marketplace).
+
+- [Shutter Count Kamera — Apa Itu dan Cara Mengeceknya](https://shuttercount.app/id/shutter-count-kamera/): Overview page explaining what shutter count is, why it matters, and how to check it for free in seconds with ShutterCount. Includes shutter lifespan table by camera class (entry-level to professional) and comparison of checking methods. Targets shutter count kamera.
+- [Cara Cek Shutter Count Kamera — Gratis Online](https://shuttercount.app/id/cek-shutter-count/): Step-by-step guide for checking camera shutter count using ShutterCount, with full list of supported brands and file formats (Canon CR3/CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, JPEG). Targets cek shutter count.
+- [Batas Shutter Kamera — Tabel Maksimum Canon, Nikon, Sony, Fujifilm](https://shuttercount.app/id/batas-shutter-kamera/): Reference tables of maximum rated shutter actuations for popular Canon, Nikon, Sony, and Fujifilm camera models, plus a percentage-based condition grading guide. Targets batas shutter kamera.
+- [Umur Shutter Kamera — Berapa Lama Rana Kamera Bertahan?](https://shuttercount.app/id/umur-shutter-kamera/): Explains factors affecting shutter lifespan (camera class, burst mode, environment, electronic shutter), includes shutter failure symptom checklist, and estimated shutter replacement costs in Indonesian Rupiah. Targets umur shutter kamera.
+- [Beli Kamera Bekas — Cek Shutter Count Sebelum Membeli](https://shuttercount.app/id/beli-kamera-bekas/): Buyer's guide for used cameras on Indonesian marketplaces (OLX, Tokopedia, Shopee, Facebook Marketplace). Includes a 5-step verification checklist, A–E condition grading table by shutter usage percentage, and tips for negotiating price. Targets beli kamera bekas.
+
 ## Optional
 
 - [llms-full.txt](https://shuttercount.app/llms-full.txt): Extended version with full page descriptions and FAQ content for each camera model page.
