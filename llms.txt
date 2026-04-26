@@ -376,6 +376,8 @@ SEO-optimized content pages in Finnish targeting Finland search queries.
 - [Suljinlaskuri](https://shuttercount.app/fi/suljinlaskuri/): How to read the camera shutter counter online for free — without software or upload. Works with Canon, Nikon, Sony, Fujifilm.
 - [Tarkista suljinlaskuri](https://shuttercount.app/fi/tarkista-suljinlaskuri/): How to check camera shutter count for free online — without software or account. Works with Canon, Nikon, Sony, Fujifilm.
 - [Suljimen maksimilaukaisut](https://shuttercount.app/fi/suljimen-maksimilaukaisut/): Complete table of maximum certified shutter actuations for Canon, Nikon, Sony, and Fujifilm cameras.
+- [EXIF laukaisut ilmaiseksi](https://shuttercount.app/fi/exif-laukaisut-ilmaiseksi/): How to read EXIF data from photos for free and find the shutter count — no registration, no software, directly in the browser.
+- [Suljimen elinikä](https://shuttercount.app/fi/suljimen-elinika/): How long does a camera shutter last? Explains how many actuations it can handle and how to calculate remaining lifespan.
 
 ## Italian SEO Pages (/it/)
 
