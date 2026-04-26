@@ -77,7 +77,7 @@
   <url><loc>https://shuttercount.app/fi/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/fr/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/he/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
-  <url><loc>https://shuttercount.app/hi/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/hi/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-04-25</lastmod></url>
   <url><loc>https://shuttercount.app/hr/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/hu/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/id/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
@@ -1850,5 +1850,36 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-04-24</lastmod>
+  </url>
+  <!-- Hindi SEO pages (2026-04-25) -->
+  <url>
+    <loc>https://shuttercount.app/hi/shutter-count-kya-hai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/hi/shutter-count-kaise-check-kare/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/hi/second-hand-camera/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/hi/shutter-umra/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/hi/exif-shutter-free/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
   </url>
 </urlset>

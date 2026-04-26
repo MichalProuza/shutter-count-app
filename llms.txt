@@ -437,6 +437,16 @@ SEO-optimized content pages in Arabic targeting Arabic-speaking markets (Saudi A
 - [شراء كاميرا مستعملة — تحقق من عداد الغالق أولاً](https://shuttercount.app/ar/kamera-musta3mala/): Guide to buying a used camera: why checking shutter count is essential, how to evaluate the reading, and what replacement costs to expect for Canon, Nikon, Sony.
 - [قراءة بيانات EXIF مجاناً](https://shuttercount.app/ar/exif-majani/): How EXIF metadata stores the shutter count and how to read it for free online with ShutterCount — no registration, no software, fully local in the browser.
 
+## Hindi SEO Pages (/hi/)
+
+SEO-optimized content pages in Hindi targeting the Indian market. India has one of the world's largest and fastest-growing internet user bases (750M+ users), with a large and active used camera market on platforms like OLX and Facebook Marketplace.
+
+- [शटर काउंट क्या है? — कैमरा शटर काउंट मुफ्त जांचें](https://shuttercount.app/hi/shutter-count-kya-hai/): Overview page explaining what shutter count is, why it matters, and how to check it in Hindi. Includes shutter lifespan table by camera class and comparison of checking methods. Targets शटर काउंट क्या है (what is shutter count).
+- [शटर काउंट कैसे चेक करें — मुफ्त ऑनलाइन तरीका](https://shuttercount.app/hi/shutter-count-kaise-check-kare/): Step-by-step guide in Hindi for checking camera shutter count using ShutterCount, with a comparison table of methods (online tool vs ExifTool vs camera menu) and list of all supported file formats and brands. Targets शटर काउंट कैसे चेक करें (how to check shutter count).
+- [सेकंड हैंड कैमरा खरीदने से पहले शटर काउंट जांचें](https://shuttercount.app/hi/second-hand-camera/): Buyer's guide for used cameras on Indian marketplaces (OLX, Facebook Marketplace). Includes condition grading table (A–D) by shutter usage percentage and a full used-camera buying checklist. Targets सेकंड हैंड कैमरा (second-hand camera).
+- [कैमरा शटर की उम्र — ब्रांड के अनुसार पूरी जानकारी](https://shuttercount.app/hi/shutter-umra/): Full shutter lifespan reference tables for Canon, Nikon, Sony, and Fujifilm models in Hindi. Includes shutter failure symptoms and replacement cost guidance. Targets कैमरा शटर उम्र (camera shutter lifespan).
+- [EXIF से शटर काउंट मुफ्त जांचें — ऑनलाइन टूल](https://shuttercount.app/hi/exif-shutter-free/): Explains how EXIF MakerNote metadata stores shutter count per brand, how ShutterCount reads it locally without uploading files, and how to use ExifTool from the command line. Targets EXIF शटर काउंट (EXIF shutter count).
+
 ## Optional
 
 - [llms-full.txt](https://shuttercount.app/llms-full.txt): Extended version with full page descriptions and FAQ content for each camera model page.
