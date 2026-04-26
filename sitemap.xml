@@ -1886,4 +1886,34 @@
     <priority>0.8</priority>
     <lastmod>2026-04-25</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/canon-m5-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-26</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-m200-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-26</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-r5-c-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-26</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-rx10-iv-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-26</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sigma-fp-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-26</lastmod>
+  </url>
 </urlset>
