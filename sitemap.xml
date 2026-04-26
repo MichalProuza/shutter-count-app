@@ -77,7 +77,7 @@
   <url><loc>https://shuttercount.app/fi/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/fr/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/he/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
-  <url><loc>https://shuttercount.app/hi/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/hi/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-04-25</lastmod></url>
   <url><loc>https://shuttercount.app/hr/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/hu/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/id/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
@@ -1819,34 +1819,71 @@
     <priority>0.8</priority>
     <lastmod>2026-04-23</lastmod>
   </url>
+
+  <!-- Arabic SEO Pages (/ar/) -->
   <url>
-    <loc>https://shuttercount.app/fujifilm-x100s-shutter-count/</loc>
+    <loc>https://shuttercount.app/ar/adad-alghaliq/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-04-24</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/fujifilm-x100t-shutter-count/</loc>
+    <loc>https://shuttercount.app/ar/fahs-alghaliq/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-04-24</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/panasonic-lumix-s1h-shutter-count/</loc>
+    <loc>https://shuttercount.app/ar/alsaqf-alghaliq/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-04-24</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/panasonic-lumix-g90-shutter-count/</loc>
+    <loc>https://shuttercount.app/ar/kamera-musta3mala/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-04-24</lastmod>
   </url>
   <url>
     <loc>https://shuttercount.app/canon-m6-shutter-count/</loc>
+    <loc>https://shuttercount.app/ar/exif-majani/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-04-24</lastmod>
+  </url>
+  <!-- New camera subpages (added 2026-04-25) -->
+  <url>
+    <loc>https://shuttercount.app/olympus-em5-mark-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/olympus-em1-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-rx100-vii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-x-t100-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-650d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-25</lastmod>
   </url>
 </urlset>

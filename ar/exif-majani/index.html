@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>قراءة بيانات EXIF مجاناً — استخرج عداد الغالق أونلاين | ShutterCount</title>
+<meta name="description" content="كيف تقرأ بيانات EXIF من صورك مجاناً وتستخرج عداد الغالق — بدون تسجيل وبدون برامج، مباشرةً في المتصفح مع Canon وNikon وSony وFujifilm.">
+<link rel="canonical" href="https://shuttercount.app/ar/exif-majani/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="قراءة بيانات EXIF مجاناً — استخرج عداد الغالق أونلاين | ShutterCount">
+<meta property="og:description" content="كيف تقرأ بيانات EXIF من صورك مجاناً وتستخرج عداد الغالق — بدون تسجيل وبدون برامج، مباشرةً في المتصفح.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ShutterCount">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:url" content="https://shuttercount.app/ar/exif-majani/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="قراءة بيانات EXIF مجاناً — استخرج عداد الغالق أونلاين | ShutterCount">
+<meta name="twitter:description" content="اقرأ بيانات EXIF مجاناً واستخرج عداد الغالق — بدون تسجيل وبدون برامج.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'Cairo','JetBrains Mono',monospace;--sans:'Cairo','Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px;direction:rtl}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:'Syne',sans-serif;font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center;direction:ltr}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;direction:ltr}
+.breadcrumb{font-size:.75rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px;text-align:right}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;margin-bottom:14px;line-height:1.4}
+.hero p{color:var(--muted);font-size:.88rem;line-height:1.9;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:'Syne',sans-serif;font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s;direction:ltr}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.72rem;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.82rem;color:var(--muted);line-height:1.9;text-align:right}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.exif-list{list-style:none;padding:0;margin-top:10px}
+.exif-list li{padding:7px 0;border-bottom:1px solid rgba(34,34,38,.5);font-size:.78rem;display:flex;justify-content:space-between;flex-direction:row-reverse;gap:12px}
+.exif-list li:last-child{border-bottom:none}
+.exif-list .key{color:var(--muted);flex-shrink:0}
+.exif-list .val{color:var(--text);font-weight:600;text-align:left;direction:ltr}
+.privacy-box{background:rgba(232,255,71,.04);border:1px solid rgba(232,255,71,.15);border-radius:8px;padding:14px 18px;margin-top:14px;font-size:.8rem;line-height:1.8}
+.privacy-box strong{color:var(--accent)}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;justify-content:flex-end}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.75rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.78rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "قراءة بيانات EXIF مجاناً — استخرج عداد الغالق أونلاين",
+      "url": "https://shuttercount.app/ar/exif-majani/",
+      "inLanguage": "ar",
+      "isPartOf": {"@type": "WebSite", "url": "https://shuttercount.app/"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/"},
+          {"@type": "ListItem", "position": 2, "name": "العربية", "item": "https://shuttercount.app/ar/"},
+          {"@type": "ListItem", "position": 3, "name": "بيانات EXIF مجاناً", "item": "https://shuttercount.app/ar/exif-majani/"}
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ما هي بيانات EXIF؟",
+          "acceptedAnswer": {"@type": "Answer", "text": "EXIF هي بيانات وصفية مضمّنة في ملفات الصور الرقمية. تتضمن معلومات مثل موديل الكاميرا، فتحة العدسة، سرعة الغالق، حساسية ISO، والتاريخ. والأهم بالنسبة للمشترين: عداد الغالق."}
+        },
+        {
+          "@type": "Question",
+          "name": "هل بيانات EXIF خاصة؟",
+          "acceptedAnswer": {"@type": "Answer", "text": "ShutterCount يعالج ملفاتك محلياً على جهازك فقط. لا يتم رفع أي ملف إلى الخوادم. بياناتك تبقى على جهازك دائماً."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &lsaquo; <a href="/ar/">العربية</a> &lsaquo; بيانات EXIF مجاناً
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon &middot; Nikon &middot; Sony &middot; Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; لا رفع ملفات &mdash; 100% خاص</span>
+  <h1>قراءة بيانات EXIF مجاناً<br>— واستخرج عداد الغالق</h1>
+  <p>بيانات EXIF مخزّنة في كل صورة رقمية تلتقطها كاميرتك. مع ShutterCount يمكنك <strong>قراءتها مجاناً في ثوانٍ</strong> مباشرةً في المتصفح — بدون تثبيت برامج، وبدون رفع صورك إلى أي خادم.</p>
+  <a class="btn-cta" href="/">اقرأ بيانات EXIF الآن &larr;</a>
+</div>
+
+<div class="section">
+  <h2>ما هي بيانات EXIF؟</h2>
+  <p>EXIF (اختصار لـ Exchangeable Image File Format) هي بيانات وصفية تُخزَّن تلقائياً في كل صورة تلتقطها كاميرتك الرقمية أو هاتفك الذكي. تحتوي على معلومات دقيقة عن كيفية التقاط الصورة.</p>
+
+  <h3>أبرز المعلومات في بيانات EXIF</h3>
+  <ul class="exif-list">
+    <li><span class="key">طراز الكاميرا</span><span class="val">Canon EOS R5</span></li>
+    <li><span class="key">عداد الغالق</span><span class="val">24,831</span></li>
+    <li><span class="key">فتحة العدسة</span><span class="val">f/2.8</span></li>
+    <li><span class="key">سرعة الغالق</span><span class="val">1/500 ثانية</span></li>
+    <li><span class="key">حساسية ISO</span><span class="val">ISO 800</span></li>
+    <li><span class="key">البعد البؤري</span><span class="val">85mm</span></li>
+    <li><span class="key">تاريخ الالتقاط</span><span class="val">2025-03-15 14:32</span></li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>كيف يخزّن الكاميرا عداد الغالق في بيانات EXIF؟</h2>
+  <p>كل مصنّع يخزّن عداد الغالق بطريقة مختلفة داخل بيانات MakerNote الخاصة به — وهي جزء مخفي داخل بيانات EXIF. ShutterCount متخصص في قراءة هذه البيانات من الطرازات المدعومة:</p>
+  <p><strong>Canon:</strong> يُخزَّن العداد في IFD خاص داخل CR2/CR3 — يقرأه ShutterCount مباشرةً.</p>
+  <p><strong>Nikon:</strong> يُخزَّن في MakerNote مشفّر داخل NEF — يفكّ ShutterCount شفرته تلقائياً.</p>
+  <p><strong>Sony:</strong> يُخزَّن في بيانات ARW الخاصة — يستخرجه ShutterCount بدقة.</p>
+  <p><strong>Fujifilm:</strong> يُخزَّن في RAF بهيكل خاص — مدعوم بالكامل.</p>
+</div>
+
+<div class="section">
+  <h2>هل بياناتك خاصة؟</h2>
+  <div class="privacy-box">
+    <strong>نعم، بياناتك آمنة تماماً.</strong> ShutterCount يعالج ملفاتك محلياً على جهازك فقط باستخدام JavaScript في المتصفح. لا يُرفع أي ملف إلى أي خادم. صورك تبقى على جهازك دائماً، ولا يراها أحد غيرك.
+  </div>
+
+  <h3>لماذا هذا مهم؟</h3>
+  <p>صورك قد تحتوي على بيانات موقع جغرافي (GPS) وبيانات شخصية أخرى. مع ShutterCount لا توجد أي مخاوف — المعالجة 100% محلية.</p>
+</div>
+
+<div class="section">
+  <h2>صفحات ذات صلة</h2>
+  <div class="related">
+    <a href="/ar/adad-alghaliq/">عداد الغالق</a>
+    <a href="/ar/fahs-alghaliq/">فحص عداد الغالق</a>
+    <a href="/ar/alsaqf-alghaliq/">الحد الأقصى للغالق</a>
+    <a href="/ar/kamera-musta3mala/">كاميرا مستعملة</a>
+    <a href="/">جميع الكاميرات المدعومة &larr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/ar/" style="color:var(--accent)">&#8592; العودة إلى ShutterCount بالعربية</a></p>
+  <p style="margin-top:12px">للتواصل: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>
