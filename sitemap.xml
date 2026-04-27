@@ -1886,34 +1886,36 @@
     <priority>0.8</priority>
     <lastmod>2026-04-25</lastmod>
   </url>
+
+  <!-- Indonesian SEO pages (added 2026-04-26) -->
   <url>
-    <loc>https://shuttercount.app/canon-m5-shutter-count/</loc>
+    <loc>https://shuttercount.app/id/shutter-count-kamera/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
     <lastmod>2026-04-26</lastmod>
   </url>
   <url>
-    <loc>https://shuttercount.app/canon-m200-shutter-count/</loc>
+    <loc>https://shuttercount.app/id/cek-shutter-count/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
     <lastmod>2026-04-26</lastmod>
   </url>
   <url>
-    <loc>https://shuttercount.app/canon-r5-c-shutter-count/</loc>
+    <loc>https://shuttercount.app/id/batas-shutter-kamera/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
     <lastmod>2026-04-26</lastmod>
   </url>
   <url>
-    <loc>https://shuttercount.app/sony-rx10-iv-shutter-count/</loc>
+    <loc>https://shuttercount.app/id/umur-shutter-kamera/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
     <lastmod>2026-04-26</lastmod>
   </url>
   <url>
-    <loc>https://shuttercount.app/sigma-fp-shutter-count/</loc>
+    <loc>https://shuttercount.app/id/beli-kamera-bekas/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
     <lastmod>2026-04-26</lastmod>
   </url>
 </urlset>
