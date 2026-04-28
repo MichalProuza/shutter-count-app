@@ -1918,4 +1918,35 @@
     <priority>0.7</priority>
     <lastmod>2026-04-26</lastmod>
   </url>
+  <!-- Vietnamese SEO Pages (/vi/) -->
+  <url>
+    <loc>https://shuttercount.app/vi/shutter-count-la-gi/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-27</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/vi/kiem-tra-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-27</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/vi/may-anh-cu/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-27</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/vi/gioi-han-shutter/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-27</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/vi/exif-shutter-mien-phi/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-27</lastmod>
+  </url>
 </urlset>

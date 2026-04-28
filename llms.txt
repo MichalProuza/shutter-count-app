@@ -471,6 +471,16 @@ SEO-optimized content pages in Indonesian targeting Indonesia — the world's 4t
 - [Umur Shutter Kamera — Berapa Lama Rana Kamera Bertahan?](https://shuttercount.app/id/umur-shutter-kamera/): Explains factors affecting shutter lifespan (camera class, burst mode, environment, electronic shutter), includes shutter failure symptom checklist, and estimated shutter replacement costs in Indonesian Rupiah. Targets umur shutter kamera.
 - [Beli Kamera Bekas — Cek Shutter Count Sebelum Membeli](https://shuttercount.app/id/beli-kamera-bekas/): Buyer's guide for used cameras on Indonesian marketplaces (OLX, Tokopedia, Shopee, Facebook Marketplace). Includes a 5-step verification checklist, A–E condition grading table by shutter usage percentage, and tips for negotiating price. Targets beli kamera bekas.
 
+## Vietnamese SEO Pages (/vi/)
+
+SEO-optimized content pages in Vietnamese targeting Vietnam and the Vietnamese diaspora. Vietnam has one of Southeast Asia's most active photography communities, with millions of enthusiasts on Facebook groups, Chợ Tốt and local used-camera markets.
+
+- [Shutter Count Là Gì? — Kiểm Tra Miễn Phí Ngay Trên Trình Duyệt](https://shuttercount.app/vi/shutter-count-la-gi/): Explains what shutter count is, why it matters for used camera purchases, and how to check it for free in the browser. Includes shutter lifespan table by camera class and covers mechanical vs electronic shutter differences. Targets shutter count là gì (what is shutter count).
+- [Cách Kiểm Tra Shutter Count Miễn Phí — Canon, Nikon, Sony, Fujifilm](https://shuttercount.app/vi/kiem-tra-shutter-count/): Step-by-step guide for checking camera shutter count for free using ShutterCount, with comparison table of methods (online tool vs ExifTool vs camera menu) and full list of supported file formats by brand. Targets kiểm tra shutter count (check shutter count).
+- [Mua Máy Ảnh Cũ — Kiểm Tra Shutter Count Trước Khi Mua](https://shuttercount.app/vi/may-anh-cu/): Buyer's guide for used cameras on Vietnamese marketplaces (Chợ Tốt, Facebook Marketplace). Includes A–E condition grading table by shutter usage percentage, full inspection checklist, red-flag warnings, and tips for safe transactions. Targets mua máy ảnh cũ (buy used camera).
+- [Giới Hạn Shutter Count — Tuổi Thọ Màn Trập Canon, Nikon, Sony, Fujifilm](https://shuttercount.app/vi/gioi-han-shutter/): Complete reference tables of maximum rated shutter actuations for popular Canon, Nikon, Sony, and Fujifilm models with examples of remaining lifespan calculation. Targets giới hạn shutter count (shutter count limit).
+- [Đọc Shutter Count Từ EXIF Miễn Phí — Công Cụ Online](https://shuttercount.app/vi/exif-shutter-mien-phi/): Explains how EXIF MakerNote metadata stores shutter count per brand, how ShutterCount reads it locally without uploading files, and how to use ExifTool from the command line as an alternative. Targets EXIF shutter count miễn phí (free EXIF shutter count).
+
 ## Optional
 
 - [llms-full.txt](https://shuttercount.app/llms-full.txt): Extended version with full page descriptions and FAQ content for each camera model page.
