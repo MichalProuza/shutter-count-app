@@ -1949,4 +1949,35 @@
     <priority>0.7</priority>
     <lastmod>2026-04-27</lastmod>
   </url>
+  <!-- New camera model pages – 2026-04-28 -->
+  <url>
+    <loc>https://shuttercount.app/leica-m11-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-28</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/leica-q3-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-28</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ricoh-gr-iii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-28</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ricoh-gr-iiix-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-28</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/om-system-om-5-mark-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-28</lastmod>
+  </url>
 </urlset>
