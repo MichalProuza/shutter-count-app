@@ -492,6 +492,16 @@ SEO-optimized content pages in Vietnamese targeting Vietnam and the Vietnamese d
 - [Giới Hạn Shutter Count — Tuổi Thọ Màn Trập Canon, Nikon, Sony, Fujifilm](https://shuttercount.app/vi/gioi-han-shutter/): Complete reference tables of maximum rated shutter actuations for popular Canon, Nikon, Sony, and Fujifilm models with examples of remaining lifespan calculation. Targets giới hạn shutter count (shutter count limit).
 - [Đọc Shutter Count Từ EXIF Miễn Phí — Công Cụ Online](https://shuttercount.app/vi/exif-shutter-mien-phi/): Explains how EXIF MakerNote metadata stores shutter count per brand, how ShutterCount reads it locally without uploading files, and how to use ExifTool from the command line as an alternative. Targets EXIF shutter count miễn phí (free EXIF shutter count).
 
+## Burmese SEO Pages (/my/)
+
+SEO-optimized content pages in Burmese (Myanmar language) targeting Myanmar — a country of 54 million internet users with a growing photography community in Yangon, Mandalay and beyond. Canon, Nikon and Sony cameras are popular in Myanmar, and used-camera markets are active on Facebook Marketplace and local shops.
+
+- [ကင်မရာ ရှတ်တာကောင့် ဆိုတာ ဘာလဲ — အခမဲ့ စစ်ဆေးနည်း](https://shuttercount.app/my/shutter-kaung/): Overview page explaining what shutter count is, why it matters for used-camera evaluation, and how to check it for free with ShutterCount. Includes shutter lifespan table by camera class (entry-level to professional) and comparison of checking methods. Targets ရှတ်တာကောင့် (shutter count).
+- [ကင်မရာ ရှတ်တာကောင့် စစ်ဆေးနည်း — အခမဲ့ အွန်လိုင်း](https://shuttercount.app/my/shutter-kaung-sisay/): Step-by-step guide for checking camera shutter count using ShutterCount, with full table of supported brands and file formats (Canon CR3/CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, JPEG) and comparison of methods (online tool vs ExifTool vs camera menu). Targets ရှတ်တာကောင့် စစ်ဆေးနည်း (how to check shutter count).
+- [ကင်မရာ ရှတ်တာ အများဆုံး ကောင့် — Canon, Nikon, Sony, Fujifilm ဇယား](https://shuttercount.app/my/shutter-amarzone/): Reference tables of maximum rated shutter actuations for popular Canon, Nikon and Sony camera models, with guidance on how to interpret remaining lifespan as a percentage of the manufacturer rating. Targets ရှတ်တာ အများဆုံး ကောင့် (maximum shutter count).
+- [ကင်မရာ ရှတ်တာ သက်တမ်း — မည်မျှ ကြာနိုင်သလဲ](https://shuttercount.app/my/shutter-thetame/): Explains factors affecting shutter lifespan (camera class, burst mode, electronic shutter, environment), includes shutter failure symptom checklist, and provides estimated replacement cost guidance. Targets ကင်မရာ ရှတ်တာ သက်တမ်း (camera shutter lifespan).
+- [အသုံးပြုပြီး ကင်မရာ ဝယ်ယူနည်း — ရှတ်တာကောင့် အရင်စစ်ဆေးပါ](https://shuttercount.app/my/thonepyupi-kaymara/): Buyer's guide for second-hand cameras in Myanmar (Facebook Marketplace, local camera shops). Includes A–E condition grading table by shutter count percentage, 5-step inspection checklist, and tips for negotiating price. Targets အသုံးပြုပြီး ကင်မရာ (used/second-hand camera).
+
 ## Optional
 
 - [llms-full.txt](https://shuttercount.app/llms-full.txt): Extended version with full page descriptions and FAQ content for each camera model page.

@@ -56,6 +56,7 @@
     <xhtml:link rel="alternate" hreflang="tr"        href="https://shuttercount.app/tr/"/>
     <xhtml:link rel="alternate" hreflang="uk"        href="https://shuttercount.app/uk/"/>
     <xhtml:link rel="alternate" hreflang="ur"        href="https://shuttercount.app/ur/"/>
+    <xhtml:link rel="alternate" hreflang="my"        href="https://shuttercount.app/my/"/>
     <xhtml:link rel="alternate" hreflang="vi"        href="https://shuttercount.app/vi/"/>
     <xhtml:link rel="alternate" hreflang="zh"        href="https://shuttercount.app/zh/"/>
   </url>
@@ -108,6 +109,7 @@
   <url><loc>https://shuttercount.app/tr/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/uk/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/ur/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/my/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-29</lastmod></url>
   <url><loc>https://shuttercount.app/vi/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/zh/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
   <!-- FAQ pages -->
@@ -1948,5 +1950,36 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2026-04-27</lastmod>
+  </url>
+  <!-- Burmese SEO pages (/my/) -->
+  <url>
+    <loc>https://shuttercount.app/my/shutter-kaung/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/my/shutter-kaung-sisay/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/my/shutter-amarzone/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/my/shutter-thetame/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/my/thonepyupi-kaymara/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-29</lastmod>
   </url>
 </urlset>
