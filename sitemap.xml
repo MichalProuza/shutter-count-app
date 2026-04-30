@@ -2012,4 +2012,35 @@
     <priority>0.8</priority>
     <lastmod>2026-04-28</lastmod>
   </url>
+  <!-- Ukrainian SEO pages (added 2026-04-29) -->
+  <url>
+    <loc>https://shuttercount.app/uk/lichylnyk-zatvora/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/uk/perevirty-lichylnyk/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/uk/resurs-zatvora/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/uk/maksymalna-kilkist-spratsyuvan/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-29</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/uk/kupy-vzhyvanyy-fotoaparat/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-29</lastmod>
+  </url>
 </urlset>

@@ -460,6 +460,16 @@ SEO-optimized content pages in Russian targeting Russia and Russian-speaking mar
 - [Ресурс затвора фотоаппарата — сколько срабатываний выдержит камера](https://shuttercount.app/ru/resurs-zatvora/): Узнайте, каков ресурс затвора вашего фотоаппарата Canon, Nikon, Sony или Fujifilm, и как он влияет на стоимость камеры при перепродаже.
 - [Как купить б/у фотоаппарат — проверка затвора перед покупкой](https://shuttercount.app/ru/kupit-bu-fotoaparat/): Руководство по покупке подержанной камеры: как проверить счётчик затвора, на что обратить внимание и как не переплатить. Проверка бесплатно онлайн.
 
+## Ukrainian SEO Pages (/uk/)
+
+SEO-optimized content pages in Ukrainian targeting Ukraine and the Ukrainian-speaking diaspora. Ukraine has an active photography community with a strong used-camera market (OLX, Facebook Marketplace, Rozetka). Key search terms: лічильник затвора, перевірити лічильник затвора, ресурс затвора, максимальна кількість спрацювань, купити вживаний фотоапарат.
+
+- [Лічильник затвора фотоапарата — що це і як перевірити](https://shuttercount.app/uk/lichylnyk-zatvora/): Лічильник затвора показує, скільки разів спрацював затвор вашої камери. Дізнайтесь лічильник безкоштовно онлайн — без завантаження файлів на сервер, без встановлення програм. Targets лічильник затвора (shutter count).
+- [Як перевірити лічильник затвора фотоапарата онлайн — безкоштовно](https://shuttercount.app/uk/perevirty-lichylnyk/): Покрокова інструкція з перевірки лічильника затвора для Canon, Nikon, Sony, Fujifilm — безкоштовно й повністю локально, без встановлення програм. Targets перевірити лічильник затвора (check shutter count).
+- [Ресурс затвора фотоапарата — скільки спрацювань витримає камера](https://shuttercount.app/uk/resurs-zatvora/): Таблиця ресурсу затвора за класами камер, вплив на вартість при перепродажі, різниця між механічним і електронним затвором. Targets ресурс затвора (shutter lifespan).
+- [Максимальна кількість спрацювань затвора — таблиця Canon, Nikon, Sony, Fujifilm](https://shuttercount.app/uk/maksymalna-kilkist-spratsyuvan/): Детальні таблиці максимальних спрацювань затвора для популярних моделей Canon, Nikon, Sony і Fujifilm, з формулою розрахунку відсотка використаного ресурсу. Targets максимальна кількість спрацювань затвора (maximum shutter actuations).
+- [Купити вживаний фотоапарат — перевірка затвора перед покупкою](https://shuttercount.app/uk/kupy-vzhyvanyy-fotoaparat/): Посібник з купівлі вживаної камери в Україні (OLX, Facebook Marketplace, Rozetka). Покрокова перевірка лічильника затвора, таблиця оцінки стану A–E, чекліст огляду. Targets купити вживаний фотоапарат (buy used camera).
+
 ## Arabic SEO Pages (/ar/)
 
 SEO-optimized content pages in Arabic targeting Arabic-speaking markets (Saudi Arabia, UAE, Egypt, and the wider Arab world). All pages are right-to-left (RTL) with full Arabic content.
