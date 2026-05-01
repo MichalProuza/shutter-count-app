@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>เช็ค Shutter Count จาก EXIF ฟรี — ไม่ต้องส่งไฟล์ | ShutterCount</title>
+<meta name="description" content="อ่าน Shutter Count จากข้อมูล EXIF ของไฟล์ JPEG หรือ RAW ฟรีออนไลน์ ไม่ต้องส่งไฟล์ไปยังเซิร์ฟเวอร์ ความเป็นส่วนตัว 100% รองรับ Canon, Nikon, Sony, Fujifilm">
+<meta name="keywords" content="shutter count ฟรี, exif shutter count ฟรี, ดู exif กล้องฟรี, เช็คชัตเตอร์ฟรี, shutter count ออนไลน์ฟรี">
+<link rel="canonical" href="https://shuttercount.app/th/exif-shutter-free/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="เช็ค Shutter Count จาก EXIF ฟรี — ไม่ต้องส่งไฟล์ | ShutterCount">
+<meta property="og:description" content="อ่าน Shutter Count จากข้อมูล EXIF ของไฟล์ JPEG หรือ RAW ฟรีออนไลน์ ไม่ต้องส่งไฟล์ไปยังเซิร์ฟเวอร์ ความเป็นส่วนตัว 100%">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ShutterCount">
+<meta property="og:locale" content="th_TH">
+<meta property="og:url" content="https://shuttercount.app/th/exif-shutter-free/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="เช็ค Shutter Count จาก EXIF ฟรี — ไม่ต้องส่งไฟล์ | ShutterCount">
+<meta name="twitter:description" content="อ่าน Shutter Count จากข้อมูล EXIF ของไฟล์ JPEG หรือ RAW ฟรีออนไลน์ ความเป็นส่วนตัว 100%">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "เช็ค Shutter Count จาก EXIF ฟรี — ไม่ต้องส่งไฟล์",
+      "url": "https://shuttercount.app/th/exif-shutter-free/",
+      "inLanguage": "th",
+      "isPartOf": {"@type": "WebSite", "url": "https://shuttercount.app/"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/"},
+          {"@type": "ListItem", "position": 2, "name": "ภาษาไทย", "item": "https://shuttercount.app/th/"},
+          {"@type": "ListItem", "position": 3, "name": "เช็ค EXIF Shutter Count ฟรี", "item": "https://shuttercount.app/th/exif-shutter-free/"}
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Shutter Count อยู่ในข้อมูล EXIF หรือเปล่า?",
+          "acceptedAnswer": {"@type": "Answer", "text": "ใช่ Shutter Count หรือจำนวนชัตเตอร์จะถูกบันทึกอยู่ในส่วน MakerNote ของข้อมูล EXIF ในทุกไฟล์ภาพ JPEG และ RAW ที่กล้องถ่าย ShutterCount อ่านข้อมูลนี้ได้โดยตรงในเบราว์เซอร์"}
+        },
+        {
+          "@type": "Question",
+          "name": "ไฟล์ภาพจะถูกส่งขึ้นอินเทอร์เน็ตหรือไม่?",
+          "acceptedAnswer": {"@type": "Answer", "text": "ไม่เลย ShutterCount ประมวลผลไฟล์ภาพทั้งหมดในเบราว์เซอร์ของคุณ ไม่มีการส่งข้อมูลขึ้นเซิร์ฟเวอร์ใดๆ ทำให้ปลอดภัยและรักษาความเป็นส่วนตัวของคุณ 100%"}
+        },
+        {
+          "@type": "Question",
+          "name": "รองรับไฟล์รูปแบบใดบ้าง?",
+          "acceptedAnswer": {"@type": "Answer", "text": "ShutterCount รองรับ JPEG, CR3, CR2 (Canon), NEF (Nikon), ARW (Sony), RAF (Fujifilm), ORF (Olympus), RW2 (Panasonic) และรูปแบบ RAW อื่นๆ อีกมากมาย"}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; <a href="/th/">ภาษาไทย</a> &rsaquo; เช็ค EXIF Shutter Count ฟรี
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon &middot; Nikon &middot; Sony &middot; Fujifilm &middot; Olympus</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; ไม่ส่งไฟล์ &mdash; ความเป็นส่วนตัว 100%</span>
+  <h1>เช็ค Shutter Count จาก EXIF ฟรี<br>&mdash; ไม่ต้องส่งไฟล์</h1>
+  <p>ShutterCount อ่าน Shutter Count จากข้อมูล EXIF ของไฟล์ JPEG หรือ RAW โดยตรงในเบราว์เซอร์ของคุณ &mdash; ฟรี ออนไลน์ ไม่ต้องดาวน์โหลดโปรแกรม และไม่มีการส่งไฟล์ขึ้นเซิร์ฟเวอร์</p>
+  <a class="btn-cta" href="/">เช็ค EXIF Shutter Count ฟรีเลย &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>ข้อมูล EXIF และ Shutter Count คืออะไร?</h2>
+  <p>ทุกภาพที่กล้องถ่ายจะมีข้อมูล <strong>EXIF (Exchangeable Image File Format)</strong> แฝงอยู่ในไฟล์ ข้อมูลเหล่านี้รวมถึง วันที่ถ่าย, ค่า ISO, ความเร็วชัตเตอร์, รูรับแสง และที่สำคัญคือ <strong>จำนวนชัตเตอร์ (Shutter Count)</strong></p>
+  <p>Shutter Count ถูกเก็บอยู่ในส่วนพิเศษของ EXIF ที่เรียกว่า <em>MakerNote</em> ซึ่งแตกต่างกันตามแบรนด์กล้อง ShutterCount รองรับการอ่านข้อมูลนี้จากกล้องหลักทุกแบรนด์</p>
+</div>
+
+<div class="section">
+  <h2>วิธีเช็ค Shutter Count จาก EXIF ด้วย ShutterCount</h2>
+  <ol class="steps">
+    <li>
+      <div><strong>ถ่ายภาพใหม่</strong> &mdash; ถ่ายรูปใดก็ได้ด้วยกล้องที่ต้องการตรวจสอบ</div>
+    </li>
+    <li>
+      <div><strong>เปิด shuttercount.app</strong> &mdash; ไม่ต้องสมัครสมาชิกหรือ login ใดๆ</div>
+    </li>
+    <li>
+      <div><strong>ลากไฟล์หรือคลิกเลือกไฟล์</strong> &mdash; รองรับ JPEG, CR3, NEF, ARW, RAF และอื่นๆ</div>
+    </li>
+    <li>
+      <div><strong>ดู Shutter Count ทันที</strong> &mdash; ผลลัพธ์แสดงในไม่กี่วินาทีจากข้อมูล EXIF</div>
+    </li>
+  </ol>
+  <div class="highlight-box">
+    <strong>ความปลอดภัย:</strong> ไฟล์ภาพของคุณประมวลผลในเบราว์เซอร์ทั้งหมด ไม่มีข้อมูลใดถูกส่งออกไปยังเซิร์ฟเวอร์
+  </div>
+</div>
+
+<div class="section">
+  <h2>ไฟล์รูปแบบใดบ้างที่รองรับ?</h2>
+  <ul>
+    <li><strong>JPEG</strong> &mdash; รองรับทุกกล้อง</li>
+    <li><strong>CR3, CR2</strong> &mdash; Canon RAW</li>
+    <li><strong>NEF</strong> &mdash; Nikon RAW</li>
+    <li><strong>ARW</strong> &mdash; Sony RAW</li>
+    <li><strong>RAF</strong> &mdash; Fujifilm RAW</li>
+    <li><strong>ORF</strong> &mdash; Olympus / OM System RAW</li>
+    <li><strong>RW2</strong> &mdash; Panasonic RAW</li>
+    <li><strong>DNG</strong> &mdash; Adobe Digital Negative</li>
+  </ul>
+  <p>ดูรายการกล้องที่รองรับทั้งหมดได้ที่หน้า <a href="/supported-cameras/">Supported Cameras</a></p>
+</div>
+
+<div class="section">
+  <h2>ทำไม ShutterCount ถึงปลอดภัยกว่าเครื่องมืออื่น?</h2>
+  <ul>
+    <li><strong>ไม่ส่งไฟล์ขึ้นเซิร์ฟเวอร์</strong> &mdash; ประมวลผลในเบราว์เซอร์ของคุณเท่านั้น</li>
+    <li><strong>ไม่ต้องสมัครสมาชิก</strong> &mdash; ใช้งานได้ทันที ไม่ต้องให้ email</li>
+    <li><strong>ฟรีทั้งหมด</strong> &mdash; ไม่มีค่าธรรมเนียมซ่อนเร้น</li>
+    <li><strong>ทำงานบนทุกอุปกรณ์</strong> &mdash; PC, Mac, มือถือ, แท็บเล็ต</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>หน้าที่เกี่ยวข้อง</h2>
+  <div class="related">
+    <a href="/th/shutter-count/">Shutter Count คืออะไร</a>
+    <a href="/th/truat-shutter-count/">วิธีตรวจสอบ Shutter Count</a>
+    <a href="/th/klong-meu-song/">กล้องมือสอง &amp; Shutter Count</a>
+    <a href="/th/shutter-count-sungsut/">จำนวนชัตเตอร์สูงสุด</a>
+    <a href="/">กล้องที่รองรับทั้งหมด &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/th/" style="color:var(--accent)">&#8592; กลับสู่ ShutterCount ภาษาไทย</a></p>
+  <p style="margin-top:12px">ติดต่อ: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>
