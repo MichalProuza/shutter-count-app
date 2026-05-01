@@ -2132,4 +2132,34 @@
     <priority>0.7</priority>
     <lastmod>2026-04-30</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/panasonic-lumix-s5-iix-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/leica-m10-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/leica-m10-r-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-rx10-iii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-m3-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
 </urlset>
