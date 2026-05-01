@@ -2040,6 +2040,36 @@
     <loc>https://shuttercount.app/fujifilm-x-a5-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  <url>
+    <loc>https://shuttercount.app/canon-100d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-30</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/canon-1200d-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-30</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-a99-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-30</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/panasonic-lumix-gx85-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-30</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/olympus-em5-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-30</lastmod>
+  </url>
   <!-- Ukrainian SEO pages (added 2026-04-29) -->
   <url>
     <loc>https://shuttercount.app/uk/lichylnyk-zatvora/</loc>
