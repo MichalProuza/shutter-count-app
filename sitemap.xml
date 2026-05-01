@@ -2132,4 +2132,34 @@
     <priority>0.7</priority>
     <lastmod>2026-04-30</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/ro/contor-declansari/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ro/verificare-declansari/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ro/declansari-maxime/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ro/exif-declansari-gratuit/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ro/durata-viata-obturator/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
 </urlset>
