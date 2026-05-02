@@ -2132,4 +2132,34 @@
     <priority>0.7</priority>
     <lastmod>2026-04-30</lastmod>
   </url>
+  <url>
+    <loc>https://shuttercount.app/fujifilm-gfx-100rf-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/om-system-om-3-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/olympus-em1x-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/panasonic-lumix-s1-ii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/sony-fx6-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
 </urlset>
