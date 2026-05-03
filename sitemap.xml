@@ -2167,4 +2167,41 @@
     <priority>0.8</priority>
     <lastmod>2026-05-01</lastmod>
   </url>
+  <!-- Punjabi SEO pages (added 2026-05-02) -->
+  <url>
+    <loc>https://shuttercount.app/pa/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pa/shutter-count-ki-hai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pa/shutter-count-kiven-check-kare/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pa/purana-camera-khareedna/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pa/shutter-di-umar/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pa/exif-shutter-muft/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
 </urlset>
