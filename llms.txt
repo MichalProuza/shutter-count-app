@@ -284,6 +284,7 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 
 ## Sigma Camera Shutter Count Pages
 
+- [Sigma fp Shutter Count](https://shuttercount.app/sigma-fp-shutter-count/): Shutter count guide for the Sigma fp (2019) — the world's smallest and lightest full-frame mirrorless camera at launch. The fp has NO mechanical shutter — electronic shutter only. No traditional shutter count or rated lifespan applies. DNG files include an exposure counter (total electronic exposures) that ShutterCount can read, but this has no mechanical wear implications. Covers what to check instead when buying a used fp and how it compares to the fp L.
 - [Sigma fp L Shutter Count](https://shuttercount.app/sigma-fp-l-shutter-count/): Shutter count guide for the Sigma fp L (2021) — Sigma's 61 MP full-frame L-mount mirrorless using the same sensor as the Sony A7R IV. The fp L has NO mechanical shutter — electronic shutter only. No traditional shutter count or rated lifespan applies. DNG files include an exposure counter (total electronic exposures) that ShutterCount can read, but this has no mechanical wear implications. Covers what to check instead when buying a used fp L, fp vs fp L differences, and L-mount ecosystem compatibility.
 
 ## Ricoh Camera Shutter Count Pages
