@@ -2160,6 +2160,75 @@
     <loc>https://shuttercount.app/sony-fx6-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <loc>https://shuttercount.app/ro/contor-declansari/</loc>
+    <loc>https://shuttercount.app/panasonic-lumix-s5-iix-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ro/verificare-declansari/</loc>
+    <loc>https://shuttercount.app/leica-m10-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ro/declansari-maxime/</loc>
+    <loc>https://shuttercount.app/leica-m10-r-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ro/exif-declansari-gratuit/</loc>
+    <loc>https://shuttercount.app/sony-rx10-iii-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ro/durata-viata-obturator/</loc>
+    <loc>https://shuttercount.app/canon-m3-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  <!-- Punjabi SEO pages (added 2026-05-02) -->
+  <url>
+    <loc>https://shuttercount.app/pa/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pa/shutter-count-ki-hai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pa/shutter-count-kiven-check-kare/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pa/purana-camera-khareedna/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pa/shutter-di-umar/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/pa/exif-shutter-muft/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
     <lastmod>2026-05-02</lastmod>
   </url>
 </urlset>
