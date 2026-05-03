@@ -96,7 +96,6 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [Nikon D5 Shutter Count](https://shuttercount.app/nikon-d5-shutter-count/): Shutter count guide for the Nikon D5 professional DSLR. Rated lifespan: 400,000 actuations.
 - [Nikon D4S Shutter Count](https://shuttercount.app/nikon-d4s-shutter-count/): Shutter count guide for the Nikon D4S. Rated lifespan: 400,000 actuations.
 - [Nikon D4 Shutter Count](https://shuttercount.app/nikon-d4-shutter-count/): Shutter count guide for the Nikon D4 professional DSLR. Rated lifespan: 400,000 actuations.
-- [Nikon D3S Shutter Count](https://shuttercount.app/nikon-d3s-shutter-count/): Shutter count guide for the Nikon D3S. Rated lifespan: 300,000 actuations.
 - [Nikon D3X Shutter Count](https://shuttercount.app/nikon-d3x-shutter-count/): Shutter count guide for the Nikon D3X. Reads MakerNote tag 0x00A7.
 - [Nikon D3 Shutter Count](https://shuttercount.app/nikon-d3-shutter-count/): Shutter count guide for the Nikon D3 flagship DSLR. Rated lifespan: 300,000 actuations.
 - [Nikon D2X Shutter Count](https://shuttercount.app/nikon-d2x-shutter-count/): Shutter count guide for the Nikon D2X / D2Xs. Rated lifespan: 150,000 actuations.
@@ -284,6 +283,7 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 
 ## Sigma Camera Shutter Count Pages
 
+- [Sigma fp Shutter Count](https://shuttercount.app/sigma-fp-shutter-count/): Shutter count guide for the Sigma fp (2019) — Sigma's world's smallest/lightest full-frame mirrorless, 24.6 MP L-mount, electronic shutter only, DNG format. Like the fp L, it has NO mechanical shutter — no rated shutter life applies. DNG files include an exposure counter that ShutterCount can read, but this reflects total electronic exposures only. Covers what to evaluate when buying used (sensor condition, USB-C port, battery contacts) and comparison with the fp L.
 - [Sigma fp L Shutter Count](https://shuttercount.app/sigma-fp-l-shutter-count/): Shutter count guide for the Sigma fp L (2021) — Sigma's 61 MP full-frame L-mount mirrorless using the same sensor as the Sony A7R IV. The fp L has NO mechanical shutter — electronic shutter only. No traditional shutter count or rated lifespan applies. DNG files include an exposure counter (total electronic exposures) that ShutterCount can read, but this has no mechanical wear implications. Covers what to check instead when buying a used fp L, fp vs fp L differences, and L-mount ecosystem compatibility.
 
 ## Ricoh Camera Shutter Count Pages

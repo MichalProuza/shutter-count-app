@@ -1981,6 +1981,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2026-04-29</lastmod>
+  </url>
   <!-- New camera model pages – 2026-04-28 -->
   <url>
     <loc>https://shuttercount.app/leica-m11-shutter-count/</loc>
@@ -2040,6 +2041,8 @@
     <loc>https://shuttercount.app/fujifilm-x-a5-shutter-count/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-04-30</lastmod>
+  </url>
   <url>
     <loc>https://shuttercount.app/canon-100d-shutter-count/</loc>
     <changefreq>monthly</changefreq>
@@ -2162,4 +2165,54 @@
     <priority>0.8</priority>
     <lastmod>2026-05-01</lastmod>
   </url>
+  <!-- Camera model pages added 2026-05-03 -->
+  <url><loc>https://shuttercount.app/canon-2000d-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/canon-40d-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/canon-700d-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/canon-m200-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/canon-m5-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/canon-r5-c-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/fujifilm-gfx100s-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/fujifilm-gfx50r-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/fujifilm-gfx50s-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/fujifilm-x-e1-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/fujifilm-x-m5-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/fujifilm-x-t10-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/fujifilm-x-t30-ii-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/fujifilm-x100s-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/leica-q2-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/leica-sl2-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/nikon-d3600-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/olympus-em10-mark-iii-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/panasonic-lumix-g100-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/panasonic-lumix-g7-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/panasonic-lumix-g9-ii-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/panasonic-lumix-gh4-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/panasonic-lumix-s1-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/panasonic-lumix-s1r-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/panasonic-lumix-s5-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/pentax-k-3-mark-ii-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/sigma-fp-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/sigma-fp-l-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/sony-a5000-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/sony-a5100-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/sony-rx10-iv-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-03</lastmod></url>
+  <!-- Hindi SEO pages (added 2026-05-03) -->
+  <url><loc>https://shuttercount.app/hi/shutter-count-kya-hai/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/hi/shutter-count-kaise-check-kare/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/hi/second-hand-camera/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/hi/shutter-umra/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/hi/exif-shutter-free/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <!-- Dutch SEO pages (added 2026-05-03) -->
+  <url><loc>https://shuttercount.app/nl/sluiterteller/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/nl/sluiterstand-controleren/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/nl/maximale-sluiteringen/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/nl/exif-sluiterstand-gratis/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/nl/tweedehands-camera-kopen/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <!-- Turkish SEO pages (added 2026-05-03) -->
+  <url><loc>https://shuttercount.app/tr/obturator-sayisi/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/tr/obturator-sayisi-sorgulama/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/tr/maksimum-obturator-sayisi/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/tr/obturator-omru/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/tr/ikinci-el-fotograf-makinesi/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
 </urlset>
