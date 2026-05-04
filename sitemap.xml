@@ -2284,35 +2284,10 @@
     <priority>0.7</priority>
     <lastmod>2026-05-02</lastmod>
   </url>
-  <!-- New camera subpages (added 2026-05-03) -->
-  <url>
-    <loc>https://shuttercount.app/canon-m100-shutter-count/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-05-03</lastmod>
-  </url>
-  <url>
-    <loc>https://shuttercount.app/canon-m10-shutter-count/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-05-03</lastmod>
-  </url>
-  <url>
-    <loc>https://shuttercount.app/fujifilm-x-a3-shutter-count/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-05-03</lastmod>
-  </url>
-  <url>
-    <loc>https://shuttercount.app/panasonic-lumix-gh3-shutter-count/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-05-03</lastmod>
-  </url>
-  <url>
-    <loc>https://shuttercount.app/olympus-pen-f-shutter-count/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-05-03</lastmod>
-  </url>
+  <!-- Greek SEO pages (added 2026-05-03) -->
+  <url><loc>https://shuttercount.app/el/metritis-klistrou/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/el/elegchos-klistrou/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/el/maximes-lipseis/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/el/diarkeia-zois-klistrou/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
+  <url><loc>https://shuttercount.app/el/exif-klistrou-dorean/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-03</lastmod></url>
 </urlset>
