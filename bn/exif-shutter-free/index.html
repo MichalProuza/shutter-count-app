@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>EXIF থেকে শাটার কাউন্ট বিনামূল্যে চেক করুন — অনলাইন টুল | ShutterCount</title>
+<meta name="description" content="EXIF ডেটা থেকে শাটার কাউন্ট কীভাবে পড়া যায় তা জানুন। ShutterCount ফাইল আপলোড না করেই সরাসরি ব্রাউজারে RAW ও JPEG ফাইল বিশ্লেষণ করে।">
+<meta name="keywords" content="EXIF শাটার কাউন্ট, EXIF থেকে শাটার কাউন্ট, EXIF ডেটা ক্যামেরা, শাটার কাউন্ট বিনামূল্যে, exif shutter count free bangla">
+<link rel="canonical" href="https://shuttercount.app/bn/exif-shutter-free/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="EXIF থেকে শাটার কাউন্ট বিনামূল্যে চেক করুন — অনলাইন টুল | ShutterCount">
+<meta property="og:description" content="EXIF ডেটা থেকে শাটার কাউন্ট পড়ুন। ফাইল আপলোড হয় না — সম্পূর্ণ গোপনীয়তা নিশ্চিত।">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ShutterCount">
+<meta property="og:locale" content="bn_BD">
+<meta property="og:url" content="https://shuttercount.app/bn/exif-shutter-free/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EXIF থেকে শাটার কাউন্ট বিনামূল্যে চেক করুন | ShutterCount">
+<meta name="twitter:description" content="EXIF ডেটা থেকে শাটার কাউন্ট পড়ুন। ফাইল আপলোড হয় না।">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.format-table{width:100%;border-collapse:collapse;margin-top:12px}
+.format-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.format-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.format-table tr:last-child td{border-bottom:none}
+.format-table .val{color:var(--text);font-weight:600}
+.code-block{background:rgba(34,34,38,.8);border:1px solid var(--border);border-radius:8px;padding:14px 16px;font-family:var(--mono);font-size:.72rem;color:var(--accent);margin:12px 0;overflow-x:auto;white-space:pre}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,71,71,.06);border:1px solid rgba(255,71,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ff8080}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "EXIF থেকে শাটার কাউন্ট বিনামূল্যে চেক করুন — অনলাইন টুল",
+      "url": "https://shuttercount.app/bn/exif-shutter-free/",
+      "inLanguage": "bn",
+      "isPartOf": {"@type": "WebSite", "url": "https://shuttercount.app/"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/"},
+          {"@type": "ListItem", "position": 2, "name": "বাংলা", "item": "https://shuttercount.app/bn/"},
+          {"@type": "ListItem", "position": 3, "name": "EXIF শাটার কাউন্ট বিনামূল্যে", "item": "https://shuttercount.app/bn/exif-shutter-free/"}
+        ]
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; <a href="/bn/">বাংলা</a> &rsaquo; EXIF শাটার কাউন্ট বিনামূল্যে
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon &middot; Nikon &middot; Sony &middot; Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; কোনো আপলোড নেই &mdash; ১০০% লোকাল</span>
+  <h1>EXIF থেকে শাটার কাউন্ট<br>&mdash; বিনামূল্যে অনলাইন টুল</h1>
+  <p>ক্যামেরার শাটার কাউন্ট ছবির EXIF ডেটায় লুকানো থাকে। ShutterCount এই তথ্য সরাসরি ব্রাউজারে পড়ে — আপনার ফাইল কখনো সার্ভারে পাঠানো হয় না।</p>
+  <a class="btn-cta" href="/">EXIF শাটার কাউন্ট চেক করুন &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>EXIF ডেটায় শাটার কাউন্ট কোথায় থাকে?</h2>
+  <p>প্রতিটি ডিজিটাল ক্যামেরা তোলা ছবিতে EXIF (Exchangeable Image File Format) মেটাডেটা সংযুক্ত করে। শাটার কাউন্ট এই মেটাডেটার "MakerNote" অংশে থাকে — যা প্রতিটি নির্মাতার নিজস্ব ফরম্যাটে সংরক্ষিত।</p>
+
+  <table class="format-table">
+    <thead>
+      <tr><th>ব্র্যান্ড</th><th>RAW ফরম্যাট</th><th>EXIF ট্যাগ</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Canon</strong></td><td class="val">CR3, CR2</td><td>MakerNote → ShutterCount</td></tr>
+      <tr><td><strong>Nikon</strong></td><td class="val">NEF</td><td>MakerNote → ShutterCount</td></tr>
+      <tr><td><strong>Sony</strong></td><td class="val">ARW</td><td>MakerNote → ImageCount</td></tr>
+      <tr><td><strong>Fujifilm</strong></td><td class="val">RAF</td><td>MakerNote → SequenceNumber</td></tr>
+      <tr><td><strong>Olympus</strong></td><td class="val">ORF</td><td>MakerNote → CameraSettings</td></tr>
+      <tr><td><strong>Panasonic</strong></td><td class="val">RW2</td><td>MakerNote → ShutterCount</td></tr>
+      <tr><td><strong>সব ব্র্যান্ড</strong></td><td class="val">JPEG, DNG</td><td>MakerNote (brand-specific)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>ShutterCount কীভাবে কাজ করে?</h2>
+  <p>ShutterCount সম্পূর্ণ ব্রাউজারে চলে। আপনি যখন একটি ছবি ড্রপ করেন:</p>
+  <ul>
+    <li>ব্রাউজার নিজেই ফাইলটি পড়ে (কোনো সার্ভার নেই)</li>
+    <li>EXIF MakerNote থেকে শাটার কাউন্ট বের করা হয়</li>
+    <li>ফলাফল তৎক্ষণাৎ দেখানো হয়</li>
+    <li>আপনার ছবি বা ডেটা কোথাও পাঠানো হয় না</li>
+  </ul>
+
+  <div class="highlight-box">
+    <strong>গোপনীয়তা নিশ্চিত:</strong> আপনার ছবিতে ব্যক্তিগত তথ্য থাকতে পারে (GPS লোকেশন, তারিখ ইত্যাদি)। ShutterCount সেই ডেটা কখনো সার্ভারে পাঠায় না।
+  </div>
+</div>
+
+<div class="section">
+  <h2>ExifTool দিয়ে কমান্ড লাইনে শাটার কাউন্ট</h2>
+  <p>প্রযুক্তি-দক্ষ ব্যবহারকারীরা ExifTool দিয়ে কমান্ড লাইনে শাটার কাউন্ট পড়তে পারেন:</p>
+
+  <h3>Nikon NEF ফাইল:</h3>
+  <div class="code-block">exiftool -ShutterCount image.NEF</div>
+
+  <h3>Canon CR3 ফাইল:</h3>
+  <div class="code-block">exiftool -ShutterCount image.CR3</div>
+
+  <h3>Sony ARW ফাইল:</h3>
+  <div class="code-block">exiftool -ImageCount image.ARW</div>
+
+  <div class="warn-box">
+    <strong>মনে রাখবেন:</strong> WhatsApp, Instagram বা Facebook-এ শেয়ার করা ছবিতে EXIF MakerNote ডেটা মুছে যায়। সবসময় ক্যামেরা বা মেমোরি কার্ড থেকে মূল ফাইল ব্যবহার করুন।
+  </div>
+</div>
+
+<div class="section">
+  <h2>সংশ্লিষ্ট পৃষ্ঠাসমূহ</h2>
+  <div class="related">
+    <a href="/bn/shutter-count-ki/">শাটার কাউন্ট কী?</a>
+    <a href="/bn/shutter-count-check/">শাটার কাউন্ট চেক করুন</a>
+    <a href="/bn/purono-camera-kena/">পুরনো ক্যামেরা কেনার গাইড</a>
+    <a href="/bn/shutter-ayu/">শাটারের আয়ু</a>
+    <a href="/">সব সাপোর্টেড ক্যামেরা &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/bn/" style="color:var(--accent)">&#8592; ShutterCount বাংলা হোমপেজে ফিরে যান</a></p>
+  <p style="margin-top:12px">যোগাযোগ: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>
