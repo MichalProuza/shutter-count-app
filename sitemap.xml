@@ -1410,6 +1410,37 @@
     <priority>0.8</priority>
     <lastmod>2026-04-15</lastmod>
   </url>
+  <!-- Hungarian SEO pages (2026-05-05) -->
+  <url>
+    <loc>https://shuttercount.app/hu/zarszam/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-05</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/hu/zarszam-ellenorzese/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-05</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/hu/zar-elettartama/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-05</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/hu/maximalis-zarszam/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-05</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/hu/hasznalt-fenykepezogep/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-05</lastmod>
+  </url>
   <!-- Korean SEO pages (2026-04-15) -->
   <url>
     <loc>https://shuttercount.app/ko/shutter-hoetsu/</loc>

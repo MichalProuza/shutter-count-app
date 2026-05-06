@@ -331,6 +331,16 @@ SEO-optimized content pages in Japanese targeting high-volume Google Japan searc
 - [カメラのシャッター寿命 — メーカー別の耐久回数の目安](https://shuttercount.app/ja/shutter-jumyo/): Full shutter lifespan reference tables for Canon, Nikon, Sony, Fujifilm, and OM System models. Includes advice on extending shutter life. Targets シャッター寿命 (shutter lifespan).
 - [シャッター枚数とは — 回数との違いと無料確認ツール](https://shuttercount.app/ja/shutter-maisuu/): Clarifies that シャッター枚数 (shutter maisuu) and シャッター回数 are synonymous terms for shutter actuations. Answers common questions about electronic shutter, video, and burst shooting. Targets シャッター枚数 (shutter shot count).
 
+## Hungarian SEO Pages (/hu/)
+
+SEO-optimized content pages in Hungarian targeting high-volume Google Hungary search queries. Hungary has an active photography community with strong demand for used DSLR and mirrorless cameras (Jófogás, Vatera).
+
+- [Zárszám — Mi az és miért fontos?](https://shuttercount.app/hu/zarszam/): Overview page explaining what shutter count (zárszám) is, why it matters, and how to check it for free. Includes shutter lifespan table by camera class (entry/mid/enthusiast/pro). Targets zárszám (shutter count).
+- [Zárszám ellenőrzése — Ingyenes online eszközzel](https://shuttercount.app/hu/zarszam-ellenorzese/): Step-by-step HowTo guide for checking shutter count using ShutterCount, with a comparison table of methods (online tool vs ExifTool vs camera menu) and a full list of supported file formats. Targets zárszám ellenőrzése (check shutter count).
+- [Fényképezőgép zár élettartama — Márka szerinti tartóssági útmutató](https://shuttercount.app/hu/zar-elettartama/): Full shutter lifespan reference tables for Canon, Nikon, Sony, and Fujifilm models. Includes shutter failure symptoms and replacement cost guidance. Targets zár élettartam (shutter lifespan).
+- [Maximális zárszám — Modellenként mikor éri el a határt?](https://shuttercount.app/hu/maximalis-zarszam/): Condition rating table (A–D) by usage percentage relative to the rated maximum, with per-model maximum shutter count data for the most popular Canon, Nikon, Sony, and Fujifilm models. Targets maximális zárszám (maximum shutter count).
+- [Használt fényképezőgép vásárlása — Zárszám ellenőrzési útmutató](https://shuttercount.app/hu/hasznalt-fenykepezogep/): Buyer's guide for used cameras on Hungarian marketplaces (Jófogás, Vatera). Includes condition rating table and per-model shutter tolerance guide. Targets használt fényképezőgép zárszám (used camera shutter count).
+
 ## Korean SEO Pages (/ko/)
 
 SEO-optimized content pages in Korean targeting high-volume Google Korea search queries. South Korea has one of the highest camera ownership rates per capita, with active used camera markets (당근마켓, 중고나라).
