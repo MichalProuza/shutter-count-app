@@ -2339,4 +2339,35 @@
   <url><loc>https://shuttercount.app/pentax-k-s2-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-05</lastmod></url>
   <url><loc>https://shuttercount.app/fujifilm-x-a2-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-05</lastmod></url>
   <url><loc>https://shuttercount.app/olympus-pen-e-pl9-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-05</lastmod></url>
+  <!-- Persian (Farsi) SEO pages (added 2026-05-06) -->
+  <url>
+    <loc>https://shuttercount.app/fa/shomar-shater/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-06</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fa/barresi-shater/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-06</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fa/hadaksar-shater/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-06</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fa/dorobin-dast-dom/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-06</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/fa/exif-raygan/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-06</lastmod>
+  </url>
 </urlset>

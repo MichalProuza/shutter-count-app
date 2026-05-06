@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>اطلاعات EXIF رایگان — شمارش شاتر را آنلاین بخوانید | ShutterCount</title>
+<meta name="description" content="چطور اطلاعات EXIF عکس‌هایتان را رایگان بخوانید و شمارش شاتر را استخراج کنید — بدون ثبت‌نام، بدون نرم‌افزار، مستقیماً در مرورگر با Canon، Nikon، Sony، Fujifilm.">
+<link rel="canonical" href="https://shuttercount.app/fa/exif-raygan/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="اطلاعات EXIF رایگان — شمارش شاتر را آنلاین بخوانید | ShutterCount">
+<meta property="og:description" content="اطلاعات EXIF عکس‌هایتان را رایگان بخوانید و شمارش شاتر را استخراج کنید — بدون ثبت‌نام، بدون نرم‌افزار.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ShutterCount">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:url" content="https://shuttercount.app/fa/exif-raygan/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="اطلاعات EXIF رایگان — شمارش شاتر آنلاین | ShutterCount">
+<meta name="twitter:description" content="اطلاعات EXIF را رایگان بخوانید و شمارش شاتر را استخراج کنید — بدون ثبت‌نام و نرم‌افزار.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'Vazirmatn','JetBrains Mono',monospace;--sans:'Vazirmatn','Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px;direction:rtl}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:'Syne',sans-serif;font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center;direction:ltr}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;direction:ltr}
+.breadcrumb{font-size:.75rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px;text-align:right}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;margin-bottom:14px;line-height:1.5}
+.hero p{color:var(--muted);font-size:.88rem;line-height:2;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:'Syne',sans-serif;font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s;direction:ltr}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.72rem;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.82rem;color:var(--muted);line-height:2;text-align:right}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.exif-list{list-style:none;padding:0;margin-top:10px}
+.exif-list li{padding:7px 0;border-bottom:1px solid rgba(34,34,38,.5);font-size:.78rem;display:flex;justify-content:space-between;flex-direction:row-reverse;gap:12px}
+.exif-list li:last-child{border-bottom:none}
+.exif-list .key{color:var(--muted);flex-shrink:0}
+.exif-list .val{color:var(--text);font-weight:600;text-align:left;direction:ltr}
+.privacy-box{background:rgba(232,255,71,.04);border:1px solid rgba(232,255,71,.15);border-radius:8px;padding:14px 18px;margin-top:14px;font-size:.8rem;line-height:2}
+.privacy-box strong{color:var(--accent)}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;justify-content:flex-end}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.75rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.78rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "اطلاعات EXIF رایگان — شمارش شاتر را آنلاین بخوانید",
+      "url": "https://shuttercount.app/fa/exif-raygan/",
+      "inLanguage": "fa",
+      "isPartOf": {"@type": "WebSite", "url": "https://shuttercount.app/"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/"},
+          {"@type": "ListItem", "position": 2, "name": "فارسی", "item": "https://shuttercount.app/fa/"},
+          {"@type": "ListItem", "position": 3, "name": "اطلاعات EXIF رایگان", "item": "https://shuttercount.app/fa/exif-raygan/"}
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "اطلاعات EXIF چیست؟",
+          "acceptedAnswer": {"@type": "Answer", "text": "EXIF اطلاعات توصیفی است که به‌طور خودکار در فایل‌های عکس دیجیتال ذخیره می‌شود. شامل اطلاعاتی مثل مدل دوربین، دیافراگم، سرعت شاتر، ISO، تاریخ و مهم‌تر از همه: شمارش شاتر می‌شود."}
+        },
+        {
+          "@type": "Question",
+          "name": "آیا اطلاعات EXIF خصوصی است؟",
+          "acceptedAnswer": {"@type": "Answer", "text": "ShutterCount فایل‌های شما را فقط به‌صورت محلی روی دستگاهتان پردازش می‌کند. هیچ فایلی به سرور آپلود نمی‌شود. اطلاعات شما همیشه روی دستگاه شما باقی می‌ماند."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &lsaquo; <a href="/fa/">فارسی</a> &lsaquo; اطلاعات EXIF رایگان
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon &middot; Nikon &middot; Sony &middot; Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; بدون آپلود فایل &mdash; ۱۰۰٪ خصوصی</span>
+  <h1>اطلاعات EXIF رایگان<br>— شمارش شاتر را استخراج کنید</h1>
+  <p>اطلاعات EXIF در هر عکس دیجیتالی که دوربینتان می‌گیرد ذخیره می‌شود. با ShutterCount می‌توانید <strong>آن‌ها را رایگان در چند ثانیه</strong> مستقیماً در مرورگر بخوانید — بدون نصب نرم‌افزار، و بدون آپلود عکس‌هایتان به هیچ سروری.</p>
+  <a class="btn-cta" href="/">خواندن EXIF الان &larr;</a>
+</div>
+
+<div class="section">
+  <h2>اطلاعات EXIF چیست؟</h2>
+  <p>EXIF (مخفف Exchangeable Image File Format) اطلاعات توصیفی است که به‌طور خودکار در هر عکس گرفته‌شده با دوربین دیجیتال یا گوشی هوشمند ذخیره می‌شود. اطلاعات دقیقی درباره چگونگی گرفتن عکس دارد.</p>
+
+  <h3>مهم‌ترین اطلاعات در EXIF</h3>
+  <ul class="exif-list">
+    <li><span class="key">مدل دوربین</span><span class="val">Canon EOS R5</span></li>
+    <li><span class="key">شمارش شاتر</span><span class="val">24,831</span></li>
+    <li><span class="key">دیافراگم</span><span class="val">f/2.8</span></li>
+    <li><span class="key">سرعت شاتر</span><span class="val">1/500 ثانیه</span></li>
+    <li><span class="key">حساسیت ISO</span><span class="val">ISO 800</span></li>
+    <li><span class="key">فاصله کانونی</span><span class="val">85mm</span></li>
+    <li><span class="key">تاریخ عکس</span><span class="val">2025-03-15 14:32</span></li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>چطور دوربین شمارش شاتر را در EXIF ذخیره می‌کند؟</h2>
+  <p>هر سازنده شمارش شاتر را به روش متفاوتی درون داده‌های MakerNote خاص خود ذخیره می‌کند — بخش پنهانی از اطلاعات EXIF. ShutterCount در خواندن این داده‌ها از مدل‌های پشتیبانی‌شده تخصص دارد:</p>
+  <p><strong>Canon:</strong> شمارش در IFD خاصی درون CR2/CR3 ذخیره می‌شود — ShutterCount آن را مستقیماً می‌خواند.</p>
+  <p><strong>Nikon:</strong> در MakerNote رمزگذاری‌شده درون NEF ذخیره می‌شود — ShutterCount به‌طور خودکار آن را رمزگشایی می‌کند.</p>
+  <p><strong>Sony:</strong> در داده‌های اختصاصی ARW ذخیره می‌شود — ShutterCount آن را با دقت استخراج می‌کند.</p>
+  <p><strong>Fujifilm:</strong> در RAF با ساختار خاصی ذخیره می‌شود — کاملاً پشتیبانی می‌شود.</p>
+</div>
+
+<div class="section">
+  <h2>آیا اطلاعات شما خصوصی است؟</h2>
+  <div class="privacy-box">
+    <strong>بله، اطلاعات شما کاملاً امن است.</strong> ShutterCount فایل‌های شما را فقط به‌صورت محلی روی دستگاهتان با استفاده از JavaScript مرورگر پردازش می‌کند. هیچ فایلی به هیچ سروری آپلود نمی‌شود. عکس‌های شما همیشه روی دستگاه شما باقی می‌مانند و هیچ‌کس جز شما آن‌ها را نمی‌بیند.
+  </div>
+
+  <h3>چرا این مهم است؟</h3>
+  <p>عکس‌های شما ممکن است حاوی داده‌های موقعیت جغرافیایی (GPS) و سایر اطلاعات شخصی باشند. با ShutterCount هیچ نگرانی وجود ندارد — پردازش ۱۰۰٪ محلی است.</p>
+</div>
+
+<div class="section">
+  <h2>صفحات مرتبط</h2>
+  <div class="related">
+    <a href="/fa/shomar-shater/">شمارش شاتر دوربین</a>
+    <a href="/fa/barresi-shater/">بررسی شاتر دوربین</a>
+    <a href="/fa/hadaksar-shater/">حداکثر شاتر</a>
+    <a href="/fa/dorobin-dast-dom/">دوربین دست دوم</a>
+    <a href="/">همه دوربین‌های پشتیبانی‌شده &larr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/fa/" style="color:var(--accent)">&#8592; بازگشت به ShutterCount فارسی</a></p>
+  <p style="margin-top:12px">تماس: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>
