@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7088JCNHD');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>Sony RX10 Shutter Count — How to Check & What It Means | ShutterCount</title>
+<meta name="description" content="Check the shutter count of your Sony RX10 (DSC-RX10, Mark I, 2013) for free — directly in your browser from an ARW RAW file. No upload required. 20.1 MP 1-inch BSI sensor, constant f/2.8 Zeiss lens, ~200,000-actuation estimated shutter life.">
+<meta name="keywords" content="sony rx10 shutter count, sony rx10 mark 1 shutter count, sony dsc-rx10 shutter count, check shutter count rx10, sony rx10 actuations, rx10 shutter life">
+<link rel="canonical" href="https://shuttercount.app/sony-rx10-shutter-count/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="Sony RX10 Shutter Count — How to Check & What It Means">
+<meta property="og:description" content="Free browser-based Sony RX10 shutter count checker. Drop an ARW RAW file and get the exact actuation count instantly — no upload, no account.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ShutterCount">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://shuttercount.app/sony-rx10-shutter-count/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sony RX10 Shutter Count — How to Check & What It Means">
+<meta name="twitter:description" content="Check Sony RX10 shutter count for free from an ARW file, directly in your browser. No upload required.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),transparent)}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}.section strong{color:var(--text)}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}.spec-table .ok{color:var(--accent)}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,170,71,.06);border:1px solid rgba(255,170,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ffaa47}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebPage","name":"Sony RX10 Shutter Count — How to Check & What It Means","url":"https://shuttercount.app/sony-rx10-shutter-count/","description":"Complete guide to checking the shutter count of the Sony RX10 (DSC-RX10, Mark I, 2013) from an ARW RAW file, with estimated shutter life, typical actuation ranges, and a free browser-based checker tool.","inLanguage":"en","isPartOf":{"@type":"WebSite","url":"https://shuttercount.app/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ShutterCount","item":"https://shuttercount.app/"},{"@type":"ListItem","position":2,"name":"Sony RX10 Shutter Count","item":"https://shuttercount.app/sony-rx10-shutter-count/"}]}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I check the shutter count of my Sony RX10?","acceptedAnswer":{"@type":"Answer","text":"Take a photo with your Sony RX10 in RAW or RAW+JPEG mode, then drop the resulting ARW file into shuttercount.app. The tool decrypts and reads MakerNote tag 0x9050 directly in your browser — no upload required."}},
+{"@type":"Question","name":"What is the rated shutter life of the Sony RX10?","acceptedAnswer":{"@type":"Answer","text":"Sony does not publish an official rated shutter life for the RX10 (Mark I). Based on community data, the compact mechanism is generally estimated at around 200,000 actuations."}},
+{"@type":"Question","name":"What is a good shutter count when buying a used Sony RX10?","acceptedAnswer":{"@type":"Answer","text":"For a used RX10, below 10,000 actuations is very low, 10,000–40,000 is moderate, 40,000–100,000 is active use. Wildlife and travel photographers who shoot in burst mode may have accumulated higher counts."}},
+{"@type":"Question","name":"Does the Sony RX10 store shutter count in ARW files?","acceptedAnswer":{"@type":"Answer","text":"Yes. Like all Sony Alpha and Cyber-shot RX cameras, the RX10 stores the shutter count encrypted in MakerNote tag 0x9050 of every ARW file. ShutterCount implements the decryption algorithm in JavaScript, so the count is extracted entirely in your browser."}},
+{"@type":"Question","name":"How does the RX10 Mark I compare to the RX10 III and IV?","acceptedAnswer":{"@type":"Answer","text":"The original RX10 uses a non-stacked BSI CMOS sensor and a 24–200mm f/2.8 constant aperture lens, compared to the 24–600mm zoom on the III and IV. The Mark I lacks 4K video and has contrast-detect-only AF, but the constant f/2.8 aperture across the entire zoom range is shared with the Mark II and makes it excellent in low light at medium focal lengths."}}
+]}
+]}
+</script>
+</head>
+<body>
+<div class="breadcrumb"><a href="/">ShutterCount</a> &rsaquo; Sony RX10 Shutter Count</div>
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon · Nikon · Sony · Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>Sony RX10 Shutter Count:<br>Check It Free in Your Browser</h1>
+  <p>Drop an ARW RAW file from your <strong>Sony RX10</strong> (DSC-RX10, Mark I, 2013) and get the exact shutter actuation count in seconds &mdash; processed entirely in your browser, never uploaded anywhere.</p>
+  <a class="btn-cta" href="/">Check Shutter Count &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Sony RX10 &mdash; Shutter Rating</h2>
+  <p>The Sony RX10 (DSC-RX10, 2013) was Sony's first large-sensor bridge camera and set a new benchmark for the genre. It features a 20.1&nbsp;MP 1-inch BSI CMOS Exmor R sensor, a Zeiss Vario-Sonnar T* 8.8–73.3&nbsp;mm f/2.8 lens (24–200&nbsp;mm equivalent) with constant f/2.8 maximum aperture throughout the entire zoom range, 1080/60p video, and a built-in ND filter. The constant f/2.8 aperture set it apart from all other bridge cameras and made it a favourite among travel, event, and documentary photographers who needed versatility without carrying a system camera.</p>
+  <p>Sony does not publish an official rated shutter life for the RX10. Based on community data, the compact mechanism is estimated at approximately <strong>200,000 actuations</strong>. The shutter count is stored encrypted in MakerNote tag <code>0x9050</code> of every ARW RAW file.</p>
+
+  <table class="spec-table">
+    <thead><tr><th>Model</th><th>Release</th><th>Sensor</th><th>Est. Shutter Life</th><th>RAW Format</th></tr></thead>
+    <tbody>
+      <tr><td class="val">Sony RX10 (DSC-RX10)</td><td>2013</td><td>20.1 MP 1-inch BSI CMOS</td><td class="ok">~200,000 (est.)</td><td>ARW</td></tr>
+      <tr><td class="val">Sony RX10 II <span style="font-weight:400;color:var(--muted)">(stacked sensor)</span></td><td>2015</td><td>20.1 MP 1-inch stacked BSI</td><td class="ok">~200,000 (est.)</td><td>ARW</td></tr>
+      <tr><td class="val">Sony RX10 IV <span style="font-weight:400;color:var(--muted)">(24–600 mm)</span></td><td>2017</td><td>20.1 MP 1-inch stacked BSI</td><td class="ok">~200,000 (est.)</td><td>ARW</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn-box">
+    <strong>No official shutter rating:</strong> Sony does not publish a rated shutter life for the RX10 series. The ~200,000 estimate is derived from community reports. The RX10 Mark I typically sees lighter use than the III/IV (which are popular with wildlife photographers), so many used copies have low counts.
+  </div>
+</div>
+
+<div class="section">
+  <h2>How to Check Shutter Count on the Sony RX10</h2>
+  <p>The Sony RX10 stores the shutter count encrypted in MakerNote tag <code>0x9050</code> of every ARW RAW file. ShutterCount decrypts and reads it automatically.</p>
+
+  <ol class="steps">
+    <li>Set your RX10 to shoot RAW or RAW+JPEG (in the Camera menu, set <strong>File Format</strong> to RAW or RAW &amp; JPEG).</li>
+    <li>Take any photo and locate the <strong>.ARW</strong> file on your memory card or computer.</li>
+    <li>Open <a href="/">shuttercount.app</a> in any modern browser (Chrome, Firefox, Safari, Edge).</li>
+    <li>Drag the ARW file onto the drop zone, or click to open a file picker.</li>
+    <li>The shutter count and estimated remaining life percentage appear instantly. No upload, no account required.</li>
+  </ol>
+
+  <div class="highlight-box">
+    <strong>JPEG files don't work:</strong> Sony strips MakerNote shutter count data from JPEG files on the RX10. You must use an ARW RAW file. If you normally shoot JPEG-only, temporarily switch to RAW mode to capture one frame for checking.
+  </div>
+</div>
+
+<div class="section">
+  <h2>What Is a Good Shutter Count for a Used Sony RX10?</h2>
+  <p>The RX10 Mark I was popular with travel and event photographers but saw less burst-heavy use than the wildlife-focused III and IV. Many used copies have moderate counts. Given the camera's age (released 2013), also check for lens barrel wear, zoom mechanism smoothness, and display condition.</p>
+
+  <table class="spec-table">
+    <thead><tr><th>Actuation Count</th><th>% of Est. Life</th><th>Assessment</th></tr></thead>
+    <tbody>
+      <tr><td class="val">0 – 10,000</td><td>0 – 5 %</td><td class="ok">Very low use &mdash; near new</td></tr>
+      <tr><td class="val">10,000 – 40,000</td><td>5 – 20 %</td><td class="ok">Low use &mdash; plenty of life remaining</td></tr>
+      <tr><td class="val">40,000 – 100,000</td><td>20 – 50 %</td><td style="color:#ffaa47">Moderate use &mdash; normal for an active shooter</td></tr>
+      <tr><td class="val">100,000 – 160,000</td><td>50 – 80 %</td><td style="color:#ffaa47">High use &mdash; negotiate price</td></tr>
+      <tr><td class="val">160,000 +</td><td>80 %+</td><td style="color:var(--accent2)">Heavy use &mdash; budget for potential shutter service</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>How Does ShutterCount Read the RX10 Shutter Count?</h2>
+  <p>Sony stores the shutter count in ARW files in encrypted form within MakerNote tag <strong>0x9050</strong>. The encryption uses a cubic residue cipher modulo 249: each byte is cubed modulo 249 to produce the decrypted value, using a per-model key derived from the first bytes of the tag.</p>
+  <p>This same encrypted structure applies across the full Sony ARW lineup — from the A1 flagship down to the RX10 compact. After decryption, ShutterCount reads the 32-bit count from the appropriate byte offset within the decrypted block.</p>
+
+  <div class="highlight-box">
+    <strong>All processing is local.</strong> The decryption algorithm runs entirely in JavaScript in your browser. The ARW file is never transmitted to any server.
+  </div>
+
+  <h3>Does the built-in ND filter affect the shutter count?</h3>
+  <p>No. The RX10's built-in 3-stop ND filter controls exposure by reducing incoming light, not by altering the shutter mechanism. All exposures — with or without ND — actuate the mechanical shutter the same way.</p>
+</div>
+
+<div class="section">
+  <h2>Sony RX10 Shutter Count &mdash; FAQ</h2>
+
+  <h3>How do I check the shutter count of my Sony RX10?</h3>
+  <p>Shoot one ARW RAW file, then drop it into <a href="/">shuttercount.app</a>. The tool decrypts and reads the shutter count from MakerNote tag 0x9050 entirely in your browser.</p>
+
+  <h3>What is the shutter life of the Sony RX10?</h3>
+  <p>Sony does not publish an official shutter rating for the RX10 Mark I. Community estimates suggest approximately <strong>200,000 actuations</strong>. This is an informal estimate, not a Sony specification.</p>
+
+  <h3>Is the RX10 Mark I worth buying used?</h3>
+  <p>Yes — the constant f/2.8 aperture across the 24–200&nbsp;mm range remains impressive for event, concert, and travel photography. Key things to check beyond shutter count: zoom ring and barrel for mechanical wear, video autofocus performance (contrast-detect only, slowish for video), lens for fungus or delamination, and battery condition.</p>
+
+  <h3>How does the RX10 Mark I compare to the RX10 II?</h3>
+  <p>The RX10 II (2015) added a stacked CMOS sensor enabling 1000 fps super slow-motion video, a higher burst rate (16 fps vs 12 fps), and 4K video. The lens and field of view (24–200&nbsp;mm f/2.8) are identical. If 4K video or slow-motion are priorities, the II is worth the extra cost on the used market.</p>
+</div>
+
+<div class="section">
+  <h2>Other Sony &amp; Bridge Cameras</h2>
+  <div class="related">
+    <a href="/sony-rx10-ii-shutter-count/">Sony RX10 II</a>
+    <a href="/sony-rx10-iii-shutter-count/">Sony RX10 III</a>
+    <a href="/sony-rx10-iv-shutter-count/">Sony RX10 IV</a>
+    <a href="/sony-rx100-vii-shutter-count/">Sony RX100 VII</a>
+    <a href="/sony-a6700-shutter-count/">Sony A6700</a>
+    <a href="/sony-a7-iv-shutter-count/">Sony A7 IV</a>
+    <a href="/sony-zv-e1-shutter-count/">Sony ZV-E1</a>
+    <a href="/">All supported cameras &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&#8592; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+</body>
+</html>
