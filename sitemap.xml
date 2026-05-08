@@ -2415,4 +2415,35 @@
   <url><loc>https://shuttercount.app/sony-rx10-ii-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-07</lastmod></url>
   <url><loc>https://shuttercount.app/panasonic-lumix-gh1-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-07</lastmod></url>
   <url><loc>https://shuttercount.app/panasonic-lumix-gh2-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-07</lastmod></url>
+  <!-- Tamil SEO pages (added 2026-05-08) -->
+  <url>
+    <loc>https://shuttercount.app/ta/shutter-ennikai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-08</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ta/shutter-ennikai-paarkka/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-08</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ta/shutter-aayul/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-08</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ta/pazhaya-kamera-vangi/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-08</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ta/exif-shutter-ilavasam/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-08</lastmod>
+  </url>
 </urlset>
