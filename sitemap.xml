@@ -57,6 +57,7 @@
     <xhtml:link rel="alternate" hreflang="uk"        href="https://shuttercount.app/uk/"/>
     <xhtml:link rel="alternate" hreflang="ur"        href="https://shuttercount.app/ur/"/>
     <xhtml:link rel="alternate" hreflang="my"        href="https://shuttercount.app/my/"/>
+    <xhtml:link rel="alternate" hreflang="uz"        href="https://shuttercount.app/uz/"/>
     <xhtml:link rel="alternate" hreflang="vi"        href="https://shuttercount.app/vi/"/>
     <xhtml:link rel="alternate" hreflang="zh"        href="https://shuttercount.app/zh/"/>
   </url>
@@ -110,6 +111,7 @@
   <url><loc>https://shuttercount.app/uk/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/ur/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/my/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-04-29</lastmod></url>
+  <url><loc>https://shuttercount.app/uz/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-05-07</lastmod></url>
   <url><loc>https://shuttercount.app/vi/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/zh/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
   <!-- FAQ pages -->
@@ -161,6 +163,37 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-03-31</lastmod>
+  </url>
+  <!-- Uzbek (uz) SEO pages -->
+  <url>
+    <loc>https://shuttercount.app/uz/shutter-count-nima/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-07</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/uz/shutter-count-tekshirish/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-07</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/uz/ishlatilgan-kamera-sotib-olish/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-07</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/uz/shutter-count-chegarasi/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-07</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/uz/mexanik-elektron-zatvor/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-07</lastmod>
   </url>
   <!-- Canon -->
   <url>
