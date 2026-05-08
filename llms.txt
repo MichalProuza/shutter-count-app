@@ -530,6 +530,16 @@ SEO-optimized content pages in Arabic targeting Arabic-speaking markets (Saudi A
 - [شراء كاميرا مستعملة — تحقق من عداد الغالق أولاً](https://shuttercount.app/ar/kamera-musta3mala/): Guide to buying a used camera: why checking shutter count is essential, how to evaluate the reading, and what replacement costs to expect for Canon, Nikon, Sony.
 - [قراءة بيانات EXIF مجاناً](https://shuttercount.app/ar/exif-majani/): How EXIF metadata stores the shutter count and how to read it for free online with ShutterCount — no registration, no software, fully local in the browser.
 
+## Persian (Farsi) SEO Pages (/fa/)
+
+SEO-optimized content pages in Persian (فارسی) targeting the Iranian market — approximately 85 million native speakers in Iran and 110+ million total Persian speakers worldwide. Iran has an active photography community, a large used-camera market, and over 67 million internet users. All pages are right-to-left (RTL) and use the Vazirmatn Persian font for optimal readability. URL slugs use Finglish (romanized Persian).
+
+- [شمارش شاتر دوربین — چیست و چگونه بررسی کنیم](https://shuttercount.app/fa/shomar-shater/): Explains what camera shutter count (شمارش شاتر) is, why it matters, how the shutter wears mechanically, and how to check it for free with ShutterCount. Includes shutter lifespan table by camera class (entry to professional) and comparison of checking methods. Targets شمارش شاتر دوربین (camera shutter count).
+- [بررسی شاتر دوربین — رایگان آنلاین در چند ثانیه](https://shuttercount.app/fa/barresi-shater/): Step-by-step guide for checking camera shutter count using ShutterCount — no software, no account needed. Lists all supported brands and RAW file formats (Canon CR2/CR3, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2). Includes guidance on acceptable shutter count thresholds. Targets بررسی شاتر دوربین (check camera shutter).
+- [حداکثر شاتر دوربین — جدول Canon، Nikon، Sony](https://shuttercount.app/fa/hadaksar-shater/): Complete reference table of maximum certified shutter actuations for Canon, Nikon, Sony and Fujifilm camera models, with guidance on calculating remaining lifespan percentage. Targets حداکثر شاتر دوربین (maximum camera shutter count).
+- [خرید دوربین دست دوم — ابتدا شاتر را بررسی کنید](https://shuttercount.app/fa/dorobin-dast-dom/): Buyer's guide for second-hand cameras in Iran: why checking shutter count is essential, an A–D condition grading table by usage percentage, a 7-item pre-purchase checklist, and shutter replacement cost guidance. Targets دوربین دست دوم (used camera).
+- [اطلاعات EXIF رایگان — شمارش شاتر را آنلاین بخوانید](https://shuttercount.app/fa/exif-raygan/): Explains what EXIF metadata is, how each manufacturer stores shutter count in MakerNote tags, why social media photos lose EXIF data, and how ShutterCount processes files 100% locally with no server upload. Targets اطلاعات EXIF رایگان (free EXIF data).
+
 ## Hindi SEO Pages (/hi/)
 
 SEO-optimized content pages in Hindi targeting the Indian market. India has one of the world's largest and fastest-growing internet user bases (750M+ users), with a large and active used camera market on platforms like OLX and Facebook Marketplace.
