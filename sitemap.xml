@@ -1823,6 +1823,37 @@
     <priority>0.7</priority>
     <lastmod>2026-04-23</lastmod>
   </url>
+  <!-- Czech language subpages (added 2026-05-09) -->
+  <url>
+    <loc>https://shuttercount.app/cz/pocet-expozic/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-09</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/cz/kontrola-poctu-expozic/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-09</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/cz/maximalni-pocet-expozic/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-09</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/cz/exif-expozice-zdarma/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-09</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/cz/pouzity-fotoaparat/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-09</lastmod>
+  </url>
   <!-- New camera subpages (added 2026-04-22) -->
   <url>
     <loc>https://shuttercount.app/canon-550d-shutter-count/</loc>

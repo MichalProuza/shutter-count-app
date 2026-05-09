@@ -485,6 +485,16 @@ SEO-optimized content pages in Dutch targeting the Netherlands and Belgium.
 - [EXIF sluiterstand gratis uitlezen — Online tool](https://shuttercount.app/nl/exif-sluiterstand-gratis/): Lees de sluiterstand gratis uit EXIF-gegevens van je camerabestand. Geen installatie, geen account. Werkt 100% lokaal in de browser met Canon, Nikon, Sony en Fujifilm.
 - [Tweedehands camera kopen — Controleer de sluiterstand eerst](https://shuttercount.app/nl/tweedehands-camera-kopen/): Gids voor het kopen van een tweedehands camera. Leer waarom de sluiterstand controleren essentieel is en hoe je een goede deal herkent bij Canon, Nikon, Sony of Fujifilm.
 
+## Czech SEO Pages (/cz/)
+
+SEO-optimized content pages in Czech targeting the Czech Republic.
+
+- [Počet expozic fotoaparátu — Zjistěte zdarma online](https://shuttercount.app/cz/pocet-expozic/): Odečtěte počet expozic vašeho fotoaparátu zdarma online — bez instalace softwaru, bez registrace. Podporuje Canon, Nikon, Sony a Fujifilm. Výsledek za pár sekund.
+- [Kontrola počtu expozic — Bezplatně online](https://shuttercount.app/cz/kontrola-poctu-expozic/): Zkontrolujte počet expozic fotoaparátu před nákupem nebo prodejem. Bezplatně online, bez softwaru, bez účtu. Podporuje Canon, Nikon, Sony a Fujifilm.
+- [Maximální počet expozic — Životnost závěrky fotoaparátu](https://shuttercount.app/cz/maximalni-pocet-expozic/): Zjistěte maximální počet expozic pro fotoaparáty Canon, Nikon, Sony a Fujifilm. Podívejte se, kolik snímků vaše závěrka vydrží a jak interpretovat aktuální stav počítadla.
+- [EXIF expozice zdarma — Přečtěte data EXIF online](https://shuttercount.app/cz/exif-expozice-zdarma/): Přečtěte data EXIF a počet expozic zdarma online. Bez registrace, bez instalace. ShutterCount analyzuje soubory RAW a JPEG přímo v prohlížeči — 100 % soukromě.
+- [Použitý fotoaparát — Jak bezpečně koupit](https://shuttercount.app/cz/pouzity-fotoaparat/): Průvodce nákupem použitého fotoaparátu. Zkontrolujte počet expozic, zhodnoťte technický stav a vyvarujte se nástrah při koupi zrcadlovky nebo bezzrcadlovky z druhé ruky.
+
 ## Polish SEO Pages (/pl/)
 
 SEO-optimized content pages in Polish targeting Poland.
