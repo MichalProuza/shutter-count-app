@@ -2446,4 +2446,10 @@
     <priority>0.8</priority>
     <lastmod>2026-05-08</lastmod>
   </url>
+  <!-- Camera model pages added 2026-05-09 -->
+  <url><loc>https://shuttercount.app/leica-sl3-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-09</lastmod></url>
+  <url><loc>https://shuttercount.app/panasonic-lumix-g100d-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-09</lastmod></url>
+  <url><loc>https://shuttercount.app/pentax-k-3-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-09</lastmod></url>
+  <url><loc>https://shuttercount.app/nikon-d70s-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-09</lastmod></url>
+  <url><loc>https://shuttercount.app/canon-350d-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-09</lastmod></url>
 </urlset>
