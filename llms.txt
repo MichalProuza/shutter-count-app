@@ -1,6 +1,6 @@
 # ShutterCount
 
-> Free camera shutter count checker. Drop a RAW photo file and instantly read the shutter actuations directly in your browser — no server upload, no account required. Supports Canon CR3/CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, Adobe DNG, and JPEG/JPG. Validated on 210+ camera models.
+> Free camera shutter count checker. Drop a RAW photo file and instantly read the shutter actuations directly in your browser — no server upload, no account required. Supports Canon CR3/CR2, Nikon NEF, Sony ARW, Fujifilm RAF, Olympus ORF, Panasonic RW2, Adobe DNG, and JPEG/JPG. Validated on 285+ camera models.
 
 ShutterCount is a static, client-side web application hosted at shuttercount.app. All RAW file parsing happens entirely in the browser using JavaScript. No file content ever leaves the user's device. The shutter count is extracted from the EXIF MakerNote data embedded in the RAW file.
 

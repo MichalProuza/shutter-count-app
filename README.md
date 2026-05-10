@@ -38,7 +38,7 @@ Everything runs client-side in `index.html`. Files are opened with `FileReader` 
 - **Life bar** — visual indicator of shutter usage vs. rated lifespan
 - **50+ languages** — full UI localisation with a language switcher
 - **GDPR cookie banner** — analytics loaded only after consent
-- **Camera subpages** — dedicated SEO pages for 210+ camera models
+- **Camera subpages** — dedicated SEO pages for 285+ camera models
 
 ## Repository layout
 

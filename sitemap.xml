@@ -6,7 +6,7 @@
     <loc>https://shuttercount.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://shuttercount.app/"/>
     <xhtml:link rel="alternate" hreflang="en"        href="https://shuttercount.app/"/>
     <xhtml:link rel="alternate" hreflang="af"        href="https://shuttercount.app/af/"/>
@@ -2415,6 +2415,11 @@
   <url><loc>https://shuttercount.app/sony-rx10-ii-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-07</lastmod></url>
   <url><loc>https://shuttercount.app/panasonic-lumix-gh1-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-07</lastmod></url>
   <url><loc>https://shuttercount.app/panasonic-lumix-gh2-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-07</lastmod></url>
+  <url><loc>https://shuttercount.app/canon-m10-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-10</lastmod></url>
+  <url><loc>https://shuttercount.app/canon-m100-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-10</lastmod></url>
+  <url><loc>https://shuttercount.app/fujifilm-x-a3-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-10</lastmod></url>
+  <url><loc>https://shuttercount.app/olympus-pen-f-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-10</lastmod></url>
+  <url><loc>https://shuttercount.app/panasonic-lumix-gh3-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-10</lastmod></url>
   <!-- Tamil SEO pages (added 2026-05-08) -->
   <url>
     <loc>https://shuttercount.app/ta/shutter-ennikai/</loc>
