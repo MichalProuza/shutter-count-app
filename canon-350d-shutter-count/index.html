@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>Canon EOS 350D Shutter Count — How to Check & What It Means | ShutterCount</title>
+<meta name="description" content="Check the shutter count of your Canon EOS 350D (Rebel XT / Kiss Digital N) — via USB PTP connection or directly from your camera. Est. shutter lifespan: ~100,000 actuations.">
+<meta name="keywords" content="canon 350d shutter count, canon rebel xt shutter count, canon kiss digital n shutter count, canon 350d actuations, check shutter count canon 350d, canon eos 350d shutter life">
+<link rel="canonical" href="https://shuttercount.app/canon-350d-shutter-count/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="Canon EOS 350D Shutter Count — How to Check & What It Means">
+<meta property="og:description" content="Canon EOS 350D (Rebel XT) shutter count guide. CR2 consumer limitation — count not stored in RAW files. Check via USB PTP using gphoto2 or EOSInfo. Est. lifespan: ~100,000 actuations.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ShutterCount">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://shuttercount.app/canon-350d-shutter-count/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Canon EOS 350D Shutter Count — How to Check & What It Means">
+<meta name="twitter:description" content="Canon EOS 350D (Rebel XT) shutter count guide. Check via USB PTP — count not stored in CR2 RAW files for consumer bodies. Est. lifespan: ~100,000 actuations.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.section ol{padding-left:1.4em;margin-top:8px}
+.section ol li{margin-bottom:6px}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}
+.spec-table .ok{color:var(--accent)}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,170,71,.06);border:1px solid rgba(255,170,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ffaa47}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Canon EOS 350D Shutter Count — How to Check & What It Means",
+      "url": "https://shuttercount.app/canon-350d-shutter-count/",
+      "description": "Complete guide to the Canon EOS 350D (Rebel XT / Kiss Digital N) shutter count — estimated 100,000 actuations, why CR2 consumer files don't store the count in-file, how to check via USB PTP using gphoto2 or EOSInfo, and buying guidance for this classic Canon DSLR.",
+      "inLanguage": "en",
+      "isPartOf": { "@type": "WebSite", "url": "https://shuttercount.app/" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Canon EOS 350D Shutter Count", "item": "https://shuttercount.app/canon-350d-shutter-count/" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I check the shutter count of my Canon EOS 350D?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Canon EOS 350D (Rebel XT) is a consumer DSLR — Canon does not embed the shutter count in CR2 RAW files for consumer bodies. To check the count, connect the camera via USB and use gphoto2 on Linux/macOS ('gphoto2 --get-config /main/status/shuttercounter') or EOSInfo on Windows. The count is accessible via Canon's PTP protocol when the camera is connected and powered on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the estimated shutter life of the Canon EOS 350D?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Canon rates the 350D shutter at approximately 100,000 actuations. This is consistent with other consumer Canon DSLRs of its era (450D, 400D, 400D). Given the camera is now approximately 20 years old, total body condition and capacitor health are also important factors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why doesn't the Canon 350D store shutter count in CR2 RAW files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Canon deliberately omitted shutter count from the in-file MakerNote data in consumer DSLR bodies (up to and including most CR2-era cameras). The count is only accessible via the PTP (Picture Transfer Protocol) connection over USB — the same protocol used by Canon's EOS Utility software. Professional Canon bodies (1D series, 5D series from certain generations) do embed the count in CR2 MakerNote data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the Canon EOS 350D the same as the Rebel XT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Canon EOS 350D is the international designation. In North America it was sold as the Canon EOS Rebel XT, and in Japan as the Canon EOS Kiss Digital N. All three names refer to the same camera body with the same sensor, shutter, and internal components."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; Canon EOS 350D Shutter Count
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon · Nikon · Sony · Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>Canon EOS 350D Shutter Count:<br>How to Check &amp; What It Means</h1>
+  <p>The <strong>Canon EOS 350D</strong> (Rebel XT / Kiss Digital N, 2005) &mdash; Canon&rsquo;s landmark 8 MP entry-level DSLR &mdash; is rated at approximately 100,000 actuations. As a consumer CR2 body, the shutter count is <em>not</em> stored in RAW files and must be accessed via USB PTP connection.</p>
+  <a class="btn-cta" href="/">Check Shutter Count &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Canon EOS 350D &mdash; Shutter Rating</h2>
+  <p>The Canon EOS 350D (released February 2005) was Canon&rsquo;s second-generation consumer DSLR after the 300D (Digital Rebel), introducing an 8 MP sensor, DIGIC II processor, 7-point AF system, and a smaller, lighter body than the 300D. It was one of the most popular consumer DSLRs of its era and introduced many photographers to digital SLR photography.</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Release</th>
+        <th>Sensor</th>
+        <th>Est. Shutter Life</th>
+        <th>RAW Format</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="val">Canon EOS 350D (Rebel XT)</td>
+        <td>2005</td>
+        <td>8 MP APS-C CMOS</td>
+        <td style="color:#ffaa47">~100,000</td>
+        <td>CR2</td>
+      </tr>
+      <tr>
+        <td class="val">Canon EOS 400D <span style="font-weight:400;color:var(--muted)">(successor)</span></td>
+        <td>2006</td>
+        <td>10.1 MP APS-C CMOS</td>
+        <td style="color:#ffaa47">~100,000</td>
+        <td>CR2</td>
+      </tr>
+      <tr>
+        <td class="val">Canon EOS 450D <span style="font-weight:400;color:var(--muted)">(later)</span></td>
+        <td>2008</td>
+        <td>12.2 MP APS-C CMOS</td>
+        <td style="color:#ffaa47">~100,000</td>
+        <td>CR2</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="warn-box">
+    <strong>CR2 consumer limitation:</strong> The Canon EOS 350D does <em>not</em> store the shutter count in CR2 RAW files. This is a deliberate Canon design choice for consumer bodies. The count can only be read via USB PTP connection — see the method below.
+  </div>
+</div>
+
+<div class="section">
+  <h2>How to Check Shutter Count on the Canon EOS 350D</h2>
+  <p>Because the 350D does not embed shutter count in CR2 files, you need a USB connection to the live camera:</p>
+
+  <ol class="steps">
+    <li><strong>Connect via USB:</strong> Connect your 350D to a computer using the supplied USB cable. Power the camera on and set the USB connection mode to <strong>PTP</strong> (Photo Transfer Protocol) in the camera menu &mdash; not Mass Storage.</li>
+    <li><strong>On Linux/macOS — gphoto2:</strong> Run <code>gphoto2 --get-config /main/status/shuttercounter</code> in a terminal. gphoto2 must be installed (<code>brew install gphoto2</code> on macOS, <code>apt install gphoto2</code> on Ubuntu).</li>
+    <li><strong>On Windows — EOSInfo:</strong> Download EOSInfo (free, by Chris Breeze) and connect the camera. EOSInfo displays the shutter count directly from the connected Canon body via PTP.</li>
+    <li><strong>On macOS — ShutterCheck:</strong> ShutterCheck (paid app, Mac App Store) also reads the shutter count from connected Canon bodies including the 350D.</li>
+  </ol>
+
+  <div class="highlight-box">
+    <strong>No RAW file needed:</strong> Unlike Sony, Nikon, or Fujifilm cameras, the Canon 350D shutter count cannot be extracted from a RAW file offline. The camera must be connected live via USB. This means you cannot verify the count from a file sent by a seller &mdash; you must inspect the camera in person.
+  </div>
+</div>
+
+<div class="section">
+  <h2>What Is a Good Shutter Count for a Used Canon EOS 350D?</h2>
+  <p>The 350D is approximately 20 years old. Shutter count is one factor, but overall camera condition and sensor quality are equally important at this age:</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Actuation Count</th>
+        <th>% of Est. Life</th>
+        <th>Assessment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="val">0 – 5,000</td>
+        <td>0 – 5 %</td>
+        <td class="ok">Very low use &mdash; lightly used body</td>
+      </tr>
+      <tr>
+        <td class="val">5,000 – 25,000</td>
+        <td>5 – 25 %</td>
+        <td class="ok">Low to moderate use</td>
+      </tr>
+      <tr>
+        <td class="val">25,000 – 65,000</td>
+        <td>25 – 65 %</td>
+        <td style="color:#ffaa47">Moderate to active use &mdash; inspect sensor and mirror box</td>
+      </tr>
+      <tr>
+        <td class="val">65,000 – 90,000</td>
+        <td>65 – 90 %</td>
+        <td style="color:#ffaa47">Heavy use &mdash; negotiate price; shutter service may be needed</td>
+      </tr>
+      <tr>
+        <td class="val">90,000 +</td>
+        <td>90 %+</td>
+        <td style="color:var(--accent2)">Near or past estimated life &mdash; risk-aware collectors or parts only</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>Canon EOS 350D &mdash; FAQ</h2>
+
+  <h3>Is the Canon 350D the same as the Rebel XT?</h3>
+  <p>Yes. The Canon EOS 350D, Canon EOS Rebel XT, and Canon EOS Kiss Digital N are all the same camera. The naming varies by region: 350D is the European/international name, Rebel XT is the North American name, and Kiss Digital N is the Japanese name.</p>
+
+  <h3>Why doesn&rsquo;t the 350D store shutter count in CR2 files?</h3>
+  <p>Canon made a deliberate engineering choice to omit shutter count from the in-file MakerNote of consumer CR2 bodies. The count is maintained internally by the camera firmware and only exposed via the USB PTP interface. Professional Canon bodies (1D series, 5D from certain eras) do include the count in CR2 MakerNote data.</p>
+
+  <h3>What lenses work with the Canon EOS 350D?</h3>
+  <p>All Canon EF and EF-S lenses are compatible. EF-S lenses (designed for APS-C bodies) provide the most compact and cost-effective options. The 350D uses the APS-C sensor with 1.6&times; crop factor, so a 50mm EF lens produces approximately 80mm effective field of view.</p>
+
+  <h3>Is the Canon 350D still worth buying in 2025?</h3>
+  <p>At extremely low prices and for specific purposes (learning photography, experimenting with vintage lenses, or as a nostalgic secondary body), the 350D can still be functional. However, the 8 MP sensor, limited ISO performance above 400, and lack of video capability make it obsolete for most modern use cases. Inspect sensor for hot pixels and ensure the mirror and autofocus are functioning correctly before purchase.</p>
+</div>
+
+<div class="section">
+  <h2>Other Canon DSLRs</h2>
+  <div class="related">
+    <a href="/canon-450d-shutter-count/">Canon EOS 450D</a>
+    <a href="/canon-500d-shutter-count/">Canon EOS 500D</a>
+    <a href="/canon-550d-shutter-count/">Canon EOS 550D</a>
+    <a href="/canon-600d-shutter-count/">Canon EOS 600D</a>
+    <a href="/canon-650d-shutter-count/">Canon EOS 650D</a>
+    <a href="/canon-700d-shutter-count/">Canon EOS 700D</a>
+    <a href="/canon-40d-shutter-count/">Canon EOS 40D</a>
+    <a href="/canon-50d-shutter-count/">Canon EOS 50D</a>
+    <a href="/canon-5d-shutter-count/">Canon EOS 5D</a>
+    <a href="/">All supported cameras &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&#8592; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7088JCNHD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H7088JCNHD');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>Leica SL3 Shutter Count — How to Check & What It Means | ShutterCount</title>
+<meta name="description" content="Check the shutter count of your Leica SL3 (Typ 10000) for free — directly in your browser from a DNG RAW file. No upload required. Est. shutter lifespan: ~500,000 actuations.">
+<meta name="keywords" content="leica sl3 shutter count, leica sl3 actuations, check shutter count leica sl3, leica typ 10000 shutter count, leica sl3 shutter life, DNG shutter count leica">
+<link rel="canonical" href="https://shuttercount.app/leica-sl3-shutter-count/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link type="text/plain" rel="llmstxt" href="/llms.txt">
+<meta property="og:title" content="Leica SL3 Shutter Count — How to Check & What It Means">
+<meta property="og:description" content="Free browser-based Leica SL3 shutter count checker. Drop a DNG RAW file and get the exact actuation count instantly — no upload, no account. Est. lifespan: ~500,000 actuations.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ShutterCount">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://shuttercount.app/leica-sl3-shutter-count/">
+<meta property="og:image" content="https://shuttercount.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Leica SL3 Shutter Count — How to Check & What It Means">
+<meta name="twitter:description" content="Check Leica SL3 shutter count for free from a DNG file, directly in your browser. Est. lifespan: ~500,000 actuations.">
+<meta name="twitter:image" content="https://shuttercount.app/og-image.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap');
+:root{--bg:#0a0a0b;--surface:#111113;--border:#222226;--accent:#e8ff47;--accent2:#ff4747;--text:#e8e8ea;--muted:#55555c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:48px 24px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{text-align:center;margin-bottom:40px;position:relative;width:100%;max-width:640px}
+.logo{font-family:var(--sans);font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:10px;text-align:center}
+.logo span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+.breadcrumb{font-size:.7rem;color:var(--muted);margin-bottom:32px;width:100%;max-width:640px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.hero{width:100%;max-width:640px;border:1px solid var(--border);border-radius:12px;padding:36px 32px;text-align:center;margin-bottom:28px;background:linear-gradient(180deg,rgba(232,255,71,.04),rgba(255,255,255,0))}
+.hero h1{font-family:var(--sans);font-size:clamp(1.4rem,4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
+.hero p{color:var(--muted);font-size:.82rem;line-height:1.75;margin-bottom:24px}
+.btn-cta{display:inline-block;background:var(--accent);color:var(--bg);font-family:var(--sans);font-size:.9rem;font-weight:800;padding:14px 36px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase;transition:filter .2s,transform .2s}
+.btn-cta:hover{filter:brightness(1.05);transform:translateY(-1px);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(71,255,138,.07);border:1px solid rgba(71,255,138,.2);color:#47ff8a;border-radius:20px;padding:3px 10px;font-size:.63rem;letter-spacing:.08em;margin-bottom:16px}
+.section{margin-top:28px;max-width:640px;width:100%;border:1px solid var(--border);border-radius:10px;padding:24px 28px;font-size:.78rem;color:var(--muted);line-height:1.8}
+.section h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:14px}
+.section h3{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--text);margin:18px 0 8px}
+.section p+p{margin-top:10px}
+.section strong{color:var(--text)}
+.section ul{padding-left:1.4em;margin-top:8px}
+.section ul li{margin-bottom:6px}
+.section ol{padding-left:1.4em;margin-top:8px}
+.section ol li{margin-bottom:6px}
+.spec-table{width:100%;border-collapse:collapse;margin-top:12px}
+.spec-table th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table td{padding:8px 10px;border-bottom:1px solid rgba(34,34,38,.5);font-size:.75rem;vertical-align:top}
+.spec-table tr:last-child td{border-bottom:none}
+.spec-table .val{color:var(--text);font-weight:600}
+.spec-table .ok{color:var(--accent)}
+.highlight-box{background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:8px;padding:16px 20px;margin:16px 0}
+.highlight-box strong{color:var(--accent)}
+.warn-box{background:rgba(255,170,71,.06);border:1px solid rgba(255,170,71,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box strong{color:#ffaa47}
+.steps{counter-reset:steps;list-style:none;padding:0;margin-top:12px}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.steps li::before{content:counter(steps);background:var(--border);color:var(--accent);font-family:var(--sans);font-weight:800;font-size:.75rem;min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.related a{background:var(--border);border-radius:6px;padding:5px 12px;font-size:.7rem;color:var(--muted);transition:color .15s,background .15s}
+.related a:hover{color:var(--accent);background:rgba(232,255,71,.08);text-decoration:none}
+footer{width:100%;max-width:640px;text-align:center;padding:40px 0 0;margin-top:40px;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+@media(max-width:480px){.hero{padding:24px 20px}.section{padding:18px 18px}.logo{font-size:clamp(2rem,10vw,2.8rem)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Leica SL3 Shutter Count — How to Check & What It Means",
+      "url": "https://shuttercount.app/leica-sl3-shutter-count/",
+      "description": "Complete guide to checking the shutter count of a Leica SL3 (Typ 10000) from a DNG RAW file, with estimated lifespan, actuation ranges, technical extraction details, and a free browser-based checker tool.",
+      "inLanguage": "en",
+      "isPartOf": { "@type": "WebSite", "url": "https://shuttercount.app/" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ShutterCount", "item": "https://shuttercount.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Leica SL3 Shutter Count", "item": "https://shuttercount.app/leica-sl3-shutter-count/" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I check the shutter count of my Leica SL3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Take a photo with your Leica SL3 in RAW mode, then drop the resulting DNG file into shuttercount.app. The shutter count is read directly from the standard EXIF metadata in your browser — no upload required. You can also use ExifTool: exiftool -ShutterCount image.dng."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the rated shutter life of the Leica SL3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Leica does not publish an official shutter rating for the SL3. Based on its professional build quality and the SL2 series heritage, the estimated shutter lifespan is approximately 500,000 actuations — comparable to other professional full-frame cameras in this class."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good shutter count when buying a used Leica SL3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a used Leica SL3 (est. ~500,000 rated): below 20,000 is very low use. 20,000–100,000 is low to moderate. 100,000–250,000 is moderate — still substantial life remaining. Above 350,000 warrants careful inspection and price negotiation. Leica shutter service costs are significantly higher than Japanese equivalents."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the Leica SL3 electronic shutter affect the count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The SL3 electronic shutter mode uses the sensor's rolling readout without engaging the mechanical curtain. Those exposures are not counted. Only mechanical shutter and EFCS (Electronic Front Curtain Shutter) exposures increment the counter stored in the DNG file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the Leica SL3 shutter count be reset or faked?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The internal hardware counter can only be reset by a Leica authorised service centre after a physical shutter replacement. The DNG EXIF field can be overwritten with metadata editors, so always verify the count from an original DNG file shot during a live inspection — not from a file provided in advance by the seller."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="/">ShutterCount</a> &rsaquo; Leica SL3 Shutter Count
+</div>
+
+<header>
+  <div class="logo">SHUTTER<span>COUNT</span></div>
+  <div class="subtitle">Canon · Nikon · Sony · Fujifilm</div>
+</header>
+
+<div class="hero">
+  <span class="badge">&#128274; No upload &mdash; 100% local</span>
+  <h1>Leica SL3 Shutter Count:<br>Check It Free in Your Browser</h1>
+  <p>Drop a DNG RAW file from your <strong>Leica SL3</strong> (Typ 10000) and get the exact shutter actuation count in seconds &mdash; processed entirely in your browser, never uploaded anywhere.</p>
+  <a class="btn-cta" href="/">Check Shutter Count &rarr;</a>
+</div>
+
+<div class="section">
+  <h2>Leica SL3 &mdash; Shutter Rating</h2>
+  <p>The Leica SL3 (Typ 10000), released in February 2024, is Leica's third-generation L-mount full-frame mirrorless camera. It features a new 60 MP BSI CMOS sensor, 5-axis in-body image stabilisation, 4K video recording, and a refined weather-sealed magnesium-alloy body. The SL3 represents a significant leap from the 47.3 MP SL2, offering the highest resolution in the SL line to date.</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Release</th>
+        <th>Sensor</th>
+        <th>Est. Shutter Life</th>
+        <th>RAW Format</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="val">Leica SL3 (Typ 10000)</td>
+        <td>2024</td>
+        <td>60 MP full-frame BSI CMOS</td>
+        <td class="ok">~500,000</td>
+        <td>DNG</td>
+      </tr>
+      <tr>
+        <td class="val">Leica SL2 <span style="font-weight:400;color:var(--muted)">(predecessor)</span></td>
+        <td>2019</td>
+        <td>47.3 MP full-frame BSI CMOS</td>
+        <td class="ok">~500,000</td>
+        <td>DNG</td>
+      </tr>
+      <tr>
+        <td class="val">Leica SL2-S <span style="font-weight:400;color:var(--muted)">(video variant)</span></td>
+        <td>2020</td>
+        <td>24 MP full-frame BSI CMOS</td>
+        <td class="ok">~500,000</td>
+        <td>DNG</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box">
+    <strong>Note:</strong> Leica does not publish an official shutter rating for the SL3. The ~500,000 estimate is based on the professional-grade shutter mechanism used throughout the SL series and consistent with real-world reports on SL2 bodies. Leica shutter service is significantly more expensive than Japanese-brand equivalents — factor this into negotiations for high-count bodies.
+  </div>
+</div>
+
+<div class="section">
+  <h2>How to Check Shutter Count on the Leica SL3</h2>
+  <p>The Leica SL3 saves RAW files in Adobe DNG format, which embeds the shutter count in standard EXIF metadata. ShutterCount reads this directly in your browser without any upload:</p>
+
+  <ol class="steps">
+    <li>Take any photo with your Leica SL3 in RAW mode and locate the resulting <strong>.DNG</strong> file on your CFexpress or SD card.</li>
+    <li>Open <a href="/">shuttercount.app</a> in any modern browser (Chrome, Firefox, Safari, Edge).</li>
+    <li>Drag the DNG file onto the drop zone, or click to open a file picker.</li>
+    <li>The shutter count appears instantly alongside camera model and metadata. No upload, no account required.</li>
+  </ol>
+
+  <p>Alternatively, use ExifTool on the command line: <code>exiftool -ShutterCount image.dng</code></p>
+
+  <div class="highlight-box">
+    <strong>Tip:</strong> When buying a used SL3, always verify the count from an original DNG file shot <em>during</em> the inspection — not from a file provided in advance by the seller. EXIF metadata in DNG files can be overwritten by editing software; only the internal hardware counter is tamper-proof.
+  </div>
+</div>
+
+<div class="section">
+  <h2>What Is a Good Shutter Count for a Used Leica SL3?</h2>
+  <p>The Leica SL3 commands a substantial premium on the used market. Given its estimated ~500,000-actuation lifespan and high Leica service costs, evaluating the count carefully before purchase is essential:</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Actuation Count</th>
+        <th>% of Est. Life</th>
+        <th>Assessment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="val">0 – 10,000</td>
+        <td>0 – 2 %</td>
+        <td class="ok">Very low use &mdash; near new</td>
+      </tr>
+      <tr>
+        <td class="val">10,000 – 50,000</td>
+        <td>2 – 10 %</td>
+        <td class="ok">Low use &mdash; substantial life remaining</td>
+      </tr>
+      <tr>
+        <td class="val">50,000 – 150,000</td>
+        <td>10 – 30 %</td>
+        <td class="ok">Moderate use &mdash; normal for active photographers</td>
+      </tr>
+      <tr>
+        <td class="val">150,000 – 350,000</td>
+        <td>30 – 70 %</td>
+        <td style="color:#ffaa47">Active use &mdash; inspect carefully, negotiate price</td>
+      </tr>
+      <tr>
+        <td class="val">350,000 +</td>
+        <td>70 %+</td>
+        <td style="color:var(--accent2)">High use &mdash; factor in Leica shutter service cost</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Leica service is handled exclusively through authorised Leica centres. A shutter replacement or full CLA for an SL-series body typically costs significantly more than servicing a Japanese-brand camera. Always factor this into the purchase negotiation.</p>
+</div>
+
+<div class="section">
+  <h2>How Does ShutterCount Read the Leica SL3 Shutter Count?</h2>
+  <p>The Leica SL3 writes RAW images in <strong>Adobe DNG</strong> format. Unlike proprietary formats such as Canon CR3, Nikon NEF, or Sony ARW, DNG is openly documented. The shutter count is stored in standard EXIF tags within the DNG container and requires no proprietary decryption.</p>
+
+  <p>ShutterCount processes the DNG file entirely in JavaScript in your browser — the file never leaves your device. The shutter count is extracted from the EXIF block and displayed instantly alongside camera and capture metadata.</p>
+
+  <h3>Does the electronic shutter affect the count?</h3>
+  <p>No. The SL3's electronic shutter mode reads the sensor electrically without engaging the mechanical curtain. Those exposures do not increment the mechanical shutter counter. Only mechanical shutter and EFCS (Electronic Front Curtain Shutter) exposures are counted.</p>
+
+  <h3>Can I use a JPEG from my SL3?</h3>
+  <p>Leica may embed the shutter count in JPEG files from the SL3, but reliability can vary. For guaranteed results, use a <strong>DNG RAW file</strong> — the shutter count is always present and accurate in DNG EXIF data.</p>
+</div>
+
+<div class="section">
+  <h2>Leica SL3 Shutter Count &mdash; FAQ</h2>
+
+  <h3>How do I check the shutter count of my Leica SL3?</h3>
+  <p>Drop a DNG file from your Leica SL3 into <a href="/">shuttercount.app</a>. The count is read from the file's EXIF data in your browser — no upload required. You can also use ExifTool: <code>exiftool -ShutterCount image.dng</code>.</p>
+
+  <h3>What is the rated shutter life of the Leica SL3?</h3>
+  <p>Leica does not publish an official rating. Based on the SL series build quality and real-world data, the estimated shutter lifespan is <strong>approximately 500,000 actuations</strong>.</p>
+
+  <h3>How does the SL3 compare to the SL2?</h3>
+  <p>The SL3 raises the resolution from 47.3 MP to 60 MP (BSI CMOS), adds 5-axis IBIS (the SL2 had no IBIS), improves continuous burst speed to 30 fps electronic / 10 fps mechanical, and adds CFexpress Type B support alongside SD UHS-II. The overall body dimensions and weather sealing are similar. Both use DNG RAW format with identical shutter count extraction.</p>
+
+  <h3>Can the SL3 shutter count be reset or faked?</h3>
+  <p>The internal hardware counter can only be reset by Leica after a physical shutter replacement. While EXIF metadata in DNG files can be overwritten with tools like ExifTool, this only modifies the file — the camera's hardware counter remains unchanged. Always verify from an original DNG shot during a live inspection.</p>
+
+  <h3>Is the Leica SL3 L-mount compatible with Panasonic and Sigma lenses?</h3>
+  <p>Yes. The SL3 uses the L-mount standard shared by Leica, Panasonic (S series), and Sigma (fp series). All L-mount lenses from these manufacturers are fully compatible. Electronic shutter usage with some third-party lenses may affect rolling shutter behaviour but does not change how shutter count is recorded.</p>
+</div>
+
+<div class="section">
+  <h2>Other Leica &amp; DNG Cameras</h2>
+  <p>ShutterCount supports DNG and all major camera RAW formats. See related guides:</p>
+  <div class="related">
+    <a href="/leica-sl2-shutter-count/">Leica SL2</a>
+    <a href="/leica-sl2-s-shutter-count/">Leica SL2-S</a>
+    <a href="/leica-q3-shutter-count/">Leica Q3</a>
+    <a href="/leica-q2-shutter-count/">Leica Q2</a>
+    <a href="/leica-m11-shutter-count/">Leica M11</a>
+    <a href="/sigma-fp-l-shutter-count/">Sigma fp L</a>
+    <a href="/panasonic-lumix-s1r-shutter-count/">Panasonic S1R</a>
+    <a href="/sony-a7r-v-shutter-count/">Sony A7R V</a>
+    <a href="/">All supported cameras &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/" style="color:var(--accent)">&#8592; Back to ShutterCount.app</a></p>
+  <p style="margin-top:12px">Contact: <a href="mailto:info@shuttercount.app" style="color:var(--accent)">info@shuttercount.app</a></p>
+</footer>
+
+</body>
+</html>
