@@ -60,6 +60,7 @@
     <xhtml:link rel="alternate" hreflang="uz"        href="https://shuttercount.app/uz/"/>
     <xhtml:link rel="alternate" hreflang="vi"        href="https://shuttercount.app/vi/"/>
     <xhtml:link rel="alternate" hreflang="zh"        href="https://shuttercount.app/zh/"/>
+    <xhtml:link rel="alternate" hreflang="gu"        href="https://shuttercount.app/gu/"/>
   </url>
   <url><loc>https://shuttercount.app/supported-cameras/</loc><changefreq>weekly</changefreq><priority>0.8</priority><lastmod>2026-04-12</lastmod></url>
   <!-- Language variant pages -->
@@ -114,6 +115,7 @@
   <url><loc>https://shuttercount.app/uz/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-05-07</lastmod></url>
   <url><loc>https://shuttercount.app/vi/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/zh/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://shuttercount.app/gu/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
   <!-- FAQ pages -->
   <url>
     <loc>https://shuttercount.app/faq/how-many-shutter-actuations-is-too-many/</loc>
@@ -2489,4 +2491,10 @@
   <url><loc>https://shuttercount.app/canon-30d-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-10</lastmod></url>
   <url><loc>https://shuttercount.app/canon-1100d-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-10</lastmod></url>
   <url><loc>https://shuttercount.app/canon-400d-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-10</lastmod></url>
+  <!-- Gujarati (gu) SEO pages (added 2026-05-11) -->
+  <url><loc>https://shuttercount.app/gu/shutter-count-shu-chhe/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
+  <url><loc>https://shuttercount.app/gu/shutter-count-kevi-rite/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
+  <url><loc>https://shuttercount.app/gu/vaparelo-camera/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
+  <url><loc>https://shuttercount.app/gu/shutter-ni-umra/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
+  <url><loc>https://shuttercount.app/gu/exif-shutter-free/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
 </urlset>
