@@ -2497,4 +2497,10 @@
   <url><loc>https://shuttercount.app/gu/vaparelo-camera/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
   <url><loc>https://shuttercount.app/gu/shutter-ni-umra/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
   <url><loc>https://shuttercount.app/gu/exif-shutter-free/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
+  <!-- Camera model pages added 2026-05-11 -->
+  <url><loc>https://shuttercount.app/sony-zv-1-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-11</lastmod></url>
+  <url><loc>https://shuttercount.app/sony-rx100-vi-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-11</lastmod></url>
+  <url><loc>https://shuttercount.app/canon-5ds-r-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-11</lastmod></url>
+  <url><loc>https://shuttercount.app/fujifilm-x-a4-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-11</lastmod></url>
+  <url><loc>https://shuttercount.app/panasonic-lumix-gh5s-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-11</lastmod></url>
 </urlset>
