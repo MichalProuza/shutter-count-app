@@ -1,6 +1,6 @@
 # Routine: Add Zoner Comparison Page in New Language
 
-Creates a translated version of the Zoner Photo Studio vs Lightroom comparison page for a new language.
+Creates a translated version of the Zoner Studio vs Lightroom comparison page for a new language.
 
 ## How to invoke
 
@@ -78,7 +78,7 @@ Creates a translated version of the Zoner Photo Studio vs Lightroom comparison p
 
 ## Notes
 
-- Brand names (Zoner Photo Studio X, Adobe Lightroom Classic, Photoshop, Canon, Nikon, Sony, Fujifilm) are **not translated** — keep them in English.
+- Brand names (Zoner Studio X, Adobe Lightroom Classic, Photoshop, Canon, Nikon, Sony, Fujifilm) are **not translated** — keep them in English.
 - Price figures ($9.99, $19.99) are kept as-is.
 - The "sponsored" tag on the promo block should be translated (e.g., German: "gesponsert", French: "sponsorisé").
 - The site uses the Czech directory as `/cz/` (not `/cs/`). If generating Czech, use `LANG_CODE=cz` for the path but `lang="cs"` in the HTML attribute.
