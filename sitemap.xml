@@ -61,6 +61,7 @@
     <xhtml:link rel="alternate" hreflang="vi"        href="https://shuttercount.app/vi/"/>
     <xhtml:link rel="alternate" hreflang="zh"        href="https://shuttercount.app/zh/"/>
     <xhtml:link rel="alternate" hreflang="gu"        href="https://shuttercount.app/gu/"/>
+    <xhtml:link rel="alternate" hreflang="kn"        href="https://shuttercount.app/kn/"/>
   </url>
   <url><loc>https://shuttercount.app/supported-cameras/</loc><changefreq>weekly</changefreq><priority>0.8</priority><lastmod>2026-04-12</lastmod></url>
   <!-- Language variant pages -->
@@ -116,6 +117,7 @@
   <url><loc>https://shuttercount.app/vi/</loc><changefreq>monthly</changefreq><priority>0.5</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/zh/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/gu/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
+  <url><loc>https://shuttercount.app/kn/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-13</lastmod></url>
   <!-- FAQ pages -->
   <url>
     <loc>https://shuttercount.app/faq/how-many-shutter-actuations-is-too-many/</loc>
@@ -2572,6 +2574,12 @@
   <url><loc>https://shuttercount.app/gu/vaparelo-camera/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
   <url><loc>https://shuttercount.app/gu/shutter-ni-umra/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
   <url><loc>https://shuttercount.app/gu/exif-shutter-free/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
+  <!-- Kannada (kn) SEO pages (added 2026-05-13) -->
+  <url><loc>https://shuttercount.app/kn/shutter-count-endare-yenu/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-13</lastmod></url>
+  <url><loc>https://shuttercount.app/kn/shutter-count-parisheelisi/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-13</lastmod></url>
+  <url><loc>https://shuttercount.app/kn/haleya-camera-khareedi/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-13</lastmod></url>
+  <url><loc>https://shuttercount.app/kn/shutter-aayassu/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-13</lastmod></url>
+  <url><loc>https://shuttercount.app/kn/exif-uchita-shutter/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-13</lastmod></url>
   <!-- Camera model pages added 2026-05-11 -->
   <url><loc>https://shuttercount.app/sony-zv-1-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-11</lastmod></url>
   <url><loc>https://shuttercount.app/sony-rx100-vi-shutter-count/</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-05-11</lastmod></url>
