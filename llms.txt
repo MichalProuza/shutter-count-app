@@ -437,6 +437,7 @@ SEO-optimized content pages in German targeting DACH search queries.
 - [Maximale Auslösezahl](https://shuttercount.app/de/maximale-ausloesezahl/): Reference table of maximum rated shutter actuations for popular Canon, Nikon, Sony, Fujifilm, and Panasonic models.
 - [Verschluss-Lebensdauer](https://shuttercount.app/de/verschluss-lebensdauer/): How long does a mechanical shutter last, what factors affect its lifespan, and when does a replacement make sense?
 - [EXIF Auslösezahl kostenlos](https://shuttercount.app/de/exif-ausloeserzahl-kostenlos/): How to read shutter count from EXIF data for free online — no software download, no registration. Works with JPEG and RAW files.
+- [Zoner Studio vs Adobe Lightroom Vergleich](https://shuttercount.app/de/zoner-photo-studio-vs-lightroom-vergleich/): Detaillierter Vergleich von Zoner Studio X und Adobe Lightroom Classic: RAW-Entwicklung, Katalogisierung, Stapelverarbeitung, Preismodell (Abonnement vs. Einmalkauf) und integrierter Ebeneneditor. Richtet sich an Windows-Fotografen, die eine günstigere Lightroom-Alternative suchen.
 
 ## French SEO Pages (/fr/)
 
@@ -447,6 +448,7 @@ SEO-optimized content pages in French targeting France and francophone markets.
 - [Déclenchements maximum](https://shuttercount.app/fr/declenchements-maximum/): Complete table of maximum certified shutter actuations for Canon, Nikon, Sony, and Fujifilm cameras.
 - [EXIF déclenchements gratuit](https://shuttercount.app/fr/exif-declenchements-gratuit/): How to read EXIF data from photos for free and get the camera's shutter count — no registration, no software, directly in the browser.
 - [Durée de vie de l'obturateur](https://shuttercount.app/fr/duree-vie-obturateur/): How long does a camera shutter last? Explains certified actuation counts and how to calculate remaining lifespan.
+- [Zoner Studio vs Adobe Lightroom Comparaison](https://shuttercount.app/fr/zoner-photo-studio-vs-lightroom-comparaison/): Comparaison détaillée de Zoner Studio X et Adobe Lightroom Classic : retouche RAW, catalogage, traitement par lots, modèle tarifaire (abonnement vs. licence perpétuelle) et éditeur de calques intégré. Destiné aux photographes Windows à la recherche d'une alternative à Lightroom plus abordable.
 
 ## Swedish SEO Pages (/sv/)
 
