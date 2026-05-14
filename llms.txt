@@ -719,6 +719,16 @@ SEO-optimized content pages in Gujarati targeting the ~57 million native Gujarat
 - [કૅમેરા Shutter ની ઉંમર — Brand પ્રમાણે સંપૂર્ણ માહિતી](https://shuttercount.app/gu/shutter-ni-umra/): Full shutter lifespan reference tables for Canon, Nikon, Sony, and Fujifilm models in Gujarati. Includes shutter failure symptoms and note on shutter replacement costs in India (₹5,000–₹20,000). Targets "કૅમેરા shutter ઉંમર" (camera shutter lifespan).
 - [EXIF થી Shutter Count મફત ચેક કરો — Online Tool](https://shuttercount.app/gu/exif-shutter-free/): Explains how EXIF MakerNote metadata stores shutter count per brand, how ShutterCount reads it locally without uploading files, and how to use ExifTool from the command line as an alternative. Targets "EXIF shutter count" (EXIF shutter count free).
 
+## Kannada SEO Pages (/kn/)
+
+SEO-optimized content pages in Kannada targeting the ~65 million native Kannada speakers, primarily in Karnataka state — home to Bangalore, India's tech capital with a large, photography-enthusiastic urban population. Karnataka has a vibrant photography community and a strong used-camera market. All pages are written in Kannada script with romanized URL slugs.
+
+- [ಶಟರ್ ಕೌಂಟ್ ಎಂದರೇನು? — ಕ್ಯಾಮೆರಾ ಶಟರ್ ಕೌಂಟ್ ಉಚಿತವಾಗಿ ಪರಿಶೀಲಿಸಿ](https://shuttercount.app/kn/shutter-count-endare-yenu/): Overview page explaining what shutter count is, why it matters, and how to check it in Kannada. Includes shutter lifespan table by camera class, comparison of checking methods, and FAQ section. Targets "ಶಟರ್ ಕೌಂಟ್ ಎಂದರೇನು" (what is shutter count).
+- [ಶಟರ್ ಕೌಂಟ್ ಹೇಗೆ ಪರಿಶೀಲಿಸುವುದು — ಉಚಿತ Online ವಿಧಾನ](https://shuttercount.app/kn/shutter-count-parisheelisi/): Step-by-step 3-step guide in Kannada for checking camera shutter count using ShutterCount, with a comparison table of methods (online tool vs ExifTool vs camera menu), list of all supported file formats and brands, and privacy guarantee. Targets "ಶಟರ್ ಕೌಂಟ್ ಪರಿಶೀಲಿಸಿ" (check shutter count).
+- [ಹಳೆಯ ಕ್ಯಾಮೆರಾ ಖರೀದಿಸುವ ಮೊದಲು ಶಟರ್ ಕೌಂಟ್ ಪರಿಶೀಲಿಸಿ](https://shuttercount.app/kn/haleya-camera-khareedi/): Buyer's guide for used cameras on Indian marketplaces (OLX, Facebook Marketplace, Flipkart Renewed). Includes A–D condition grading table by shutter usage percentage, an 8-item inspection checklist, and advice on how to request a RAW file from the seller. Targets "ಹಳೆಯ ಕ್ಯಾಮೆರಾ ಖರೀದಿ" (used camera purchase).
+- [ಕ್ಯಾಮೆರಾ ಶಟರ್ ಆಯಸ್ಸು — Brand ಪ್ರಕಾರ ಸಂಪೂರ್ಣ ಮಾಹಿತಿ](https://shuttercount.app/kn/shutter-aayassu/): Full shutter lifespan reference tables for Canon, Nikon, Sony, and Fujifilm models in Kannada. Includes shutter failure symptoms and note on shutter replacement costs in India (₹5,000–₹20,000). Targets "ಕ್ಯಾಮೆರಾ shutter ಆಯಸ್ಸು" (camera shutter lifespan).
+- [EXIF ಉಚಿತ ಶಟರ್ ಕೌಂಟ್ — Online RAW/JPEG ಪರಿಶೀಲಿಸಿ](https://shuttercount.app/kn/exif-uchita-shutter/): Explains what EXIF MakerNote metadata is and how manufacturers store shutter count within it, how ShutterCount reads it locally without uploading files, supported RAW formats (CR3, CR2, NEF, ARW, RAF, ORF, RW2, JPEG), and why social media strips EXIF data. Targets "EXIF ಉಚಿತ ಶಟರ್ ಕೌಂಟ್" (EXIF free shutter count).
+
 ## Optional
 
 - [llms-full.txt](https://shuttercount.app/llms-full.txt): Extended version with full page descriptions and FAQ content for each camera model page.
