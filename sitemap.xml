@@ -62,6 +62,7 @@
     <xhtml:link rel="alternate" hreflang="zh"        href="https://shuttercount.app/zh/"/>
     <xhtml:link rel="alternate" hreflang="gu"        href="https://shuttercount.app/gu/"/>
     <xhtml:link rel="alternate" hreflang="kn"        href="https://shuttercount.app/kn/"/>
+    <xhtml:link rel="alternate" hreflang="am"        href="https://shuttercount.app/am/"/>
   </url>
   <url><loc>https://shuttercount.app/supported-cameras/</loc><changefreq>weekly</changefreq><priority>0.8</priority><lastmod>2026-04-12</lastmod></url>
   <!-- Language variant pages -->
@@ -118,6 +119,7 @@
   <url><loc>https://shuttercount.app/zh/</loc><changefreq>monthly</changefreq><priority>0.6</priority><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://shuttercount.app/gu/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
   <url><loc>https://shuttercount.app/kn/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-13</lastmod></url>
+  <url><loc>https://shuttercount.app/am/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-14</lastmod></url>
   <!-- FAQ pages -->
   <url>
     <loc>https://shuttercount.app/faq/how-many-shutter-actuations-is-too-many/</loc>
@@ -198,6 +200,37 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <lastmod>2026-05-07</lastmod>
+  </url>
+  <!-- Amharic (am) SEO pages -->
+  <url>
+    <loc>https://shuttercount.app/am/shutter-count-minu-new/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/am/shutter-count-masavere/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/am/yetebelete-camera/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/am/nesa-shutter-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/am/shutter-wessene/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <!-- Canon -->
   <url>
