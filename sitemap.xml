@@ -63,6 +63,7 @@
     <xhtml:link rel="alternate" hreflang="gu"        href="https://shuttercount.app/gu/"/>
     <xhtml:link rel="alternate" hreflang="kn"        href="https://shuttercount.app/kn/"/>
     <xhtml:link rel="alternate" hreflang="am"        href="https://shuttercount.app/am/"/>
+    <xhtml:link rel="alternate" hreflang="ml"        href="https://shuttercount.app/ml/"/>
   </url>
   <url><loc>https://shuttercount.app/supported-cameras/</loc><changefreq>weekly</changefreq><priority>0.8</priority><lastmod>2026-04-12</lastmod></url>
   <!-- Photo editing software comparison pilot articles -->
@@ -126,6 +127,38 @@
   <url><loc>https://shuttercount.app/gu/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-11</lastmod></url>
   <url><loc>https://shuttercount.app/kn/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-13</lastmod></url>
   <url><loc>https://shuttercount.app/am/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://shuttercount.app/ml/</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-05-15</lastmod></url>
+  <!-- Malayalam (ml) SEO pages -->
+  <url>
+    <loc>https://shuttercount.app/ml/shutter-count-enthaanu/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-15</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ml/shutter-count-parisodhikkal/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-15</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ml/upayogiccha-camera-vannal/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-15</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ml/shutter-count-paridhi/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-15</lastmod>
+  </url>
+  <url>
+    <loc>https://shuttercount.app/ml/camera-shutter-maattal/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-05-15</lastmod>
+  </url>
   <!-- FAQ pages -->
   <url>
     <loc>https://shuttercount.app/faq/how-many-shutter-actuations-is-too-many/</loc>
