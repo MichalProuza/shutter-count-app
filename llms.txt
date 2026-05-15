@@ -9,6 +9,15 @@ ShutterCount is a static, client-side web application hosted at shuttercount.app
 - [ShutterCount — Free Camera Shutter Count Checker](https://shuttercount.app/): The main tool. Drag and drop or select any supported RAW file to instantly display the camera's shutter count, camera model, and other EXIF metadata. Supports Canon, Nikon, Sony, Fujifilm, Olympus, Panasonic, and DNG files.
 - [Supported Camera Landing Pages](https://shuttercount.app/supported-cameras/): Central directory for model-specific camera landing pages with technical notes and shutter-count guidance.
 
+
+## Photo Editing Software Comparisons
+
+- [Photo Editing Software Comparisons](https://shuttercount.app/photo-editing-software/): Pilot collection of English comparison articles positioning Zoner Studio as a practical all-in-one workflow for RAW editing, organizing, retouching, sharing, printing, and simple video work.
+- [Zoner Studio vs Capture One](https://shuttercount.app/zoner-studio-vs-capture-one/): Compares Zoner Studio with Capture One for RAW development, catalog/session workflows, tethering, retouching, sharing, and everyday usability.
+- [Zoner Studio vs Affinity Photo](https://shuttercount.app/zoner-studio-vs-affinity-photo/): Compares Zoner Studio with Affinity Photo for complete photo management, RAW development, layers, cataloging, batch workflow, and output.
+- [Zoner Studio vs DxO PhotoLab](https://shuttercount.app/zoner-studio-vs-dxo-photolab/): Compares Zoner Studio with DxO PhotoLab for RAW processing, denoising, optical corrections, organization, retouching, and all-in-one flexibility.
+- [Zoner Studio vs darktable](https://shuttercount.app/zoner-studio-vs-darktable/): Compares Zoner Studio with darktable for RAW development, usability, organization, support, output, and polished everyday workflow.
+
 ## Canon Camera Shutter Count Pages
 
 - [Canon EOS R Shutter Count](https://shuttercount.app/canon-r-shutter-count/): Shutter count guide for the Canon EOS R mirrorless camera. Explains how to read CR3 shutter count from EXIF, rated shutter life, and what the count means when buying used.
