@@ -422,6 +422,7 @@ SEO-optimized content pages in Portuguese targeting Brazil and Portugal search q
 - [Vida Útil de uma Câmera](https://shuttercount.app/pt/vida-util-camera/): Guide on how many shots a camera lasts and how to calculate remaining shutter life — with table by model.
 - [Disparos Máximos por Modelo](https://shuttercount.app/pt/disparos-maximos/): Complete table of maximum certified actuation counts for Canon, Nikon, Sony, Fujifilm, and Olympus cameras.
 - [Ver Disparos pelos Dados EXIF](https://shuttercount.app/pt/exif-disparos-gratis/): Explains how EXIF metadata stores shot count and how to read it for free online with ShutterCount.
+- [Zoner Studio vs Adobe Lightroom Comparação](https://shuttercount.app/pt/zoner-photo-studio-vs-lightroom-comparacao/): Comparação detalhada do Zoner Studio X e Adobe Lightroom Classic: edição RAW, catalogação, processamento em lote, modelo de preços (assinatura vs. licença perpétua) e editor de camadas integrado. Destinado a fotógrafos Windows que buscam uma alternativa mais acessível ao Lightroom.
 
 ## Spanish SEO Pages (/es/)
 
