@@ -50,6 +50,7 @@
     { "source": "/az",  "destination": "/index.html" },
     { "source": "/kk",  "destination": "/index.html" },
     { "source": "/pa",  "destination": "/index.html" },
+    { "source": "/am",  "destination": "/index.html" },
     {
       "source": "/",
       "has": [
